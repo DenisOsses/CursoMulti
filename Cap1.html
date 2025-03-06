@@ -14,21 +14,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -38,11 +36,10 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="_static/documentation_options.js?v=78d55cf8"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -69,7 +66,6 @@
     <link rel="prev" title="MAT203 Cálculo Multivariables" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,16 +73,31 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -94,6 +105,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,15 +113,10 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
-</div>
-
+</form></div>
+  </div>
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
     </header>
   
 
@@ -118,8 +125,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -134,8 +140,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -149,17 +153,21 @@
     
     
     <img src="_static/logomat.jpeg" class="logo__image only-light" alt="Cálculo Multivariables 2025-1 - Home"/>
-    <img src="_static/logomat.jpeg" class="logo__image only-dark pst-js-only" alt="Cálculo Multivariables 2025-1 - Home"/>
+    <script>document.write(`<img src="_static/logomat.jpeg" class="logo__image only-dark" alt="Cálculo Multivariables 2025-1 - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Búsqueda</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -180,19 +188,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -201,7 +204,7 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -397,16 +400,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -438,7 +449,12 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-del-grafico-de-funciones-de-2-variables">Visualización del Gráfico de Funciones de 2 Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-del-grafico-de-funciones-de-2-variables">Visualización del Gráfico de Funciones de 2 Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curvas-de-nivel">Curvas de nivel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersecciones-con-los-planos-coordenados">Intersecciones con los planos coordenados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trazas">Trazas</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -450,41 +466,54 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <!--######################################################################################################################################################################################################################################################################################################################################################
+  <!--###########################################################################################################################
+##############################################################################################################################
+#############################################################################################
 --><section class="tex2jax_ignore mathjax_ignore" id="unidad-1">
 <span id="u1"></span><h1>Unidad 1<a class="headerlink" href="#unidad-1" title="Link to this heading">#</a></h1>
 <section id="introduccion">
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
-<p>El estudio de las dimensiones espaciales es fundamental para poder comprender el universo. Por ejemplo, conectar la mecánica cuántica con la relatividad general ha desarrollado toda una línea de investigación física en torno a la <a class="reference external" href="https://en.wikipedia.org/wiki/String_theory"><strong>Teoría de Cuerdas</strong></a>, donde se establecen al menos 10 dimensiones (una dimensión temporal, tres dimensiones espaciales ordinarias y seis dimensiones compactadas e inobservables en la práctica).</p>
+<p>El estudio de las dimensiones espaciales es fundamental para poder comprender el universo. Por ejemplo, conectar la mecánica cuántica
+con la relatividad general ha desarrollado toda una línea de investigación física en torno a la
+<a class="reference external" href="https://en.wikipedia.org/wiki/String_theory"><strong>Teoría de Cuerdas</strong></a>, donde se establecen al menos 10 dimensiones
+(una dimensión temporal, tres dimensiones espaciales ordinarias y seis dimensiones compactadas e inobservables en la práctica).</p>
 <p>En general, ¿cómo es posible definir y comprender un sistema con <span class="math notranslate nohighlight">\(n\)</span> dimensiones?</p>
-<p>Hasta ahora hemos estudiado las herramientas del cálculo en 2 dimensiones trabajando sobre el plano cartesiano, pero bien sabemos que el mundo que nos rodea, en una perspectiva simple, se comprende en 3 dimensiones espaciales.</p>
+<p>Hasta ahora hemos estudiado las herramientas del cálculo en 2 dimensiones trabajando sobre el plano cartesiano, pero bien sabemos
+que el mundo que nos rodea, en una perspectiva simple, se comprende en 3 dimensiones espaciales.</p>
 <figure class="align-default" id="espacio3d">
 <a class="reference internal image-reference" href="_images/3coordenadas.png"><img alt="_images/3coordenadas.png" src="_images/3coordenadas.png" style="height: 200px;" /></a>
 <figcaption>
 <p><span class="caption-number">Figura 1 </span><span class="caption-text">Representación Espacio Tridimensional</span><a class="headerlink" href="#espacio3d" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Aún más, incluso es posible visualizar una cuarta dimensión considerando el tiempo. Por ejemplo, a partir de una línea, podemos construir un cuadrado, luego un cubo y finalmente un <a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/d/d7/8-cell.gif"><strong>teseracto o hipercubo</strong></a></p>
+<p>Aún más, incluso es posible visualizar una cuarta dimensión considerando el tiempo. Por ejemplo, a partir de una línea, podemos
+construir un cuadrado, luego un cubo y finalmente un
+<a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/d/d7/8-cell.gif"><strong>teseracto o hipercubo</strong></a></p>
 <figure class="align-default" id="teseracto">
 <a class="reference internal image-reference" href="_images/teseracto.png"><img alt="_images/teseracto.png" src="_images/teseracto.png" style="height: 200px;" /></a>
 <figcaption>
 <p><span class="caption-number">Figura 2 </span><span class="caption-text">Teseracto</span><a class="headerlink" href="#teseracto" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Un ejemplo artístico, ¿qué tiene de especial el cuadro la <a class="reference external" href="https://en.wikipedia.org/wiki/Crucifixion_(Corpus_Hypercubus)"><strong>Crucifixión (Corpus Hypercubus)</strong></a> de Salvador Dalí?</p>
+<p>Un ejemplo artístico, ¿qué tiene de especial el cuadro la
+<a class="reference external" href="https://en.wikipedia.org/wiki/Crucifixion_(Corpus_Hypercubus)"><strong>Crucifixión (Corpus Hypercubus)</strong></a> de Salvador Dalí?</p>
 <figure class="align-default" id="crucifixion">
 <a class="reference internal image-reference" href="_images/Dali_Crucifixion_hypercube.jpg"><img alt="_images/Dali_Crucifixion_hypercube.jpg" src="_images/Dali_Crucifixion_hypercube.jpg" style="height: 300px;" /></a>
 <figcaption>
 <p><span class="caption-number">Figura 3 </span><span class="caption-text">Crucifixión</span><a class="headerlink" href="#crucifixion" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Esto nos invita a ampliar nuestras fronteras y extender, muchas veces de manera natural pero no directa, los conceptos de funciones, límites, derivadas e integrales al Cálculo Multivariable.</p>
+<p>Esto nos invita a ampliar nuestras fronteras y extender, muchas veces de manera natural pero no directa,
+los conceptos de funciones,
+límites, derivadas e integrales al Cálculo Multivariable.</p>
 </section>
 <section id="funciones-de-varias-variables">
 <h2>Funciones de Varias Variables<a class="headerlink" href="#funciones-de-varias-variables" title="Link to this heading">#</a></h2>
 <section id="funciones-y-dominio">
 <h3>Funciones y Dominio<a class="headerlink" href="#funciones-y-dominio" title="Link to this heading">#</a></h3>
-<p>Una <strong>función real</strong> <span class="math notranslate nohighlight">\(f\)</span> de <span class="math notranslate nohighlight">\(n\)</span> variables es una regla que asigna el elemento <span class="math notranslate nohighlight">\(\mathbf{x}=(x_1,x_2,x_3,\ldots,x_n)\in D\subseteq\mathbb{R}^n\)</span> (la preimagen) un único número real <span class="math notranslate nohighlight">\(x_{n+1}\)</span> denotado por <span class="math notranslate nohighlight">\(f(\mathbf{x})\)</span> (la imagen), es decir,</p>
+<p>Una <strong>función real</strong> <span class="math notranslate nohighlight">\(f\)</span> de <span class="math notranslate nohighlight">\(n\)</span> variables es una regla que asigna el elemento
+<span class="math notranslate nohighlight">\(\mathbf{x}=(x_1,x_2,x_3,\ldots,x_n)\in D\subseteq\mathbb{R}^n\)</span> (la preimagen) un único número real <span class="math notranslate nohighlight">\(x_{n+1}\)</span> denotado por
+<span class="math notranslate nohighlight">\(f(\mathbf{x})\)</span> (la imagen), es decir,</p>
 <div class="math notranslate nohighlight">
 \[
 f:D\subseteq\mathbb{R}^n\to\mathbb{R}, ~~x_{n+1}=f(\mathbf{x})
@@ -494,7 +523,8 @@ f:D\subseteq\mathbb{R}^n\to\mathbb{R}, ~~x_{n+1}=f(\mathbf{x})
 <span class="eqno">(1)<a class="headerlink" href="#equation-dom" title="Link to this equation">#</a></span>\[
 Dom(f)=\left\{\mathbf{x}\in\mathbb{R}^n\, :\,  f(\mathbf{x})\in\mathbb{R}\right\},
 \]</div>
-<p>para referirnos al dominio maximal de <span class="math notranslate nohighlight">\(f\)</span>, es decir, <a class="reference internal" href="#equation-dom">(1)</a> es el conjunto de elementos en <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> para los que <span class="math notranslate nohighlight">\(f\)</span> está bien definida (sin restricciones adicionales).</p>
+<p>para referirnos al dominio maximal de <span class="math notranslate nohighlight">\(f\)</span>, es decir, <a class="reference internal" href="#equation-dom">(1)</a> es el conjunto de elementos en <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> para los que <span class="math notranslate nohighlight">\(f\)</span> está
+bien definida (sin restricciones adicionales).</p>
 <p><strong>Nota</strong>. Si <span class="math notranslate nohighlight">\(n=2\)</span> tenemos una función de 2 variables, que anotamos usualmente como <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> (en lugar de <span class="math notranslate nohighlight">\(x_3 = f(x_1,x_2))\)</span>.</p>
 <figure class="align-default" id="funcion2var">
 <a class="reference internal image-reference" href="_images/fun2var.jpg"><img alt="_images/fun2var.jpg" src="_images/fun2var.jpg" style="height: 200px;" /></a>
@@ -506,7 +536,8 @@ Dom(f)=\left\{\mathbf{x}\in\mathbb{R}^n\, :\,  f(\mathbf{x})\in\mathbb{R}\right\
 </section>
 <section id="recorrido">
 <h3>Recorrido<a class="headerlink" href="#recorrido" title="Link to this heading">#</a></h3>
-<p>El <strong>recorrido</strong> de una función <span class="math notranslate nohighlight">\(f\)</span> es el conjunto de imágenes <span class="math notranslate nohighlight">\(x_{n+1}=f(\mathbf{x})\)</span> para los cuales existe una preimagen en <span class="math notranslate nohighlight">\(D\)</span>, es decir,</p>
+<p>El <strong>recorrido</strong> de una función <span class="math notranslate nohighlight">\(f\)</span> es el conjunto de imágenes <span class="math notranslate nohighlight">\(x_{n+1}=f(\mathbf{x})\)</span> para los cuales existe una preimagen en <span class="math notranslate nohighlight">\(D\)</span>,
+es decir,</p>
 <div class="math notranslate nohighlight" id="equation-rec">
 <span class="eqno">(2)<a class="headerlink" href="#equation-rec" title="Link to this equation">#</a></span>\[
 Rec(f)=\{x_{n+1}\in\mathbb{R}: \exists~\mathbf{x}\in D~,~x_{n+1}=f(\mathbf{x})\}.
@@ -514,13 +545,15 @@ Rec(f)=\{x_{n+1}\in\mathbb{R}: \exists~\mathbf{x}\in D~,~x_{n+1}=f(\mathbf{x})\}
 </section>
 <section id="grafico">
 <h3>Gráfico<a class="headerlink" href="#grafico" title="Link to this heading">#</a></h3>
-<p>El <strong>gráfico</strong> de una función <span class="math notranslate nohighlight">\(f\)</span> es el conjunto de puntos <span class="math notranslate nohighlight">\((\mathbf{x},x_{n+1})\in\mathbb{R}^{n+1}\)</span> tales que <span class="math notranslate nohighlight">\(\mathbf{x}\in D\)</span> y <span class="math notranslate nohighlight">\(x_{n+1}=f(\mathbf{x})\)</span>.</p>
+<p>El <strong>gráfico</strong> de una función <span class="math notranslate nohighlight">\(f\)</span> es el conjunto de puntos <span class="math notranslate nohighlight">\((\mathbf{x},x_{n+1})\in\mathbb{R}^{n+1}\)</span> tales que <span class="math notranslate nohighlight">\(\mathbf{x}\in D\)</span>
+y <span class="math notranslate nohighlight">\(x_{n+1}=f(\mathbf{x})\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-graf">
 <span class="eqno">(3)<a class="headerlink" href="#equation-graf" title="Link to this equation">#</a></span>\[
 Graf(f)=\{(\mathbf{x},x_{n+1})\in\mathbb{R}^{n+1}:\mathbf{x}\in D~\wedge~x_{n+1}=f(\mathbf{x})\}
 \]</div>
 <p>Si bien toda función tiene asociado un gráfico, este conjunto no siempre se puede visualizar.</p>
-<p><strong>Nota</strong>. Si <span class="math notranslate nohighlight">\(n=2\)</span>, entonces el gráfico de <span class="math notranslate nohighlight">\(f\)</span> está es el espacio <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> y es llamado genéricamente <strong>superficie</strong>. (Veremos más adelante que no todas las superficies provienen de funciones).</p>
+<p><strong>Nota</strong>. Si <span class="math notranslate nohighlight">\(n=2\)</span>, entonces el gráfico de <span class="math notranslate nohighlight">\(f\)</span> está es el espacio <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> y es llamado genéricamente <strong>superficie</strong>.
+(Veremos más adelante que no todas las superficies provienen de funciones).</p>
 <figure class="align-default" id="grafico3d">
 <a class="reference internal image-reference" href="_images/fun2vargraf.jpg"><img alt="_images/fun2vargraf.jpg" src="_images/fun2vargraf.jpg" style="height: 200px;" /></a>
 <figcaption>
@@ -588,10 +621,52 @@ Graf(f)=\{(\mathbf{x},x_{n+1})\in\mathbb{R}^{n+1}:\mathbf{x}\in D~\wedge~x_{n+1}
 <p><span class="caption-number">Figura 6 </span><span class="caption-text">Gráfico del dominio de <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#ejercicio2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<p><strong>Preguntas.</strong> ¿Es posible determinar el recorrido de <span class="math notranslate nohighlight">\(f\)</span>? o incluso, ¿cómo es su gráfico?</p>
 </section>
 </section>
 <section id="visualizacion-del-grafico-de-funciones-de-2-variables">
 <h2>Visualización del Gráfico de Funciones de 2 Variables<a class="headerlink" href="#visualizacion-del-grafico-de-funciones-de-2-variables" title="Link to this heading">#</a></h2>
+<p>Para estudiar y realizar una representación gráfica de una superficie en <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> son importantes 3 elementos:</p>
+<ol class="arabic simple">
+<li><p>Las curvas de nivel.</p></li>
+<li><p>Las intersecciones con los planos coordenados.</p></li>
+<li><p>Las trazas (intersecciones con planos paralelos a los planos coordenados).</p></li>
+</ol>
+<p>Definimos estos 3 elementos a continuación:</p>
+<section id="curvas-de-nivel">
+<h3>Curvas de nivel<a class="headerlink" href="#curvas-de-nivel" title="Link to this heading">#</a></h3>
+<p>Sean <span class="math notranslate nohighlight">\(f:D\subseteq\mathbb{R}^n\to\mathbb{R}\)</span> y <span class="math notranslate nohighlight">\(k\in\mathbb{R}\)</span> (fijo), el <strong>conjunto de nivel</strong> <span class="math notranslate nohighlight">\(k\)</span> de <span class="math notranslate nohighlight">\(f\)</span>, denotado por <span class="math notranslate nohighlight">\(N_k(f)\)</span>,
+es el conjunto definido por:</p>
+<div class="math notranslate nohighlight" id="equation-conjnivel">
+<span class="eqno">(4)<a class="headerlink" href="#equation-conjnivel" title="Link to this equation">#</a></span>\[
+N_k(f)=\{\mathbf{x}\in D\,:\, f(\mathbf{x})=k\}
+\]</div>
+<p><strong>Observación.</strong> Para que exista el conjunto de nivel <span class="math notranslate nohighlight">\(k\)</span> de <span class="math notranslate nohighlight">\(f\)</span>, necesariamente <span class="math notranslate nohighlight">\(k\)</span> debe pertenecer al recorrido <span class="math notranslate nohighlight">\(f\)</span>.
+Dicho de otro modo, si <span class="math notranslate nohighlight">\(k\)</span> está en el recorrido de <span class="math notranslate nohighlight">\(f\)</span>, el conjunto de nivel <span class="math notranslate nohighlight">\(k\)</span> de <span class="math notranslate nohighlight">\(f\)</span> corresponde al conjunto de preimagenes
+de <span class="math notranslate nohighlight">\(k\)</span> bajo la función <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p><strong>Caso</strong> <span class="math notranslate nohighlight">\(n=2\)</span>. Sea <span class="math notranslate nohighlight">\(f:D\subseteq\mathbb{R}^2\to\mathbb{R}\)</span>, el conjunto de nivel <span class="math notranslate nohighlight">\(k\)</span> de <span class="math notranslate nohighlight">\(f\)</span>, corresponde a una curva en el plano
+denominada <strong>curva de nivel</strong> <span class="math notranslate nohighlight">\(k\)</span> de <span class="math notranslate nohighlight">\(f\)</span>. Se denota <span class="math notranslate nohighlight">\(C_k(f)\)</span> o <span class="math notranslate nohighlight">\(C_k\)</span> y está dada por:</p>
+<div class="math notranslate nohighlight" id="equation-curvanivel">
+<span class="eqno">(5)<a class="headerlink" href="#equation-curvanivel" title="Link to this equation">#</a></span>\[
+C_k=\{(x,y)\in D\,:\,f(x,y)=k\}
+\]</div>
+<p><strong>Observación.</strong> Note que <span class="math notranslate nohighlight">\(z=k\)</span> corresponde a un plano paralelo al plano <span class="math notranslate nohighlight">\(XY\)</span>, que se encuentra a distancia <span class="math notranslate nohighlight">\(|k|\)</span> de este.</p>
+<p>Las curvas de nivel se grafican en el plano <span class="math notranslate nohighlight">\(XY\)</span> y una colección de ellas se denomina <strong>mapa de contorno</strong>.</p>
+<figure class="align-default" id="curvanivel">
+<a class="reference internal image-reference" href="_images/curvanivel.jpg"><img alt="_images/curvanivel.jpg" src="_images/curvanivel.jpg" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 7 </span><span class="caption-text">Mapa de contorno de una función <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#curvanivel" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Nota:</strong> Podemos visualizar las curvas de nivel de una función utilizando la siguiente aplicación de
+<a class="reference external" href="https://www.geogebra.org/m/jy7znQM5"><strong>Geogebra</strong></a></p>
+</section>
+<section id="intersecciones-con-los-planos-coordenados">
+<h3>Intersecciones con los planos coordenados<a class="headerlink" href="#intersecciones-con-los-planos-coordenados" title="Link to this heading">#</a></h3>
+</section>
+<section id="trazas">
+<h3>Trazas<a class="headerlink" href="#trazas" title="Link to this heading">#</a></h3>
+</section>
 </section>
 </section>
 
@@ -622,7 +697,7 @@ Graf(f)=\{(\mathbf{x},x_{n+1})\in\mathbb{R}^{n+1}:\mathbf{x}\in D~\wedge~x_{n+1}
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -641,8 +716,7 @@ Graf(f)=\{(\mathbf{x},x_{n+1})\in\mathbb{R}^{n+1}:\mathbf{x}\in D~\wedge~x_{n+1}
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -659,7 +733,12 @@ Graf(f)=\{(\mathbf{x},x_{n+1})\in\mathbb{R}^{n+1}:\mathbf{x}\in D~\wedge~x_{n+1}
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-del-grafico-de-funciones-de-2-variables">Visualización del Gráfico de Funciones de 2 Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-del-grafico-de-funciones-de-2-variables">Visualización del Gráfico de Funciones de 2 Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curvas-de-nivel">Curvas de nivel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersecciones-con-los-planos-coordenados">Intersecciones con los planos coordenados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trazas">Trazas</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -708,8 +787,8 @@ Por The Jupyter Book Community/ Área de Matemáticas FIC UAI/ Denis Osses, deni
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
