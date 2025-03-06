@@ -12,7 +12,9 @@ kernelspec:
   name: python3
 ---
 
-<!--######################################################################################################################################################################################################################################################################################################################################################
+<!--###########################################################################################################################
+##############################################################################################################################
+#############################################################################################
 -->
 
 +++
@@ -24,11 +26,15 @@ kernelspec:
 
 ## Introducción
 
-El estudio de las dimensiones espaciales es fundamental para poder comprender el universo. Por ejemplo, conectar la mecánica cuántica con la relatividad general ha desarrollado toda una línea de investigación física en torno a la [**Teoría de Cuerdas**](https://en.wikipedia.org/wiki/String_theory), donde se establecen al menos 10 dimensiones (una dimensión temporal, tres dimensiones espaciales ordinarias y seis dimensiones compactadas e inobservables en la práctica).
+El estudio de las dimensiones espaciales es fundamental para poder comprender el universo. Por ejemplo, conectar la mecánica cuántica 
+con la relatividad general ha desarrollado toda una línea de investigación física en torno a la 
+[**Teoría de Cuerdas**](https://en.wikipedia.org/wiki/String_theory), donde se establecen al menos 10 dimensiones 
+(una dimensión temporal, tres dimensiones espaciales ordinarias y seis dimensiones compactadas e inobservables en la práctica).
 
 En general, ¿cómo es posible definir y comprender un sistema con $n$ dimensiones?
 
-Hasta ahora hemos estudiado las herramientas del cálculo en 2 dimensiones trabajando sobre el plano cartesiano, pero bien sabemos que el mundo que nos rodea, en una perspectiva simple, se comprende en 3 dimensiones espaciales. 
+Hasta ahora hemos estudiado las herramientas del cálculo en 2 dimensiones trabajando sobre el plano cartesiano, pero bien sabemos 
+que el mundo que nos rodea, en una perspectiva simple, se comprende en 3 dimensiones espaciales. 
 
 ```{figure} 3coordenadas.png
 ---
@@ -38,7 +44,9 @@ name: Espacio3D
 Representación Espacio Tridimensional
 ```
 
-Aún más, incluso es posible visualizar una cuarta dimensión considerando el tiempo. Por ejemplo, a partir de una línea, podemos construir un cuadrado, luego un cubo y finalmente un [**teseracto o hipercubo**](https://upload.wikimedia.org/wikipedia/commons/d/d7/8-cell.gif) 
+Aún más, incluso es posible visualizar una cuarta dimensión considerando el tiempo. Por ejemplo, a partir de una línea, podemos 
+construir un cuadrado, luego un cubo y finalmente un 
+[**teseracto o hipercubo**](https://upload.wikimedia.org/wikipedia/commons/d/d7/8-cell.gif) 
 
 ```{figure} teseracto.png
 ---
@@ -48,7 +56,8 @@ name: Teseracto
 Teseracto
 ```
 
-Un ejemplo artístico, ¿qué tiene de especial el cuadro la [**Crucifixión (Corpus Hypercubus)**](https://en.wikipedia.org/wiki/Crucifixion_(Corpus_Hypercubus)) de Salvador Dalí?
+Un ejemplo artístico, ¿qué tiene de especial el cuadro la 
+[**Crucifixión (Corpus Hypercubus)**](https://en.wikipedia.org/wiki/Crucifixion_(Corpus_Hypercubus)) de Salvador Dalí?
 
 ```{figure} Dali_Crucifixion_hypercube.jpg
 ---
@@ -58,12 +67,16 @@ name: Crucifixión
 Crucifixión
 ```
 
-Esto nos invita a ampliar nuestras fronteras y extender, muchas veces de manera natural pero no directa, los conceptos de funciones, límites, derivadas e integrales al Cálculo Multivariable.
+Esto nos invita a ampliar nuestras fronteras y extender, muchas veces de manera natural pero no directa, 
+los conceptos de funciones, 
+límites, derivadas e integrales al Cálculo Multivariable.
 
 ## Funciones de Varias Variables
 
 ### Funciones y Dominio
-Una **función real** $f$ de $n$ variables es una regla que asigna el elemento $\mathbf{x}=(x_1,x_2,x_3,\ldots,x_n)\in D\subseteq\mathbb{R}^n$ (la preimagen) un único número real $x_{n+1}$ denotado por $f(\mathbf{x})$ (la imagen), es decir,
+Una **función real** $f$ de $n$ variables es una regla que asigna el elemento 
+$\mathbf{x}=(x_1,x_2,x_3,\ldots,x_n)\in D\subseteq\mathbb{R}^n$ (la preimagen) un único número real $x_{n+1}$ denotado por 
+$f(\mathbf{x})$ (la imagen), es decir,
 
 $$
 f:D\subseteq\mathbb{R}^n\to\mathbb{R}, ~~x_{n+1}=f(\mathbf{x})
@@ -75,7 +88,8 @@ $$
 Dom(f)=\left\{\mathbf{x}\in\mathbb{R}^n\, :\,  f(\mathbf{x})\in\mathbb{R}\right\},
 $$ (Dom)
 
-para referirnos al dominio maximal de $f$, es decir, [](Dom) es el conjunto de elementos en $\mathbb{R}^n$ para los que $f$ está bien definida (sin restricciones adicionales).
+para referirnos al dominio maximal de $f$, es decir, [](Dom) es el conjunto de elementos en $\mathbb{R}^n$ para los que $f$ está 
+bien definida (sin restricciones adicionales).
 
 **Nota**. Si $n=2$ tenemos una función de 2 variables, que anotamos usualmente como $z=f(x,y)$ (en lugar de $x_3 = f(x_1,x_2))$. 
 
@@ -90,14 +104,16 @@ Función de 2 Variables
 Si $n=3$ tenemos una función de 3 variables, que anotamos mediante $w=f(x,y,z)$. 
 
 ### Recorrido
-El **recorrido** de una función $f$ es el conjunto de imágenes $x_{n+1}=f(\mathbf{x})$ para los cuales existe una preimagen en $D$, es decir, 
+El **recorrido** de una función $f$ es el conjunto de imágenes $x_{n+1}=f(\mathbf{x})$ para los cuales existe una preimagen en $D$, 
+es decir, 
 
 $$
 Rec(f)=\{x_{n+1}\in\mathbb{R}: \exists~\mathbf{x}\in D~,~x_{n+1}=f(\mathbf{x})\}.
 $$ (Rec)
 
 ### Gráfico 
-El **gráfico** de una función $f$ es el conjunto de puntos $(\mathbf{x},x_{n+1})\in\mathbb{R}^{n+1}$ tales que $\mathbf{x}\in D$ y $x_{n+1}=f(\mathbf{x})$.
+El **gráfico** de una función $f$ es el conjunto de puntos $(\mathbf{x},x_{n+1})\in\mathbb{R}^{n+1}$ tales que $\mathbf{x}\in D$ 
+y $x_{n+1}=f(\mathbf{x})$.
 
 $$
 Graf(f)=\{(\mathbf{x},x_{n+1})\in\mathbb{R}^{n+1}:\mathbf{x}\in D~\wedge~x_{n+1}=f(\mathbf{x})\}
@@ -105,7 +121,8 @@ $$ (Graf)
 
 Si bien toda función tiene asociado un gráfico, este conjunto no siempre se puede visualizar.
 
-**Nota**. Si $n=2$, entonces el gráfico de $f$ está es el espacio $\mathbb{R}^3$ y es llamado genéricamente **superficie**. (Veremos más adelante que no todas las superficies provienen de funciones).
+**Nota**. Si $n=2$, entonces el gráfico de $f$ está es el espacio $\mathbb{R}^3$ y es llamado genéricamente **superficie**. 
+(Veremos más adelante que no todas las superficies provienen de funciones).
 
 ```{figure} fun2vargraf.jpg
 ---
@@ -173,4 +190,54 @@ name: Ejercicio2
 Gráfico del dominio de $f$
 ```
 
+**Preguntas.** ¿Es posible determinar el recorrido de $f$? o incluso, ¿cómo es su gráfico? 
+
 ## Visualización del Gráfico de Funciones de 2 Variables
+
+Para estudiar y realizar una representación gráfica de una superficie en $\mathbb{R}^3$ son importantes 3 elementos:
+
+1. Las curvas de nivel.
+2. Las intersecciones con los planos coordenados.
+3. Las trazas (intersecciones con planos paralelos a los planos coordenados).
+
+Definimos estos 3 elementos a continuación:
+
+### Curvas de nivel
+
+Sean $f:D\subseteq\mathbb{R}^n\to\mathbb{R}$ y $k\in\mathbb{R}$ (fijo), el **conjunto de nivel** $k$ de $f$, denotado por $N_k(f)$, 
+es el conjunto definido por: 
+
+$$
+N_k(f)=\{\mathbf{x}\in D\,:\, f(\mathbf{x})=k\}
+$$ (ConjNivel)
+
+**Observación.** Para que exista el conjunto de nivel $k$ de $f$, necesariamente $k$ debe pertenecer al recorrido $f$. 
+Dicho de otro modo, si $k$ está en el recorrido de $f$, el conjunto de nivel $k$ de $f$ corresponde al conjunto de preimagenes 
+de $k$ bajo la función $f$.
+
+**Caso** $n=2$. Sea $f:D\subseteq\mathbb{R}^2\to\mathbb{R}$, el conjunto de nivel $k$ de $f$, corresponde a una curva en el plano 
+denominada **curva de nivel** $k$ de $f$. Se denota $C_k(f)$ o $C_k$ y está dada por:
+
+$$
+C_k=\{(x,y)\in D\,:\,f(x,y)=k\}
+$$ (CurvaNivel)
+
+**Observación.** Note que $z=k$ corresponde a un plano paralelo al plano $XY$, que se encuentra a distancia $|k|$ de este.
+
+Las curvas de nivel se grafican en el plano $XY$ y una colección de ellas se denomina **mapa de contorno**.
+
+```{figure} curvanivel.jpg
+---
+height: 300px
+name: curvanivel
+---
+Mapa de contorno de una función $f$
+```
+
+**Nota:** Podemos visualizar las curvas de nivel de una función utilizando la siguiente aplicación de 
+[**Geogebra**](https://www.geogebra.org/m/jy7znQM5)
+
+### Intersecciones con los planos coordenados
+
+
+### Trazas
