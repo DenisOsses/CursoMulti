@@ -660,12 +660,84 @@ C_k=\{(x,y)\in D\,:\,f(x,y)=k\}
 </figure>
 <p><strong>Nota:</strong> Podemos visualizar las curvas de nivel de una función utilizando la siguiente aplicación de
 <a class="reference external" href="https://www.geogebra.org/m/jy7znQM5"><strong>Geogebra</strong></a></p>
+<p>En Python:</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Mostrar el código fuente</span>
+<span class="expanded">Ocultar el código</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Grilla de datos</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
+
+<span class="c1"># Función</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">X</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Y</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+<span class="c1"># Gráfico de la superficie 3D</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral_r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Contornos</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral_r&#39;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+
+<span class="c1"># Límites en el eje Z</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/366fb708199a1a3898b03d8c5b1963ac0155104030942abd73f191e231c5a5d6.png" src="_images/366fb708199a1a3898b03d8c5b1963ac0155104030942abd73f191e231c5a5d6.png" />
+</div>
+</div>
+<p><strong>Nota</strong>. Podemos observar mapas de contornos aplicados a diversas zonas geográficas en la aplicación <a class="reference external" href="https://contourmap.app/"><strong>contourmap</strong></a></p>
 </section>
 <section id="intersecciones-con-los-planos-coordenados">
 <h3>Intersecciones con los planos coordenados<a class="headerlink" href="#intersecciones-con-los-planos-coordenados" title="Link to this heading">#</a></h3>
+<p>Las <strong>intersecciones con los planos coordenados</strong> de la gráfica de <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> son curvas en los planos <span class="math notranslate nohighlight">\(XY\)</span>, <span class="math notranslate nohighlight">\(XZ\)</span> e <span class="math notranslate nohighlight">\(YZ\)</span>, que se obtienen reemplazando <span class="math notranslate nohighlight">\(z=0\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span> y <span class="math notranslate nohighlight">\(x=0\)</span> en <span class="math notranslate nohighlight">\(z=f(x,y)\)</span>, respectivamente.</p>
 </section>
 <section id="trazas">
 <h3>Trazas<a class="headerlink" href="#trazas" title="Link to this heading">#</a></h3>
+<p>Las <strong>trazas</strong> son las curvas de intersección de la superficie <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> con planos paralelos a los planos coordenados.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Considere la función <span class="math notranslate nohighlight">\(f:D\subseteq\mathbb{R}^2 \to \mathbb{R}\)</span> dada por</p>
+<div class="math notranslate nohighlight">
+\[
+f(x,y)=\sqrt{1-2x^2-4y^2}
+\]</div>
+<p>Describa:</p>
+<p>a. Las curvas de nivel <span class="math notranslate nohighlight">\(C_{0}\)</span>, <span class="math notranslate nohighlight">\(C_1\)</span> y  <span class="math notranslate nohighlight">\(C_{-1}\)</span>.</p>
+<p>b. El conjunto de curvas de nivel.</p>
+<p>c. Las intersecciones con los planos coordenados.</p>
+<p>d. A qué tipo de curva pertenecen las trazas.</p>
+<p>e. El recorrido de <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</div>
+<p>El ejercicio anterior plantea la superficie <span class="math notranslate nohighlight">\(z=\sqrt{1-2x^2-4y^2}\)</span>, que es equivalente a</p>
+<div class="math notranslate nohighlight">
+\[
+z^2+2x^2+4y^2=1~~,~ z\geq 0
+\]</div>
+<p>Este tipo de ecuaciones pertenece a grupo más general conocido como superficies cuádricas que estudiaremos la próxima clase.</p>
+<div class="warning admonition">
+<p class="admonition-title">Ejercicio Propuesto</p>
+<p>Considere la función <span class="math notranslate nohighlight">\(f(x,y)=\dfrac{x^2+y^2-1}{y^2}\)</span>.</p>
+<p>a. Determine el dominio de <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>b. Esboce el gráfico del dominio de <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>c. Identifique y dibuje las curvas de nivel <span class="math notranslate nohighlight">\(C_{-1}, C_0\)</span> y <span class="math notranslate nohighlight">\(C_1\)</span>.</p>
+<p>d. Describa el conjunto de curvas de nivel.</p>
+<p>e. Determine el recorrido de <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>f. Describa las trazas para <span class="math notranslate nohighlight">\(y=1\)</span> e <span class="math notranslate nohighlight">\(y=-1.\)</span></p>
+</div>
 </section>
 </section>
 </section>
