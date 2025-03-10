@@ -237,7 +237,90 @@ Mapa de contorno de una función $f$
 **Nota:** Podemos visualizar las curvas de nivel de una función utilizando la siguiente aplicación de 
 [**Geogebra**](https://www.geogebra.org/m/jy7znQM5)
 
+En Python:
+
+```{code-cell}
+:tags: [Fun2D]
+:tags: [hide-input]
+:mystnb:
+:  code_prompt_show: "Mostrar el código fuente"
+:  code_prompt_hide: "Ocultar el código"
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Grilla de datos
+X, Y = np.meshgrid(np.linspace(-2, 2, 50), np.linspace(-2, 2, 50))
+
+# Función
+Z = X**2 + Y**2
+
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+
+# Gráfico de la superficie 3D
+ax.plot_surface(X, Y, Z, cmap='Spectral_r', alpha=1)
+
+# Contornos
+ax.contour(X, Y, Z, linewidths=2, colors='black', offset=0)
+ax.contourf(X, Y, Z, cmap='Spectral_r', offset=0, alpha=0.75)
+
+# Límites en el eje Z
+ax.set_zlim(0, 4)
+
+plt.show()
+```
+
+**Nota**. Podemos observar mapas de contornos aplicados a diversas zonas geográficas en la aplicación [**contourmap**](https://contourmap.app/)
+
 ### Intersecciones con los planos coordenados
 
+ Las **intersecciones con los planos coordenados** de la gráfica de $z=f(x,y)$ son curvas en los planos $XY$, $XZ$ e $YZ$, que se obtienen reemplazando $z=0$, $y=0$ y $x=0$ en $z=f(x,y)$, respectivamente.
 
 ### Trazas
+
+Las **trazas** son las curvas de intersección de la superficie $z=f(x,y)$ con planos paralelos a los planos coordenados.
+
+```{admonition} Ejercicio 
+Considere la función $f:D\subseteq\mathbb{R}^2 \to \mathbb{R}$ dada por 
+
+$$
+f(x,y)=\sqrt{1-2x^2-4y^2}
+$$
+    
+Describa:
+
+a. Las curvas de nivel $C_{0}$, $C_1$ y  $C_{-1}$.
+
+b. El conjunto de curvas de nivel. 
+
+c. Las intersecciones con los planos coordenados.
+
+d. A qué tipo de curva pertenecen las trazas.
+
+e. El recorrido de $f$.
+```
+
+El ejercicio anterior plantea la superficie $z=\sqrt{1-2x^2-4y^2}$, que es equivalente a 
+
+$$
+z^2+2x^2+4y^2=1~~,~ z\geq 0
+$$
+
+Este tipo de ecuaciones pertenece a grupo más general conocido como superficies cuádricas que estudiaremos la próxima clase.
+
+`````{admonition} Ejercicio Propuesto
+:class: warning
+Considere la función $f(x,y)=\dfrac{x^2+y^2-1}{y^2}$.
+
+a. Determine el dominio de $f$.
+
+b. Esboce el gráfico del dominio de $f$.
+
+c. Identifique y dibuje las curvas de nivel $C_{-1}, C_0$ y $C_1$.
+
+d. Describa el conjunto de curvas de nivel.
+
+e. Determine el recorrido de $f$.
+
+f. Describa las trazas para $y=1$ e $y=-1.$
+`````
