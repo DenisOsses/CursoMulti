@@ -324,3 +324,89 @@ e. Determine el recorrido de $f$.
 
 f. Describa las trazas para $y=1$ e $y=-1.$
 `````
+
+## Superficies
+
+### Superficies Cuádricas
+
+Una **superficie cuádrica** es el gráfico de una ecuación de segundo grado con variables $x,y,z$. Su forma más general es: 
+
+$$
+Ax^2+By^2+Cz^2+Dxy+Exz+Fyz+Gx+Hy+Iz=J
+$$ (cuadrica)
+
+Sin embargo, por rotación y traslación se puede llevar a la siguiente forma estándar: 
+
+$$
+Ax^2+By^2+Cz^2+Gx+Hy+Iz=J
+$$ (cuadrica2)
+
+Dependiendo de los valores de las constantes se clasifican en:
+
+```{figure} cuadricas.jpg
+---
+height: 500px
+name: cuadricas
+---
+Cuádricas
+```
+
+**Importante.** Note que NO todas las superficies representan el gráfico de una función.
+
+`````{admonition} Ejercicio
+Esboce el gráfico de la función $f(x,y)=\sqrt{1-2x^2-4y^2}$ y del elipsoide $z^2+2x^2+4y^2=1$. ¿Qué observa?
+`````
+
+`````{admonition} Ejercicio
+Sea $f:\mathbb{R}^2\to\mathbb{R}$ una función definida por: 
+
+$$
+f(x,y)=4x^2+y^2+8x-12
+$$
+
+
+a. ¿Está relacionado el gráfico de $f$ con alguna superficie cuádrica? Justifique.
+
+b. Determine el conjunto de curvas de nivel $C_k(f)$ y grafíquela para $k=0$.
+
+c. Establezca el recorrido de $f.$
+
+`````
+
+### Superficies Cilíndricas
+
+Si $C$ es una curva en un plano coordenado y $L$ es una recta no paralela a ese plano, entonces el conjunto de todas las rectas paralelas a $L$ que cortan a $C$ se llama **superficie cilíndrica**. A la curva $C$ se le llama **curva generatriz** de la superficie y las rectas $L$ se denominan **rectas generatrices**.
+
+```{figure} cilindros.jpg
+---
+height: 300px
+name: cilindricas
+---
+Algunas Superficies Cilíndricas
+```
+
+`````{admonition} Ejercicio
+Grafique las superficies $x-1 = y^2+z^2~$, $~z^2+y^2=1$. Describa su intersección.
+`````
+
+### Superficies de Nivel
+
+En el caso de funciones de $3$ variables: $f:D\subseteq\mathbb{R}^3\to\mathbb{R}~,~w=f(x,y,z)$, el dominio es una superficie en $\mathbb{R}^3$ y el gráfico está en $\mathbb{R}^4$ por lo que no puede ser visualizado. Sin embargo, para determinar el recorrido podemos utilizar los respectivos conjuntos de nivel para $n=3$, llamadas superficies de nivel.
+
+Las **superficies de nivel**, $S_k(f)$ o $S_k$, de la función $w=f(x,y,z)$ son las superficies con ecuaciones $f(x,y,z)=k$, donde $k$ es una constante ($k$ está en el recorrido de $f$). Técnicamente 
+
+$$
+S_k=\{(x,y,z)\in\mathbb{R}^3:f(x,y,z)=k, k\in Rec(f)\}
+$$ (Snivel)
+
+`````{admonition} Ejercicio
+ Observe las superficies de nivel de $f(x,y,z)=x^2+y^2+z^2$ de la figura dada. ¿Cuál es la superficie de nivel para $k=0$ y para $k=-1$?
+`````
+
+```{figure} supnivel.jpg
+---
+height: 300px
+name: supnivel
+---
+Superficies de Nivel del Ejercicio
+```
