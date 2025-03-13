@@ -24,4 +24,6 @@ kernelspec:
 
 +++
 
-## Límites y Continuidad
+## Límites
+
+## Continuidad

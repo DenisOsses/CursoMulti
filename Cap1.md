@@ -393,7 +393,7 @@ Grafique las superficies $x-1 = y^2+z^2~$, $~z^2+y^2=1$. Describa su intersecci�
 
 En el caso de funciones de $3$ variables: $f:D\subseteq\mathbb{R}^3\to\mathbb{R}~,~w=f(x,y,z)$, el dominio es una superficie en $\mathbb{R}^3$ y el gráfico está en $\mathbb{R}^4$ por lo que no puede ser visualizado. Sin embargo, para determinar el recorrido podemos utilizar los respectivos conjuntos de nivel para $n=3$, llamadas superficies de nivel.
 
-Las **superficies de nivel**, $S_k(f)$ o $S_k$, de la función $w=f(x,y,z)$ son las superficies con ecuaciones $f(x,y,z)=k$, donde $k$ es una constante ($k$ está en el recorrido de $f$). Técnicamente 
+Las **superficies de nivel**, $S_k(f)$ o $S_k$, de la función $w=f(x,y,z)$ son las superficies de ecuaciones $f(x,y,z)=k$, donde $k$ es una constante ($k$ está en el recorrido de $f$). Técnicamente 
 
 $$
 S_k=\{(x,y,z)\in\mathbb{R}^3:f(x,y,z)=k, k\in Rec(f)\}
