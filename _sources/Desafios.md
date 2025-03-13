@@ -43,15 +43,15 @@ b. Las curvas de igual latitud son trazas en los planos $z=k$ (o intersecciones 
 
 c. Los meridianos (curvas de igual longitud) son trazas en planos de la forma $y=mx$ (o intersecciones con esos planos). ¿Cuál es la forma de estos meridianos?
 
-**3**: Considera la familia de superficies $S_a$ en $\mathbb{R}^3$, para el parámetro $a\in\mathbb{R}$, dada por 
+**3**: Considere la familia de superficies $S_a$ en $\mathbb{R}^3$, para el parámetro $a\in\mathbb{R}$, dada por 
 
 $$
 S_a:x^2+y^2-az^2=a+1
 $$
 
-a. Determina los valores del parámetro de modo que $S_a$ represente una superficie cuádrica real.
+a. Determine los valores del parámetro de modo que $S_a$ represente una superficie cuádrica real.
 
-b. Identifica adecuadamente la superficie cuádrica correspondiente para los distintos valores de $a$.
+b. Identifique adecuadamente la superficie cuádrica correspondiente para los distintos valores de $a$.
 
 **Fecha de Entrega**: Miércoles 19 de marzo, hasta las 18:00 hrs., en el buzón de tareas respectivo en Webc.
 
