@@ -58,6 +58,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Cap2';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
@@ -442,8 +444,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limites">Límites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidad">Continuidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limites">Límites</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremas-y-algebra-de-limites">Teoremas y Álgebra de Límites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-polares">Coordenadas Polares</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidad">Continuidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremas-de-continuidad">Teoremas de Continuidad</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -462,9 +471,189 @@ document.write(`
 <span id="u2"></span><h1>Unidad 2<a class="headerlink" href="#unidad-2" title="Link to this heading">#</a></h1>
 <section id="limites">
 <h2>Límites<a class="headerlink" href="#limites" title="Link to this heading">#</a></h2>
+<p>Sea <span class="math notranslate nohighlight">\(f:D\subseteq \mathbb{R}^n\to\mathbb{R}\)</span> una función definida en un conjunto abierto <span class="math notranslate nohighlight">\(D\)</span> de <span class="math notranslate nohighlight">\(\mathbb{R}^n.\)</span> Sea <span class="math notranslate nohighlight">\({\bf x}_0\)</span> un punto en <span class="math notranslate nohighlight">\(D\)</span> o bien un punto en la frontera de <span class="math notranslate nohighlight">\(D.\)</span> Se dice que el límite de <span class="math notranslate nohighlight">\(f\)</span> cuando <span class="math notranslate nohighlight">\({\bf x}\)</span> tiende a <span class="math notranslate nohighlight">\({\bf x}_0\)</span> es <span class="math notranslate nohighlight">\(L\in \mathbb{R}\)</span>, lo que se escribe como</p>
+<div class="math notranslate nohighlight" id="equation-limite">
+<span class="eqno">(9)<a class="headerlink" href="#equation-limite" title="Link to this equation">#</a></span>\[
+\lim_{{\bf x}\to {\bf x}_0}f({\bf x})=L,
+\]</div>
+<p>si dado cualquier <span class="math notranslate nohighlight">\(\varepsilon &gt;0\)</span> existe <span class="math notranslate nohighlight">\(\delta &gt;0\)</span> tal que</p>
+<div class="math notranslate nohighlight">
+\[
+0&lt; || {\bf x} - {\bf x}_0|| &lt; \delta, \, {\bf x} \in D \Rightarrow |f({\bf x}) - L| &lt; \varepsilon,
+\]</div>
+<p>Explícitamente para <span class="math notranslate nohighlight">\(\mathbb{R}^{2}:\)</span> Cuando <span class="math notranslate nohighlight">\(f:D\subseteq \mathbb{R}^2 \to \mathbb{R}\)</span> y <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> es un punto de <span class="math notranslate nohighlight">\(D\)</span> o bien un punto frontera de <span class="math notranslate nohighlight">\(D\)</span> se dice que el límite de <span class="math notranslate nohighlight">\(f\)</span> cuando <span class="math notranslate nohighlight">\((x,y)\)</span> tiende a <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> es <span class="math notranslate nohighlight">\(L\)</span> si:</p>
+<p>Para todo <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span> existe <span class="math notranslate nohighlight">\(\delta&gt;0\)</span> tal que</p>
+<div class="math notranslate nohighlight">
+\[
+0&lt; || (x,y) - (x_{0},y_{0})|| &lt; \delta, \, (x,y) \in D \Rightarrow |f(x,y) - L| &lt; \varepsilon,
+\]</div>
+<p>lo que es equivalente a</p>
+<div class="math notranslate nohighlight">
+\[
+0&lt;\sqrt{(x-x_0)^2+(y-y_0)^2}&lt;\delta, \, (x,y) \in D\, \Rightarrow |f(x,y)-L|&lt;\varepsilon.
+\]</div>
+<p>La interpretación geométrica de</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{(x,y)\to (x_0,y_0)}f(x,y)=L
+\]</div>
+<p>es como en la figura:</p>
+<figure class="align-default" id="limite">
+<a class="reference internal image-reference" href="_images/f1_03.png"><img alt="_images/f1_03.png" src="_images/f1_03.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 11 </span><span class="caption-text">Interpretación Límites</span><a class="headerlink" href="#limite" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Use las desigualdades:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(|x-a|\leq \sqrt{(x-a)^2+(y-b)^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|x+y|\leq |x|+|y|,\)</span></p></li>
+</ol>
+<p>para todo <span class="math notranslate nohighlight">\(x,y,a\in \mathbb{R}\)</span>, para demostrar que</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{(x,y)\to(1,2)}(2x+3y)=8.
+\]</div>
+</div>
+<section id="teoremas-y-algebra-de-limites">
+<h3>Teoremas y Álgebra de Límites<a class="headerlink" href="#teoremas-y-algebra-de-limites" title="Link to this heading">#</a></h3>
+<p>Al igual que en una variable, tenemos el teorema de unicidad del límite:</p>
+<p><strong>Teorema de Unicidad</strong>. Si <span class="math notranslate nohighlight">\(\displaystyle \lim_{{\bf x}\to{\bf x}_0}f({\bf x})=L\)</span> y <span class="math notranslate nohighlight">\(\displaystyle \lim_{{\bf x}\to{\bf x}_0}f({\bf x})=M\)</span> entonces <span class="math notranslate nohighlight">\(L=M.\)</span></p>
+<p>Es decir, si el límite de una función en un punto es único. Esto permite deducir una propiedad útil para <strong>probar que un límite no existe</strong>. Intuitivamente:</p>
+<p>«Si una función tiene diferentes límites cuando <span class="math notranslate nohighlight">\({\bf x}\to {\bf x}_0\)</span> a través de conjuntos diferentes de puntos (distintas trayectorias), entonces <span class="math notranslate nohighlight">\(\displaystyle \lim_{{\bf x}\to {\bf x}_0}f({\bf x})\)</span> no existe.»</p>
+<p>Por ejemplo, considere la función <span class="math notranslate nohighlight">\(f:\mathbb{R}^{2}-\{(0,0)\}\to \mathbb{R}\)</span> y supongamos que deseamos calcular el límite</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{(x,y)\to (0,0)}f(x,y)
+\]</div>
+<p>Si existen dos trayectorias <span class="math notranslate nohighlight">\(C_{1},C_{2}\)</span> <strong>contenidas en el dominio de <span class="math notranslate nohighlight">\(f\)</span></strong> tal que</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{(x,y)_{\overrightarrow{C_1}} (0,0)} f(x,y)\neq \lim_{(x,y)_{\overrightarrow{C_2}} (0,0)} f(x,y)\Rightarrow\lim_{(x,y)\to (0,0)}f(x,y),
+\]</div>
+<p>no existe.</p>
+<figure class="align-default" id="trayectoria">
+<a class="reference internal image-reference" href="_images/Trayectoria.png"><img alt="_images/Trayectoria.png" src="_images/Trayectoria.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 12 </span><span class="caption-text">Trayectorias</span><a class="headerlink" href="#trayectoria" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Estudie <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to (0,0)} \dfrac{xy}{x^2+y^2}.\)</span></p>
+</div>
+<p>Para calcular límites, tenemos los siguientes teoremas:</p>
+<p><strong>Teorema (Álgebra de Límites)</strong>. Si <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)=L\)</span> y <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to (x_0,y_0)} g(x,y)=M\)</span>, entonces</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to (x_0,y_0)} \left(f(x,y)+g(x,y)\right)=L+M.\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to (x_0,y_0)} \left(f(x,y)\cdot g(x,y)\right)=L\cdot M.\)</span></p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(M\neq 0\)</span>, entonces <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to (x_0,y_0)} \frac{f(x,y)}{g(x,y)}=\frac{L}{M}.\)</span></p></li>
+</ol>
+<p><strong>Teorema de Acotamiento (Sandwich)</strong>. Si para todo <span class="math notranslate nohighlight">\((x,y)\)</span> enuna vecindad de <span class="math notranslate nohighlight">\((x_0,y_0)\)</span>, se tiene que</p>
+<div class="math notranslate nohighlight">
+\[
+h(x,y)\leq f(x,y) \leq g(x,y),~ \lim_{(x,y)\to (x_0,y_0)} h(x,y)=L
+\]</div>
+<p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to (x_0,y_0)} h(x,y)=L\)</span> y <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to (x_0,y_0)} g(x,y)=L\)</span>, entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{(x,y)\to (x_0,y_0)} f(x,y)=L
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Calcule el valor de <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to (0,0)} \dfrac{\cos (y) \sin(x^3)}{x^2+y^4}.\)</span></p>
+</div>
+<p><strong>Observación:</strong> Probar que</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{(x,y)\to (x_{0},y_{0})}f(x,y)=L
+\]</div>
+<p>es equivalente a probar que</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{(x,y)\to (x_{0},y_{0})}|f(x,y)-L|=0.
+\]</div>
+<p>Luego, si tenemos un candidato a límite <span class="math notranslate nohighlight">\(L\)</span> para una función <span class="math notranslate nohighlight">\(f,\)</span> podemos usar el de Teorema de acotamiento para probar que la función <span class="math notranslate nohighlight">\(|f(x,y)-L|\)</span> tiende a 0.</p>
+</section>
+<section id="coordenadas-polares">
+<h3>Coordenadas Polares<a class="headerlink" href="#coordenadas-polares" title="Link to this heading">#</a></h3>
+<p>Otra forma de estudiar la existencia del límite <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to(0,0)}f(x,y)\)</span> es mediante el cambio de variable <span class="math notranslate nohighlight">\(x=r\cos(\theta),\)</span> <span class="math notranslate nohighlight">\(y=\sin(\theta),\)</span> resultando la expresión</p>
+<div class="math notranslate nohighlight" id="equation-limpolares">
+<span class="eqno">(10)<a class="headerlink" href="#equation-limpolares" title="Link to this equation">#</a></span>\[
+\lim_{r\to 0}F(r,\theta)=\lim_{r\to 0}f(r\cos\theta,r\sin\theta)
+\]</div>
+<p><strong>Teorema</strong>. Suponga que <span class="math notranslate nohighlight">\(F(r,\theta)\)</span> se puede descomponer como <span class="math notranslate nohighlight">\(F(r,\theta)=H(r)G(\theta)\)</span>, donde además <span class="math notranslate nohighlight">\(\displaystyle \lim_{r\to 0}H(r)=0\)</span>. Entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{(x,y)\to (0,0)} f(x,y)=\lim_{r\to 0}F(r,\theta)=0
+\]</div>
+<p>si y solo si la función <span class="math notranslate nohighlight">\(G(\theta)\)</span> est’a acotada en <span class="math notranslate nohighlight">\([0,2\pi].\)</span></p>
+<p>En particular, si el límite</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{r\to0} f(r\cos\theta,r\sin\theta)
+\]</div>
+<p>no existe o depende de <span class="math notranslate nohighlight">\(\theta,\)</span>  entonces <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to (0,0)} f(x,y)\)</span> no existe.</p>
+<p><strong>Nota</strong>. Es importante mencionar que las coordenadas polares se pueden aplicar siempre y cuando el límite sea cuando <span class="math notranslate nohighlight">\((x,y)\)</span> tienda al origen.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Calcule <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to (0,0)}\dfrac{x^2y^2}{x^2+y^2}\)</span></p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Ejercicio Propuesto</p>
+<p>Analice la existencia de los siguientes límites. Si el límite no existe justifique, de lo contrario determine su valor.</p>
+<p>a. <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to (0,0)}\dfrac{x^2y}{x^4+y^2}\)</span></p>
+<p>b. <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x,y)\to(0,0)}\dfrac{x^4y^4}{(x^2+y^4)^3}\)</span></p>
+</div>
+</section>
 </section>
 <section id="continuidad">
 <h2>Continuidad<a class="headerlink" href="#continuidad" title="Link to this heading">#</a></h2>
+<p>Conociendo el concepto de límite de funciones en varias variables y todo sus teoremas asociados, podemos entender el concepto de continuidad:</p>
+<p><strong>Definición</strong>.  Sea <span class="math notranslate nohighlight">\(f:D\subseteq \mathbb{R}^n\to \mathbb{R}\)</span> una función definida en un subconjunto <span class="math notranslate nohighlight">\(D\)</span>. Se dice que <span class="math notranslate nohighlight">\(f\)</span> es <strong>continua</strong> en <span class="math notranslate nohighlight">\({\bf x}_0\in D\)</span> si</p>
+<div class="math notranslate nohighlight" id="equation-continuidad">
+<span class="eqno">(11)<a class="headerlink" href="#equation-continuidad" title="Link to this equation">#</a></span>\[
+\lim_{{\bf x}\to {\bf x}_0}f({\bf x})=f({\bf x}_0)
+\]</div>
+<p>Si la función <span class="math notranslate nohighlight">\(f\)</span> no es continua en <span class="math notranslate nohighlight">\({\bf x_0}\)</span>, se dice que es discontinua en ese punto.</p>
+<p>Si <span class="math notranslate nohighlight">\(f\)</span> una función definida en <span class="math notranslate nohighlight">\(D\)</span>,  se dice que <span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\(D\)</span> si lo es <span class="math notranslate nohighlight">\(\forall~{\bf x}\in D.\)</span></p>
+<section id="teoremas-de-continuidad">
+<h3>Teoremas de Continuidad<a class="headerlink" href="#teoremas-de-continuidad" title="Link to this heading">#</a></h3>
+<p>Sean <span class="math notranslate nohighlight">\(f,g:D\subseteq \mathbb{R}^n\to \mathbb{R}\)</span> funciones definidas en <span class="math notranslate nohighlight">\(D\)</span>. Si <span class="math notranslate nohighlight">\(f\)</span> y <span class="math notranslate nohighlight">\(g\)</span> son continuas en <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, entonces</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f+g\)</span> es continua en <span class="math notranslate nohighlight">\({\bf x}_0.\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f\cdot g\)</span> es continua en <span class="math notranslate nohighlight">\({\bf x}_0.\)</span></p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(g({\bf x}_0)\neq 0\)</span> entonces <span class="math notranslate nohighlight">\(\dfrac{f}{g}\)</span> es continua en <span class="math notranslate nohighlight">\({\bf x}_0.\)</span></p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(h:I\subseteq \mathbb{R}\to \mathbb{R}\)</span> es continua y <span class="math notranslate nohighlight">\(h\circ f\)</span> está bien definida, entonces <span class="math notranslate nohighlight">\(h\circ f\)</span> es continua en <span class="math notranslate nohighlight">\({\bf x}_0\)</span></p></li>
+</ol>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p><span class="math notranslate nohighlight">\(f:\mathbb{R}^2\to \mathbb{R}\)</span> definida por</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x,y)=\left\{\begin{array}{ccc}
+\dfrac{2x^{8}+x^4y^2+2y^{4}}{x^8+y^4} &amp; \textrm{si} &amp; (x,y)\neq (0,0)\\
+% &amp; &amp; \\
+0 &amp; \textrm{si} &amp; (x,y)=(0,0)
+\end{array}\right.
+\end{split}\]</div>
+<p>Determine si <span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\(\mathbb{R}^{2}.\)</span></p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Ejercicio Propuesto</p>
+<p>Sea <span class="math notranslate nohighlight">\(f:\mathbb{R}^2\to\mathbb{R}\)</span> definida por</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x,y)=\left\{\begin{array}{ccc}
+x^2+4y^2 &amp; \text{si} &amp; x^2+4y^2\leq 1\\
+1 &amp; \text{si} &amp; x^2+4y^2&gt; 1\\
+\end{array}\right.
+\end{split}\]</div>
+<p>Demuestre que <span class="math notranslate nohighlight">\(f\)</span> es continua en todo <span class="math notranslate nohighlight">\(\mathbb{R}^2.\)</span></p>
+</div>
+</section>
 </section>
 </section>
 
@@ -532,8 +721,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limites">Límites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidad">Continuidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limites">Límites</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremas-y-algebra-de-limites">Teoremas y Álgebra de Límites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-polares">Coordenadas Polares</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidad">Continuidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremas-de-continuidad">Teoremas de Continuidad</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
