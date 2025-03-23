@@ -6,6 +6,8 @@ root: intro
 chapters:
 - file: Cap1
 - file: Cap2
+- file: Cap3
 - file: Desafios
+#- file: Clases en Youtube
 # - file: notebooks
 # - file: markdown-notebooks

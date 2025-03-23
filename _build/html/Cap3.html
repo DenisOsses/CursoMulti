@@ -1,0 +1,883 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Unidad 3 &#8212; Cálculo Multivariables 2025-1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=efdbd0b9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Cap3';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Desafíos" href="Desafios.html" />
+    <link rel="prev" title="Unidad 2" href="Cap2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logomat.jpeg" class="logo__image only-light" alt="Cálculo Multivariables 2025-1 - Home"/>
+    <script>document.write(`<img src="_static/logomat.jpeg" class="logo__image only-dark" alt="Cálculo Multivariables 2025-1 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    MAT203 Cálculo Multivariables
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Cap1.html">Unidad 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cap2.html">Unidad 2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Unidad 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Desafios.html">Desafíos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DenisOsses/CursoMulti/blob/master/Cap3.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DenisOsses/CursoMulti" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DenisOsses/CursoMulti/issues/new?title=Issue%20on%20page%20%2FCap3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Cap3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Descargar archivo de cuaderno"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="_sources/Cap3.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Unidad 3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-parciales">Derivadas Parciales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-geometrica">Interpretación Geométrica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-parcial-con-respecto-a-x">Derivada Parcial con respecto a <span class="math notranslate nohighlight">\(x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-parcial-con-respecto-a-y">Derivada Parcial con respecto a <span class="math notranslate nohighlight">\(y\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-parcial-en-n-variables">Derivada parcial en <span class="math notranslate nohighlight">\(n\)</span> variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rectas-tangentes">Rectas Tangentes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plano-tangente">Plano Tangente</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuacion-cartesiana">Ecuación Cartesiana</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aproximacion-lineal">Aproximación Lineal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenciabilidad">Diferenciabilidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-diferenciables">Funciones Diferenciables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremas-de-diferenciabilidad">Teoremas de Diferenciabilidad</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <!--###########################################################################################################################
+##############################################################################################################################
+#############################################################################################
+--><section class="tex2jax_ignore mathjax_ignore" id="unidad-3">
+<span id="u3"></span><h1>Unidad 3<a class="headerlink" href="#unidad-3" title="Link to this heading">#</a></h1>
+<section id="derivadas-parciales">
+<h2>Derivadas Parciales<a class="headerlink" href="#derivadas-parciales" title="Link to this heading">#</a></h2>
+<section id="interpretacion-geometrica">
+<h3>Interpretación Geométrica<a class="headerlink" href="#interpretacion-geometrica" title="Link to this heading">#</a></h3>
+<p>Observemos los siguientes gráficos</p>
+<figure class="align-default" id="rectax">
+<a class="reference internal image-reference" href="_images/rectax.png"><img alt="_images/rectax.png" src="_images/rectax.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 13 </span><span class="caption-text">Intersección superficie <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> con el plano <span class="math notranslate nohighlight">\(y=y_0\)</span></span><a class="headerlink" href="#rectax" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="rectay">
+<a class="reference internal image-reference" href="_images/rectay.png"><img alt="_images/rectay.png" src="_images/rectay.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 14 </span><span class="caption-text">Intersección superficie <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> con el plano <span class="math notranslate nohighlight">\(x=x_0\)</span></span><a class="headerlink" href="#rectay" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Si <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> está en el dominio de <span class="math notranslate nohighlight">\(f(x,y)\)</span>, el plano vertical <span class="math notranslate nohighlight">\(y=y_0\)</span> (donde <span class="math notranslate nohighlight">\(y_0\)</span> es un número fijo, constante) corta a la superficie <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> en la curva <span class="math notranslate nohighlight">\(z=f(x,y_0)\)</span> (que está contenida precisamente en el plano <span class="math notranslate nohighlight">\(y=y_0\)</span>). Esta curva pertenece a la intersección de <span class="math notranslate nohighlight">\(f(x,y)\)</span> con el plano <span class="math notranslate nohighlight">\(y=y_0\)</span>, y observamos que hay sólo variación en <span class="math notranslate nohighlight">\(x\)</span>. Análogamente, la curva <span class="math notranslate nohighlight">\(z=f(x_0,y)\)</span> está contenida en el plano <span class="math notranslate nohighlight">\(x=x_0\)</span>, y notamos que hay sólo variación en <span class="math notranslate nohighlight">\(y\)</span>.</p>
+</section>
+<section id="derivada-parcial-con-respecto-a-x">
+<h3>Derivada Parcial con respecto a <span class="math notranslate nohighlight">\(x\)</span><a class="headerlink" href="#derivada-parcial-con-respecto-a-x" title="Link to this heading">#</a></h3>
+<p>La <strong>derivada parcial</strong> de <span class="math notranslate nohighlight">\(f\)</span> <strong>con respecto a</strong> <span class="math notranslate nohighlight">\(x\)</span> en <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> es la derivada de la función de una variable <span class="math notranslate nohighlight">\(f(x,y_0)\)</span> con respecto a <span class="math notranslate nohighlight">\(x\)</span> en el punto <span class="math notranslate nohighlight">\(x=x_0\)</span>. Se denota como</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{\partial f}{\partial x}\Big|_{(x_0,y_0)}\;\;\;\text{o}\;\;\;f_x(x_0,y_0)
+\]</div>
+<p>Formalmente, la derivada parcial de <span class="math notranslate nohighlight">\(f\)</span> con respecto a <span class="math notranslate nohighlight">\(x\)</span> en el punto <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> es</p>
+<div class="math notranslate nohighlight" id="equation-parcialx2">
+<span class="eqno">(12)<a class="headerlink" href="#equation-parcialx2" title="Link to this equation">#</a></span>\[
+\dfrac{\partial f}{\partial x}\Big|_{(x_0,y_0)}=f_x(x_0,y_0)=\lim_{h\to0}\frac{f(x_0+h,y_0)-f(x_0,y_0)}{h}
+\]</div>
+<p>si tal límite existe.</p>
+</section>
+<section id="derivada-parcial-con-respecto-a-y">
+<h3>Derivada Parcial con respecto a <span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#derivada-parcial-con-respecto-a-y" title="Link to this heading">#</a></h3>
+<p>La derivada parcial de <span class="math notranslate nohighlight">\(f\)</span> con respecto a <span class="math notranslate nohighlight">\(y\)</span> en <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> es análoga a la anterior. Mantenemos <span class="math notranslate nohighlight">\(x\)</span> fija en <span class="math notranslate nohighlight">\(x_0\)</span> y derivamos <span class="math notranslate nohighlight">\(f(x_0,y)\)</span> con respecto a <span class="math notranslate nohighlight">\(y\)</span> en <span class="math notranslate nohighlight">\(y_0\)</span>.</p>
+<p>Formalmente, la <strong>derivada parcial</strong> de <span class="math notranslate nohighlight">\(f\)</span> con <strong>respecto a</strong> <span class="math notranslate nohighlight">\(y\)</span> en el punto <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> es</p>
+<div class="math notranslate nohighlight" id="equation-parcialy1">
+<span class="eqno">(13)<a class="headerlink" href="#equation-parcialy1" title="Link to this equation">#</a></span>\[
+\dfrac{\partial f}{\partial y}\Big|_{(x_0,y_0)}=f_y(x_0,y_0)=\lim_{k\to0}\frac{f(x_0,y_0+k)-f(x_0,y_0)}{k}
+\]</div>
+<p>si tal límite existe.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Si <span class="math notranslate nohighlight">\(f(x,y)=x^2\sin(y)\)</span>, calcule <span class="math notranslate nohighlight">\(\dfrac{\partial f}{\partial x}\left(1,\dfrac{\pi}{2}\right)\)</span>.</p>
+</div>
+</section>
+<section id="derivada-parcial-en-n-variables">
+<h3>Derivada parcial en <span class="math notranslate nohighlight">\(n\)</span> variables<a class="headerlink" href="#derivada-parcial-en-n-variables" title="Link to this heading">#</a></h3>
+<p>Si <span class="math notranslate nohighlight">\(z=f(x_1,x_2,\ldots,x_i,\ldots,x_n)\)</span> es función de <span class="math notranslate nohighlight">\(n\)</span> variables entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial x_i}=\lim_{h\to0}\frac{f(x_1,x_2,\ldots,x_i+h,\ldots,x_n)-f(x_1,x_2,\ldots,x_i,\ldots,x_n)}{h}.
+\]</div>
+<p>Derivar <span class="math notranslate nohighlight">\(f\)</span> con respecto a la variable <span class="math notranslate nohighlight">\(x_i\)</span> es considerar las otras variables como constantes y <strong>derivar</strong> <span class="math notranslate nohighlight">\(f\)</span> <strong>como si fuese una función sólo de la variable</strong> <span class="math notranslate nohighlight">\(x_i\)</span>, utilizando reglas de derivación de funciones de una variable (cuando sean aplicables).</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Considere <span class="math notranslate nohighlight">\(f: \mathbb{R}^2 \to \mathbb{R}\)</span> definida por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x,y)=\left\{\begin{array}{ccc}
+\dfrac{x^2y}{x^2+y^2} &amp; \text{si} &amp; (x,y)\neq (0,0)\\\\
+0 &amp; \text{si} &amp; (x,y)=(0,0)
+\end{array}\right.
+\end{split}\]</div>
+<p>Determine <span class="math notranslate nohighlight">\(\dfrac{\partial{f}}{\partial{y}}(0,0)\)</span> y <span class="math notranslate nohighlight">\( \dfrac{\partial{f}}{\partial{y}}(1,2)\)</span>.</p>
+</div>
+</section>
+<section id="rectas-tangentes">
+<h3>Rectas Tangentes<a class="headerlink" href="#rectas-tangentes" title="Link to this heading">#</a></h3>
+<p>Podemos interpretar <span class="math notranslate nohighlight">\(f_x(x_0,y_0)\)</span> como la pendiente de la recta tangente a la curva <span class="math notranslate nohighlight">\(z=f(x,y_0)\)</span> (contenida en el plano <span class="math notranslate nohighlight">\(y=y_0\)</span>) en el punto <span class="math notranslate nohighlight">\((x_0,y_0,f(x_0,y_0))\)</span>. También, otra forma de entenderla es como la razón de cambio (tasa, ritmo) de <span class="math notranslate nohighlight">\(f\)</span> con respecto a <span class="math notranslate nohighlight">\(x\)</span> en el punto <span class="math notranslate nohighlight">\((x_0,y_0,f(x_0,y_0))\)</span>. Análogamente para <span class="math notranslate nohighlight">\(f_y(x_0,y_0)\)</span>.}</p>
+<figure class="align-default" id="tangentes">
+<a class="reference internal image-reference" href="_images/tangentes.png"><img alt="_images/tangentes.png" src="_images/tangentes.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 15 </span><span class="caption-text">Rectas Tangentes a la superficie <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> en el punto <span class="math notranslate nohighlight">\((x_0,y_0)\)</span></span><a class="headerlink" href="#tangentes" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>La <strong>ecuación de la recta tangente</strong> a la curva <span class="math notranslate nohighlight">\(z=f(x,y_0)\)</span>, <strong>contenida en el plano</strong> <span class="math notranslate nohighlight">\(y=y_0\)</span>, sobre el punto <span class="math notranslate nohighlight">\((x_0,y_0,f(x_0,y_0))\)</span> es</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+z&amp;=&amp;f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)\\ y&amp;=&amp;y_0
+\end{eqnarray*}\]</div>
+<p>Las ecuaciones paramétricas de la recta tangente son</p>
+<div class="math notranslate nohighlight">
+\[
+x=x_0+t~,~y=y_0~,~z=f(x_0,y_0)+f_x(x_0,y_0)t
+\]</div>
+<p>con <span class="math notranslate nohighlight">\(t\in\mathbb{R}\)</span>. Un vector director de la recta es <span class="math notranslate nohighlight">\((1,0,f_x(x_0,y_0))\)</span>.</p>
+<p>La <strong>ecuación de la recta tangente</strong> a la curva <span class="math notranslate nohighlight">\(z=f(x_0,y)\)</span>, <strong>contenida en el plano</strong> <span class="math notranslate nohighlight">\(x=x_0\)</span>, sobre el punto <span class="math notranslate nohighlight">\((x_0,y_0,f(x_0,y_0))\)</span> es</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+
+z&amp;=&amp;f(x_0,y_0)+f_y(x_0,y_0)(y-y_0)\\ x&amp;=&amp;x_0
+\end{eqnarray*}\]</div>
+<p>Las ecuaciones paramétricas de la recta tangente son</p>
+<div class="math notranslate nohighlight">
+\[
+x=x_0~,~ y=y_0+t~,~z=f(x_0,y_0)+f_y(x_0,y_0)t
+\]</div>
+<p>con <span class="math notranslate nohighlight">\(t\in\mathbb{R}\)</span>. Un vector director de la recta es <span class="math notranslate nohighlight">\((0,1,f_y(x_0,y_0))\)</span>.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Determine la ecuación de la recta tangente a la curva que se obtiene de la intersección entre la superficie <span class="math notranslate nohighlight">\(z=x^2+y^2\)</span>, y el plano <span class="math notranslate nohighlight">\(x=1\)</span>, sobre el punto <span class="math notranslate nohighlight">\((1,2)\)</span>.</p>
+</div>
+<figure class="align-default" id="ejerciciotangente">
+<a class="reference internal image-reference" href="_images/cilindro_recta.png"><img alt="_images/cilindro_recta.png" src="_images/cilindro_recta.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 16 </span><span class="caption-text">Gráfico del ejercicio anterior</span><a class="headerlink" href="#ejerciciotangente" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="plano-tangente">
+<h2>Plano Tangente<a class="headerlink" href="#plano-tangente" title="Link to this heading">#</a></h2>
+<p>Obtuvimos 2 rectas tangentes <span class="math notranslate nohighlight">\(T_1\)</span> y <span class="math notranslate nohighlight">\(T_2\)</span> a la superficie <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> sobre el punto <span class="math notranslate nohighlight">\(P(x_0,y_0,f(x_0,y_0))\)</span>, cuyos vectores directores son <span class="math notranslate nohighlight">\(\vec{v}_1=(1,0,f_x(x_0,y_0))\)</span> y <span class="math notranslate nohighlight">\(\vec{v}_2=(0,1,f_y(x_0,y_0))\)</span>. No es difícil probar que <span class="math notranslate nohighlight">\(\vec{v}_1\)</span> y <span class="math notranslate nohighlight">\(\vec{v}_2\)</span> son L.I. y, por lo tanto, generan un plano. Este plano se denomina <strong>plano tangente</strong> a la superficie <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> sobre el punto <span class="math notranslate nohighlight">\(P(x_0,y_0,f(x_0,y_0))\)</span>.</p>
+<figure class="align-default" id="planotangente">
+<a class="reference internal image-reference" href="_images/plano_tangente.png"><img alt="_images/plano_tangente.png" src="_images/plano_tangente.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 17 </span><span class="caption-text">Plano Tangente a la superficie <span class="math notranslate nohighlight">\(z=f(x,y)\)</span></span><a class="headerlink" href="#planotangente" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Para obtener la ecuación del plano tangente a la superficie <span class="math notranslate nohighlight">\(S\)</span> en el punto <span class="math notranslate nohighlight">\(P(x_0,y_0,f(x_0,y_0))\)</span>, necesitamos un vector perpendicular (normal) a dicho plano. Recordemos que la recta tangente <span class="math notranslate nohighlight">\(T_1\)</span> tiene vector director <span class="math notranslate nohighlight">\(\vec{v}_1=(1,0,f_x(x_0,y_0))\)</span> y la recta tangente <span class="math notranslate nohighlight">\(T_2\)</span> tiene vector director <span class="math notranslate nohighlight">\(\vec{v}_2=(0,1,f_y(x_0,y_0))\)</span>, luego un vector normal es</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{n}=\vec{v}_2\times\vec{v}_1=(f_x(x_0,y_0),f_y(x_0,y_0),-1).
+\]</div>
+<p>Por tanto, la ecuación vectorial del plano tangente a la superficie <span class="math notranslate nohighlight">\(S\)</span> en el punto <span class="math notranslate nohighlight">\(P(x_0,y_0,z_0)\)</span> es</p>
+<div class="math notranslate nohighlight" id="equation-ecvecplano">
+<span class="eqno">(14)<a class="headerlink" href="#equation-ecvecplano" title="Link to this equation">#</a></span>\[
+(f_x(x_0,y_0),f_y(x_0,y_0),-1)\cdot (x-x_0,y-y_0,z-z_0)=0.
+\]</div>
+<section id="ecuacion-cartesiana">
+<h3>Ecuación Cartesiana<a class="headerlink" href="#ecuacion-cartesiana" title="Link to this heading">#</a></h3>
+<p>La <strong>ecuación cartesiana</strong> del plano tangente a la superficie <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> en el punto <span class="math notranslate nohighlight">\(P(x_0,y_0,f(x_0,y_0))\)</span> es</p>
+<div class="math notranslate nohighlight" id="equation-eccartesiana">
+<span class="eqno">(15)<a class="headerlink" href="#equation-eccartesiana" title="Link to this equation">#</a></span>\[
+z=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0).
+\]</div>
+<p><strong>Definición</strong>. El vector <span class="math notranslate nohighlight">\((f_x(x_0,y_0),f_y(x_0,y_0))\)</span> se denomina <strong>vector gradiente</strong> de <span class="math notranslate nohighlight">\(f\)</span> en el punto <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> y se anota como</p>
+<div class="math notranslate nohighlight" id="equation-vectorgradiente">
+<span class="eqno">(16)<a class="headerlink" href="#equation-vectorgradiente" title="Link to this equation">#</a></span>\[
+\nabla f(x_0,y_0)=(f_x(x_0,y_0),f_y(x_0,y_0)).
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Determine, si existe, la ecuación del plano tangente a <span class="math notranslate nohighlight">\(f(x,y)=x^2+2y^3\)</span> en el punto <span class="math notranslate nohighlight">\((1,1,3)\)</span>.</p>
+</div>
+</section>
+<section id="aproximacion-lineal">
+<h3>Aproximación Lineal<a class="headerlink" href="#aproximacion-lineal" title="Link to this heading">#</a></h3>
+<p>Podemos mirar la ecuación del plano tangente obtenida en el ejercicio: <span class="math notranslate nohighlight">\(z=2x+6y-5\)</span>, como una función de 2 variables</p>
+<div class="math notranslate nohighlight">
+\[
+L(x,y)=2x+6y-5
+\]</div>
+<p>que es una <em>buena aproximación</em> de <span class="math notranslate nohighlight">\(f(x,y)\)</span> cuando <span class="math notranslate nohighlight">\((x,y)\)</span> es cercano al punto <span class="math notranslate nohighlight">\((1,1)\)</span>. La función <span class="math notranslate nohighlight">\(L\)</span> es llamada <strong>linealización</strong> de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\((1,1)\)</span>.</p>
+<p>La función lineal,</p>
+<div class="math notranslate nohighlight">
+\[
+L(x,y)=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)
+\]</div>
+<p>cuyo gráfico es el plano tangente, es llamada <strong>linealización</strong> de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> y la aproximación</p>
+<div class="math notranslate nohighlight" id="equation-aproxlineal">
+<span class="eqno">(17)<a class="headerlink" href="#equation-aproxlineal" title="Link to this equation">#</a></span>\[
+L(x,y)\approx f(x,y)
+\]</div>
+<p>es llamada la <strong>aproximación lineal</strong> de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\((x_0,y_0)\)</span>.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Utilice la aproximación lineal para estimar <span class="math notranslate nohighlight">\(\sqrt{(4.01)^2+(2.98)^2}\)</span></p>
+</div>
+</section>
+</section>
+<section id="diferenciabilidad">
+<h2>Diferenciabilidad<a class="headerlink" href="#diferenciabilidad" title="Link to this heading">#</a></h2>
+<p>La ecuación del plano tangente a la superficie <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> en el punto <span class="math notranslate nohighlight">\((a,b)\)</span> está dada por</p>
+<div class="math notranslate nohighlight">
+\[
+z-f(a,b)=f_x(a,b)(x-a)+f_y(a,b)(y-b)
+\]</div>
+<figure class="align-default" id="diferencial">
+<a class="reference internal image-reference" href="_images/diferencial.png"><img alt="_images/diferencial.png" src="_images/diferencial.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 18 </span><span class="caption-text">Aproximación Diferencial de una Superficie <span class="math notranslate nohighlight">\(z=f(z,y)\)</span> en el punto <span class="math notranslate nohighlight">\((a,b)\)</span> mediante su Plano Tangente</span><a class="headerlink" href="#diferencial" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Si nos movemos pequeñas cantidades (conocidas como <strong>diferenciales</strong>) <span class="math notranslate nohighlight">\(\Delta x ~(=dx)\)</span> y <span class="math notranslate nohighlight">\(\Delta y~(=dy)\)</span> desde <span class="math notranslate nohighlight">\((a,b)\)</span> llegamos al punto</p>
+<div class="math notranslate nohighlight">
+\[
+(x,y)=(a+dx, b+dy)
+\]</div>
+<p>es decir <span class="math notranslate nohighlight">\(dx=x-a\)</span> y <span class="math notranslate nohighlight">\(dy=y-b\)</span>. El <strong>cambio real</strong> de la función <span class="math notranslate nohighlight">\(f\)</span> al pasar del punto <span class="math notranslate nohighlight">\((a,b)\)</span> a <span class="math notranslate nohighlight">\((x,y)=(a+dx, b+dy)\)</span> es</p>
+<div class="math notranslate nohighlight" id="equation-cambioreal">
+<span class="eqno">(18)<a class="headerlink" href="#equation-cambioreal" title="Link to this equation">#</a></span>\[
+\Delta f=\Delta z=f(x,y)-f(a,b)=f(a+dx, b+dy)-f(a,b)
+\]</div>
+<p><strong>Definición</strong>. Si <span class="math notranslate nohighlight">\(f\)</span> es una función que tiene derivadas parciales continuas <span class="math notranslate nohighlight">\(f_x\)</span> y <span class="math notranslate nohighlight">\(f_y\)</span> entonces el <strong>diferencial</strong> <span class="math notranslate nohighlight">\(df=dz\)</span> o <strong>diferencial total</strong> es definido por</p>
+<div class="math notranslate nohighlight">
+\[
+df=dz=f_x(x,y)dx+f_y(x,y)dy=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy
+\]</div>
+<p>Así <span class="math notranslate nohighlight">\(L(x,y)-f(a,b)=f_x(a,b)(x-a)+f_y(a,b)(y-b)=df\)</span> y por lo tanto <span class="math notranslate nohighlight">\(df\approx \Delta f\)</span> ya que <span class="math notranslate nohighlight">\(L(x,y)\approx f(x,y)\)</span> en una vecindad de <span class="math notranslate nohighlight">\((a,b)\)</span>.</p>
+<p><strong>Nota</strong>. Al usar diferenciales es usual poner <span class="math notranslate nohighlight">\(h=\Delta x=dx\)</span> y <span class="math notranslate nohighlight">\(k=\Delta y=dy\)</span>.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Calcule una aproximación de la variación que experimenta la función <span class="math notranslate nohighlight">\(f(x,y)=\sqrt{xy}\)</span> cuando <span class="math notranslate nohighlight">\(x\)</span> varía de <span class="math notranslate nohighlight">\(4\)</span> a <span class="math notranslate nohighlight">\(4.01\)</span> e <span class="math notranslate nohighlight">\(y\)</span> de <span class="math notranslate nohighlight">\(9\)</span> a <span class="math notranslate nohighlight">\(8.99\)</span>. ¿Qué error se comete con dicha aproximación?</p>
+</div>
+<p><strong>Nota</strong>. A partir de la aproximación <span class="math notranslate nohighlight">\(df\approx \Delta f\)</span>, nos preguntamos cuándo ésta corresponde a una igualdad.En realidad, tenemos que</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta f= df+E(h,k)
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(E(h,k)\)</span> es un término que expresa el error en la aproximación y donde lo esperable es que <span class="math notranslate nohighlight">\(E(h,k)\to 0\)</span> cuando <span class="math notranslate nohighlight">\(h,k\to0\)</span>. Esto nos da la siguiente definición.</p>
+<section id="funciones-diferenciables">
+<h3>Funciones Diferenciables<a class="headerlink" href="#funciones-diferenciables" title="Link to this heading">#</a></h3>
+<p>Una función <span class="math notranslate nohighlight">\(f\)</span> es <strong>diferenciable</strong> en <span class="math notranslate nohighlight">\((a,b)\)</span> si <span class="math notranslate nohighlight">\(f_x(a,b)\)</span> y <span class="math notranslate nohighlight">\(f_y(a,b)\)</span> existen en un conjunto abierto <span class="math notranslate nohighlight">\(D\)</span> que contiene al punto <span class="math notranslate nohighlight">\((a,b)\)</span>, <span class="math notranslate nohighlight">\(f_x\)</span> y <span class="math notranslate nohighlight">\(f_y\)</span> son continuas en <span class="math notranslate nohighlight">\((a,b)\)</span> y el cambio real <span class="math notranslate nohighlight">\(\Delta f\)</span> satisface una ecuación de la forma</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta f=f(a+h,b+k)-f(a,b)=f_x(a,b)h+f_y(a,b)k+E(h,k)
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(E(h,k)\to 0\)</span> cuando <span class="math notranslate nohighlight">\(h,k\to0\)</span>. Esto equivale a que</p>
+<div class="math notranslate nohighlight" id="equation-diferenciable">
+<span class="eqno">(19)<a class="headerlink" href="#equation-diferenciable" title="Link to this equation">#</a></span>\[
+\lim_{(h,k)\to (0,0)}\frac{|\Delta f-df|}{\sqrt{h^2+k^2}}=0
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Sea</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+g(x,y)=\left\{\begin{array}{ccc}
+\dfrac{x^3}{x^2+y^2} &amp;  \text{si} &amp; (x,y)\neq(0,0)\\
+0 &amp; \text{si} &amp; (x,y)=(0,0)
+\end{array}\right.
+\end{split}\]</div>
+<ol class="arabic simple">
+<li><p>Determine si existen <span class="math notranslate nohighlight">\(g_x(0,0)\)</span> y <span class="math notranslate nohighlight">\(g_y(0,0)\)</span>.</p></li>
+<li><p>¿Es <span class="math notranslate nohighlight">\(g\)</span> diferenciable en <span class="math notranslate nohighlight">\((0,0)\)</span>? Justifique.</p></li>
+</ol>
+</div>
+</section>
+<section id="teoremas-de-diferenciabilidad">
+<h3>Teoremas de Diferenciabilidad<a class="headerlink" href="#teoremas-de-diferenciabilidad" title="Link to this heading">#</a></h3>
+<p><strong>Teorema 1</strong>. Si <span class="math notranslate nohighlight">\(f_x\)</span> y <span class="math notranslate nohighlight">\(f_y\)</span> son continuas en un conjunto abierto <span class="math notranslate nohighlight">\(D\)</span> entonces <span class="math notranslate nohighlight">\(f\)</span> es diferenciable en cada punto de <span class="math notranslate nohighlight">\(D\)</span>.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Pruebe que <span class="math notranslate nohighlight">\(f(x,y)=e^{-(x^2+y^2)}\)</span> es diferenciable para todo <span class="math notranslate nohighlight">\((x,y)\in\mathbb{R}^2\)</span>.</p>
+</div>
+<p><strong>Teorema 2</strong>. Si <span class="math notranslate nohighlight">\(f\)</span> está definida en un conjunto abierto <span class="math notranslate nohighlight">\(D\)</span> y es diferenciable en <span class="math notranslate nohighlight">\((a,b)\in D\)</span> entonces <span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\((a,b)\)</span>. Esto equivale a que si <span class="math notranslate nohighlight">\(f\)</span> no es continua en <span class="math notranslate nohighlight">\((a,b)\)</span> entonces no es diferenciable en ese punto.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Sea</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x,y)=\left\{\begin{array}{ccc}
+\dfrac{xy}{\sqrt{x^2+y^2}} &amp; \text{si} &amp; (x,y)\neq(0,0)\\
+0 &amp; \text{si} &amp; (x,y)=(0,0) 
+\end{array}\right.
+\end{split}\]</div>
+<p>Probar que <span class="math notranslate nohighlight">\(f\)</span> no es diferenciable en <span class="math notranslate nohighlight">\((0,0)\)</span> a pesar de que <span class="math notranslate nohighlight">\(f_x(0,0)\)</span> y <span class="math notranslate nohighlight">\(f_y(0,0)\)</span> existen.</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "DenisOsses/CursoMulti",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Cap2.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Unidad 2</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Desafios.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Desafíos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-parciales">Derivadas Parciales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-geometrica">Interpretación Geométrica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-parcial-con-respecto-a-x">Derivada Parcial con respecto a <span class="math notranslate nohighlight">\(x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-parcial-con-respecto-a-y">Derivada Parcial con respecto a <span class="math notranslate nohighlight">\(y\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-parcial-en-n-variables">Derivada parcial en <span class="math notranslate nohighlight">\(n\)</span> variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rectas-tangentes">Rectas Tangentes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plano-tangente">Plano Tangente</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuacion-cartesiana">Ecuación Cartesiana</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aproximacion-lineal">Aproximación Lineal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenciabilidad">Diferenciabilidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-diferenciables">Funciones Diferenciables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremas-de-diferenciabilidad">Teoremas de Diferenciabilidad</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por The Jupyter Book Community/ Área de Matemáticas FIC UAI/ Denis Osses, denis.osses@uai.cl
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025-1.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

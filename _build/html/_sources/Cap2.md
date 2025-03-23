@@ -131,7 +131,7 @@ Para calcular límites, tenemos los siguientes teoremas:
 **Teorema de Acotamiento (Sandwich)**. Si para todo $(x,y)$ enuna vecindad de $(x_0,y_0)$, se tiene que
 
 $$
-h(x,y)\leq f(x,y) \leq g(x,y),~ \lim_{(x,y)\to (x_0,y_0)} h(x,y)=L
+h(x,y)\leq f(x,y) \leq g(x,y),
 $$
 
 $\displaystyle \lim_{(x,y)\to (x_0,y_0)} h(x,y)=L$ y $\displaystyle \lim_{(x,y)\to (x_0,y_0)} g(x,y)=L$, entonces 
@@ -160,7 +160,7 @@ Luego, si tenemos un candidato a límite $L$ para una función $f,$ podemos usar
 
 ### Coordenadas Polares
 
-Otra forma de estudiar la existencia del límite $\displaystyle \lim_{(x,y)\to(0,0)}f(x,y)$ es mediante el cambio de variable $x=r\cos(\theta),$ $y=\sin(\theta),$ resultando la expresión 
+Otra forma de estudiar la existencia del límite $\displaystyle \lim_{(x,y)\to(0,0)}f(x,y)$ es mediante el cambio de variable $x=r\cos(\theta),$ $y=r\sin(\theta),$ resultando la expresión 
 
 $$
 \lim_{r\to 0}F(r,\theta)=\lim_{r\to 0}f(r\cos\theta,r\sin\theta)
@@ -172,7 +172,7 @@ $$
 \lim_{(x,y)\to (0,0)} f(x,y)=\lim_{r\to 0}F(r,\theta)=0
 $$ 
 
-si y solo si la función $G(\theta)$ est\'a acotada en $[0,2\pi].$
+si y solo si la función $G(\theta)$ está acotada en $[0,2\pi].$
 
 En particular, si el límite 
 
