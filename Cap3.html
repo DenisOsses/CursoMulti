@@ -463,6 +463,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremas-de-diferenciabilidad">Teoremas de Diferenciabilidad</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regla-de-la-cadena">Regla de la Cadena</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-la-funcion-implicita-tfi">Teorema de la Función Implícita (TFI)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tfi">TFI</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -742,6 +747,103 @@ f(x,y)=\left\{\begin{array}{ccc}
 </div>
 </section>
 </section>
+<section id="regla-de-la-cadena">
+<h2>Regla de la Cadena<a class="headerlink" href="#regla-de-la-cadena" title="Link to this heading">#</a></h2>
+<p>Si <span class="math notranslate nohighlight">\(w=f(x,y)\)</span> tiene derivadas parciales continuas <span class="math notranslate nohighlight">\(f_x, f_y\)</span> y si <span class="math notranslate nohighlight">\(x=x(t)\)</span>, <span class="math notranslate nohighlight">\(y=y(t)\)</span> son funciones diferenciables de <span class="math notranslate nohighlight">\(t\)</span>, entonces la composición <span class="math notranslate nohighlight">\(w=f(x(t),y(t))\)</span> es una función diferenciable de <span class="math notranslate nohighlight">\(t\)</span> y la derivada de <span class="math notranslate nohighlight">\(f\)</span> (que es una función de <span class="math notranslate nohighlight">\(t\)</span>) tiene la expresión</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dt}=f_x(x(t),y(t))\cdot x'(t)+f_y(x(t),y(t))\cdot y'(t)
+\]</div>
+<p>o, equivalentemente</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dw}{dt}=\frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial f}{\partial y}\frac{dy}{dt}.
+\]</div>
+<p>Esquemáticamente la relación entre las variables y sus derivadas parciales correspondientes es:</p>
+<figure class="align-default" id="cadena">
+<a class="reference internal image-reference" href="_images/cadena1.png"><img alt="_images/cadena1.png" src="_images/cadena1.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 19 </span><span class="caption-text">Regla de la Cadena para <span class="math notranslate nohighlight">\(w=f(x,y)\)</span>, con <span class="math notranslate nohighlight">\(x,y\)</span> funciones de <span class="math notranslate nohighlight">\(t\)</span></span><a class="headerlink" href="#cadena" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Si <span class="math notranslate nohighlight">\(z=f(x,y)=y^2\sqrt{x+1}\)</span> donde <span class="math notranslate nohighlight">\(x=x(t)=t^3-t\)</span> e <span class="math notranslate nohighlight">\(y=y(t)=t^2-2t+4\)</span>, calcule <span class="math notranslate nohighlight">\(\dfrac{dz}{dt}.\)</span></p>
+</div>
+<p>Podemos generalizar la regla de la cadena: si <span class="math notranslate nohighlight">\(w=f(x_1,\ldots,x_n)\)</span> es una función de <span class="math notranslate nohighlight">\(n\)</span> variables y cada <span class="math notranslate nohighlight">\(x_i=x_i(t_1,t_2,\ldots,t_m)\)</span> es una función de <span class="math notranslate nohighlight">\(m\)</span> variables, entonces <span class="math notranslate nohighlight">\(f\)</span> es una función de <span class="math notranslate nohighlight">\(t_1,t_2,\ldots,t_m\)</span> y</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial w}{\partial t_i}=\frac{\partial f}{\partial x_1}\frac{\partial x_1}{\partial t_i}+\frac{\partial f}{\partial x_2}\frac{\partial x_2}{\partial t_i}+\cdots+\frac{\partial f}{\partial x_n}\frac{\partial x_n}{\partial t_i}
+\]</div>
+<p>para cada <span class="math notranslate nohighlight">\(i=1,2,\ldots,m\)</span>.</p>
+<p>Como caso particular, expresamos la regla de la cadena para <span class="math notranslate nohighlight">\(w=f(x,y,z,t)\)</span> con <span class="math notranslate nohighlight">\(x=x(u,v)\)</span>, <span class="math notranslate nohighlight">\(y=y(u,v)\)</span>, <span class="math notranslate nohighlight">\(z=z(u,v)\)</span> y <span class="math notranslate nohighlight">\(t=t(u,v)\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*} 
+\frac{\partial w}{\partial u}&amp;=&amp;\frac{\partial f}{\partial x}\frac{\partial x}{\partial u}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial u}+\frac{\partial f}{\partial z}\frac{\partial z}{\partial u}+\frac{\partial f}{\partial t}\frac{\partial t}{\partial u}\\ 
+\frac{\partial w}{\partial v}&amp;=&amp;\frac{\partial f}{\partial x}\frac{\partial x}{\partial v}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial v}+\frac{\partial f}{\partial z}\frac{\partial z}{\partial v}+\frac{\partial f}{\partial t}\frac{\partial t}{\partial v}
+\end{eqnarray*} \]</div>
+<p>El siguiente diagrama de árbol explica las relaciones entre las variables dependientes e independientes involucradas en esta regla:</p>
+<figure class="align-default" id="cadena2">
+<a class="reference internal image-reference" href="_images/cadena2.png"><img alt="_images/cadena2.png" src="_images/cadena2.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 20 </span><span class="caption-text">Regla de la Cadena para <span class="math notranslate nohighlight">\(w=f(x,y,z,t)\)</span>, con <span class="math notranslate nohighlight">\(x,y,z,t\)</span> funciones de <span class="math notranslate nohighlight">\(u,v\)</span></span><a class="headerlink" href="#cadena2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Considere la función <span class="math notranslate nohighlight">\(P(u,v,w)=\sqrt{u^2+v^2+w^2}\)</span>, con <span class="math notranslate nohighlight">\(u=xe^y\)</span>, <span class="math notranslate nohighlight">\(v=ye^x\)</span>, <span class="math notranslate nohighlight">\(w=e^{xy}\)</span>. Determine <span class="math notranslate nohighlight">\(P_x\)</span> y <span class="math notranslate nohighlight">\(P_y\)</span> cuando <span class="math notranslate nohighlight">\(x=0\)</span> e <span class="math notranslate nohighlight">\(y=2\)</span>.</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Ejercicio Propuesto</p>
+<p>Si <span class="math notranslate nohighlight">\(z=f(x,y)\)</span>, con <span class="math notranslate nohighlight">\(x=r\cos(\theta)\)</span> e <span class="math notranslate nohighlight">\(y=r\sin(\theta)\)</span>:</p>
+<p>a. Determine <span class="math notranslate nohighlight">\(z_r\)</span> y <span class="math notranslate nohighlight">\(z_\theta\)</span>.</p>
+<p>b. Demuestre que: <span class="math notranslate nohighlight">\(\displaystyle\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2=\left(\frac{\partial z}{\partial r}\right)^2+\frac{1}{r^2}\left(\frac{\partial z}{\partial \theta}\right)^2\)</span></p>
+<p>c. Probar que: <span class="math notranslate nohighlight">\(\displaystyle\frac{\partial^2 z}{\partial x^2}+\frac{\partial^2 z}{\partial y^2}=\frac{\partial^2 z}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2 z}{\partial \theta^2}+\frac{1}{r}\frac{\partial z}{\partial r}\)</span></p>
+</div>
+</section>
+<section id="teorema-de-la-funcion-implicita-tfi">
+<h2>Teorema de la Función Implícita (TFI)<a class="headerlink" href="#teorema-de-la-funcion-implicita-tfi" title="Link to this heading">#</a></h2>
+<p>Existen expresiones como</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(xyz)+zx+\sin(x+z+y)=5
+\]</div>
+<p>donde la variable <span class="math notranslate nohighlight">\(z\)</span> no puede ser despejada explícitamente en términos de <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>. ¿Bajo qué condiciones es posible hacerlo?</p>
+<section id="tfi">
+<h3>TFI<a class="headerlink" href="#tfi" title="Link to this heading">#</a></h3>
+<p>Sea <span class="math notranslate nohighlight">\(F(x,y,z)=0\)</span> una expresión definida en <span class="math notranslate nohighlight">\(D\)</span> y <span class="math notranslate nohighlight">\((x_0,y_0,z_0)\)</span> un punto en <span class="math notranslate nohighlight">\(D\)</span>. Si se cumple:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(F(x_0,y_0,z_0)=0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(F_x(x,y,z)\)</span>, <span class="math notranslate nohighlight">\(F_y(x,y,z)\)</span> y <span class="math notranslate nohighlight">\(F_z(x,y,z)\)</span> son continuas en <span class="math notranslate nohighlight">\(D\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(F_z(x_0,y_0,z_0)\neq0\)</span>.</p></li>
+</ol>
+<p>Entonces existe un disco abierto <span class="math notranslate nohighlight">\(U\)</span> con centro en <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> tal que <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> y <span class="math notranslate nohighlight">\(z_0=f(x_0,y_0)\)</span>. Además</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial z}{\partial x}(x,y)=-\frac{F_x}{F_z}~~,~~\frac{\partial z}{\partial y}(x,y)=-\frac{F_y}{F_z}
+\]</div>
+<p>para todo <span class="math notranslate nohighlight">\((x,y)\in U.\)</span></p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/TFI.png"><img alt="_images/TFI.png" src="_images/TFI.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 21 </span><span class="caption-text">Teorema de la Función Implícita</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Dada <span class="math notranslate nohighlight">\(F(x,y,z)=x^2+y^2+z^2+xy+2z-1\)</span></p>
+<ol class="arabic simple">
+<li><p>Determine si <span class="math notranslate nohighlight">\(F(x,y,z)=0\)</span> define a <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> alrededor de <span class="math notranslate nohighlight">\(P(0,-1,0)\)</span>.</p></li>
+<li><p>Encuentre <span class="math notranslate nohighlight">\(z_x\)</span> y <span class="math notranslate nohighlight">\(z_y\)</span> en <span class="math notranslate nohighlight">\((0,-1)\)</span>.</p></li>
+<li><p>Calcule <span class="math notranslate nohighlight">\(z_{xx}\)</span>.</p></li>
+</ol>
+</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Considere <span class="math notranslate nohighlight">\(F(x,y,z)=xyz+\ln(xyz)-z\)</span>. Demuestre que <span class="math notranslate nohighlight">\(z\)</span> puede definirse como una función implícita de <span class="math notranslate nohighlight">\((x,y)\)</span> alrededor del punto <span class="math notranslate nohighlight">\((1,1,1)\)</span>. Encuentre la ecuación del plano tangente a <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> en <span class="math notranslate nohighlight">\((1,1,1)\)</span>.</p>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -824,6 +926,11 @@ f(x,y)=\left\{\begin{array}{ccc}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenciabilidad">Diferenciabilidad</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-diferenciables">Funciones Diferenciables</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremas-de-diferenciabilidad">Teoremas de Diferenciabilidad</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regla-de-la-cadena">Regla de la Cadena</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-la-funcion-implicita-tfi">Teorema de la Función Implícita (TFI)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tfi">TFI</a></li>
 </ul>
 </li>
 </ul>

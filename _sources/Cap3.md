@@ -326,3 +326,121 @@ $$
 
 Probar que $f$ no es diferenciable en $(0,0)$ a pesar de que $f_x(0,0)$ y $f_y(0,0)$ existen.
 ```
+
+## Regla de la Cadena
+
+Si $w=f(x,y)$ tiene derivadas parciales continuas $f_x, f_y$ y si $x=x(t)$, $y=y(t)$ son funciones diferenciables de $t$, entonces la composición $w=f(x(t),y(t))$ es una función diferenciable de $t$ y la derivada de $f$ (que es una función de $t$) tiene la expresión 
+
+$$
+\frac{df}{dt}=f_x(x(t),y(t))\cdot x'(t)+f_y(x(t),y(t))\cdot y'(t)
+$$ 
+
+o, equivalentemente 
+
+$$
+\frac{dw}{dt}=\frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial f}{\partial y}\frac{dy}{dt}.
+$$
+
+Esquemáticamente la relación entre las variables y sus derivadas parciales correspondientes es:
+
+```{figure} cadena1.png
+---
+height: 250px
+name: cadena
+---
+Regla de la Cadena para $w=f(x,y)$, con $x,y$ funciones de $t$
+```
+
+```{admonition} Ejercicio 
+Si $z=f(x,y)=y^2\sqrt{x+1}$ donde $x=x(t)=t^3-t$ e $y=y(t)=t^2-2t+4$, calcule $\dfrac{dz}{dt}.$
+```
+
+Podemos generalizar la regla de la cadena: si $w=f(x_1,\ldots,x_n)$ es una función de $n$ variables y cada $x_i=x_i(t_1,t_2,\ldots,t_m)$ es una función de $m$ variables, entonces $f$ es una función de $t_1,t_2,\ldots,t_m$ y 
+
+$$
+\frac{\partial w}{\partial t_i}=\frac{\partial f}{\partial x_1}\frac{\partial x_1}{\partial t_i}+\frac{\partial f}{\partial x_2}\frac{\partial x_2}{\partial t_i}+\cdots+\frac{\partial f}{\partial x_n}\frac{\partial x_n}{\partial t_i}
+$$ 
+
+para cada $i=1,2,\ldots,m$.
+
+Como caso particular, expresamos la regla de la cadena para $w=f(x,y,z,t)$ con $x=x(u,v)$, $y=y(u,v)$, $z=z(u,v)$ y $t=t(u,v)$ 
+
+\begin{eqnarray*} 
+\frac{\partial w}{\partial u}&=&\frac{\partial f}{\partial x}\frac{\partial x}{\partial u}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial u}+\frac{\partial f}{\partial z}\frac{\partial z}{\partial u}+\frac{\partial f}{\partial t}\frac{\partial t}{\partial u}\\ 
+\frac{\partial w}{\partial v}&=&\frac{\partial f}{\partial x}\frac{\partial x}{\partial v}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial v}+\frac{\partial f}{\partial z}\frac{\partial z}{\partial v}+\frac{\partial f}{\partial t}\frac{\partial t}{\partial v}
+\end{eqnarray*} 
+
+El siguiente diagrama de árbol explica las relaciones entre las variables dependientes e independientes involucradas en esta regla:
+
+```{figure} cadena2.png
+---
+height: 250px
+name: cadena2
+---
+Regla de la Cadena para $w=f(x,y,z,t)$, con $x,y,z,t$ funciones de $u,v$
+```
+
+```{admonition} Ejercicio 
+Considere la función $P(u,v,w)=\sqrt{u^2+v^2+w^2}$, con $u=xe^y$, $v=ye^x$, $w=e^{xy}$. Determine $P_x$ y $P_y$ cuando $x=0$ e $y=2$.
+```
+
+`````{admonition} Ejercicio Propuesto
+:class: warning
+Si $z=f(x,y)$, con $x=r\cos(\theta)$ e $y=r\sin(\theta)$:
+
+a. Determine $z_r$ y $z_\theta$.
+
+b. Demuestre que: $\displaystyle\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2=\left(\frac{\partial z}{\partial r}\right)^2+\frac{1}{r^2}\left(\frac{\partial z}{\partial \theta}\right)^2$
+
+c. Probar que: $\displaystyle\frac{\partial^2 z}{\partial x^2}+\frac{\partial^2 z}{\partial y^2}=\frac{\partial^2 z}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2 z}{\partial \theta^2}+\frac{1}{r}\frac{\partial z}{\partial r}$
+`````
+
+## Teorema de la Función Implícita (TFI)
+
+Existen expresiones como 
+
+$$
+\ln(xyz)+zx+\sin(x+z+y)=5
+$$ 
+
+donde la variable $z$ no puede ser despejada explícitamente en términos de $x$ e $y$. ¿Bajo qué condiciones es posible hacerlo?
+
+### TFI
+
+Sea $F(x,y,z)=0$ una expresión definida en $D$ y $(x_0,y_0,z_0)$ un punto en $D$. Si se cumple:
+
+1. $F(x_0,y_0,z_0)=0$.
+
+2. $F_x(x,y,z)$, $F_y(x,y,z)$ y $F_z(x,y,z)$ son continuas en $D$.
+
+3. $F_z(x_0,y_0,z_0)\neq0$.
+
+Entonces existe un disco abierto $U$ con centro en $(x_0,y_0)$ tal que $z=f(x,y)$ y $z_0=f(x_0,y_0)$. Además 
+
+$$
+\frac{\partial z}{\partial x}(x,y)=-\frac{F_x}{F_z}~~,~~\frac{\partial z}{\partial y}(x,y)=-\frac{F_y}{F_z}
+$$ 
+
+para todo $(x,y)\in U.$ 
+
+```{figure} TFI.png
+---
+height: 250px
+name: TFI
+---
+Teorema de la Función Implícita
+```
+
+```{admonition} Ejercicio 
+Dada $F(x,y,z)=x^2+y^2+z^2+xy+2z-1$
+
+1. Determine si $F(x,y,z)=0$ define a $z=f(x,y)$ alrededor de $P(0,-1,0)$.
+
+2. Encuentre $z_x$ y $z_y$ en $(0,-1)$.
+
+3. Calcule $z_{xx}$.
+```
+
+```{admonition} Ejercicio 
+Considere $F(x,y,z)=xyz+\ln(xyz)-z$. Demuestre que $z$ puede definirse como una función implícita de $(x,y)$ alrededor del punto $(1,1,1)$. Encuentre la ecuación del plano tangente a $z=f(x,y)$ en $(1,1,1)$.
+```
