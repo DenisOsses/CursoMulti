@@ -448,6 +448,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solucion">Solución</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desafio-2">Desafío 2</a></li>
 </ul>
             </nav>
         </div>
@@ -554,6 +555,47 @@ x^2 + y^2 = az^2 + a + 1.
 <p>Si <span class="math notranslate nohighlight">\(a&gt;0\)</span>. En este caso el coeficiente <span class="math notranslate nohighlight">\(-a\)</span> es negativo y <span class="math notranslate nohighlight">\(a+1&gt;0\)</span> con lo cual <span class="math notranslate nohighlight">\(S_a:x^2+y^2-az^2=a+1\)</span> representa un hiperboloide 1 hoja.</p>
 </section>
 </section>
+<section id="desafio-2">
+<h2>Desafío 2<a class="headerlink" href="#desafio-2" title="Link to this heading">#</a></h2>
+<div class="admonition-problemas admonition">
+<p class="admonition-title">Problemas</p>
+<p><strong>1</strong>:</p>
+<p>a. Si <span class="math notranslate nohighlight">\(dz\)</span> es el error de medición en una cantidad <span class="math notranslate nohighlight">\(z\)</span>, el <strong>error relativo</strong> se define como <span class="math notranslate nohighlight">\(\dfrac{dz}{z}\)</span>. Demostrar que el error relativo en un producto <span class="math notranslate nohighlight">\(z = xy\)</span> es igual a la suma de los errores relativos en los factores.</p>
+<p>b. Se va a determinar la aceleración <span class="math notranslate nohighlight">\(g\)</span> de la gravedad, midiendo el tiempo de caída en segundos de un cuerpo que se deja caer desde el reposo a través de una distancia fija <span class="math notranslate nohighlight">\(x\)</span>. Si el tiempo medido es <span class="math notranslate nohighlight">\(t\)</span>, se tiene <span class="math notranslate nohighlight">\(g = \dfrac{2x}{t^2}\)</span>. Si <span class="math notranslate nohighlight">\(x\)</span> mide alrededor de <span class="math notranslate nohighlight">\(1~m\)</span> y <span class="math notranslate nohighlight">\(t\)</span> alrededor de <span class="math notranslate nohighlight">\(0.45~seg,\)</span> demostrar que el error relativo en la medición de <span class="math notranslate nohighlight">\(g\)</span> es más sensible a un error relativo en <span class="math notranslate nohighlight">\(t\)</span> que a un error relativo en <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p><strong>2</strong>: Consideremos la gráfica de una función <span class="math notranslate nohighlight">\(f(x,y)\)</span> como en la figura dada. Sea <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> un punto en una curva de nivel <span class="math notranslate nohighlight">\(C\)</span>: Prueba que <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0)\)</span> es perpendicular a esta curva.</p>
+<p>Luego, demuestra que el plano tangente a la gráfica es el plano que</p>
+<p>i. contiene la recta perpendicular a <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0)\)</span> y que yace en el plano horizontal <span class="math notranslate nohighlight">\(z = f(x_0, y_0)\)</span>, y</p>
+<p>ii. tiene pendiente <span class="math notranslate nohighlight">\( \left|\nabla f(x_0, y_0)\right|\)</span> con respecto al plano <span class="math notranslate nohighlight">\(XY\)</span>.</p>
+<p>(Por <em>pendiente</em> de un plano <span class="math notranslate nohighlight">\(P\)</span>, relativa al plano <span class="math notranslate nohighlight">\(XY\)</span>, entendemos la tangente del ángulo <span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(0 \leq \theta \leq \pi\)</span>, entre la normal hacia arriba <span class="math notranslate nohighlight">\(\mathbf{p}\)</span> a <span class="math notranslate nohighlight">\(P\)</span> y el vector unitario <span class="math notranslate nohighlight">\(\mathbf{k}\)</span>.)</p>
+<p><strong>3</strong>: Imagina una región en el espacio ocupada por una barra de pan, y sea <span class="math notranslate nohighlight">\(f(a,b)\)</span> el volumen de pan en la región donde <span class="math notranslate nohighlight">\(x &lt; a\)</span> e <span class="math notranslate nohighlight">\( y &lt; b \)</span>, como en la figura dada. Los siguientes argumentos ilustran que <span class="math notranslate nohighlight">\( f_{xy} = f_{yx} \)</span>.</p>
+<p>a. Considera el cuociente</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{f(a+h,b) - f(a,b)}{h};
+\]</div>
+<p>el numerador es el volumen de una cierta rebanada de pan, y el denominador es su grosor. Concluye que <span class="math notranslate nohighlight">\( f_x(a,b) \)</span> es el área de la sección sombreada en <span class="math notranslate nohighlight">\(x = a \)</span>.</p>
+<p>b. Explica de manera similar por qué <span class="math notranslate nohighlight">\( f_y(a,b)\)</span> es el área de la sección no sombreada en <span class="math notranslate nohighlight">\(y = b\)</span>.</p>
+<p>c. Considera el cuociente</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{f_x(a,b+k) - f_x(a,b)}{k}
+\]</div>
+<p>el numerador es el área de un cierto objeto, y el denominador es su ancho. Concluye que <span class="math notranslate nohighlight">\( f_{xy}(a,b) \)</span> es la longitud del segmento vertical en la esquina donde <span class="math notranslate nohighlight">\( x = a, y = b \)</span>. Mediante un argumento similar, concluye que <span class="math notranslate nohighlight">\( f_{yx}(a,b) \)</span> también es la longitud del mismo segmento.</p>
+<p><strong>Fecha de Entrega</strong>: Miércoles 9 de abril, hasta las 18:00 hrs., en el buzón de tareas respectivo en Webc.</p>
+</div>
+<figure class="align-default" id="pan">
+<a class="reference internal image-reference" href="_images/nivel.png"><img alt="_images/nivel.png" src="_images/nivel.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 23 </span><span class="caption-text">Gráfico del Problema 2</span><a class="headerlink" href="#pan" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/pan.png"><img alt="_images/pan.png" src="_images/pan.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 24 </span><span class="caption-text">Representación del Problema 3</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -615,6 +657,7 @@ x^2 + y^2 = az^2 + a + 1.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solucion">Solución</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desafio-2">Desafío 2</a></li>
 </ul>
   </nav></div>
 

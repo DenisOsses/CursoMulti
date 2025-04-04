@@ -395,6 +395,29 @@ b. Demuestre que: $\displaystyle\left(\frac{\partial z}{\partial x}\right)^2+\le
 c. Probar que: $\displaystyle\frac{\partial^2 z}{\partial x^2}+\frac{\partial^2 z}{\partial y^2}=\frac{\partial^2 z}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2 z}{\partial \theta^2}+\frac{1}{r}\frac{\partial z}{\partial r}$
 `````
 
+## Derivadas Parciales de Orden Superior
+
+Si $z=f(\mathbf{x})$ es una función de $n$ variables, entonces sus derivadas parciales $f_{x_i}$ también son funciones de $n$ variables, de modo que podemos derivarlas parcialmente: $(f_{x_i})_{x_j}=\frac{\partial^2 f}{\partial x_j\partial x_i}$, $i,j=1,2,\ldots,n$. Estas derivadas son conocidas como **segundas derivadas parciales** de $f$. En particular, en el caso de 2 variables, escribimos 
+
+$$
+f_{xx}=\frac{\partial^2f}{\partial x^2}~~,~~f_{xy}=\frac{\partial^2f}{\partial y\partial x}
+$$ 
+$$
+f_{yy}=\frac{\partial^2f}{\partial y^2}~~,~~ f_{yx}=\frac{\partial^2f}{\partial x\partial y}
+$$
+
+```{admonition} Ejercicio 
+Sea $f(x,y)=\ln\left(\dfrac{1}{\sqrt{x^2+y^2}}\right)$. Calcule todas las derivadas parciales de segundo orden de $f$ y pruebe que $f_{xx}+f_{yy}=0$.
+```
+
+### Teorema de Clairaut (o de Schwarz (derivadas cruzadas))
+
+Suponga que $f$ es una función definida en un conjunto abierto $D$ que contiene el punto $(a,b)$. Si las funciones $f_{xy}$ y $f_{yx}$ son ambas continuas en $D$, entonces 
+
+$$
+f_{xy}(a,b)=f_{yx}(a,b).
+$$
+
 ## Teorema de la Función Implícita (TFI)
 
 Existen expresiones como 
