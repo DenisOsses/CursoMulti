@@ -148,3 +148,65 @@ Si $-1<a<0$. En este caso el coeficiente $-a$ es positivo y $a+1>0$ con lo cual 
 Si $a=0$. Obtenemos $S_0:x^2+y^2=1$ que corresponde a un cilindro.
 
 Si $a>0$. En este caso el coeficiente $-a$ es negativo y $a+1>0$ con lo cual $S_a:x^2+y^2-az^2=a+1$ representa un hiperboloide 1 hoja.
+
++++
+
+## Desafío 2
+
++++
+
+```{admonition} Problemas
+**1**: 
+
+a. Si $dz$ es el error de medición en una cantidad $z$, el **error relativo** se define como $\dfrac{dz}{z}$. Demostrar que el error relativo en un producto $z = xy$ es igual a la suma de los errores relativos en los factores.
+
+b. Se va a determinar la aceleración $g$ de la gravedad, midiendo el tiempo de caída en segundos de un cuerpo que se deja caer desde el reposo a través de una distancia fija $x$. Si el tiempo medido es $t$, se tiene $g = \dfrac{2x}{t^2}$. Si $x$ mide alrededor de $1~m$ y $t$ alrededor de $0.45~seg,$ demostrar que el error relativo en la medición de $g$ es más sensible a un error relativo en $t$ que a un error relativo en $x$.
+
+**2**: Consideremos la gráfica de una función $f(x,y)$ como en la figura dada. Sea $(x_0, y_0)$ un punto en una curva de nivel $C$: Prueba que $\nabla f(x_0, y_0)$ es perpendicular a esta curva. 
+
+Luego, demuestra que el plano tangente a la gráfica es el plano que 
+
+i. contiene la recta perpendicular a $\nabla f(x_0, y_0)$ y que yace en el plano horizontal $z = f(x_0, y_0)$, y 
+
+ii. tiene pendiente $ \left|\nabla f(x_0, y_0)\right|$ con respecto al plano $XY$.
+
+(Por *pendiente* de un plano $P$, relativa al plano $XY$, entendemos la tangente del ángulo $\theta$, $0 \leq \theta \leq \pi$, entre la normal hacia arriba $\mathbf{p}$ a $P$ y el vector unitario $\mathbf{k}$.)
+
+**3**: Imagina una región en el espacio ocupada por una barra de pan, y sea $f(a,b)$ el volumen de pan en la región donde $x < a$ e $ y < b $, como en la figura dada. Los siguientes argumentos ilustran que $ f_{xy} = f_{yx} $.
+
+a. Considera el cuociente
+
+$$
+\frac{f(a+h,b) - f(a,b)}{h};
+$$ 
+
+el numerador es el volumen de una cierta rebanada de pan, y el denominador es su grosor. Concluye que $ f_x(a,b) $ es el área de la sección sombreada en $x = a $.
+
+b. Explica de manera similar por qué $ f_y(a,b)$ es el área de la sección no sombreada en $y = b$.
+
+c. Considera el cuociente
+
+$$
+\frac{f_x(a,b+k) - f_x(a,b)}{k}
+$$ 
+
+el numerador es el área de un cierto objeto, y el denominador es su ancho. Concluye que $ f_{xy}(a,b) $ es la longitud del segmento vertical en la esquina donde $ x = a, y = b $. Mediante un argumento similar, concluye que $ f_{yx}(a,b) $ también es la longitud del mismo segmento.
+
+**Fecha de Entrega**: Miércoles 9 de abril, hasta las 18:00 hrs., en el buzón de tareas respectivo en Webc.
+```
+
+```{figure} nivel.png
+---
+height: 300px
+name: pan
+---
+Gráfico del Problema 2
+```
+
+```{figure} pan.png
+---
+height: 300px
+name: pan
+---
+Representación del Problema 3
+```

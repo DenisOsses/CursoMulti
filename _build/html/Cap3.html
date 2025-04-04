@@ -464,6 +464,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regla-de-la-cadena">Regla de la Cadena</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-parciales-de-orden-superior">Derivadas Parciales de Orden Superior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-clairaut-o-de-schwarz-derivadas-cruzadas">Teorema de Clairaut (o de Schwarz (derivadas cruzadas))</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-la-funcion-implicita-tfi">Teorema de la Función Implícita (TFI)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tfi">TFI</a></li>
 </ul>
@@ -801,6 +805,30 @@ f(x,y)=\left\{\begin{array}{ccc}
 <p>c. Probar que: <span class="math notranslate nohighlight">\(\displaystyle\frac{\partial^2 z}{\partial x^2}+\frac{\partial^2 z}{\partial y^2}=\frac{\partial^2 z}{\partial r^2}+\frac{1}{r^2}\frac{\partial^2 z}{\partial \theta^2}+\frac{1}{r}\frac{\partial z}{\partial r}\)</span></p>
 </div>
 </section>
+<section id="derivadas-parciales-de-orden-superior">
+<h2>Derivadas Parciales de Orden Superior<a class="headerlink" href="#derivadas-parciales-de-orden-superior" title="Link to this heading">#</a></h2>
+<p>Si <span class="math notranslate nohighlight">\(z=f(\mathbf{x})\)</span> es una función de <span class="math notranslate nohighlight">\(n\)</span> variables, entonces sus derivadas parciales <span class="math notranslate nohighlight">\(f_{x_i}\)</span> también son funciones de <span class="math notranslate nohighlight">\(n\)</span> variables, de modo que podemos derivarlas parcialmente: <span class="math notranslate nohighlight">\((f_{x_i})_{x_j}=\frac{\partial^2 f}{\partial x_j\partial x_i}\)</span>, <span class="math notranslate nohighlight">\(i,j=1,2,\ldots,n\)</span>. Estas derivadas son conocidas como <strong>segundas derivadas parciales</strong> de <span class="math notranslate nohighlight">\(f\)</span>. En particular, en el caso de 2 variables, escribimos</p>
+<div class="math notranslate nohighlight">
+\[
+f_{xx}=\frac{\partial^2f}{\partial x^2}~~,~~f_{xy}=\frac{\partial^2f}{\partial y\partial x}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+f_{yy}=\frac{\partial^2f}{\partial y^2}~~,~~ f_{yx}=\frac{\partial^2f}{\partial x\partial y}
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Sea <span class="math notranslate nohighlight">\(f(x,y)=\ln\left(\dfrac{1}{\sqrt{x^2+y^2}}\right)\)</span>. Calcule todas las derivadas parciales de segundo orden de <span class="math notranslate nohighlight">\(f\)</span> y pruebe que <span class="math notranslate nohighlight">\(f_{xx}+f_{yy}=0\)</span>.</p>
+</div>
+<section id="teorema-de-clairaut-o-de-schwarz-derivadas-cruzadas">
+<h3>Teorema de Clairaut (o de Schwarz (derivadas cruzadas))<a class="headerlink" href="#teorema-de-clairaut-o-de-schwarz-derivadas-cruzadas" title="Link to this heading">#</a></h3>
+<p>Suponga que <span class="math notranslate nohighlight">\(f\)</span> es una función definida en un conjunto abierto <span class="math notranslate nohighlight">\(D\)</span> que contiene el punto <span class="math notranslate nohighlight">\((a,b)\)</span>. Si las funciones <span class="math notranslate nohighlight">\(f_{xy}\)</span> y <span class="math notranslate nohighlight">\(f_{yx}\)</span> son ambas continuas en <span class="math notranslate nohighlight">\(D\)</span>, entonces</p>
+<div class="math notranslate nohighlight">
+\[
+f_{xy}(a,b)=f_{yx}(a,b).
+\]</div>
+</section>
+</section>
 <section id="teorema-de-la-funcion-implicita-tfi">
 <h2>Teorema de la Función Implícita (TFI)<a class="headerlink" href="#teorema-de-la-funcion-implicita-tfi" title="Link to this heading">#</a></h2>
 <p>Existen expresiones como</p>
@@ -929,6 +957,10 @@ f(x,y)=\left\{\begin{array}{ccc}
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regla-de-la-cadena">Regla de la Cadena</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-parciales-de-orden-superior">Derivadas Parciales de Orden Superior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-clairaut-o-de-schwarz-derivadas-cruzadas">Teorema de Clairaut (o de Schwarz (derivadas cruzadas))</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-la-funcion-implicita-tfi">Teorema de la Función Implícita (TFI)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tfi">TFI</a></li>
 </ul>
