@@ -168,7 +168,7 @@ Luego, demuestra que el plano tangente a la gráfica es el plano que
 
 i. contiene la recta perpendicular a $\nabla f(x_0, y_0)$ y que yace en el plano horizontal $z = f(x_0, y_0)$, y 
 
-ii. tiene pendiente $ \left|\nabla f(x_0, y_0)\right|$ con respecto al plano $XY$.
+ii. tiene pendiente $ \left|\left|\nabla f(x_0, y_0)\right|\right|$ con respecto al plano $XY$.
 
 (Por *pendiente* de un plano $P$, relativa al plano $XY$, entendemos la tangente del ángulo $\theta$, $0 \leq \theta \leq \pi$, entre la normal hacia arriba $\mathbf{p}$ a $P$ y el vector unitario $\mathbf{k}$.)
 
@@ -210,3 +210,145 @@ name: pan
 ---
 Representación del Problema 3
 ```
+
++++
+
+### Solución
+
++++
+
+**1**:
+
+a. Consideremos $z=f(x,y)=xy$. Entonces el diferencial es 
+
+$$
+dz=df=f_x(x,y)dx+f_y(x,y)dy=ydx+xdy~\Rightarrow~\frac{dz}{z}=\frac{y}{z}dx+\frac{x}{z}dy=\frac{dx}{x}+\frac{dy}{y}
+$$
+
+que es justamente lo que se quería demostrar.
+
+b. Consideremos $g(x,t)=\dfrac{2x}{t^2}$. Entonces el diferencial es 
+
+$$
+dg=g_x(x,t)dx+g_t(x,t)dt=\frac{2}{t^2}dx-\frac{4x}{t^3}dt~\Rightarrow\frac{dg}{g}=\frac{2}{gt^2}dx-\frac{4x}{gt^3}dt=\frac{dx}{x}-2\frac{dt}{t}
+$$
+
+Ahora, si realizamos una medición en $x$ (manteniendo $t$ constante) entonces $dt=0$ y la proporción (para comparar) entre el error relativo en la medición de $g$ y el error relativo en la medición de $x$, en términos absolutos, es:
+
+$$
+\left|\frac{\frac{dg}{g}}{\frac{dx}{x}}\right|=1
+$$
+
+y si realizamos una medición en $t$ (manteniendo $x$ constante) entonces $dx=0$ y la proporción entre el error relativo en la medición de $g$ y el error relativo en la medición de $t$, en términos absolutos, es:
+
+$$
+\left|\frac{\frac{dg}{g}}{\frac{dt}{t}}\right|=2
+$$
+
+Por lo tanto, el error relativo en la medición de $g$ es más sensible a un error relativo en $t$ que a un error relativo en $x$, ya que en $t$ se duplica la magnitud del error con respecto a $x$.
+
+**2**: Sea $k=f(x_0,y_0)$. Luego, la curva de nivel $C_k$ que pasa por el punto $(x_0,y_0)$ es $C_k(f)=\{(x,y)\in\mathbb{R}^2:k=f(x,y)\}$, es decir $C_k$ tiene ecuación $k=f(x,y)$. Si calculamos el diferencial de esta última ecuación y lo reescribimos usando el producto punto de vectores, obtenemos 
+
+\begin{eqnarray*}
+0=f_x(x,y)dx+f_y(x,y)dy~&\Leftrightarrow&~0=(f_x(x,y),f_y(x,y))\cdot(dx,dy)\\
+&\Leftrightarrow&~0=\nabla f(x,y)\cdot(dx,dy)
+\end{eqnarray*}
+
+Además, podemos parametrizar la curva de nivel mediante $x=x(t)$ e $y=y(t)$ para $t\in~I$, y derivar mediante la regla de la cadena: $dx=x'(t)dt$ y $dy=y'(t)dt$, es decir $(dx,dy)=(x'(t)dt,y'(t)dt)=(x'(t),y'(t))dt$, donde $(x'(t),y'(t))$ corresponde al vector tangente a la curva de nivel $C_k$ en $(x(t),y(t))$. Luego, por la identidad del producto punto, el vector gradiente $\nabla f(x,y)$ es perpendicular a la curva de nivel, ya que es perpendicular al vector tangente (y, por ende, a la recta tangente de la cual es vector director).
+
+Por otro lado, la ecuación de la recta tangente a la curva de nivel $C_k$ en $(x_0,y_0)$ (que ocurre en el instante $t_0$) tiene como vector director a $(x'(t_0),y'(t_0))$. Así, la ecuación vectorial de la recta tangente a $C_k$, en el plano $XY$, es 
+
+\begin{eqnarray*}
+x(t)&=&x_0+x'(t_0)t\\
+y(t)&=&y_0+y'(t_0)t~~,~ ~ t\in~I
+\end{eqnarray*}
+
+Notamos que esta recta es perpendicular a $\nabla f(x_0,y_0)$. La curva de nivel $C_k$ ocurre cuando $k=f(x_0,y_0)$ y podemos afirmar que esta curva está contenida también en el plano $z=k=f(x_0,y_0)$. Como este plano es paralelo al plano $XY$ (o $z=0$), la ecuación vectorial de la recta tangente a $C_k$, en el plano $z=k=f(x_0,y_0)$, es 
+
+\begin{eqnarray*}
+x(t)&=&x_0+x'(t_0)t\\
+y(t)&=&y_0+y'(t_0)t~~,~ ~ t\in~I\\
+z(t)&=&f(x_0,y_0)
+\end{eqnarray*}
+
+es decir, la recta perpendicular yace en el plano $z=f(x_0,y_0)$. Para probar que esta recta está contenida en el plano tangente $z=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)$, reemplazamos la ecuación de la recta tangente:
+
+\begin{eqnarray*}
+&&z(t)=f(x_0,y_0)+f_x(x_0,y_0)(x(t)-x_0)+f_y(x_0,y_0)(y(t)-y_0)\\
+&\Rightarrow& \cancelto{0}{z(t)-f(x_0,y_0)}=f_x(x_0,y_0)x'(t_0)t+f_y(x_0,y_0)y'(t_0)t\\
+&\Rightarrow& 0=(f_x(x_0,y_0),f_y(x_0,y_0))\cdot (x'(t_0),y'(t_0))t
+\end{eqnarray*}
+
+lo cual es verdad para todo $t\in~I$. Por lo tanto, la recta tangente está contenida en el plano tangente.
+
+Por último, el vector unitario $\mathbf{k}=(0,0,1)$ y la normal hacia arriba $\mathbf{p}$ del plano tangente es $\mathbf{p}=(f_x(x_0,y_0),f_y(x_0,y_0),1)$. Por álgebra, sabemos que 
+
+\begin{eqnarray*}
+\tan(\theta)&=&\frac{||\mathbf{p}\times\mathbf{k}||}{\mathbf{p}\cdot\mathbf{k}}\\
+&=&\frac{||(f_x(x_0,y_0),f_y(x_0,y_0),1)\times(0,0,1)||}{(f_x(x_0,y_0),f_y(x_0,y_0),1)\cdot(0,0,1)}\\
+&=&\frac{||(f_y(x_0,y_0),-f_x(x_0,y_0),0)||}{1}=\left|\left|\nabla f(x_0, y_0)\right|\right|
+\end{eqnarray*}
+
+**3**:
+
+a. Para un valor de $b$ fijo, consideremos la función $A(x)$ que mide el área de una región plana para $x\in[a,a+h]$; entonces, por cálculo integral, sabemos que
+
+$$
+f(a+h,b)=V_b(h)=\int_a^{a+h}A(x)~dx~~,~~f(a,b)=V_b(0)=0
+$$
+
+Por el teorema del valor medio integral, existe un $a_0\in[a,a+h]$ tal que $V_b(h)=hA(a_0)$. Luego
+
+$$
+\frac{f(a+h,b) - f(a,b)}{h}=\frac{V_b(h)-\cancelto{0}{V_b(0)}}{h}=\frac{hA(a_0)}{h}=A(a_0)
+$$ 
+
+Si $h\to0$, $a_0\to a$, entonces 
+
+$$
+f_x(a,b)=\lim_{h\to0}\frac{f(a+h,b) - f(a,b)}{h}=\lim_{h\to0}A(a_0)=A(a)
+$$
+
+b. Para un valor de $a$ fijo, consideremos la función $A(y)$ que mide el área de una región plana para $y\in[b,b+k]$; entonces, por cálculo integral, sabemos que
+
+$$
+f(a,b+k)=V_a(k)=\int_b^{b+k}A(y)~dy~~,~~f(a,b)=V_a(0)=0
+$$
+
+Por el teorema del valor medio integral, existe un $b_0\in[b,b+k]$ tal que $V_a(k)=kA(b_0)$. Luego
+
+$$
+\frac{f(a,b+k) - f(a,b)}{k}=\frac{V_a(k)-\cancelto{0}{V_a(0)}}{k}=\frac{kA(b_0)}{k}=A(b_0)
+$$ 
+
+Si $k\to0$, $b_0\to b$, entonces 
+
+$$
+f_y(a,b)=\lim_{k\to0}\frac{f(a,b+k) - f(a,b)}{k}=\lim_{k\to0}A(b_0)=A(b)
+$$
+
+c. Para un valor de $a$ fijo, consideremos la función $L(y)$ que mide la longitud de un segmento vertical. Si $y\in[b,b+k]$ entonces, por cálculo integral, sabemos que
+
+$$
+f_x(a,b+k)=A_a(k)=\int_b^{b+k}L(y)~dy~~,~~f_x(a,b)=A_a(0)=0
+$$
+
+Por el teorema del valor medio integral, existe un $b_0\in[b,b+k]$ tal que $A_a(k)=kL(b_0)$. Luego
+
+$$
+\frac{f_x(a,b+k) - f_x(a,b)}{k}=\frac{A_a(k)-\cancelto{0}{A_a(0)}}{k}=\frac{kL(b_0)}{k}=L(b_0)
+$$ 
+
+Si $k\to0$, $b_0\to b$, entonces 
+
+$$
+(f_{x})_y(a,b)=\lim_{k\to0}\frac{f_x(a,b+k) - f_x(a,b)}{k}=\lim_{k\to0}L(b_0)=L(b)
+$$
+
+Análogamente, 
+
+$$
+(f_{y})_x(a,b)=\lim_{h\to0}\frac{f_y(a+h,b) - f_y(a,b)}{k}=\lim_{h\to0}L(a_0)=L(a)
+$$
+
+Como $L(a)=L(b)$ (ya que es la longitud del segmento vertical en la esquina), concluimos que $f_{xy}(a,b)=f_{yx}(a,b)$.
