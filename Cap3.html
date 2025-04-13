@@ -472,6 +472,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tfi">TFI</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-direccional">Derivada Direccional</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion">Definición</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-calculo-de-la-derivada-direccional">Teorema de Cálculo de la Derivada Direccional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximo-valor-de-la-derivada-direccional">Máximo Valor de la Derivada Direccional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-gradiente-y-plano-tangente">Vector Gradiente y Plano Tangente</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -872,6 +879,102 @@ f_{xy}(a,b)=f_{yx}(a,b).
 </div>
 </section>
 </section>
+<section id="derivada-direccional">
+<h2>Derivada Direccional<a class="headerlink" href="#derivada-direccional" title="Link to this heading">#</a></h2>
+<p>Queremos encontrar la tasa de cambio de <span class="math notranslate nohighlight">\(z\)</span> en <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> en la dirección de cualquier <strong>vector unitario</strong> <span class="math notranslate nohighlight">\(\mathbf{u}=(a,b)\)</span>, como en la figura</p>
+<figure class="align-default" id="direccional">
+<a class="reference internal image-reference" href="_images/direccional.png"><img alt="_images/direccional.png" src="_images/direccional.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 22 </span><span class="caption-text">Derivada Direccional de <span class="math notranslate nohighlight">\(f\)</span> en la dirección de <span class="math notranslate nohighlight">\(\mathbf{u}\)</span></span><a class="headerlink" href="#direccional" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Observamos que</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\Delta z}{h}=\frac{f(x_0+ha,y_0+hb)-f(x_0,y_0)}{h}
+\]</div>
+<p>Si hacemos <span class="math notranslate nohighlight">\(h\to 0\)</span>, obtenemos la tasa de cambio de <span class="math notranslate nohighlight">\(z\)</span> (con respecto a la distancia) en la dirección de <span class="math notranslate nohighlight">\(\mathbf{u}\)</span>, que es llamada <strong>derivada direccional</strong> de <span class="math notranslate nohighlight">\(f\)</span> en la dirección de <span class="math notranslate nohighlight">\(\mathbf{u}\)</span>.</p>
+<section id="definicion">
+<h3>Definición<a class="headerlink" href="#definicion" title="Link to this heading">#</a></h3>
+<p>La <strong>derivada direccional</strong> de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(P(x_0,y_0)\)</span> en la dirección del vector unitario <span class="math notranslate nohighlight">\(\mathbf{u}=(a,b)\)</span> es</p>
+<div class="math notranslate nohighlight" id="equation-defdireccional">
+<span class="eqno">(20)<a class="headerlink" href="#equation-defdireccional" title="Link to this equation">#</a></span>\[
+D_{\mathbf{u}}f(x_0,y_0)=\lim_{h\to0}\frac{f(x_0+ha,y_0+hb)-f(x_0,y_0)}{h}
+\]</div>
+<p>si tal límite existe.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Calcule la derivada direccional de <span class="math notranslate nohighlight">\(f(x,y)=x^2+y^2\)</span> en <span class="math notranslate nohighlight">\(P(1,1)\)</span> en la dirección de <span class="math notranslate nohighlight">\(\mathbf{v}=(1,2)\)</span>.</p>
+</div>
+<p>Podemos visualizar la derivada direccional mediante la siguiente aplicación de (Geogebra)[https://www.geogebra.org/m/hUtCF2Wb].</p>
+</section>
+<section id="teorema-de-calculo-de-la-derivada-direccional">
+<h3>Teorema de Cálculo de la Derivada Direccional<a class="headerlink" href="#teorema-de-calculo-de-la-derivada-direccional" title="Link to this heading">#</a></h3>
+<p>Si <span class="math notranslate nohighlight">\(f\)</span> es una función diferenciable de <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, entonces <span class="math notranslate nohighlight">\(f\)</span> tiene una derivada direccional en la dirección de cualquier vector <span class="math notranslate nohighlight">\(\mathbf{u}=(a,b)\)</span> y</p>
+<div class="math notranslate nohighlight" id="equation-direccional">
+<span class="eqno">(21)<a class="headerlink" href="#equation-direccional" title="Link to this equation">#</a></span>\[
+D_{\mathbf{u}}f(x,y)=f_x(x,y)a+f_y(x,y)b=\nabla f\cdot \mathbf{u}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\nabla f(x,y)=(f_x(x,y),f_y(x,y))\)</span> es el <strong>vector gradiente</strong> de <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Determine la derivada direccional de <span class="math notranslate nohighlight">\(f(x,y)=4x^2-xy-2y^2\)</span> en <span class="math notranslate nohighlight">\(P(2,-1)\)</span> y en la dirección de <span class="math notranslate nohighlight">\(\mathbf{v}=(4,3)\)</span>.</p>
+</div>
+</section>
+<section id="maximo-valor-de-la-derivada-direccional">
+<h3>Máximo Valor de la Derivada Direccional<a class="headerlink" href="#maximo-valor-de-la-derivada-direccional" title="Link to this heading">#</a></h3>
+<p>Suponga que <span class="math notranslate nohighlight">\(f\)</span> es una función diferenciable de 2 o 3 variables. El valor máximo de la derivada direccional <span class="math notranslate nohighlight">\(D_{\mathbf{u}}f\)</span> es <span class="math notranslate nohighlight">\(||\nabla f||\)</span> y ocurre cuando <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> tiene la misma dirección que el vector gradiente <span class="math notranslate nohighlight">\(\nabla f\)</span>. Análogamente, el valor mínimo de la derivada direccional <span class="math notranslate nohighlight">\(D_{\mathbf{u}}f\)</span> es <span class="math notranslate nohighlight">\(-||\nabla f||\)</span> y ocurre cuando <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> tiene la misma dirección que el vector gradiente <span class="math notranslate nohighlight">\(-\nabla f\)</span>.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>La temperatura <span class="math notranslate nohighlight">\(T\)</span> en un punto <span class="math notranslate nohighlight">\((x,y,z)\)</span> en el espacio es inversamente proporcional al cuadrado de la distancia de <span class="math notranslate nohighlight">\((x,y,z)\)</span> al origen. Sabemos que <span class="math notranslate nohighlight">\(T(0,0,1)=500\)</span>. Encuentre la tasa de cambio de la temperatura <span class="math notranslate nohighlight">\(T\)</span> en <span class="math notranslate nohighlight">\(P(2,3,3)\)</span> en la dirección de <span class="math notranslate nohighlight">\(\mathbf{v}=(3,1,1)\)</span>. ¿En cuál dirección a partir de <span class="math notranslate nohighlight">\((2,3,3)\)</span> la temperatura aumenta con mayor rapidez?. En <span class="math notranslate nohighlight">\((2,3,3)\)</span>, ¿cuál es la máxima tasa de cambio de <span class="math notranslate nohighlight">\(T\)</span>?.</p>
+</div>
+</section>
+<section id="vector-gradiente-y-plano-tangente">
+<h3>Vector Gradiente y Plano Tangente<a class="headerlink" href="#vector-gradiente-y-plano-tangente" title="Link to this heading">#</a></h3>
+<p>Consideremos la superficie de nivel <span class="math notranslate nohighlight">\(F(x,y,z)=k\)</span> que pasa por el punto <span class="math notranslate nohighlight">\(P_0(x_0,y_0,z_0)\)</span>. Hacemos <span class="math notranslate nohighlight">\(x=x(t)\)</span>, <span class="math notranslate nohighlight">\(y=y(t)\)</span>, <span class="math notranslate nohighlight">\(z=z(t)\)</span> y derivamos la superficie de nivel, con respecto a <span class="math notranslate nohighlight">\(t\)</span>, usando la regla de la cadena. Así:</p>
+<figure class="align-default" id="plano">
+<a class="reference internal image-reference" href="_images/PlanoTangenteSup.png"><img alt="_images/PlanoTangenteSup.png" src="_images/PlanoTangenteSup.png" style="height: 220px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 23 </span><span class="caption-text">Plano Tangente a una Superficie <span class="math notranslate nohighlight">\(F(x,y,z)=0\)</span></span><a class="headerlink" href="#plano" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="math notranslate nohighlight">
+\[
+F_x(P_0)x'(t_0)+F_y(P_0)y'(t_0)+F_z(P_0)z'(t_0)=0~\Rightarrow
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+(F_x(P_0),F_y(P_0),F_z(P_0))\cdot (x'(t_0),y'(t_0),z'(t_0))=0
+\]</div>
+<p>es decir, el vector gradiente de <span class="math notranslate nohighlight">\(F\)</span> es perpendicular con (todas las rectas tangentes a) la superficie de nivel <span class="math notranslate nohighlight">\(F(x,y,z)=k\)</span> en <span class="math notranslate nohighlight">\(P_0(x_0,y_0,z_0)\)</span>. Luego, <span class="math notranslate nohighlight">\(\nabla F(P_0)\)</span> es perpendicular al plano que contiene todas estas rectas tangentes <span class="math notranslate nohighlight">\(\ldots\)</span> ¡al plano tangente!</p>
+<p>De lo anterior se desprende lo siguiente:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\nabla F(P_0)\)</span> es <strong>perpendicular a las superficies de nivel</strong> <span class="math notranslate nohighlight">\(F(x,y,z)=k\)</span> en <span class="math notranslate nohighlight">\(P_0(x_0,y_0,z_0)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla F(P_0)\)</span> es un vector normal (perpendicular) al plano tangente a la superficie <span class="math notranslate nohighlight">\(F(x,y,z)=k\)</span> en el punto <span class="math notranslate nohighlight">\(P_0(x_0,y_0,z_0)\)</span>. La ecuación de tal plano es</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\nabla F(P_0)\cdot (x-x_0,y-y_0,z-z_0)=0~~~~\text{o}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+F_x(P_0)(x-x_0)+F_y(P_0)(y-y_0)+F_z(P_0)(z-z_0)=0
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Si <span class="math notranslate nohighlight">\(z=0\)</span>, tenemos que <span class="math notranslate nohighlight">\(\nabla F(P_0)\)</span> es un vector <strong>perpendicular a las curvas de nivel</strong> <span class="math notranslate nohighlight">\(F(x,y)=k\)</span> en el punto <span class="math notranslate nohighlight">\(P_0(x_0,y_0)\)</span>.</p></li>
+</ol>
+<figure class="align-default" id="curvagradiente">
+<a class="reference internal image-reference" href="_images/curvanivel.png"><img alt="_images/curvanivel.png" src="_images/curvanivel.png" style="height: 220px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 24 </span><span class="caption-text">Relación entre el Vector Gradiente y una Curva Nivel</span><a class="headerlink" href="#curvagradiente" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Encuentre la curva de nivel de <span class="math notranslate nohighlight">\(f(x,y)=-x^2+y^2\)</span> que pasa por <span class="math notranslate nohighlight">\(P(2,3)\)</span>. Grafique el gradiente en el punto <span class="math notranslate nohighlight">\(P\)</span>, ¿qué observa?</p>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -963,6 +1066,13 @@ f_{xy}(a,b)=f_{yx}(a,b).
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-la-funcion-implicita-tfi">Teorema de la Función Implícita (TFI)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tfi">TFI</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-direccional">Derivada Direccional</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion">Definición</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-calculo-de-la-derivada-direccional">Teorema de Cálculo de la Derivada Direccional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximo-valor-de-la-derivada-direccional">Máximo Valor de la Derivada Direccional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-gradiente-y-plano-tangente">Vector Gradiente y Plano Tangente</a></li>
 </ul>
 </li>
 </ul>

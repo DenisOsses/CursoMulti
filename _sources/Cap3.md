@@ -467,3 +467,111 @@ Dada $F(x,y,z)=x^2+y^2+z^2+xy+2z-1$
 ```{admonition} Ejercicio 
 Considere $F(x,y,z)=xyz+\ln(xyz)-z$. Demuestre que $z$ puede definirse como una función implícita de $(x,y)$ alrededor del punto $(1,1,1)$. Encuentre la ecuación del plano tangente a $z=f(x,y)$ en $(1,1,1)$.
 ```
+
+## Derivada Direccional
+
+Queremos encontrar la tasa de cambio de $z$ en $(x_0,y_0)$ en la dirección de cualquier **vector unitario** $\mathbf{u}=(a,b)$, como en la figura
+
+```{figure} direccional.png
+---
+height: 300px
+name: direccional
+---
+Derivada Direccional de $f$ en la dirección de $\mathbf{u}$
+```
+
+Observamos que 
+
+$$
+\frac{\Delta z}{h}=\frac{f(x_0+ha,y_0+hb)-f(x_0,y_0)}{h}
+$$
+
+Si hacemos $h\to 0$, obtenemos la tasa de cambio de $z$ (con respecto a la distancia) en la dirección de $\mathbf{u}$, que es llamada **derivada direccional** de $f$ en la dirección de $\mathbf{u}$.
+
+### Definición
+
+La **derivada direccional** de $f$ en $P(x_0,y_0)$ en la dirección del vector unitario $\mathbf{u}=(a,b)$ es 
+
+$$
+D_{\mathbf{u}}f(x_0,y_0)=\lim_{h\to0}\frac{f(x_0+ha,y_0+hb)-f(x_0,y_0)}{h}
+$$ (DefDireccional)
+
+si tal límite existe.
+
+```{admonition} Ejercicio 
+Calcule la derivada direccional de $f(x,y)=x^2+y^2$ en $P(1,1)$ en la dirección de $\mathbf{v}=(1,2)$.
+```
+
+Podemos visualizar la derivada direccional mediante la siguiente aplicación de (Geogebra)[https://www.geogebra.org/m/hUtCF2Wb].
+
+### Teorema de Cálculo de la Derivada Direccional
+
+Si $f$ es una función diferenciable de $x$ e $y$, entonces $f$ tiene una derivada direccional en la dirección de cualquier vector $\mathbf{u}=(a,b)$ y 
+
+$$
+D_{\mathbf{u}}f(x,y)=f_x(x,y)a+f_y(x,y)b=\nabla f\cdot \mathbf{u}
+$$ (Direccional)
+
+donde $\nabla f(x,y)=(f_x(x,y),f_y(x,y))$ es el **vector gradiente** de $f$.
+
+```{admonition} Ejercicio 
+Determine la derivada direccional de $f(x,y)=4x^2-xy-2y^2$ en $P(2,-1)$ y en la dirección de $\mathbf{v}=(4,3)$.
+```
+
+### Máximo Valor de la Derivada Direccional
+
+Suponga que $f$ es una función diferenciable de 2 o 3 variables. El valor máximo de la derivada direccional $D_{\mathbf{u}}f$ es $||\nabla f||$ y ocurre cuando $\mathbf{u}$ tiene la misma dirección que el vector gradiente $\nabla f$. Análogamente, el valor mínimo de la derivada direccional $D_{\mathbf{u}}f$ es $-||\nabla f||$ y ocurre cuando $\mathbf{u}$ tiene la misma dirección que el vector gradiente $-\nabla f$.
+
+```{admonition} Ejercicio 
+La temperatura $T$ en un punto $(x,y,z)$ en el espacio es inversamente proporcional al cuadrado de la distancia de $(x,y,z)$ al origen. Sabemos que $T(0,0,1)=500$. Encuentre la tasa de cambio de la temperatura $T$ en $P(2,3,3)$ en la dirección de $\mathbf{v}=(3,1,1)$. ¿En cuál dirección a partir de $(2,3,3)$ la temperatura aumenta con mayor rapidez?. En $(2,3,3)$, ¿cuál es la máxima tasa de cambio de $T$?.
+```
+
+### Vector Gradiente y Plano Tangente
+
+Consideremos la superficie de nivel $F(x,y,z)=k$ que pasa por el punto $P_0(x_0,y_0,z_0)$. Hacemos $x=x(t)$, $y=y(t)$, $z=z(t)$ y derivamos la superficie de nivel, con respecto a $t$, usando la regla de la cadena. Así: 
+
+```{figure} PlanoTangenteSup.png
+---
+height: 220px
+name: Plano
+---
+Plano Tangente a una Superficie $F(x,y,z)=0$
+```
+
+$$
+F_x(P_0)x'(t_0)+F_y(P_0)y'(t_0)+F_z(P_0)z'(t_0)=0~\Rightarrow
+$$
+
+$$
+(F_x(P_0),F_y(P_0),F_z(P_0))\cdot (x'(t_0),y'(t_0),z'(t_0))=0
+$$
+
+es decir, el vector gradiente de $F$ es perpendicular con (todas las rectas tangentes a) la superficie de nivel $F(x,y,z)=k$ en $P_0(x_0,y_0,z_0)$. Luego, $\nabla F(P_0)$ es perpendicular al plano que contiene todas estas rectas tangentes $\ldots$ ¡al plano tangente!
+
+De lo anterior se desprende lo siguiente:
+
+1. $\nabla F(P_0)$ es **perpendicular a las superficies de nivel** $F(x,y,z)=k$ en $P_0(x_0,y_0,z_0)$.
+
+2. $\nabla F(P_0)$ es un vector normal (perpendicular) al plano tangente a la superficie $F(x,y,z)=k$ en el punto $P_0(x_0,y_0,z_0)$. La ecuación de tal plano es 
+
+$$
+\nabla F(P_0)\cdot (x-x_0,y-y_0,z-z_0)=0~~~~\text{o}
+$$ 
+
+$$
+F_x(P_0)(x-x_0)+F_y(P_0)(y-y_0)+F_z(P_0)(z-z_0)=0
+$$
+
+3. Si $z=0$, tenemos que $\nabla F(P_0)$ es un vector **perpendicular a las curvas de nivel** $F(x,y)=k$ en el punto $P_0(x_0,y_0)$.
+
+```{figure} curvanivel.png
+---
+height: 220px
+name: CurvaGradiente
+---
+Relación entre el Vector Gradiente y una Curva Nivel
+```
+
+```{admonition} Ejercicio 
+Encuentre la curva de nivel de $f(x,y)=-x^2+y^2$ que pasa por $P(2,3)$. Grafique el gradiente en el punto $P$, ¿qué observa? 
+```
