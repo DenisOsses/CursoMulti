@@ -1,0 +1,239 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+<!--###########################################################################################################################
+##############################################################################################################################
+#############################################################################################
+-->
+
++++
+
+(U4)=
+# Unidad 4
+
++++
+
+## Aplicaciones de las Derivadas Parciales
+
+### Valores Extremos de una Función
+
+Recordemos de Cálculo Diferencial que los valores máximos y mínimos (locales o absolutos) de una función $g:[a,b]\subseteq\mathbb{R}\to \mathbb{R}$ se pueden obtener en tres tipos de puntos:
+
+1. Puntos estacionarios (puntos en $]a,b[$ donde la derivada es igual a cero).
+
+2. Puntos frontera (los extremos del intervalo $[a,b]$).
+
+3. Puntos singulares (puntos en $]a,b[$ donde no existe derivada).
+
+Para el caso de una función de $n$ variables, considere la función $f:D\subseteq \mathbb{R}^{n}\to \mathbb{R}$ y $\mathbf{x}_0\in D.$ 
+
+1. $f$ tiene un **máximo local** en $\mathbf{x}_0$ si $f(\mathbf{x})\leq f(\mathbf{x}_0)$ para todo $\mathbf{x}$ en una vecindad de $\mathbf{x}_0$.
+
+2. Si $f(\mathbf{x})\leq f(\mathbf{x}_0)$ para todo $\mathbf{x}\in D$ entonces $f$ tiene un **máximo global o absoluto** en $\mathbf{x}_0$.
+
+3. $f$ tiene un **mínimo local** en $\mathbf{x}_0$ si $f(\mathbf{x}_0)\leq f(\mathbf{x})$ para todo $\mathbf{x}$ en una vecindad de $\mathbf{x}_0$.
+
+4. Si $f(\mathbf{x}_0)\leq f(\mathbf{x})$ para todo $\mathbf{x}\in D$ entonces $f$ tiene un **mínimo global o absoluto** en $\mathbf{x}_0$.
+
+5. Los puntos donde $f$ tiene un máximo o mínimo, ya sea local o global, los denominaremos **valores extremos** de $f.$
+
+```{figure} max_y_min.png
+---
+height: 300px
+name: max_y_min
+---
+Máximos y Mínimos Locales y Absolutos
+```
+
+### Puntos Críticos
+
+Los valores extremos de una función ocurren en los siguientes tipos de puntos críticos:
+
+a. **Puntos Frontera**. Son los puntos ubicados en la **frontera del dominio** de la función.
+
+b. **Puntos Singulares**. Son los puntos, en el interior del dominio de $f$, donde la función no es diferenciable.
+
+c. **Puntos Estacionarios**. Para generalizar la noción de estos puntos, establecemos:
+
+**Teorema de Fermat**. Sea $S$ un conjunto abierto en $\mathbb{R}^n$ y $f:S\subseteq\mathbb{R}^n\to\mathbb{R}$ una función diferenciable en un punto $\mathbf{x}_0$ de $S$. Si $f$ tiene un valor extremo local en $\mathbf{x}_0$, entonces $\nabla f(\mathbf{x}_0)=\vec 0$.
+
+Así, los **puntos estacionarios** son aquellos $\mathbf{x}_0$ en el interior del dominio de $f$ donde $\nabla f(\mathbf{x}_0)=\vec 0$.
+
+**Teorema de Weierstrass**. Sea $D\subseteq \mathbb{R}^{n}$ un conjunto cerrado y acotado. Si la función $f:D\to \mathbb{R}$ es continua entonces alcanza un valor máximo y mínimo global en $D.$
+
+```{admonition} Ejercicio 
+Considere la región
+
+$$
+D=\left\{(x, y) \in \mathbb{R}^{2} \: : \:  0 \leq x \leq 1,0 \leq y \leq 1\right\},
+$$
+
+Determine los valores máximos y mínimos de $V(x,y)=48xy-32x^3-24y^2$ sobre $D$.
+```
+
+```{figure} funcionvregion.png
+---
+height: 100px
+name: funcionvregion
+Gráfico del Ejercicio Anterior
+```
+
+En este ejercicio, si cambiamos la región del dominio de $V$ por todo $\mathbb{R}^{2}$ dejamos de tener puntos frontera y ahora nuestros puntos estacionarios son $(0,0)$ (¡ya no es punto frontera!) y $\displaystyle \left(\frac{1}{2},\frac{1}{2}\right).$
+
+Por lo tanto, nuestros candidatos a ser máximos o mínimos (¿locales o globales?) son los puntos $(0,0)$ y $\displaystyle \left(\frac{1}{2},\frac{1}{2}\right).$ 
+
+Si observamos el gráfico de la función en este nuevo caso:
+
+```{figure} funcionv.png
+---
+height: 100px
+name: funcionv
+Gráfico en un Dominio Abierto
+```
+
+$\displaystyle \left(\frac{1}{2},\frac{1}{2}\right)$ es un máximo local y el punto $(0,0)$ tiene una característica especial: Es un **punto de silla**. 
+
+Para clasificar los puntos estacionarios sobre dominios sin restricciones de frontera, establecemos la:
+
+### Matriz Hessiana
+
+Sea $f:D\subseteq \mathbb{R}^{n}\to \mathbb{R}$ una función con $D$ abierto y sea $\mathbf{x}_0 \in D$. Se define la **Matriz Hessiana (o Hessiano)** de $f$ en $\mathbf{x}_0$ como la matriz de orden $n \times n$
+
+$$
+H_{f}(\mathbf{x}_0)=\begin{pmatrix}
+\dfrac{\partial^{2} f}{\partial x_{1}^{2}}(\mathbf{x}_0) & \dfrac{\partial^{2} f}{\partial x_{2} \partial x_{1}}(\mathbf{x}_0) & \cdots & \dfrac{\partial^{2} f}{\partial x_{n} \partial x_{1}}(\mathbf{x}_0) \\
+\dfrac{\partial^{2} f}{\partial x_{1} \partial x_{2}}(\mathbf{x}_0) & \dfrac{\partial^{2} f}{\partial x_{2}^{2}}(\mathbf{x}_0) & \cdots & \dfrac{\partial^{2} f}{\partial x_{n} \partial x_{2}}(\mathbf{x}_0) \\
+\vdots & \vdots & \ddots & \vdots \\
+\dfrac{\partial^{2} f}{\partial x_{1} \partial x_{n}}(\mathbf{x}_0) & \dfrac{\partial^{2} f}{\partial x_{2} \partial x_{n}}(\mathbf{x}_0) & \cdots & \dfrac{\partial^{2} f}{\partial x_{n}^{2}}(\mathbf{x}_0)
+\end{pmatrix},
+$$
+
+si existen todas las derivadas parciales de segundo orden de $f$ en $\mathbf{x}_0$.
+
+### Clasificación de Puntos Estacionarios
+
+Sea $f:D\subseteq \mathbb{R}^{n}\to \mathbb{R}$ una función con $D$ abierto y sea $\mathbf{x}_0 \in D$. Supongamos que $\mathbf{x}_0$ es un punto estacionario de $f$, es decir, $\nabla f(\mathbf{x}_0)=\mathbf{0}.$ Sean $H^1_{f}(\mathbf{x}_0), H^2_{f}(\mathbf{x}_0), \dotsm  H^n_{f}(\mathbf{x}_0)=H_{f}(\mathbf{x}_0)$ las $n$ submatrices superiores del Hessiano $H_{f}(\mathbf{x}_0)$. Entonces:
+
+1. Si todos los determinantes de las submatrices son estrictamente positivos, entonces $f$ alcanza un mínimo local en $\mathbf{x}_0$.
+
+2. Si $\det\left(H^1_{f}(\mathbf{x}_0)\right)<0$ y los determinantes de las submatrices alternan de signo (ninguno igual a cero), entonces $f$ alcanza un máximo local en $\mathbf{x}_0$.
+
+**Nota**. Supongamos que el Hessiano no cumple los criterios (1) o (2) en $\mathbf{x}_0$. Entonces:
+
+1. Diremos genéricamente que se trata de un **punto silla**.
+
+2. Sin embargo, si los signos de los determinantes de las submatrices de $H_{f}(\mathbf{x}_0)$ son todos distintos de cero entonces podemos decir que **no se trata ni de un máximo ni de un mínimo local** (esto corresponde a la noción intuitiva de un punto silla).
+
+3. Si el determinante de alguna submatriz es cero,  entonces se carece de información para saber si el punto es un máximo, un mínimo local o ninguno de los dos. Por ejemplo la función $f(x,y)=x^4+ y^4$ es tal que $(0,0)$ es el único punto estacionario y $H_f(0,0)$ es la matriz nula (comprobarlo). Sin embargo, se sabe que $f(x,y)=x^4+ y^4\geq 0=f(0,0)$ y el punto es un mínimo (global, de hecho).
+
+```{admonition} Ejercicio 
+Considere la función $f:\mathbb{R}^{2}\to \mathbb{R}$ dada por $f(x,y)=x^2y+2y^2x-2xy$. Determine y clasifique los puntos críticos estacionarios de $f$.
+```
+
+`````{admonition} Ejercicio Propuesto
+:class: warning
+Considere la función $g:\mathbb{R}^{3}\to \mathbb{R}$ dada por $g(x,y,z)=xyz - x^2-y^2-z^2.$ Determine los puntos críticos de $g$ y clasifíquelos.
+`````
+
+### Optimización con restricciones
+
+Nos interesa determinar el máximo y/o mínimo de una función $f(x_{1},x_{2},...,x_{n})$ sujeta a la restricci\'ón del tipo $g(x_{1},x_{2},...,x_{n})=0.$  Precisamente, esto consiste en determinar valores máximos y mínimos de una funci\ón sobre el conjunto 
+
+$$
+S= \{ (x_{1},x_{2},...,x_{n})\in \mathbb{R}^n\, | \,g(x_{1},x_{2},...,x_{n})=0 \},
+$$
+
+siempre y cuando $S$ sea no vacío. El método que usaremos para resolver este tipo de problemas es conocido como el método de los **multiplicadores de Lagrange**. El siguiente teorema describe condiciones de primer orden para el problema de valores extremos de $f$ restringida al conjunto $S$.
+
+### Método de los Multiplicadores de Lagrange
+
+Sean $f,g:\mathbb{R}^{n}\to \mathbb{R}$ funciones con primeras derivadas continuas y considere $S$ como el conjunto de nivel $0$ de $g$, es decir, 
+
+$$
+S= \{ (x_{1},x_{2},...,x_{n})\in \mathbb{R}^n\, | \,g(x_{1},x_{2},...,x_{n})=0\}.
+$$ 
+
+Si $f$ alcanza un máximo o mínimo (local) en $\mathbf{x}_0 \in S$ y se tiene además que $\nabla g(\mathbf{x}_0)\neq \mathbf{0},$ entonces existe $\lambda \in \mathbb{R}$ tal que
+
+\begin{eqnarray*}
+\nabla f\left(\mathbf{x}_0\right) &=& \lambda \nabla g\left(\mathbf{x}_0\right) \\
+g\left(\mathbf{x}_0\right) &=& 0,
+\end{eqnarray*}
+$\lambda$ se denomina **multiplicador de Lagrange**. Ver [Geogebra](https://www.geogebra.org/m/grvkdznH).
+
+```{figure} lagrange.png
+---
+height: 150px
+name: lagrange
+Método de los Multiplicadores de Lagrange
+```
+
+**Nota**.
+
+1. La función $L: \mathbb{R}^{n+1} \to \mathbb{R}$ definida por $L(\mathbf{x}, \lambda)= f(\mathbf{x}) - \lambda g(\mathbf{x})$ se llama **Lagrangeano** del problema. 
+
+2. Notemos que la condición $\nabla f(\mathbf{x}_0) =\lambda \nabla g(\mathbf{x}_0 $ es equivalente  a que el punto $(\mathbf{x}_0, \lambda) \in \mathbb{R}^{n+1}$ sea un punto crítico de $L$, es decir, $\nabla L(\mathbf{x}_0, \lambda)= \vec 0$.
+
+3. La condición $\nabla f(\mathbf{x}_0) =\lambda \nabla g(\mathbf{x}_0)$ dice que los gradientes de $f$ y $g$ deben ser paralelos en $\mathbf{x}_0$.
+
+4. Si $\mathbf{x}_0 \in S$ y $\lambda \in \mathbb{R}$ satisfacen las ecuaciones de Lagrange, entonces $\mathbf{x}_0$ se denomina punto crítico de $\displaystyle \left.f\right|_{S}$.
+
+5. Es posible desarrollar análogamente un método de los Multiplicadores de Lagrange en el caso donde el conjunto $S$ está definido por *múltiples restricciones*. 
+
+```{admonition} Ejercicio 
+Calcule los valores extremos de la función $f(x,y)=5-x^2-y^2$ bajo la restricción $(x-1)^2+(y-1)^2=1.$ 
+```
+
+### Criterio del Hessiano Orlado (dos variables, una restricción)
+
+Sea $S= \{ (x,y)\, | \, g(x,y)=0 \}$ y $(x_0,y_0,\lambda_0)$ un punto crítico del Lagrangeano $L(x,y, \lambda)=f(x,y)-\lambda g(x,y)$ del problema de encontrar los valores extremos de $f(x,y)$ en $S$. Queremos clasificar el punto  $(x_0,y_0,\lambda_0)$ mediante un criterio de segundo orden. Definamos la matriz
+
+$$
+\widetilde{H}_{f}(x_0, y_0, \lambda_0)=\left[\begin{array}{ccc}
+0 & -g_{x}(x_0, y_0) & -g_{y}(x_0, y_0) \\
+-g_{x}(x_0, y_0) & L_{x x}(x_0, y_0, \lambda_0) & L_{x y}(x_0, y_0, \lambda_0) \\
+-g_{y}(x_0, y_0) & L_{x y}(x_0, y_0, \lambda_0) & L_{y y}(x_0, y_0, \lambda_0)
+\end{array}\right],
+$$
+
+llamada **Matriz Hessiana Orlada** del problema.
+
+a. Si $\det(\widetilde{H}_{f}(x_0, y_0, \lambda_0))>0,$ entonces $f$ alcanza un máximo local en $(x_0,y_0).$
+
+b. Si $\det(\widetilde{H}_{f}(x_0, y_0, \lambda_0))<0,$ entonces $f$ alcanza un mínimo local en $(x_0,y_0).$
+
+c. Si $\det(\widetilde{H}_{f}(x_0, y_0, \lambda_0))=0,$ el criterio no es concluyente.
+
+```{admonition} Ejercicio 
+Determine los extremos de $f(x,y)=9-x^2-y^2$ bajo la restricción $x+y=3$ y realice la clasificación del extremo obtenido mediante el criterio de segundo orden para funciones de dos variables.
+```
+
+`````{admonition} Ejercicio Propuesto
+:class: warning
+Suponga que la temperatura (en $\,^\circ C$) en cada punto de una placa circular de radio $1$ y centrada en el origen, está dada por la siguiente función: $T(x,y)=2x^2+y^2-y$. Determine los puntos sobre el disco donde se alcanza la mayor y menor temperatura e indique sus valores.
+`````
+
+**Nota (Algunas consideraciones generales)**. 
+
+Para resolver un problema de optimización en compactos, procederemos considerando lo siguiente:
+
+1. Identificar claramente la función a optimizar.
+
+2. Identificar las restricciones asociadas a la función o su dominio $D$ y reconocer que es cerrado y acotado.
+
+3. En el interior de $D$ (que es un conjunto abierto) se obtienen los puntos estacionarios (en caso de ser una función diferenciable) y la naturaleza local de estos puntos se analiza con el criterio de la matriz Hessiana.
+
+4. En la frontera de $D$ (cerrada y acotada) se obtienen los extremos globales de la función a optimizar sujeto a la restricción de frontera $D$. Este análisis puede ser obtenido mediante multiplicadores de Lagrange o bien, optimizando funciones de una variable en caso que corresponda y que sea más simple.
+
+5. Aplicamos el Teorema de Weierstrass para concluir que los extremos globales de la función objetivo sujeta a la restricción, deben estar entre los puntos obtenidos, por lo que la evaluación de ellos en la función entregará los puntos donde se obtienen los extremos globales, al comparar sus imágenes. 

@@ -1,0 +1,769 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Unidad 4 &#8212; Cálculo Multivariables 2025-1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=efdbd0b9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Cap4';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Desafíos" href="Desafios.html" />
+    <link rel="prev" title="Unidad 3" href="Cap3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logomat.jpeg" class="logo__image only-light" alt="Cálculo Multivariables 2025-1 - Home"/>
+    <script>document.write(`<img src="_static/logomat.jpeg" class="logo__image only-dark" alt="Cálculo Multivariables 2025-1 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    MAT203 Cálculo Multivariables
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Cap1.html">Unidad 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cap2.html">Unidad 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cap3.html">Unidad 3</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Unidad 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Desafios.html">Desafíos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DenisOsses/CursoMulti/blob/master/Cap4.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DenisOsses/CursoMulti" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DenisOsses/CursoMulti/issues/new?title=Issue%20on%20page%20%2FCap4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Cap4.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Descargar archivo de cuaderno"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="_sources/Cap4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Unidad 4</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-de-las-derivadas-parciales">Aplicaciones de las Derivadas Parciales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-extremos-de-una-funcion">Valores Extremos de una Función</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puntos-criticos">Puntos Críticos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-hessiana">Matriz Hessiana</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-de-puntos-estacionarios">Clasificación de Puntos Estacionarios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizacion-con-restricciones">Optimización con restricciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-los-multiplicadores-de-lagrange">Método de los Multiplicadores de Lagrange</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#criterio-del-hessiano-orlado-dos-variables-una-restriccion">Criterio del Hessiano Orlado (dos variables, una restricción)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <!--###########################################################################################################################
+##############################################################################################################################
+#############################################################################################
+--><section class="tex2jax_ignore mathjax_ignore" id="unidad-4">
+<span id="u4"></span><h1>Unidad 4<a class="headerlink" href="#unidad-4" title="Link to this heading">#</a></h1>
+<section id="aplicaciones-de-las-derivadas-parciales">
+<h2>Aplicaciones de las Derivadas Parciales<a class="headerlink" href="#aplicaciones-de-las-derivadas-parciales" title="Link to this heading">#</a></h2>
+<section id="valores-extremos-de-una-funcion">
+<h3>Valores Extremos de una Función<a class="headerlink" href="#valores-extremos-de-una-funcion" title="Link to this heading">#</a></h3>
+<p>Recordemos de Cálculo Diferencial que los valores máximos y mínimos (locales o absolutos) de una función <span class="math notranslate nohighlight">\(g:[a,b]\subseteq\mathbb{R}\to \mathbb{R}\)</span> se pueden obtener en tres tipos de puntos:</p>
+<ol class="arabic simple">
+<li><p>Puntos estacionarios (puntos en <span class="math notranslate nohighlight">\(]a,b[\)</span> donde la derivada es igual a cero).</p></li>
+<li><p>Puntos frontera (los extremos del intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>).</p></li>
+<li><p>Puntos singulares (puntos en <span class="math notranslate nohighlight">\(]a,b[\)</span> donde no existe derivada).</p></li>
+</ol>
+<p>Para el caso de una función de <span class="math notranslate nohighlight">\(n\)</span> variables, considere la función <span class="math notranslate nohighlight">\(f:D\subseteq \mathbb{R}^{n}\to \mathbb{R}\)</span> y <span class="math notranslate nohighlight">\(\mathbf{x}_0\in D.\)</span></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> tiene un <strong>máximo local</strong> en <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span> si <span class="math notranslate nohighlight">\(f(\mathbf{x})\leq f(\mathbf{x}_0)\)</span> para todo <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> en una vecindad de <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(f(\mathbf{x})\leq f(\mathbf{x}_0)\)</span> para todo <span class="math notranslate nohighlight">\(\mathbf{x}\in D\)</span> entonces <span class="math notranslate nohighlight">\(f\)</span> tiene un <strong>máximo global o absoluto</strong> en <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> tiene un <strong>mínimo local</strong> en <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span> si <span class="math notranslate nohighlight">\(f(\mathbf{x}_0)\leq f(\mathbf{x})\)</span> para todo <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> en una vecindad de <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(f(\mathbf{x}_0)\leq f(\mathbf{x})\)</span> para todo <span class="math notranslate nohighlight">\(\mathbf{x}\in D\)</span> entonces <span class="math notranslate nohighlight">\(f\)</span> tiene un <strong>mínimo global o absoluto</strong> en <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>.</p></li>
+<li><p>Los puntos donde <span class="math notranslate nohighlight">\(f\)</span> tiene un máximo o mínimo, ya sea local o global, los denominaremos <strong>valores extremos</strong> de <span class="math notranslate nohighlight">\(f.\)</span></p></li>
+</ol>
+<figure class="align-default" id="max-y-min">
+<a class="reference internal image-reference" href="_images/max_y_min.png"><img alt="_images/max_y_min.png" src="_images/max_y_min.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 25 </span><span class="caption-text">Máximos y Mínimos Locales y Absolutos</span><a class="headerlink" href="#max-y-min" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="puntos-criticos">
+<h3>Puntos Críticos<a class="headerlink" href="#puntos-criticos" title="Link to this heading">#</a></h3>
+<p>Los valores extremos de una función ocurren en los siguientes tipos de puntos críticos:</p>
+<p>a. <strong>Puntos Frontera</strong>. Son los puntos ubicados en la <strong>frontera del dominio</strong> de la función.</p>
+<p>b. <strong>Puntos Singulares</strong>. Son los puntos, en el interior del dominio de <span class="math notranslate nohighlight">\(f\)</span>, donde la función no es diferenciable.</p>
+<p>c. <strong>Puntos Estacionarios</strong>. Para generalizar la noción de estos puntos, establecemos:</p>
+<p><strong>Teorema de Fermat</strong>. Sea <span class="math notranslate nohighlight">\(S\)</span> un conjunto abierto en <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> y <span class="math notranslate nohighlight">\(f:S\subseteq\mathbb{R}^n\to\mathbb{R}\)</span> una función diferenciable en un punto <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span> de <span class="math notranslate nohighlight">\(S\)</span>. Si <span class="math notranslate nohighlight">\(f\)</span> tiene un valor extremo local en <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>, entonces <span class="math notranslate nohighlight">\(\nabla f(\mathbf{x}_0)=\vec 0\)</span>.</p>
+<p>Así, los <strong>puntos estacionarios</strong> son aquellos <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span> en el interior del dominio de <span class="math notranslate nohighlight">\(f\)</span> donde <span class="math notranslate nohighlight">\(\nabla f(\mathbf{x}_0)=\vec 0\)</span>.</p>
+<p><strong>Teorema de Weierstrass</strong>. Sea <span class="math notranslate nohighlight">\(D\subseteq \mathbb{R}^{n}\)</span> un conjunto cerrado y acotado. Si la función <span class="math notranslate nohighlight">\(f:D\to \mathbb{R}\)</span> es continua entonces alcanza un valor máximo y mínimo global en <span class="math notranslate nohighlight">\(D.\)</span></p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Considere la región</p>
+<div class="math notranslate nohighlight">
+\[
+D=\left\{(x, y) \in \mathbb{R}^{2} \: : \:  0 \leq x \leq 1,0 \leq y \leq 1\right\},
+\]</div>
+<p>Determine los valores máximos y mínimos de <span class="math notranslate nohighlight">\(V(x,y)=48xy-32x^3-24y^2\)</span> sobre <span class="math notranslate nohighlight">\(D\)</span>.</p>
+</div>
+<figure class="align-default">
+<img alt="_images/funcionvregion.png" src="_images/funcionvregion.png" />
+</figure>
+<p>En este ejercicio, si cambiamos la región del dominio de <span class="math notranslate nohighlight">\(V\)</span> por todo <span class="math notranslate nohighlight">\(\mathbb{R}^{2}\)</span> dejamos de tener puntos frontera y ahora nuestros puntos estacionarios son <span class="math notranslate nohighlight">\((0,0)\)</span> (¡ya no es punto frontera!) y <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{1}{2},\frac{1}{2}\right).\)</span></p>
+<p>Por lo tanto, nuestros candidatos a ser máximos o mínimos (¿locales o globales?) son los puntos <span class="math notranslate nohighlight">\((0,0)\)</span> y <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{1}{2},\frac{1}{2}\right).\)</span></p>
+<p>Si observamos el gráfico de la función en este nuevo caso:</p>
+<figure class="align-default">
+<img alt="_images/funcionv.png" src="_images/funcionv.png" />
+</figure>
+<p><span class="math notranslate nohighlight">\(\displaystyle \left(\frac{1}{2},\frac{1}{2}\right)\)</span> es un máximo local y el punto <span class="math notranslate nohighlight">\((0,0)\)</span> tiene una característica especial: Es un <strong>punto de silla</strong>.</p>
+<p>Para clasificar los puntos estacionarios sobre dominios sin restricciones de frontera, establecemos la:</p>
+</section>
+<section id="matriz-hessiana">
+<h3>Matriz Hessiana<a class="headerlink" href="#matriz-hessiana" title="Link to this heading">#</a></h3>
+<p>Sea <span class="math notranslate nohighlight">\(f:D\subseteq \mathbb{R}^{n}\to \mathbb{R}\)</span> una función con <span class="math notranslate nohighlight">\(D\)</span> abierto y sea <span class="math notranslate nohighlight">\(\mathbf{x}_0 \in D\)</span>. Se define la <strong>Matriz Hessiana (o Hessiano)</strong> de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span> como la matriz de orden <span class="math notranslate nohighlight">\(n \times n\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+H_{f}(\mathbf{x}_0)=\begin{pmatrix}
+\dfrac{\partial^{2} f}{\partial x_{1}^{2}}(\mathbf{x}_0) &amp; \dfrac{\partial^{2} f}{\partial x_{2} \partial x_{1}}(\mathbf{x}_0) &amp; \cdots &amp; \dfrac{\partial^{2} f}{\partial x_{n} \partial x_{1}}(\mathbf{x}_0) \\
+\dfrac{\partial^{2} f}{\partial x_{1} \partial x_{2}}(\mathbf{x}_0) &amp; \dfrac{\partial^{2} f}{\partial x_{2}^{2}}(\mathbf{x}_0) &amp; \cdots &amp; \dfrac{\partial^{2} f}{\partial x_{n} \partial x_{2}}(\mathbf{x}_0) \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\dfrac{\partial^{2} f}{\partial x_{1} \partial x_{n}}(\mathbf{x}_0) &amp; \dfrac{\partial^{2} f}{\partial x_{2} \partial x_{n}}(\mathbf{x}_0) &amp; \cdots &amp; \dfrac{\partial^{2} f}{\partial x_{n}^{2}}(\mathbf{x}_0)
+\end{pmatrix},
+\end{split}\]</div>
+<p>si existen todas las derivadas parciales de segundo orden de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>.</p>
+</section>
+<section id="clasificacion-de-puntos-estacionarios">
+<h3>Clasificación de Puntos Estacionarios<a class="headerlink" href="#clasificacion-de-puntos-estacionarios" title="Link to this heading">#</a></h3>
+<p>Sea <span class="math notranslate nohighlight">\(f:D\subseteq \mathbb{R}^{n}\to \mathbb{R}\)</span> una función con <span class="math notranslate nohighlight">\(D\)</span> abierto y sea <span class="math notranslate nohighlight">\(\mathbf{x}_0 \in D\)</span>. Supongamos que <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span> es un punto estacionario de <span class="math notranslate nohighlight">\(f\)</span>, es decir, <span class="math notranslate nohighlight">\(\nabla f(\mathbf{x}_0)=\mathbf{0}.\)</span> Sean <span class="math notranslate nohighlight">\(H^1_{f}(\mathbf{x}_0), H^2_{f}(\mathbf{x}_0), \dotsm  H^n_{f}(\mathbf{x}_0)=H_{f}(\mathbf{x}_0)\)</span> las <span class="math notranslate nohighlight">\(n\)</span> submatrices superiores del Hessiano <span class="math notranslate nohighlight">\(H_{f}(\mathbf{x}_0)\)</span>. Entonces:</p>
+<ol class="arabic simple">
+<li><p>Si todos los determinantes de las submatrices son estrictamente positivos, entonces <span class="math notranslate nohighlight">\(f\)</span> alcanza un mínimo local en <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(\det\left(H^1_{f}(\mathbf{x}_0)\right)&lt;0\)</span> y los determinantes de las submatrices alternan de signo (ninguno igual a cero), entonces <span class="math notranslate nohighlight">\(f\)</span> alcanza un máximo local en <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>.</p></li>
+</ol>
+<p><strong>Nota</strong>. Supongamos que el Hessiano no cumple los criterios (1) o (2) en <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>. Entonces:</p>
+<ol class="arabic simple">
+<li><p>Diremos genéricamente que se trata de un <strong>punto silla</strong>.</p></li>
+<li><p>Sin embargo, si los signos de los determinantes de las submatrices de <span class="math notranslate nohighlight">\(H_{f}(\mathbf{x}_0)\)</span> son todos distintos de cero entonces podemos decir que <strong>no se trata ni de un máximo ni de un mínimo local</strong> (esto corresponde a la noción intuitiva de un punto silla).</p></li>
+<li><p>Si el determinante de alguna submatriz es cero,  entonces se carece de información para saber si el punto es un máximo, un mínimo local o ninguno de los dos. Por ejemplo la función <span class="math notranslate nohighlight">\(f(x,y)=x^4+ y^4\)</span> es tal que <span class="math notranslate nohighlight">\((0,0)\)</span> es el único punto estacionario y <span class="math notranslate nohighlight">\(H_f(0,0)\)</span> es la matriz nula (comprobarlo). Sin embargo, se sabe que <span class="math notranslate nohighlight">\(f(x,y)=x^4+ y^4\geq 0=f(0,0)\)</span> y el punto es un mínimo (global, de hecho).</p></li>
+</ol>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Considere la función <span class="math notranslate nohighlight">\(f:\mathbb{R}^{2}\to \mathbb{R}\)</span> dada por <span class="math notranslate nohighlight">\(f(x,y)=x^2y+2y^2x-2xy\)</span>. Determine y clasifique los puntos críticos estacionarios de <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Ejercicio Propuesto</p>
+<p>Considere la función <span class="math notranslate nohighlight">\(g:\mathbb{R}^{3}\to \mathbb{R}\)</span> dada por <span class="math notranslate nohighlight">\(g(x,y,z)=xyz - x^2-y^2-z^2.\)</span> Determine los puntos críticos de <span class="math notranslate nohighlight">\(g\)</span> y clasifíquelos.</p>
+</div>
+</section>
+<section id="optimizacion-con-restricciones">
+<h3>Optimización con restricciones<a class="headerlink" href="#optimizacion-con-restricciones" title="Link to this heading">#</a></h3>
+<p>Nos interesa determinar el máximo y/o mínimo de una función <span class="math notranslate nohighlight">\(f(x_{1},x_{2},...,x_{n})\)</span> sujeta a la restricci’ón del tipo <span class="math notranslate nohighlight">\(g(x_{1},x_{2},...,x_{n})=0.\)</span>  Precisamente, esto consiste en determinar valores máximos y mínimos de una funci\ón sobre el conjunto</p>
+<div class="math notranslate nohighlight">
+\[
+S= \{ (x_{1},x_{2},...,x_{n})\in \mathbb{R}^n\, | \,g(x_{1},x_{2},...,x_{n})=0 \},
+\]</div>
+<p>siempre y cuando <span class="math notranslate nohighlight">\(S\)</span> sea no vacío. El método que usaremos para resolver este tipo de problemas es conocido como el método de los <strong>multiplicadores de Lagrange</strong>. El siguiente teorema describe condiciones de primer orden para el problema de valores extremos de <span class="math notranslate nohighlight">\(f\)</span> restringida al conjunto <span class="math notranslate nohighlight">\(S\)</span>.</p>
+</section>
+<section id="metodo-de-los-multiplicadores-de-lagrange">
+<h3>Método de los Multiplicadores de Lagrange<a class="headerlink" href="#metodo-de-los-multiplicadores-de-lagrange" title="Link to this heading">#</a></h3>
+<p>Sean <span class="math notranslate nohighlight">\(f,g:\mathbb{R}^{n}\to \mathbb{R}\)</span> funciones con primeras derivadas continuas y considere <span class="math notranslate nohighlight">\(S\)</span> como el conjunto de nivel <span class="math notranslate nohighlight">\(0\)</span> de <span class="math notranslate nohighlight">\(g\)</span>, es decir,</p>
+<div class="math notranslate nohighlight">
+\[
+S= \{ (x_{1},x_{2},...,x_{n})\in \mathbb{R}^n\, | \,g(x_{1},x_{2},...,x_{n})=0\}.
+\]</div>
+<p>Si <span class="math notranslate nohighlight">\(f\)</span> alcanza un máximo o mínimo (local) en <span class="math notranslate nohighlight">\(\mathbf{x}_0 \in S\)</span> y se tiene además que <span class="math notranslate nohighlight">\(\nabla g(\mathbf{x}_0)\neq \mathbf{0},\)</span> entonces existe <span class="math notranslate nohighlight">\(\lambda \in \mathbb{R}\)</span> tal que</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\nabla f\left(\mathbf{x}_0\right) &amp;=&amp; \lambda \nabla g\left(\mathbf{x}_0\right) \\
+g\left(\mathbf{x}_0\right) &amp;=&amp; 0,
+\end{eqnarray*}\]</div>
+<p><span class="math notranslate nohighlight">\(\lambda\)</span> se denomina <strong>multiplicador de Lagrange</strong>. Ver <a class="reference external" href="https://www.geogebra.org/m/grvkdznH">Geogebra</a>.</p>
+<figure class="align-default">
+<img alt="_images/lagrange.png" src="_images/lagrange.png" />
+</figure>
+<p><strong>Nota</strong>.</p>
+<ol class="arabic simple">
+<li><p>La función <span class="math notranslate nohighlight">\(L: \mathbb{R}^{n+1} \to \mathbb{R}\)</span> definida por <span class="math notranslate nohighlight">\(L(\mathbf{x}, \lambda)= f(\mathbf{x}) - \lambda g(\mathbf{x})\)</span> se llama <strong>Lagrangeano</strong> del problema.</p></li>
+<li><p>Notemos que la condición <span class="math notranslate nohighlight">\(\nabla f(\mathbf{x}_0) =\lambda \nabla g(\mathbf{x}_0 \)</span> es equivalente  a que el punto <span class="math notranslate nohighlight">\((\mathbf{x}_0, \lambda) \in \mathbb{R}^{n+1}\)</span> sea un punto crítico de <span class="math notranslate nohighlight">\(L\)</span>, es decir, <span class="math notranslate nohighlight">\(\nabla L(\mathbf{x}_0, \lambda)= \vec 0\)</span>.</p></li>
+<li><p>La condición <span class="math notranslate nohighlight">\(\nabla f(\mathbf{x}_0) =\lambda \nabla g(\mathbf{x}_0)\)</span> dice que los gradientes de <span class="math notranslate nohighlight">\(f\)</span> y <span class="math notranslate nohighlight">\(g\)</span> deben ser paralelos en <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(\mathbf{x}_0 \in S\)</span> y <span class="math notranslate nohighlight">\(\lambda \in \mathbb{R}\)</span> satisfacen las ecuaciones de Lagrange, entonces <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span> se denomina punto crítico de <span class="math notranslate nohighlight">\(\displaystyle \left.f\right|_{S}\)</span>.</p></li>
+<li><p>Es posible desarrollar análogamente un método de los Multiplicadores de Lagrange en el caso donde el conjunto <span class="math notranslate nohighlight">\(S\)</span> está definido por <em>múltiples restricciones</em>.</p></li>
+</ol>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Calcule los valores extremos de la función <span class="math notranslate nohighlight">\(f(x,y)=5-x^2-y^2\)</span> bajo la restricción <span class="math notranslate nohighlight">\((x-1)^2+(y-1)^2=1.\)</span></p>
+</div>
+</section>
+<section id="criterio-del-hessiano-orlado-dos-variables-una-restriccion">
+<h3>Criterio del Hessiano Orlado (dos variables, una restricción)<a class="headerlink" href="#criterio-del-hessiano-orlado-dos-variables-una-restriccion" title="Link to this heading">#</a></h3>
+<p>Sea <span class="math notranslate nohighlight">\(S= \{ (x,y)\, | \, g(x,y)=0 \}\)</span> y <span class="math notranslate nohighlight">\((x_0,y_0,\lambda_0)\)</span> un punto crítico del Lagrangeano <span class="math notranslate nohighlight">\(L(x,y, \lambda)=f(x,y)-\lambda g(x,y)\)</span> del problema de encontrar los valores extremos de <span class="math notranslate nohighlight">\(f(x,y)\)</span> en <span class="math notranslate nohighlight">\(S\)</span>. Queremos clasificar el punto  <span class="math notranslate nohighlight">\((x_0,y_0,\lambda_0)\)</span> mediante un criterio de segundo orden. Definamos la matriz</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\widetilde{H}_{f}(x_0, y_0, \lambda_0)=\left[\begin{array}{ccc}
+0 &amp; -g_{x}(x_0, y_0) &amp; -g_{y}(x_0, y_0) \\
+-g_{x}(x_0, y_0) &amp; L_{x x}(x_0, y_0, \lambda_0) &amp; L_{x y}(x_0, y_0, \lambda_0) \\
+-g_{y}(x_0, y_0) &amp; L_{x y}(x_0, y_0, \lambda_0) &amp; L_{y y}(x_0, y_0, \lambda_0)
+\end{array}\right],
+\end{split}\]</div>
+<p>llamada <strong>Matriz Hessiana Orlada</strong> del problema.</p>
+<p>a. Si <span class="math notranslate nohighlight">\(\det(\widetilde{H}_{f}(x_0, y_0, \lambda_0))&gt;0,\)</span> entonces <span class="math notranslate nohighlight">\(f\)</span> alcanza un máximo local en <span class="math notranslate nohighlight">\((x_0,y_0).\)</span></p>
+<p>b. Si <span class="math notranslate nohighlight">\(\det(\widetilde{H}_{f}(x_0, y_0, \lambda_0))&lt;0,\)</span> entonces <span class="math notranslate nohighlight">\(f\)</span> alcanza un mínimo local en <span class="math notranslate nohighlight">\((x_0,y_0).\)</span></p>
+<p>c. Si <span class="math notranslate nohighlight">\(\det(\widetilde{H}_{f}(x_0, y_0, \lambda_0))=0,\)</span> el criterio no es concluyente.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Determine los extremos de <span class="math notranslate nohighlight">\(f(x,y)=9-x^2-y^2\)</span> bajo la restricción <span class="math notranslate nohighlight">\(x+y=3\)</span> y realice la clasificación del extremo obtenido mediante el criterio de segundo orden para funciones de dos variables.</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Ejercicio Propuesto</p>
+<p>Suponga que la temperatura (en <span class="math notranslate nohighlight">\(\,^\circ C\)</span>) en cada punto de una placa circular de radio <span class="math notranslate nohighlight">\(1\)</span> y centrada en el origen, está dada por la siguiente función: <span class="math notranslate nohighlight">\(T(x,y)=2x^2+y^2-y\)</span>. Determine los puntos sobre el disco donde se alcanza la mayor y menor temperatura e indique sus valores.</p>
+</div>
+<p><strong>Nota (Algunas consideraciones generales)</strong>.</p>
+<p>Para resolver un problema de optimización en compactos, procederemos considerando lo siguiente:</p>
+<ol class="arabic simple">
+<li><p>Identificar claramente la función a optimizar.</p></li>
+<li><p>Identificar las restricciones asociadas a la función o su dominio <span class="math notranslate nohighlight">\(D\)</span> y reconocer que es cerrado y acotado.</p></li>
+<li><p>En el interior de <span class="math notranslate nohighlight">\(D\)</span> (que es un conjunto abierto) se obtienen los puntos estacionarios (en caso de ser una función diferenciable) y la naturaleza local de estos puntos se analiza con el criterio de la matriz Hessiana.</p></li>
+<li><p>En la frontera de <span class="math notranslate nohighlight">\(D\)</span> (cerrada y acotada) se obtienen los extremos globales de la función a optimizar sujeto a la restricción de frontera <span class="math notranslate nohighlight">\(D\)</span>. Este análisis puede ser obtenido mediante multiplicadores de Lagrange o bien, optimizando funciones de una variable en caso que corresponda y que sea más simple.</p></li>
+<li><p>Aplicamos el Teorema de Weierstrass para concluir que los extremos globales de la función objetivo sujeta a la restricción, deben estar entre los puntos obtenidos, por lo que la evaluación de ellos en la función entregará los puntos donde se obtienen los extremos globales, al comparar sus imágenes.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "DenisOsses/CursoMulti",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Cap3.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Unidad 3</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Desafios.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Desafíos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-de-las-derivadas-parciales">Aplicaciones de las Derivadas Parciales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-extremos-de-una-funcion">Valores Extremos de una Función</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puntos-criticos">Puntos Críticos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-hessiana">Matriz Hessiana</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-de-puntos-estacionarios">Clasificación de Puntos Estacionarios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizacion-con-restricciones">Optimización con restricciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-los-multiplicadores-de-lagrange">Método de los Multiplicadores de Lagrange</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#criterio-del-hessiano-orlado-dos-variables-una-restriccion">Criterio del Hessiano Orlado (dos variables, una restricción)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por The Jupyter Book Community/ Área de Matemáticas FIC UAI/ Denis Osses, denis.osses@uai.cl
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025-1.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
