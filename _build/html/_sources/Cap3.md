@@ -502,7 +502,7 @@ si tal límite existe.
 Calcule la derivada direccional de $f(x,y)=x^2+y^2$ en $P(1,1)$ en la dirección de $\mathbf{v}=(1,2)$.
 ```
 
-Podemos visualizar la derivada direccional mediante la siguiente aplicación de (Geogebra)[https://www.geogebra.org/m/hUtCF2Wb].
+Podemos visualizar la derivada direccional mediante la siguiente aplicación de [Geogebra](https://www.geogebra.org/m/hUtCF2Wb).
 
 ### Teorema de Cálculo de la Derivada Direccional
 
