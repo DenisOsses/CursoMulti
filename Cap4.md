@@ -84,8 +84,9 @@ Determine los valores máximos y mínimos de $V(x,y)=48xy-32x^3-24y^2$ sobre $D$
 
 ```{figure} funcionvregion.png
 ---
-height: 100px
+height: 250px
 name: funcionvregion
+---
 Gráfico del Ejercicio Anterior
 ```
 
@@ -97,8 +98,9 @@ Si observamos el gráfico de la función en este nuevo caso:
 
 ```{figure} funcionv.png
 ---
-height: 100px
+height: 250px
 name: funcionv
+---
 Gráfico en un Dominio Abierto
 ```
 
@@ -148,7 +150,7 @@ Considere la función $g:\mathbb{R}^{3}\to \mathbb{R}$ dada por $g(x,y,z)=xyz - 
 
 ### Optimización con restricciones
 
-Nos interesa determinar el máximo y/o mínimo de una función $f(x_{1},x_{2},...,x_{n})$ sujeta a la restricci\'ón del tipo $g(x_{1},x_{2},...,x_{n})=0.$  Precisamente, esto consiste en determinar valores máximos y mínimos de una funci\ón sobre el conjunto 
+Nos interesa determinar el máximo y/o mínimo de una función $f(x_{1},x_{2},...,x_{n})$ sujeta a la restricción del tipo $g(x_{1},x_{2},...,x_{n})=0.$  Precisamente, esto consiste en determinar valores máximos y mínimos de una función sobre el conjunto 
 
 $$
 S= \{ (x_{1},x_{2},...,x_{n})\in \mathbb{R}^n\, | \,g(x_{1},x_{2},...,x_{n})=0 \},
@@ -174,8 +176,9 @@ $\lambda$ se denomina **multiplicador de Lagrange**. Ver [Geogebra](https://www.
 
 ```{figure} lagrange.png
 ---
-height: 150px
+height: 250px
 name: lagrange
+---
 Método de los Multiplicadores de Lagrange
 ```
 

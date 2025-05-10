@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Cap4';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Desafíos" href="Desafios.html" />
+    <link rel="next" title="Unidad 5" href="Cap5.html" />
     <link rel="prev" title="Unidad 3" href="Cap3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -184,6 +184,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Cap2.html">Unidad 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Cap3.html">Unidad 3</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Unidad 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cap5.html">Unidad 5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Desafios.html">Desafíos</a></li>
 </ul>
 
@@ -515,14 +516,20 @@ D=\left\{(x, y) \in \mathbb{R}^{2} \: : \:  0 \leq x \leq 1,0 \leq y \leq 1\righ
 \]</div>
 <p>Determine los valores máximos y mínimos de <span class="math notranslate nohighlight">\(V(x,y)=48xy-32x^3-24y^2\)</span> sobre <span class="math notranslate nohighlight">\(D\)</span>.</p>
 </div>
-<figure class="align-default">
-<img alt="_images/funcionvregion.png" src="_images/funcionvregion.png" />
+<figure class="align-default" id="funcionvregion">
+<a class="reference internal image-reference" href="_images/funcionvregion.png"><img alt="_images/funcionvregion.png" src="_images/funcionvregion.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 26 </span><span class="caption-text">Gráfico del Ejercicio Anterior</span><a class="headerlink" href="#funcionvregion" title="Link to this image">#</a></p>
+</figcaption>
 </figure>
 <p>En este ejercicio, si cambiamos la región del dominio de <span class="math notranslate nohighlight">\(V\)</span> por todo <span class="math notranslate nohighlight">\(\mathbb{R}^{2}\)</span> dejamos de tener puntos frontera y ahora nuestros puntos estacionarios son <span class="math notranslate nohighlight">\((0,0)\)</span> (¡ya no es punto frontera!) y <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{1}{2},\frac{1}{2}\right).\)</span></p>
 <p>Por lo tanto, nuestros candidatos a ser máximos o mínimos (¿locales o globales?) son los puntos <span class="math notranslate nohighlight">\((0,0)\)</span> y <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{1}{2},\frac{1}{2}\right).\)</span></p>
 <p>Si observamos el gráfico de la función en este nuevo caso:</p>
-<figure class="align-default">
-<img alt="_images/funcionv.png" src="_images/funcionv.png" />
+<figure class="align-default" id="funcionv">
+<a class="reference internal image-reference" href="_images/funcionv.png"><img alt="_images/funcionv.png" src="_images/funcionv.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 27 </span><span class="caption-text">Gráfico en un Dominio Abierto</span><a class="headerlink" href="#funcionv" title="Link to this image">#</a></p>
+</figcaption>
 </figure>
 <p><span class="math notranslate nohighlight">\(\displaystyle \left(\frac{1}{2},\frac{1}{2}\right)\)</span> es un máximo local y el punto <span class="math notranslate nohighlight">\((0,0)\)</span> tiene una característica especial: Es un <strong>punto de silla</strong>.</p>
 <p>Para clasificar los puntos estacionarios sobre dominios sin restricciones de frontera, establecemos la:</p>
@@ -565,7 +572,7 @@ H_{f}(\mathbf{x}_0)=\begin{pmatrix}
 </section>
 <section id="optimizacion-con-restricciones">
 <h3>Optimización con restricciones<a class="headerlink" href="#optimizacion-con-restricciones" title="Link to this heading">#</a></h3>
-<p>Nos interesa determinar el máximo y/o mínimo de una función <span class="math notranslate nohighlight">\(f(x_{1},x_{2},...,x_{n})\)</span> sujeta a la restricci’ón del tipo <span class="math notranslate nohighlight">\(g(x_{1},x_{2},...,x_{n})=0.\)</span>  Precisamente, esto consiste en determinar valores máximos y mínimos de una funci\ón sobre el conjunto</p>
+<p>Nos interesa determinar el máximo y/o mínimo de una función <span class="math notranslate nohighlight">\(f(x_{1},x_{2},...,x_{n})\)</span> sujeta a la restricción del tipo <span class="math notranslate nohighlight">\(g(x_{1},x_{2},...,x_{n})=0.\)</span>  Precisamente, esto consiste en determinar valores máximos y mínimos de una función sobre el conjunto</p>
 <div class="math notranslate nohighlight">
 \[
 S= \{ (x_{1},x_{2},...,x_{n})\in \mathbb{R}^n\, | \,g(x_{1},x_{2},...,x_{n})=0 \},
@@ -586,8 +593,11 @@ S= \{ (x_{1},x_{2},...,x_{n})\in \mathbb{R}^n\, | \,g(x_{1},x_{2},...,x_{n})=0\}
 g\left(\mathbf{x}_0\right) &amp;=&amp; 0,
 \end{eqnarray*}\]</div>
 <p><span class="math notranslate nohighlight">\(\lambda\)</span> se denomina <strong>multiplicador de Lagrange</strong>. Ver <a class="reference external" href="https://www.geogebra.org/m/grvkdznH">Geogebra</a>.</p>
-<figure class="align-default">
-<img alt="_images/lagrange.png" src="_images/lagrange.png" />
+<figure class="align-default" id="lagrange">
+<a class="reference internal image-reference" href="_images/lagrange.png"><img alt="_images/lagrange.png" src="_images/lagrange.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 28 </span><span class="caption-text">Método de los Multiplicadores de Lagrange</span><a class="headerlink" href="#lagrange" title="Link to this image">#</a></p>
+</figcaption>
 </figure>
 <p><strong>Nota</strong>.</p>
 <ol class="arabic simple">
@@ -678,11 +688,11 @@ g\left(\mathbf{x}_0\right) &amp;=&amp; 0,
       </div>
     </a>
     <a class="right-next"
-       href="Desafios.html"
+       href="Cap5.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Desafíos</p>
+        <p class="prev-next-title">Unidad 5</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

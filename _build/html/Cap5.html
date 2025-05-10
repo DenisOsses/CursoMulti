@@ -1,0 +1,1404 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Unidad 5 &#8212; Cálculo Multivariables 2025-1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=efdbd0b9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Cap5';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Desafíos" href="Desafios.html" />
+    <link rel="prev" title="Unidad 4" href="Cap4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logomat.jpeg" class="logo__image only-light" alt="Cálculo Multivariables 2025-1 - Home"/>
+    <script>document.write(`<img src="_static/logomat.jpeg" class="logo__image only-dark" alt="Cálculo Multivariables 2025-1 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    MAT203 Cálculo Multivariables
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Cap1.html">Unidad 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cap2.html">Unidad 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cap3.html">Unidad 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cap4.html">Unidad 4</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Unidad 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Desafios.html">Desafíos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DenisOsses/CursoMulti/blob/master/Cap5.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DenisOsses/CursoMulti" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DenisOsses/CursoMulti/issues/new?title=Issue%20on%20page%20%2FCap5.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Cap5.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Descargar archivo de cuaderno"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="_sources/Cap5.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Unidad 5</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-multiple">Integración Múltiple</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-integrales-dobles-sobre-rectangulos">Construcción de Integrales Dobles sobre Rectángulos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-doble">Integral Doble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-de-la-integral">Propiedades de la Integral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-fubini-integrales-iteradas">Teorema de Fubini (Integrales Iteradas)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-dobles-sobre-regiones-generales">Integrales Dobles sobre Regiones Generales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regiones-tipo-i">Regiones Tipo I</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regiones-tipo-ii">Regiones Tipo II</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-triples">Integrales Triples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-integrales-triples-sobre-cajas">Construcción de Integrales Triples sobre Cajas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-triple">Integral Triple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-fubini-para-integrales-triples">Teorema de Fubini para Integrales Triples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-triples-sobre-regiones-generales">Integrales Triples sobre Regiones Generales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regiones-tipo-1">Regiones Tipo 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regiones-tipo-2">Regiones Tipo 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regiones-tipo-3">Regiones Tipo 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-general-del-cambio-de-variables">Teorema General del Cambio de Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformaciones-en-el-plano">Transformaciones en el Plano</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-de-variables-e-integracion">Cambio de Variables e Integración</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jacobiano-de-la-transformacion">Jacobiano de la Transformación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-general">Teorema General</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-dobles-en-coordenadas-polares">Integrales Dobles en Coordenadas Polares</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformaciones-en-coordenadas-polares">Transformaciones en Coordenadas Polares</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-triples-en-coordenadas-cilindricas">Integrales Triples en Coordenadas Cilíndricas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformaciones-en-el-espacio">Transformaciones en el Espacio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-cilindricas">Coordenadas Cilíndricas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-triples-en-coordenadas-esfericas">Integrales Triples en Coordenadas Esféricas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-esfericas">Coordenadas Esféricas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-triples-en-esfericas">Integrales Triples en Esféricas</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <!--###########################################################################################################################
+##############################################################################################################################
+#############################################################################################
+--><section class="tex2jax_ignore mathjax_ignore" id="unidad-5">
+<span id="u5"></span><h1>Unidad 5<a class="headerlink" href="#unidad-5" title="Link to this heading">#</a></h1>
+<section id="integracion-multiple">
+<h2>Integración Múltiple<a class="headerlink" href="#integracion-multiple" title="Link to this heading">#</a></h2>
+<p>En este capítulo estudiaremos integrales para funciones de varias variables, especialmente en 2 y 3 variables. Como notaremos, su proceso de construcción es completamente análogo al de la <a class="reference external" href="https://en.wikipedia.org/wiki/Riemann_integral">Integral de Riemann</a> para funciones de una variable que se construyó en el curso de Cálculo Integral. A continuación, comenzamos con las integrales dobles.</p>
+<section id="construccion-de-integrales-dobles-sobre-rectangulos">
+<h3>Construcción de Integrales Dobles sobre Rectángulos<a class="headerlink" href="#construccion-de-integrales-dobles-sobre-rectangulos" title="Link to this heading">#</a></h3>
+<p>Consideremos la función <span class="math notranslate nohighlight">\(f\)</span> definida sobre el rectángulo <span class="math notranslate nohighlight">\(R\)</span>:</p>
+<figure class="align-default" id="intdoble1">
+<a class="reference internal image-reference" href="_images/IntDoble1.png"><img alt="_images/IntDoble1.png" src="_images/IntDoble1.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 29 </span><span class="caption-text">Integral doble sobre un dominio rectangular <span class="math notranslate nohighlight">\(R\)</span> para <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#intdoble1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Es decir, <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> definida sobre un rectángulo cerrado</p>
+<div class="math notranslate nohighlight" id="equation-intrect">
+<span class="eqno">(22)<a class="headerlink" href="#equation-intrect" title="Link to this equation">#</a></span>\[
+R=[a,b]\times[c,d]=\{(x,y)\in\mathbb{R}^2:a\leq x\leq b, c\leq y\leq d\}.
+\]</div>
+<p>Supongamos inicialmente que <span class="math notranslate nohighlight">\(f(x,y)\geq0\)</span>. Recordemos que el gráfico de <span class="math notranslate nohighlight">\(f\)</span> es una superficie en el espacio que encierra un sólido <span class="math notranslate nohighlight">\(S\)</span> sobre <span class="math notranslate nohighlight">\(R\)</span> y bajo el gráfico de <span class="math notranslate nohighlight">\(z=f(x,y)\)</span>.</p>
+<p>Nuestro objetivo es encontrar el volumen del sólido <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<p>Procedemos de modo análogo a la construcción de la integral de Riemann en 1 variable.</p>
+<figure class="align-default" id="intdoble2">
+<a class="reference internal image-reference" href="_images/IntDoble2.png"><img alt="_images/IntDoble2.png" src="_images/IntDoble2.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 30 </span><span class="caption-text">Partición del dominio rectangular <span class="math notranslate nohighlight">\(R\)</span> en <span class="math notranslate nohighlight">\(mn\)</span> subrectángulos</span><a class="headerlink" href="#intdoble2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Dividimos el rectángulo <span class="math notranslate nohighlight">\(R\)</span> en subrectángulos <span class="math notranslate nohighlight">\(R_{ij}\)</span> que se forman dividiendo <span class="math notranslate nohighlight">\([a,b]\)</span> en <span class="math notranslate nohighlight">\(m\)</span> subintervalos <span class="math notranslate nohighlight">\([x_{i-1},x_i]\)</span> del mismo ancho <span class="math notranslate nohighlight">\(\Delta x=\frac{b-a}{m}\)</span>, y dividiendo <span class="math notranslate nohighlight">\([c,d]\)</span> en <span class="math notranslate nohighlight">\(n\)</span> subintervalos <span class="math notranslate nohighlight">\([y_{j-1},y_j]\)</span> del mismo ancho <span class="math notranslate nohighlight">\(\Delta y=\frac{d-c}{n}\)</span>. Los subrectángulos son</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+R_{ij} &amp;=&amp; [x_{i-1},x_i]\times[y_{j-1},y_j]\\
+&amp;=&amp; \{(x,y)\in\mathbb{R}^2:x_{i-1}\leq x\leq x_i, y_{j-1}\leq y\leq y_j\}\
+\end{eqnarray*} \]</div>
+<p>cada uno con área <span class="math notranslate nohighlight">\(\Delta A=\Delta x\Delta y\)</span>.</p>
+<figure class="align-default" id="intdoble3">
+<a class="reference internal image-reference" href="_images/IntDoble3.png"><img alt="_images/IntDoble3.png" src="_images/IntDoble3.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 31 </span><span class="caption-text">Elección de un punto de muestra genérico <span class="math notranslate nohighlight">\(f(x_{ij}^\ast,y_{ij}^\ast)\)</span> en el subrectángulo <span class="math notranslate nohighlight">\(R_{ij}\)</span></span><a class="headerlink" href="#intdoble3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Elegimos un punto de muestra <span class="math notranslate nohighlight">\((x_{ij}^\ast,y_{ij}^\ast)\)</span> en cada subrectángulo <span class="math notranslate nohighlight">\(R_{ij}\)</span> para tener la altura <span class="math notranslate nohighlight">\(f(x_{ij}^\ast,y_{ij}^\ast)\)</span> de la caja que se forma sobre <span class="math notranslate nohighlight">\(R_{ij}\)</span> y bajo la superficie <span class="math notranslate nohighlight">\(z=f(x,y)\)</span>. Esta caja tiene volumen aproximado</p>
+<div class="math notranslate nohighlight">
+\[
+f(x_{ij}^\ast,y_{ij}^\ast)\Delta A.
+\]</div>
+<p>Luego, el volumen del sólido <span class="math notranslate nohighlight">\(S\)</span> puede ser aproximado como</p>
+<div class="math notranslate nohighlight">
+\[
+V\approx\sum_{i=1}^m\sum_{j=1}^nf(x_{ij}^\ast,y_{ij}^\ast)\Delta A.
+\]</div>
+<figure class="align-default" id="intdoble4">
+<a class="reference internal image-reference" href="_images/IntDoble4.png"><img alt="_images/IntDoble4.png" src="_images/IntDoble4.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 32 </span><span class="caption-text">Volumen aproximado por <span class="math notranslate nohighlight">\(mn\)</span> subrectángulos</span><a class="headerlink" href="#intdoble4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="integral-doble">
+<h3>Integral Doble<a class="headerlink" href="#integral-doble" title="Link to this heading">#</a></h3>
+<p>La <strong>integral doble</strong> de <span class="math notranslate nohighlight">\(f\)</span> sobre el rectángulo <span class="math notranslate nohighlight">\(R\)</span> es</p>
+<div class="math notranslate nohighlight" id="equation-intdoble">
+<span class="eqno">(23)<a class="headerlink" href="#equation-intdoble" title="Link to this equation">#</a></span>\[
+\iint_R f(x,y)~dA=\lim_{m,n\to\infty}\sum_{i=1}^m\sum_{j=1}^nf(x_{ij}^\ast,y_{ij}^\ast)\Delta A
+\]</div>
+<p>si tal límite existe.</p>
+<p>Si <span class="math notranslate nohighlight">\(f(x,y)\geq0\)</span> entonces <span class="math notranslate nohighlight">\(\displaystyle\iint_R f(x,y)~dA\)</span> corresponde al volumen del sólido <span class="math notranslate nohighlight">\(S\)</span> sobre el rectángulo <span class="math notranslate nohighlight">\(R\)</span> y bajo la superficie <span class="math notranslate nohighlight">\(z=f(x,y)\)</span>.</p>
+</section>
+<section id="propiedades-de-la-integral">
+<h3>Propiedades de la Integral<a class="headerlink" href="#propiedades-de-la-integral" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\iint_R \big(f(x,y)+g(x,y)\big)~dA=\iint_R f(x,y)~dA+\iint_R g(x,y)~dA.\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\iint_R cf(x,y)~dA=c\iint_R f(x,y)~dA~~,~~c~~\text{constante}.\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\text{Si}~f(x,y)\geq g(x,y)~\text{para todo}~(x,y)\in R~\text{entonces}\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\iint_R f(x,y)~dA\geq\iint_R g(x,y)~dA.
+\]</div>
+</section>
+<section id="teorema-de-fubini-integrales-iteradas">
+<h3>Teorema de Fubini (Integrales Iteradas)<a class="headerlink" href="#teorema-de-fubini-integrales-iteradas" title="Link to this heading">#</a></h3>
+<p>Si <span class="math notranslate nohighlight">\(f\)</span> es continua y acotada en el rectángulo cerrado <span class="math notranslate nohighlight">\(R=\{(x,y)\in\mathbb{R}^2:a\leq x\leq b, c\leq y\leq d\}\)</span>, salvo en un número finito de curvas suaves, entonces <span class="math notranslate nohighlight">\(f\)</span> es integrable en <span class="math notranslate nohighlight">\(R\)</span> y</p>
+<div class="math notranslate nohighlight" id="equation-fubini">
+<span class="eqno">(24)<a class="headerlink" href="#equation-fubini" title="Link to this equation">#</a></span>\[
+\iint_R f(x,y)~dA=\int_a^b\int_c^d f(x,y)~dydx=\int_c^d\int_a^b f(x,y)~dxdy
+\]</div>
+<figure class="align-default" id="fubini1">
+<a class="reference internal image-reference" href="_images/Fubini1.png"><img alt="_images/Fubini1.png" src="_images/Fubini1.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 33 </span><span class="caption-text">Área sección transversal <span class="math notranslate nohighlight">\(A(x)\)</span></span><a class="headerlink" href="#fubini1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="fubini">
+<a class="reference internal image-reference" href="_images/Fubini2.png"><img alt="_images/Fubini2.png" src="_images/Fubini2.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 34 </span><span class="caption-text">Área sección transversal <span class="math notranslate nohighlight">\(A(y)\)</span></span><a class="headerlink" href="#fubini" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Calcule las siguientes integrales dobles:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int_1^2\int_0^\pi y\cos(xy)~dxdy\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int_{-1}^4\int_1^2 x+y^2~dydx\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int_0^1\int_0^1 xe^{xy}~dydx\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int_0^3\int_0^1 2x\sqrt{x^2+y}~dxdy\)</span>.</p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="integrales-dobles-sobre-regiones-generales">
+<h2>Integrales Dobles sobre Regiones Generales<a class="headerlink" href="#integrales-dobles-sobre-regiones-generales" title="Link to this heading">#</a></h2>
+<p>Consideremos una función de dos variables <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> definida sobre un dominio <span class="math notranslate nohighlight">\(D\)</span> acotado cualquiera.</p>
+<figure class="align-default" id="gen1">
+<a class="reference internal image-reference" href="_images/IntDobleGen1.png"><img alt="_images/IntDobleGen1.png" src="_images/IntDobleGen1.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 35 </span><span class="caption-text">Gráfico de <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#gen1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Podemos encerrar a <span class="math notranslate nohighlight">\(D\)</span> en un rectángulo <span class="math notranslate nohighlight">\(R\)</span>.  Definimos la nueva función sobre el rectángulo <span class="math notranslate nohighlight">\(R\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+F(x,y)=\left\{\begin{array}{ccc}
+     f(x,y)&amp; \text{si} &amp; (x,y)\in D\\
+     0&amp; \text{si} &amp; (x,y)\in R-D
+\end{array}\right.
+\end{split}\]</div>
+<figure class="align-default" id="gen2">
+<a class="reference internal image-reference" href="_images/IntDobleGen2.png"><img alt="_images/IntDobleGen2.png" src="_images/IntDobleGen2.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 36 </span><span class="caption-text">Gráfico de <span class="math notranslate nohighlight">\(F\)</span>, extensión de <span class="math notranslate nohighlight">\(f\)</span> a un rectángulo</span><a class="headerlink" href="#gen2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Si F es integrable sobre <span class="math notranslate nohighlight">\(R\)</span>, la <strong>integral doble</strong> de <span class="math notranslate nohighlight">\(f\)</span> sobre <span class="math notranslate nohighlight">\(D\)</span> es</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_D f(x,y)~dA=\iint_R F(x,y)~dA.
+\]</div>
+<p>El procedimiento usado es razonable ya que los valores de <span class="math notranslate nohighlight">\(F(x,y)\)</span> son 0 cuando <span class="math notranslate nohighlight">\((x,y)\)</span> está fuera de <span class="math notranslate nohighlight">\(D\)</span> y no contribuyen a la integral. Nos enfocaremos en regiones generales de los siguientes tipos:</p>
+<section id="regiones-tipo-i">
+<h3>Regiones Tipo I<a class="headerlink" href="#regiones-tipo-i" title="Link to this heading">#</a></h3>
+<p>Una región plana <span class="math notranslate nohighlight">\(D\)</span> es de <strong>tipo I</strong> si se encuentra encerrada por las gráficas de dos funciones continuas de <span class="math notranslate nohighlight">\(x\)</span>, es decir,</p>
+<div class="math notranslate nohighlight" id="equation-tipoi">
+<span class="eqno">(25)<a class="headerlink" href="#equation-tipoi" title="Link to this equation">#</a></span>\[
+D=\{(x,y)\in\mathbb{R}^2:a\leq x\leq b,~g_1(x)\leq y\leq g_2(x)\}.
+\]</div>
+<figure class="align-default" id="gen3">
+<a class="reference internal image-reference" href="_images/IntDobleGen3.png"><img alt="_images/IntDobleGen3.png" src="_images/IntDobleGen3.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 37 </span><span class="caption-text">Región Tipo I</span><a class="headerlink" href="#gen3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Teorema</strong>. Si <span class="math notranslate nohighlight">\(f\)</span> es continua sobre una región <span class="math notranslate nohighlight">\(D\)</span> de tipo I entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_D f(x,y)~dA=\int_a^b\int_{g_1(x)}^{g_2(x)}f(x,y)~dydx
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Si <span class="math notranslate nohighlight">\(D\)</span> es la región del plano acotada por <span class="math notranslate nohighlight">\(y=x\)</span> e <span class="math notranslate nohighlight">\(y=x^2\)</span> calcule</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_D(x^2+y^2)~dA.
+\]</div>
+</div>
+</section>
+<section id="regiones-tipo-ii">
+<h3>Regiones Tipo II<a class="headerlink" href="#regiones-tipo-ii" title="Link to this heading">#</a></h3>
+<p>Una región plana <span class="math notranslate nohighlight">\(D\)</span> es de <strong>tipo II</strong> si se encuentra encerrada por las gráficas de dos funciones continuas de <span class="math notranslate nohighlight">\(y\)</span>, es decir,</p>
+<div class="math notranslate nohighlight" id="equation-tipoii">
+<span class="eqno">(26)<a class="headerlink" href="#equation-tipoii" title="Link to this equation">#</a></span>\[
+D=\{(x,y)\in\mathbb{R}^2:h_1(y)\leq x\leq h_2(y),~c\leq y\leq d\}.
+\]</div>
+<figure class="align-default" id="gen4">
+<a class="reference internal image-reference" href="_images/IntDobleGen4.png"><img alt="_images/IntDobleGen4.png" src="_images/IntDobleGen4.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 38 </span><span class="caption-text">Región Tipo II</span><a class="headerlink" href="#gen4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Teorema</strong>. Si <span class="math notranslate nohighlight">\(f\)</span> es continua sobre una región <span class="math notranslate nohighlight">\(D\)</span> de tipo II entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_D f(x,y)~dA=\int_c^d\int_{h_1(y)}^{h_2(y)}f(x,y)~dxdy
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Si <span class="math notranslate nohighlight">\(D\)</span> es la región del plano acotada por <span class="math notranslate nohighlight">\(x=y^2\)</span> y <span class="math notranslate nohighlight">\(x=2\)</span> calcule</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_D xy~dA.
+\]</div>
+</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Calcule <span class="math notranslate nohighlight">\(\displaystyle\int_0^1\int_x^1\sin(y^2)~dydx.\)</span></p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Ejercicio Propuesto</p>
+<p>Al evaluar una integral doble sobre una región <span class="math notranslate nohighlight">\(D\)</span>, se obtuvo una suma de integrales como sigue</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_D f(x,y)~dA=\int_0^1\int_0^{2y} f(x,y)~dxdy+\int_1^3\int_0^{3-y} f(x,y)~dxdy.
+\]</div>
+<p>Bosqueje la región <span class="math notranslate nohighlight">\(D\)</span> y exprese la integral doble como una integral con orden inverso de integración.</p>
+</div>
+</section>
+</section>
+<section id="integrales-triples">
+<h2>Integrales Triples<a class="headerlink" href="#integrales-triples" title="Link to this heading">#</a></h2>
+<section id="construccion-de-integrales-triples-sobre-cajas">
+<h3>Construcción de Integrales Triples sobre Cajas<a class="headerlink" href="#construccion-de-integrales-triples-sobre-cajas" title="Link to this heading">#</a></h3>
+<p>Sea <span class="math notranslate nohighlight">\(w=f(x,y,z)\)</span> una función de 3 variables definida sobre una caja cerrada <span class="math notranslate nohighlight">\(B\)</span>, donde</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+B&amp;=&amp;[a,b]\times[c,d]\times[r,s]\\
+&amp;=&amp;\{(x,y,z)\in\mathbb{R}^3:a\leq x\leq b, c\leq y\leq d, r\leq z\leq s\}.
+\end{eqnarray*}\]</div>
+<figure class="align-default" id="triple1">
+<a class="reference internal image-reference" href="_images/Triple1.png"><img alt="_images/Triple1.png" src="_images/Triple1.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 39 </span><span class="caption-text">Caja <span class="math notranslate nohighlight">\(B\)</span></span><a class="headerlink" href="#triple1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Para definir una <strong>integral triple</strong> de <span class="math notranslate nohighlight">\(f\)</span> sobre <span class="math notranslate nohighlight">\(B\)</span>, dividimos la caja <span class="math notranslate nohighlight">\(B\)</span> en subcajas <span class="math notranslate nohighlight">\(B_{ijk}\)</span> que se forman dividiendo <span class="math notranslate nohighlight">\([a,b]\)</span> en <span class="math notranslate nohighlight">\(l\)</span> subintervalos <span class="math notranslate nohighlight">\([x_{i-1},x_i]\)</span> del mismo ancho <span class="math notranslate nohighlight">\(\Delta x\)</span>, <span class="math notranslate nohighlight">\([c,d]\)</span> en <span class="math notranslate nohighlight">\(m\)</span> subintervalos <span class="math notranslate nohighlight">\([y_{j-1},y_j]\)</span> del mismo ancho <span class="math notranslate nohighlight">\(\Delta y\)</span>, y dividiendo <span class="math notranslate nohighlight">\([r,s]\)</span> en <span class="math notranslate nohighlight">\(n\)</span> subintervalos <span class="math notranslate nohighlight">\([z_{k-1},z_k]\)</span> del mismo ancho <span class="math notranslate nohighlight">\(\Delta z\)</span>. Las subcajas son</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+B_{ijk}&amp;=&amp;[x_{i-1},x_i]\times[y_{j-1},y_j]\times[z_{k-1},z_k]
+\end{eqnarray*} \]</div>
+<p>cada una con volumen <span class="math notranslate nohighlight">\(\Delta V=\Delta x\Delta y\Delta z.\)</span>.</p>
+<figure class="align-default" id="triple2">
+<a class="reference internal image-reference" href="_images/Triple2.png"><img alt="_images/Triple2.png" src="_images/Triple2.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 40 </span><span class="caption-text">Subcaja genérica <span class="math notranslate nohighlight">\(B_{ijk}\)</span></span><a class="headerlink" href="#triple2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Elegimos un punto de muestra <span class="math notranslate nohighlight">\((x_{ijk}^\ast,y_{ijk}^\ast,z_{ijk}^\ast)\)</span> en cada subcaja <span class="math notranslate nohighlight">\(B_{ijk}\)</span> para tener la altura <span class="math notranslate nohighlight">\(f(x_{ijk}^\ast,y_{ijk}^\ast,z_{ijk}^\ast)\)</span> de la hipercaja que se forma sobre <span class="math notranslate nohighlight">\(B_{ijk}\)</span> y bajo <span class="math notranslate nohighlight">\(w=f(x,y,z)\)</span>. Esta hipercaja tiene hipervolumen aproximado</p>
+<div class="math notranslate nohighlight">
+\[
+f(x_{ijk}^\ast,y_{ijk}^\ast,z_{ijk}^\ast)\Delta V.
+\]</div>
+<p>Luego, el hipervolumen puede ser aproximado como</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^l\sum_{j=1}^m\sum_{j=1}^n f(x_{ijk}^\ast,y_{ijk}^\ast,z_{ijk}^\ast)\Delta V.
+\]</div>
+</section>
+<section id="integral-triple">
+<h3>Integral Triple<a class="headerlink" href="#integral-triple" title="Link to this heading">#</a></h3>
+<p>La <strong>integral triple</strong> de <span class="math notranslate nohighlight">\(f\)</span> sobre la caja <span class="math notranslate nohighlight">\(B\)</span> es</p>
+<div class="math notranslate nohighlight" id="equation-intcaja">
+<span class="eqno">(27)<a class="headerlink" href="#equation-intcaja" title="Link to this equation">#</a></span>\[
+\iiint\limits_B f(x,y,z)~dV=\lim_{l,m,n\to\infty}\sum_{i=1}^l\sum_{j=1}^m\sum_{j=1}^n f(x_{ijk}^\ast,y_{ijk}^\ast,z_{ijk}^\ast)\Delta V
+\]</div>
+<p>si tal límite existe.</p>
+<p>Al igual que para las integrales dobles, el método para evaluar integrales triples sobre cajas es expresarlas como integrales iteradas de la siguiente manera.</p>
+</section>
+<section id="teorema-de-fubini-para-integrales-triples">
+<h3>Teorema de Fubini para Integrales Triples<a class="headerlink" href="#teorema-de-fubini-para-integrales-triples" title="Link to this heading">#</a></h3>
+<p>Si <span class="math notranslate nohighlight">\(f\)</span> es continua sobre la caja <span class="math notranslate nohighlight">\(B=[a,b]\times[c,d]\times[r,s]\)</span> entonces</p>
+<div class="math notranslate nohighlight" id="equation-fubinitriple">
+<span class="eqno">(28)<a class="headerlink" href="#equation-fubinitriple" title="Link to this equation">#</a></span>\[
+\iiint\limits_B f(x,y,z)~dV=\int_r^s\int_c^d\int_a^b f(x,y,z)~dx~dy~dz
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Calcule <span class="math notranslate nohighlight">\(\displaystyle\iiint\limits_E(xy+z^2)~dV\)</span> donde <span class="math notranslate nohighlight">\(E=\{(x,y,z)\in\mathbb{R}^3:0\leq x\leq 2,0\leq y\leq 1,0\leq z\leq 3\}\)</span></p>
+</div>
+</section>
+</section>
+<section id="integrales-triples-sobre-regiones-generales">
+<h2>Integrales Triples sobre Regiones Generales<a class="headerlink" href="#integrales-triples-sobre-regiones-generales" title="Link to this heading">#</a></h2>
+<p>Una <strong>integral triple sobre una región acotada general</strong> <span class="math notranslate nohighlight">\(E\)</span> en el espacio tridimensional se define análogamente a las integrales dobles: Se encierra <span class="math notranslate nohighlight">\(E\)</span> en una caja <span class="math notranslate nohighlight">\(B\)</span>, después se define una función <span class="math notranslate nohighlight">\(F\)</span> de modo que concuerda con <span class="math notranslate nohighlight">\(f\)</span> sobre <span class="math notranslate nohighlight">\(E\)</span>, pero es cero para puntos en <span class="math notranslate nohighlight">\(B-E\)</span>. Luego,</p>
+<div class="math notranslate nohighlight" id="equation-inttriplegen">
+<span class="eqno">(29)<a class="headerlink" href="#equation-inttriplegen" title="Link to this equation">#</a></span>\[
+\iiint\limits_E f(x,y,z)~dV=\iiint\limits_B F(x,y,z)~dV
+\]</div>
+<p>Esta integral existe si <span class="math notranslate nohighlight">\(f\)</span> es continua y la frontera de <span class="math notranslate nohighlight">\(E\)</span> es suave. Nos enfocaremos en funciones continuas <span class="math notranslate nohighlight">\(f\)</span> y ciertos tipos de regiones simples.</p>
+<section id="regiones-tipo-1">
+<h3>Regiones Tipo 1<a class="headerlink" href="#regiones-tipo-1" title="Link to this heading">#</a></h3>
+<p>Se dice que una región sólida <span class="math notranslate nohighlight">\(E\)</span> es <strong>tipo 1</strong> si está entre las gráficas de dos funciones continuas de <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, es decir,</p>
+<figure class="align-default" id="tripletipo1">
+<a class="reference internal image-reference" href="_images/TripleTipo1.png"><img alt="_images/TripleTipo1.png" src="_images/TripleTipo1.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 41 </span><span class="caption-text">Región Tipo 1</span><a class="headerlink" href="#tripletipo1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>donde</p>
+<div class="math notranslate nohighlight">
+\[
+E=\{(x,y,z)\in\mathbb{R}^3: (x,y)\in D, u_1(x,y)\leq z\leq u_2(x,y)\}
+\]</div>
+<p>y <span class="math notranslate nohighlight">\(D\)</span> es la proyección de <span class="math notranslate nohighlight">\(E\)</span> sobre el plano <span class="math notranslate nohighlight">\(XY\)</span>. Se puede demostrar que:</p>
+<div class="math notranslate nohighlight">
+\[
+\iiint\limits_E f(x,y,z)~dV=\iint\limits_D\left[\int_{u_1(x,y)}^{u_2(x,y)}f(x,y,z)~dz\right]dA
+\]</div>
+<p>Si la proyección de sobre el plano <span class="math notranslate nohighlight">\(XY\)</span> es una región plana tipo I, donde <span class="math notranslate nohighlight">\(g_1(x)\leq y\leq g_2(x)\)</span>, <span class="math notranslate nohighlight">\(a\leq x\leq b\)</span></p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/TripleTipo1-1.png"><img alt="_images/TripleTipo1-1.png" src="_images/TripleTipo1-1.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 42 </span><span class="caption-text">Región Tipo 1, con proyección <span class="math notranslate nohighlight">\(D\)</span> correspondiente a una región plana Tipo I</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\iiint\limits_E f(x,y,z)~dV=\int_a^b\int_{g_1(x)}^{g_2(x)}\int_{u_1(x,y)}^{u_2(x,y)}f(x,y,z)~dz~dy~dx
+\]</div>
+<p>Si la proyección de sobre el plano <span class="math notranslate nohighlight">\(XY\)</span> es una región plana tipo II, donde <span class="math notranslate nohighlight">\(h_1(y)\leq x\leq h_2(y)\)</span>, <span class="math notranslate nohighlight">\(c\leq y\leq d\)</span></p>
+<figure class="align-default" id="tripletipo2">
+<a class="reference internal image-reference" href="_images/TripleTipo1-2.png"><img alt="_images/TripleTipo1-2.png" src="_images/TripleTipo1-2.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 43 </span><span class="caption-text">Región Tipo 1, con proyección <span class="math notranslate nohighlight">\(D\)</span> correspondiente a una región plana Tipo II</span><a class="headerlink" href="#tripletipo2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\iiint\limits_E f(x,y,z)~dV=\int_c^d\int_{h_1(y)}^{h_2(y)}\int_{u_1(x,y)}^{u_2(x,y)}f(x,y,z)~dz~dx~dy
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Calcule <span class="math notranslate nohighlight">\(\displaystyle\iiint\limits_E 6xy~dV\)</span> donde <span class="math notranslate nohighlight">\(E\)</span> yace bajo el plano <span class="math notranslate nohighlight">\(z=1+x+y\)</span>, y arriba de la región en el plano <span class="math notranslate nohighlight">\(XY\)</span> acotado por las curvas <span class="math notranslate nohighlight">\(y=\sqrt{x}\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span>, <span class="math notranslate nohighlight">\(x=1\)</span>.</p>
+</div>
+</section>
+<section id="regiones-tipo-2">
+<h3>Regiones Tipo 2<a class="headerlink" href="#regiones-tipo-2" title="Link to this heading">#</a></h3>
+<p>Se dice que una región sólida <span class="math notranslate nohighlight">\(E\)</span> es <strong>tipo 2</strong> si está entre las gráficas de dos funciones continuas de <span class="math notranslate nohighlight">\(z\)</span> e <span class="math notranslate nohighlight">\(y\)</span></p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/TripleTipo2.png"><img alt="_images/TripleTipo2.png" src="_images/TripleTipo2.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 44 </span><span class="caption-text">Región Tipo 2, con proyección <span class="math notranslate nohighlight">\(D\)</span></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>donde</p>
+<div class="math notranslate nohighlight">
+\[
+E=\{(x,y,z)\in\mathbb{R}^3: (y,z)\in D, u_1(y,z)\leq x\leq u_2(y,z)\}
+\]</div>
+<p>y <span class="math notranslate nohighlight">\(D\)</span> es la proyección de <span class="math notranslate nohighlight">\(E\)</span> sobre el plano <span class="math notranslate nohighlight">\(YZ\)</span>. Se puede demostrar que:</p>
+<div class="math notranslate nohighlight">
+\[
+\iiint\limits_E f(x,y,z)~dV=\iint\limits_D\left[\int_{u_1(y,z)}^{u_2(y,z)}f(x,y,z)~dx\right]dA
+\]</div>
+<p>Puede haber dos expresiones posibles para la integral anterior, dependiendo de si <span class="math notranslate nohighlight">\(D\)</span> es una región plana Tipo I o Tipo II.</p>
+</section>
+<section id="regiones-tipo-3">
+<h3>Regiones Tipo 3<a class="headerlink" href="#regiones-tipo-3" title="Link to this heading">#</a></h3>
+<p>Se dice que una región sólida <span class="math notranslate nohighlight">\(E\)</span> es tipo 3 si está entre las gráficas de dos funciones continuas de <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(z\)</span></p>
+<figure class="align-default" id="tripletipo3">
+<a class="reference internal image-reference" href="_images/TripleTipo3.png"><img alt="_images/TripleTipo3.png" src="_images/TripleTipo3.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 45 </span><span class="caption-text">Región Tipo 3, con proyección <span class="math notranslate nohighlight">\(D\)</span></span><a class="headerlink" href="#tripletipo3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>donde</p>
+<div class="math notranslate nohighlight">
+\[
+E=\{(x,y,z)\in\mathbb{R}^3: (x,z)\in D, u_1(x,z)\leq y\leq u_2(x,z)\}
+\]</div>
+<p>y</p>
+<p><span class="math notranslate nohighlight">\(D\)</span> es la proyección de <span class="math notranslate nohighlight">\(E\)</span> sobre el plano <span class="math notranslate nohighlight">\(XZ\)</span>. Se puede demostrar que:</p>
+<div class="math notranslate nohighlight">
+\[
+\iiint\limits_E f(x,y,z)~dV=\iint\limits_D\left[\int_{u_1(x,z)}^{u_2(x,z)}f(x,y,z)~dy\right]dA
+\]</div>
+<p>Puede haber dos expresiones posibles para la integral anterior, dependiendo de si <span class="math notranslate nohighlight">\(D\)</span> es una región plana Tipo I o Tipo II.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Calcule <span class="math notranslate nohighlight">\(\displaystyle\iiint\limits_E z~dV\)</span> donde <span class="math notranslate nohighlight">\(E\)</span> está acotada por el cilindro <span class="math notranslate nohighlight">\(y^2+z^2=9\)</span> y los planos <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(y=3x\)</span>, y <span class="math notranslate nohighlight">\(z=0\)</span> en el primer octante.</p>
+</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Calcule <span class="math notranslate nohighlight">\(\displaystyle\iiint\limits_T xyz~dV\)</span> donde <span class="math notranslate nohighlight">\(T\)</span> es el tetraedro sólido con vértices <span class="math notranslate nohighlight">\((0, 0, 0)\)</span>, <span class="math notranslate nohighlight">\((1, 0, 0)\)</span>, <span class="math notranslate nohighlight">\((1, 1, 0)\)</span> y <span class="math notranslate nohighlight">\((1, 0, 1)\)</span>.</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Ejercicio Propuesto</p>
+<p>La figura muestra la región de integración para la integral</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^1\int_0^{1-x^2}\int_0^{1-x}f(x,y,z)~dydzdx.
+\]</div>
+<p>Reescriba en los otros cinco órdenes esta integral como una integral iterada equivalente.</p>
+</div>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="_images/TripleEjercicio.png"><img alt="_images/TripleEjercicio.png" src="_images/TripleEjercicio.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 46 </span><span class="caption-text">Región Ejercicio Propuesto</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="teorema-general-del-cambio-de-variables">
+<h2>Teorema General del Cambio de Variables<a class="headerlink" href="#teorema-general-del-cambio-de-variables" title="Link to this heading">#</a></h2>
+<section id="transformaciones-en-el-plano">
+<h3>Transformaciones en el Plano<a class="headerlink" href="#transformaciones-en-el-plano" title="Link to this heading">#</a></h3>
+<p>Consideremos una <strong>transformación</strong> <span class="math notranslate nohighlight">\(T:\mathbb{R}^2\to\mathbb{R}^2\)</span>, del plano <span class="math notranslate nohighlight">\(UV\)</span> en el plano <span class="math notranslate nohighlight">\(XY\)</span> dada por</p>
+<div class="math notranslate nohighlight" id="equation-transformacion">
+<span class="eqno">(30)<a class="headerlink" href="#equation-transformacion" title="Link to this equation">#</a></span>\[
+T(u,v)=(x,y),~~\text{con}~ x=g(u,v),~y=h(u,v)
+\]</div>
+<p>Supondremos que <span class="math notranslate nohighlight">\(T\)</span> es una <strong>transformación</strong> <span class="math notranslate nohighlight">\(\mathbf{C^1}\)</span>, lo que significa que <span class="math notranslate nohighlight">\(g\)</span> y <span class="math notranslate nohighlight">\(h\)</span> tienen derivadas parciales continuas.</p>
+<p>Una transformación <span class="math notranslate nohighlight">\(T\)</span> es en realidad una función cuyo dominio y recorrido son subconjuntos de <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>. Si <span class="math notranslate nohighlight">\(T(u_1, v_1)=(x_1, y_1)\)</span>, entonces el punto <span class="math notranslate nohighlight">\((x_1, y_1)\)</span> se llama <strong>imagen</strong> del punto <span class="math notranslate nohighlight">\((u_1, v_1)\)</span>. <span class="math notranslate nohighlight">\(T\)</span> transforma a <span class="math notranslate nohighlight">\(S\)</span> (en el plano <span class="math notranslate nohighlight">\(UV\)</span>) en una región <span class="math notranslate nohighlight">\(R\)</span> (en el plano <span class="math notranslate nohighlight">\(XY\)</span>) llamada imagen de <span class="math notranslate nohighlight">\(S\)</span>: <span class="math notranslate nohighlight">\(T(S)=R\)</span>.</p>
+<figure class="align-default" id="variablesgen1">
+<a class="reference internal image-reference" href="_images/VariablesGen1.png"><img alt="_images/VariablesGen1.png" src="_images/VariablesGen1.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 47 </span><span class="caption-text">Transformación <span class="math notranslate nohighlight">\(T\)</span> de la región <span class="math notranslate nohighlight">\(S\)</span> a <span class="math notranslate nohighlight">\(R\)</span>.</span><a class="headerlink" href="#variablesgen1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Si <span class="math notranslate nohighlight">\(T\)</span> es una transformación inyectiva, entonces tiene una <strong>transformación inversa</strong> <span class="math notranslate nohighlight">\(\mathbf{T^{-1}}\)</span> del plano <span class="math notranslate nohighlight">\(XY\)</span> al plano <span class="math notranslate nohighlight">\(UV\)</span> dada por</p>
+<div class="math notranslate nohighlight" id="equation-tinversa">
+<span class="eqno">(31)<a class="headerlink" href="#equation-tinversa" title="Link to this equation">#</a></span>\[
+T^{-1}(x,y)=(u,v),~~\text{con}~ u=G(x,y),~v=H(x,y)
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Encuentre la imagen del triángulo <span class="math notranslate nohighlight">\(S\)</span> con vértices <span class="math notranslate nohighlight">\((0,0)\)</span>, <span class="math notranslate nohighlight">\((1,1)\)</span> y <span class="math notranslate nohighlight">\((0,1)\)</span> bajo la transformación <span class="math notranslate nohighlight">\(T(u,v)=(u^2,v)\)</span>.</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Ejercicio Propuesto</p>
+<p>Encuentre la imagen del disco <span class="math notranslate nohighlight">\(S=\{(u,v)\in\mathbb{R}^2:u^2+v^2\leq1\}\)</span> bajo la transformación <span class="math notranslate nohighlight">\(x=au\)</span>, <span class="math notranslate nohighlight">\(y=bv\)</span> (<span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> constantes positivas).</p>
+</div>
+</section>
+<section id="cambio-de-variables-e-integracion">
+<h3>Cambio de Variables e Integración<a class="headerlink" href="#cambio-de-variables-e-integracion" title="Link to this heading">#</a></h3>
+<p>Un cambio de variables afecta a la integral doble ya que modifica el dominio de integración. Empezamos con un rectángulo peque~{n}o <span class="math notranslate nohighlight">\(S\)</span> cuya esquina inferior izquierda es el punto <span class="math notranslate nohighlight">\((u_0,v_0)\)</span> y cuyas dimensiones son <span class="math notranslate nohighlight">\(\Delta u\)</span> y <span class="math notranslate nohighlight">\(\Delta v\)</span>.  La imagen de <span class="math notranslate nohighlight">\(S\)</span> es una región <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<figure class="align-default" id="variablesgen2">
+<a class="reference internal image-reference" href="_images/VariablesGen2.png"><img alt="_images/VariablesGen2.png" src="_images/VariablesGen2.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 48 </span><span class="caption-text">Transformación del rectángulo <span class="math notranslate nohighlight">\(S\)</span> en <span class="math notranslate nohighlight">\(R\)</span>.</span><a class="headerlink" href="#variablesgen2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>El vector</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}(u,v)=g(u,v)\mathbf{i}+h(u,v)\mathbf{j}
+\]</div>
+<p>es el vector posición de la imagen del punto <span class="math notranslate nohighlight">\((u, v)\)</span>. La ecuación del lado inferior de <span class="math notranslate nohighlight">\(S\)</span> es <span class="math notranslate nohighlight">\(v=v_0\)</span>, cuya curva imagen está dada por la función vectorial <span class="math notranslate nohighlight">\(\mathbf{r}(u, v_0)\)</span>. El vector tangente en <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> a esta curva imagen es</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}_u=g_u(u_0,v_0)\mathbf{i}+h_u(u_0,v_0)\mathbf{j}=\frac{\partial x}{\partial u}\mathbf{i}+\frac{\partial y}{\partial u}\mathbf{j}.
+\]</div>
+<p>Análogamente, el vector tangente en <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> a la curva imagen del lado izquierdo de <span class="math notranslate nohighlight">\(S\)</span> (que es <span class="math notranslate nohighlight">\(u=u_0\)</span>) es</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}_v=g_v(u_0,v_0)\mathbf{i}+h_v(u_0,v_0)\mathbf{j}=\frac{\partial x}{\partial v}\mathbf{i}+\frac{\partial y}{\partial v}\mathbf{j}.
+\]</div>
+<p>Se puede aproximar la región imagen <span class="math notranslate nohighlight">\(R=T(S)\)</span> por el paralelógramo determinado por los vectores secantes</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{a}=\mathbf{r}(u_0+\Delta u,v_0)-\mathbf{r}(u_0,v_0)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{b}=\mathbf{r}(u_0,v_0+\Delta v)-\mathbf{r}(u_0,v_0)
+\]</div>
+<figure class="align-default" id="variablesgen3">
+<a class="reference internal image-reference" href="_images/VariablesGen3.png"><img alt="_images/VariablesGen3.png" src="_images/VariablesGen3.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 49 </span><span class="caption-text">Vectores <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> y <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> que aproximan los lados de <span class="math notranslate nohighlight">\(R\)</span>.</span><a class="headerlink" href="#variablesgen3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="variablesgen4">
+<a class="reference internal image-reference" href="_images/VariablesGen4.png"><img alt="_images/VariablesGen4.png" src="_images/VariablesGen4.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 50 </span><span class="caption-text">Paralelógramo de aproximación de <span class="math notranslate nohighlight">\(R\)</span>.</span><a class="headerlink" href="#variablesgen4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>De aquí <span class="math notranslate nohighlight">\(\displaystyle\mathbf{r}_u=\lim_{\Delta u\to0}\frac{\mathbf{a}}{\Delta u}~\Rightarrow~\mathbf{a}\approx\Delta u~\mathbf{r}_u\)</span>.</p>
+<p>Análogamente</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}_v=\lim_{\Delta v\to0}\frac{\mathbf{b}}{\Delta u}~\Rightarrow~\mathbf{b}\approx\Delta v~\mathbf{r}_v
+\]</div>
+<p>Esto significa que se puede aproximar <span class="math notranslate nohighlight">\(R\)</span> mediante un paralelógramo determinado por los vectores <span class="math notranslate nohighlight">\(\Delta u~\mathbf{r}_u\)</span> y <span class="math notranslate nohighlight">\(\Delta v~\mathbf{r}_v\)</span>. Por tanto, se puede aproximar el área de <span class="math notranslate nohighlight">\(R\)</span> mediante el área de dicho paralelógramo</p>
+<div class="math notranslate nohighlight">
+\[
+||(\Delta u~\mathbf{r}_u)\times(\Delta v~\mathbf{r}_v)||=||\mathbf{r}_u\times \mathbf{r}_v||\Delta u\Delta v
+\]</div>
+<p>donde</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{r}_u\times \mathbf{r}_v=\begin{vmatrix}\mathbf{i}&amp;\mathbf{j}&amp;\mathbf{k}\\ x_u&amp;y_u&amp;0\\ x_v&amp;y_v&amp;0\end{vmatrix}=\begin{vmatrix}x_u&amp;y_u\\ x_v&amp; y_v\end{vmatrix}\mathbf{k}
+\end{split}\]</div>
+</section>
+<section id="jacobiano-de-la-transformacion">
+<h3>Jacobiano de la Transformación<a class="headerlink" href="#jacobiano-de-la-transformacion" title="Link to this heading">#</a></h3>
+<p>El <strong>jacobiano</strong> de la transformación <span class="math notranslate nohighlight">\(T:S\to R\)</span> definida por <span class="math notranslate nohighlight">\(x=g(u, v)\)</span> e <span class="math notranslate nohighlight">\(y=h(u, v)\)</span> es</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{\partial(x,y)}{\partial(u,v)}=\begin{vmatrix}x_u&amp;y_u\\ x_v&amp; y_v\end{vmatrix}=x_uy_v-x_vy_u
+\end{split}\]</div>
+<p>Con esta notación escribimos el área aproximada de <span class="math notranslate nohighlight">\(R\)</span> como</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta A\approx\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\Delta u\Delta v
+\]</div>
+<p>donde el jacobiano se evalúa en <span class="math notranslate nohighlight">\((u_0, v_0)\)</span>.</p>
+<p>A continuación se divide una región <span class="math notranslate nohighlight">\(S\)</span> general en el plano <span class="math notranslate nohighlight">\(UV\)</span> en rectángulos <span class="math notranslate nohighlight">\(S_{ij}\)</span> cuyas imágenes en el plano <span class="math notranslate nohighlight">\(XY\)</span> son los <span class="math notranslate nohighlight">\(R_{ij}\)</span> (que pueden ser aproximados por paralelógramos)</p>
+<figure class="align-default" id="variablesgen5">
+<a class="reference internal image-reference" href="_images/VariablesGen5.png"><img alt="_images/VariablesGen5.png" src="_images/VariablesGen5.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 51 </span><span class="caption-text">Transformación del rectángulo <span class="math notranslate nohighlight">\(S_{ij}\)</span> en el paralelógramo aproximado <span class="math notranslate nohighlight">\(R_{ij}\)</span>.</span><a class="headerlink" href="#variablesgen5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Por lo tanto</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\iint\limits_R f(x,y)
+~dA&amp;\approx&amp; \sum_{i=1}^m\sum_{j=1}^n f(x_i,y_i)\Delta A\\
+&amp;\approx&amp; \sum_{i=1}^m\sum_{j=1}^n f\big(g(u_i,v_j),h(u_i,v_j)\big) \left|\frac{\partial(x,y)}{\partial(u,v)}\right|\Delta u\Delta v
+\end{eqnarray*}\]</div>
+<p>donde el jacobiano se evalúa en <span class="math notranslate nohighlight">\((u_i,v_j)\)</span>.</p>
+<p><strong>Nota</strong>. Aquí puede verse una <a class="reference external" href="https://www.youtube.com/watch?v=bohL918kXQk&amp;amp;t=334s&amp;amp;ab_channel=KhanAcademy">interpretación geométrica</a> del jacobiano</p>
+<p>De aquí se deduce el teorema general del cambio de variables</p>
+</section>
+<section id="teorema-general">
+<h3>Teorema General<a class="headerlink" href="#teorema-general" title="Link to this heading">#</a></h3>
+<p>Suponga que <span class="math notranslate nohighlight">\(T\)</span> es una transformación <span class="math notranslate nohighlight">\(C^1\)</span> (con derivada continua) cuyo jacobiano es no nulo, tal que <span class="math notranslate nohighlight">\(T(S)=R\)</span>, que <span class="math notranslate nohighlight">\(T\)</span> es continua sobre <span class="math notranslate nohighlight">\(R\)</span>, y que <span class="math notranslate nohighlight">\(R\)</span> y <span class="math notranslate nohighlight">\(S\)</span> son regiones planas tipo I o tipo II. Suponga también que T es inyectiva (excepto quizás en la frontera de <span class="math notranslate nohighlight">\(S\)</span>). Entonces</p>
+<div class="math notranslate nohighlight" id="equation-teojacobiano">
+<span class="eqno">(32)<a class="headerlink" href="#equation-teojacobiano" title="Link to this equation">#</a></span>\[\iint\limits_R f(x,y)
+~dA=\iint\limits_S f\big(x(u,v),y(u,v)\big)\left|\frac{\partial(x,y)}{\partial(u,v)}\right|~dudv
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Evalúe <span class="math notranslate nohighlight">\(\displaystyle\iint\limits_R\cos\left(\frac{y-x}{y+x}\right)dA\)</span> donde <span class="math notranslate nohighlight">\(R\)</span> es la región trapezoidal con vértices <span class="math notranslate nohighlight">\((1,0)\)</span>, <span class="math notranslate nohighlight">\((2,0)\)</span>, <span class="math notranslate nohighlight">\((0,2)\)</span> y <span class="math notranslate nohighlight">\((0,1)\)</span>. Utilice un cambio de variables apropiado.</p>
+</div>
+</section>
+</section>
+<section id="integrales-dobles-en-coordenadas-polares">
+<h2>Integrales Dobles en Coordenadas Polares<a class="headerlink" href="#integrales-dobles-en-coordenadas-polares" title="Link to this heading">#</a></h2>
+<section id="transformaciones-en-coordenadas-polares">
+<h3>Transformaciones en Coordenadas Polares<a class="headerlink" href="#transformaciones-en-coordenadas-polares" title="Link to this heading">#</a></h3>
+<p>Si <span class="math notranslate nohighlight">\(T\)</span> es una transformación del plano polar <span class="math notranslate nohighlight">\(R\Theta\)</span> al plano cartesiano <span class="math notranslate nohighlight">\(XY\)</span>, dada por las coordenadas polares <span class="math notranslate nohighlight">\((r,\theta)\)</span></p>
+<div class="math notranslate nohighlight" id="equation-polares">
+<span class="eqno">(33)<a class="headerlink" href="#equation-polares" title="Link to this equation">#</a></span>\[
+x=g(r,\theta)=r\cos(\theta)~~,~~y=f(r,\theta)=r\sin(\theta)
+\]</div>
+<figure class="align-default" id="variablesgen6">
+<a class="reference internal image-reference" href="_images/VariablesGen6.png"><img alt="_images/VariablesGen6.png" src="_images/VariablesGen6.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 52 </span><span class="caption-text">Transformación del rectángulo polar <span class="math notranslate nohighlight">\(S\)</span> en el sector circular <span class="math notranslate nohighlight">\(R\)</span>.</span><a class="headerlink" href="#variablesgen6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><span class="math notranslate nohighlight">\(T\)</span> establece una correspondencia entre un rectángulo ordinario <span class="math notranslate nohighlight">\(S\)</span> en el plano <span class="math notranslate nohighlight">\(R\Theta\)</span> y el rectángulo polar <span class="math notranslate nohighlight">\(R\)</span> en el plano <span class="math notranslate nohighlight">\(XY\)</span>. El jacobiano de la la transformación es</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{\partial(x,y)}{\partial(r,\theta)}=\begin{vmatrix}x_r&amp;x_\theta\\ y_r&amp;y_\theta\end{vmatrix}=r&gt;0.
+\end{split}\]</div>
+<p>Por lo tanto</p>
+<div class="math notranslate nohighlight">
+\[
+\iint\limits_R f(x,y)
+~dA=\int_\alpha^\beta\int_a^b f\big(r\cos(\theta),r\sin(\theta)\big)~r~dr~d\theta
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Calcule el volumen del sólido bajo el cono de ecuación <span class="math notranslate nohighlight">\(z=\sqrt{x^2+y^2}\)</span> y arriba del disco <span class="math notranslate nohighlight">\(x^2+y^2\leq4\)</span>.</p>
+</div>
+<p><strong>Nota</strong>. No olvidar el factor adicional <span class="math notranslate nohighlight">\(r\)</span> en el lado derecho de la fórmula anterior. Un método para recordar esto se muestra en la figura siguiente, donde el rectángulo polar <em>infinitesimal</em> se puede considerar como un rectángulo ordinario con dimensiones <span class="math notranslate nohighlight">\(rd\theta\)</span> y <span class="math notranslate nohighlight">\(dr\)</span> y, por tanto, tiene <em>área</em> <span class="math notranslate nohighlight">\(dA=r~drd\theta\)</span>.</p>
+<figure class="align-default" id="polares4">
+<a class="reference internal image-reference" href="_images/Polares4.png"><img alt="_images/Polares4.png" src="_images/Polares4.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 53 </span><span class="caption-text">Área de un rectángulo polar infinitesimal</span><a class="headerlink" href="#polares4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Nota</strong>. Si <span class="math notranslate nohighlight">\(f\)</span> es continua sobre una región polar de la forma <span class="math notranslate nohighlight">\(D=\{(r,\theta):\alpha\leq \theta\leq\beta, h_1(\theta)\leq r\leq h_2(\theta)\}\)</span>.</p>
+<figure class="align-default" id="polares5">
+<a class="reference internal image-reference" href="_images/Polares5.png"><img alt="_images/Polares5.png" src="_images/Polares5.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 54 </span><span class="caption-text">Región polar <span class="math notranslate nohighlight">\(D\)</span> entre los ángulos <span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span>.</span><a class="headerlink" href="#polares5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>La integral doble queda como</p>
+<div class="math notranslate nohighlight">
+\[
+\iint\limits_R f(x,y)~dA=\int_\alpha^\beta\int_{h_1(\theta)}^{h_2(\theta)}f(r\cos(\theta),r\sin(\theta))\cdot r~drd\theta
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Encuentre el volumen del sólido que se encuentra dentro del cilindro <span class="math notranslate nohighlight">\(x^2+y^2=4\)</span> y el elipsoide <span class="math notranslate nohighlight">\(4x^2+4y^2+z^2=64\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="integrales-triples-en-coordenadas-cilindricas">
+<h2>Integrales Triples en Coordenadas Cilíndricas<a class="headerlink" href="#integrales-triples-en-coordenadas-cilindricas" title="Link to this heading">#</a></h2>
+<section id="transformaciones-en-el-espacio">
+<h3>Transformaciones en el Espacio<a class="headerlink" href="#transformaciones-en-el-espacio" title="Link to this heading">#</a></h3>
+<p>Considere la <strong>transformación</strong> <span class="math notranslate nohighlight">\(T:\mathbb{R}^3\to\mathbb{R}^3\)</span>, del espacio <span class="math notranslate nohighlight">\(UVW\)</span> en el espacio <span class="math notranslate nohighlight">\(XYZ\)</span> dada por <span class="math notranslate nohighlight">\(T(u,v,w)=(x,y,z)\)</span> con</p>
+<div class="math notranslate nohighlight">
+\[
+x=g(u,v,w),~y=h(u,v,w),~z=k(u,v,w)
+\]</div>
+<p>Supondremos que <span class="math notranslate nohighlight">\(T\)</span> es una <strong>transformación</strong> <span class="math notranslate nohighlight">\(\mathbf{C^1}\)</span>, lo que significa que <span class="math notranslate nohighlight">\(g\)</span>, <span class="math notranslate nohighlight">\(h\)</span> y <span class="math notranslate nohighlight">\(k\)</span> tienen derivadas parciales continuas. <span class="math notranslate nohighlight">\(T\)</span> transforma a <span class="math notranslate nohighlight">\(S\)</span> (en el espacio <span class="math notranslate nohighlight">\(UVW\)</span>) en una región sólida <span class="math notranslate nohighlight">\(E\)</span> (en el espacio <span class="math notranslate nohighlight">\(XYZ\)</span>) llamada imagen de <span class="math notranslate nohighlight">\(S\)</span>: <span class="math notranslate nohighlight">\(T(S)=E\)</span>.</p>
+<p>El <strong>jacobiano</strong> <span class="math notranslate nohighlight">\(J_T\)</span> de la transformación es</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+J_T=\frac{\partial(x,y,z)}{\partial(u,v,w)}=\begin{vmatrix}x_u&amp;x_v&amp;x_w\\ y_u&amp;y_v&amp;y_w\\ z_u&amp;z_v&amp;z_w\end{vmatrix}
+\end{split}\]</div>
+<p>Análogamente a transformaciones en el plano,</p>
+<div class="math notranslate nohighlight" id="equation-intespacio">
+<span class="eqno">(34)<a class="headerlink" href="#equation-intespacio" title="Link to this equation">#</a></span>\[
+\iiint\limits_E f(x,y,z)~dV=\iiint\limits_S f\big(x(u,v,w),y(u,v,w),z(u,v,w)\big)|J_T|~dV_s
+\]</div>
+</section>
+<section id="coordenadas-cilindricas">
+<h3>Coordenadas Cilíndricas<a class="headerlink" href="#coordenadas-cilindricas" title="Link to this heading">#</a></h3>
+<p>En el sistema de <strong>coordenadas cilíndricas</strong>, un punto <span class="math notranslate nohighlight">\(P\)</span> en el espacio está representado por la terna <span class="math notranslate nohighlight">\((r,\theta,z)\)</span>, donde <span class="math notranslate nohighlight">\(r\)</span> y <span class="math notranslate nohighlight">\(\theta\)</span> son las coordenadas polares de la proyección de <span class="math notranslate nohighlight">\(P\)</span> sobre el plano <span class="math notranslate nohighlight">\(XY\)</span>, y <span class="math notranslate nohighlight">\(z\)</span> es la distancia dirigida del plano <span class="math notranslate nohighlight">\(XY\)</span> a <span class="math notranslate nohighlight">\(P\)</span>.
+La transformación de coordenadas cilíndricas a cartesianas es</p>
+<div class="math notranslate nohighlight">
+\[
+x=r\cos(\theta)~,~y=r\sin(\theta)~,~z=z
+\]</div>
+<figure class="align-default" id="cilindricas1">
+<a class="reference internal image-reference" href="_images/Cilindricas1.png"><img alt="_images/Cilindricas1.png" src="_images/Cilindricas1.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 55 </span><span class="caption-text">Coordenadas cilíndricas de un punto en el espacio.</span><a class="headerlink" href="#cilindricas1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>El jacobiano de esta transformación es</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{\partial(x,y,z)}{\partial(r,\theta,z)}=\begin{vmatrix}x_r&amp;x_\theta&amp;x_z\\ y_r&amp;y_\theta&amp;y_z\\ z_r&amp;z_\theta&amp;z_z\end{vmatrix}=r.
+\end{split}\]</div>
+<p>Por lo tanto</p>
+<div class="math notranslate nohighlight">
+\[
+\iiint\limits_E f(x,y,z)~dV=\iiint\limits_S f\big(r\cos(\theta),r\sin(\theta),z\big)\cdot r~dV_s
+\]</div>
+<p>En particular, si <span class="math notranslate nohighlight">\(E\)</span> es un sólido tipo 1 cuya proyección <span class="math notranslate nohighlight">\(D\)</span> sobre el plano <span class="math notranslate nohighlight">\(XY\)</span> es una región plana que puede ser descrita en coordenadas polares, entonces</p>
+<div class="math notranslate nohighlight">
+\[
+E=\{(x,y,z)\in\mathbb{R}^3:(x,y)\in D,~u_1(x,y)\leq z\leq u_2(x,y)\}
+\]</div>
+<p>y</p>
+<div class="math notranslate nohighlight">
+\[
+D=\{(r,\theta)\in \mathbb{R}_0^+\times[0,2\pi]: \alpha\leq \theta\leq\beta,~h_1(\theta)\leq r\leq h_2(\theta)\}
+\]</div>
+<figure class="align-default" id="cilindricas2">
+<a class="reference internal image-reference" href="_images/Cilindricas2.png"><img alt="_images/Cilindricas2.png" src="_images/Cilindricas2.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 56 </span><span class="caption-text">Sólido <span class="math notranslate nohighlight">\(E\)</span> con proyección polar <span class="math notranslate nohighlight">\(D\)</span> sobre el plano <span class="math notranslate nohighlight">\(XY\)</span>.</span><a class="headerlink" href="#cilindricas2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>De esta manera</p>
+<div class="math notranslate nohighlight">
+\[
+\iiint\limits_E f(x,y,z)~dV=\int_\alpha^\beta\int_{h_1(\theta)}^{h_2(\theta)}\int_{u_1(x,y)}^{u_2(x,y)} f\big(r\cos(\theta),r\sin(\theta),z\big)\cdot r~dzdrd\theta
+\]</div>
+<p><strong>Nota</strong>. No olvidar el elemento de volumen <span class="math notranslate nohighlight">\(dV=r~dzdrd\theta\)</span> que aparece luego de realizar la transformación a coordenadas cilíndricas.</p>
+<figure class="align-default" id="cilindricas3">
+<a class="reference internal image-reference" href="_images/Cilindricas3.png"><img alt="_images/Cilindricas3.png" src="_images/Cilindricas3.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 57 </span><span class="caption-text">Elemento de volumen en coordenadas cilíndricas <span class="math notranslate nohighlight">\(dV=r~dzdrd\theta\)</span>.</span><a class="headerlink" href="#cilindricas3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Evalúe <span class="math notranslate nohighlight">\(\displaystyle\iiint\limits_E x~dV\)</span> donde <span class="math notranslate nohighlight">\(E\)</span> está encerrada por los planos <span class="math notranslate nohighlight">\(z=0\)</span> y <span class="math notranslate nohighlight">\(z=x+y+5\)</span>, y los cilindros <span class="math notranslate nohighlight">\(x^2+y^2=4\)</span>, <span class="math notranslate nohighlight">\(x^2+y^2=9\)</span>.</p>
+</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Determine el volumen del sólido que se encuentra dentro del cilindro <span class="math notranslate nohighlight">\(x^2+y^2=4\)</span> y el elipsoide <span class="math notranslate nohighlight">\(4x^2+4y^2+z^2=64\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="integrales-triples-en-coordenadas-esfericas">
+<h2>Integrales Triples en Coordenadas Esféricas<a class="headerlink" href="#integrales-triples-en-coordenadas-esfericas" title="Link to this heading">#</a></h2>
+<section id="coordenadas-esfericas">
+<h3>Coordenadas Esféricas<a class="headerlink" href="#coordenadas-esfericas" title="Link to this heading">#</a></h3>
+<p>Las **coordenadas esféricas <span class="math notranslate nohighlight">\((\rho,\theta,\phi)\)</span> de un punto <span class="math notranslate nohighlight">\(P\)</span> en el <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> son tales que: <span class="math notranslate nohighlight">\(\rho=|OP|\)</span> es la distancia al origen desde <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span> es el mismo ángulo que en coordenadas cilíndricas (que se forma con el eje polar o <span class="math notranslate nohighlight">\(X\)</span>), y <span class="math notranslate nohighlight">\(\phi\)</span> es el ángulo entre el eje <span class="math notranslate nohighlight">\(Z\)</span> positivo y el segmento de recta <span class="math notranslate nohighlight">\(\overline{OP}\)</span>.</p>
+<figure class="align-default" id="esfericas2">
+<a class="reference internal image-reference" href="_images/Esfericas2.png"><img alt="_images/Esfericas2.png" src="_images/Esfericas2.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 58 </span><span class="caption-text">Coordenadas esféricas de un punto</span><a class="headerlink" href="#esfericas2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note que: <span class="math notranslate nohighlight">\(0\leq\rho~\)</span>, <span class="math notranslate nohighlight">\(~0\leq\theta&lt;2\pi~\)</span>. <span class="math notranslate nohighlight">\(~0\leq\phi\leq\pi\)</span>.</p>
+<p>A partir de la figura anterior, podemos deducir que</p>
+<div class="math notranslate nohighlight">
+\[
+x=\rho\sin(\phi)\cos(\theta)~,~y=\rho\sin(\phi)\sin(\theta)~,~z=\rho\cos(\phi)
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Escriba la esfera <span class="math notranslate nohighlight">\(x^2+y^2+z^2=R^2\)</span>, el cono <span class="math notranslate nohighlight">\(z^2=x^2+y^2\)</span> y el plano <span class="math notranslate nohighlight">\(x-y=0\)</span> en coordenadas esféricas.</p>
+</div>
+</section>
+<section id="integrales-triples-en-esfericas">
+<h3>Integrales Triples en Esféricas<a class="headerlink" href="#integrales-triples-en-esfericas" title="Link to this heading">#</a></h3>
+<p>El jacobiano de esta transformación es</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+J_T=\frac{\partial(x,y,z)}{\partial(\rho,\theta,\phi)}=\begin{vmatrix}x_\rho&amp;x_\theta&amp;x_\phi\\ y_\rho&amp;y_\theta&amp;y_\phi\\ z_\rho&amp;z_\theta&amp;z_\phi\end{vmatrix}=-\rho^2\sin(\phi).
+\end{split}\]</div>
+<p>En coordenadas esféricas, el equivalente a una caja rectangular es una <strong>cuña esférica</strong></p>
+<div class="math notranslate nohighlight">
+\[
+E=\{(\rho,\theta,\phi):a\leq\rho\leq b, \alpha\leq\theta\leq\beta, c\leq\phi\leq d\}.
+\]</div>
+<p>Así, reemplazando las coordenadas esféricas en la integral triple general, obtenemos</p>
+<div class="math notranslate nohighlight" id="equation-tripleesfericas">
+<span class="eqno">(35)<a class="headerlink" href="#equation-tripleesfericas" title="Link to this equation">#</a></span>\[
+\iiint\limits_E f(x,y,z)~dV=\int_c^d\int_\alpha^\beta\int_a^b f\big(\rho\sin(\phi)\cos(\theta),\rho\sin(\phi)\sin(\theta),\rho\cos(\phi)\big)\cdot \rho^2\sin(\phi)~d\rho d\theta d\phi
+\]</div>
+<p>El elemento de volumen es <span class="math notranslate nohighlight">\(dV=\rho^2\sin(\phi)~d\rho d\theta d\phi\)</span>.</p>
+<figure class="align-default" id="esfericas3">
+<a class="reference internal image-reference" href="_images/Esfericas3.png"><img alt="_images/Esfericas3.png" src="_images/Esfericas3.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 59 </span><span class="caption-text">Elemento de volumen <span class="math notranslate nohighlight">\(dV\)</span></span><a class="headerlink" href="#esfericas3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Nota</strong>. La fórmula se puede ampliar para incluir regiones esféricas mas generales como</p>
+<div class="math notranslate nohighlight">
+\[
+E=\{(\rho,\theta,\phi): \alpha\leq\theta\leq\beta, c\leq\phi\leq d, g_1(\theta,\phi)\leq\rho\leq g_2(\theta,\phi)\}
+\]</div>
+<p>donde los límites de integración para <span class="math notranslate nohighlight">\(\rho\)</span> son <span class="math notranslate nohighlight">\(g_1(\theta,\phi)\)</span> y <span class="math notranslate nohighlight">\(g_2(\theta,\phi)\)</span>.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Calcule <span class="math notranslate nohighlight">\(\displaystyle\iiint\limits_E (x^2+y^2)~dV\)</span> donde <span class="math notranslate nohighlight">\(E\)</span> está entre las esferas <span class="math notranslate nohighlight">\(x^2+y^2+z^2=4\)</span>, <span class="math notranslate nohighlight">\(x^2+y^2+z^2=9.\)</span></p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Ejercicio Propuesto</p>
+<p>Determine el volumen del sólido que está dentro de la esfera <span class="math notranslate nohighlight">\(x^2+y^2+z^2=4\)</span>, por encima del plano <span class="math notranslate nohighlight">\(XY\)</span> y por abajo del cono <span class="math notranslate nohighlight">\(z=\sqrt{x^2+y^2}\)</span>.</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "DenisOsses/CursoMulti",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Cap4.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Unidad 4</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Desafios.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Desafíos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-multiple">Integración Múltiple</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-integrales-dobles-sobre-rectangulos">Construcción de Integrales Dobles sobre Rectángulos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-doble">Integral Doble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-de-la-integral">Propiedades de la Integral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-fubini-integrales-iteradas">Teorema de Fubini (Integrales Iteradas)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-dobles-sobre-regiones-generales">Integrales Dobles sobre Regiones Generales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regiones-tipo-i">Regiones Tipo I</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regiones-tipo-ii">Regiones Tipo II</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-triples">Integrales Triples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-integrales-triples-sobre-cajas">Construcción de Integrales Triples sobre Cajas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-triple">Integral Triple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-fubini-para-integrales-triples">Teorema de Fubini para Integrales Triples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-triples-sobre-regiones-generales">Integrales Triples sobre Regiones Generales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regiones-tipo-1">Regiones Tipo 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regiones-tipo-2">Regiones Tipo 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regiones-tipo-3">Regiones Tipo 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-general-del-cambio-de-variables">Teorema General del Cambio de Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformaciones-en-el-plano">Transformaciones en el Plano</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-de-variables-e-integracion">Cambio de Variables e Integración</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jacobiano-de-la-transformacion">Jacobiano de la Transformación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-general">Teorema General</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-dobles-en-coordenadas-polares">Integrales Dobles en Coordenadas Polares</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformaciones-en-coordenadas-polares">Transformaciones en Coordenadas Polares</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-triples-en-coordenadas-cilindricas">Integrales Triples en Coordenadas Cilíndricas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformaciones-en-el-espacio">Transformaciones en el Espacio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-cilindricas">Coordenadas Cilíndricas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-triples-en-coordenadas-esfericas">Integrales Triples en Coordenadas Esféricas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-esfericas">Coordenadas Esféricas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-triples-en-esfericas">Integrales Triples en Esféricas</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por The Jupyter Book Community/ Área de Matemáticas FIC UAI/ Denis Osses, denis.osses@uai.cl
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025-1.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
