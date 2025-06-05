@@ -1,0 +1,1144 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Unidad 6 &#8212; Cálculo Multivariables 2025-1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=efdbd0b9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Cap6';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Desafíos" href="Desafios.html" />
+    <link rel="prev" title="Unidad 5" href="Cap5.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logomat.jpeg" class="logo__image only-light" alt="Cálculo Multivariables 2025-1 - Home"/>
+    <script>document.write(`<img src="_static/logomat.jpeg" class="logo__image only-dark" alt="Cálculo Multivariables 2025-1 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    MAT203 Cálculo Multivariables
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Cap1.html">Unidad 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cap2.html">Unidad 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cap3.html">Unidad 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cap4.html">Unidad 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cap5.html">Unidad 5</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Unidad 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Desafios.html">Desafíos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DenisOsses/CursoMulti/blob/master/Cap6.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DenisOsses/CursoMulti" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DenisOsses/CursoMulti/issues/new?title=Issue%20on%20page%20%2FCap6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Cap6.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Descargar archivo de cuaderno"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="_sources/Cap6.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Unidad 6</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-sobre-curvas-y-superficies">Integración sobre Curvas y Superficies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-vectoriales">Funciones Vectoriales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curvas">Curvas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recta-en-el-espacio">Recta en el Espacio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmento-de-recta">Segmento de Recta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circunferencia">Circunferencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elipse">Elipse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helice">Hélice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-de-curvas">Derivadas de Curvas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reglas-de-derivacion-de-funciones-vectoriales">Reglas de Derivación de Funciones Vectoriales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#longitud-de-una-curva">Longitud de una Curva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#longitud">Longitud</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#longitud-de-arco">Longitud de Arco</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectores-asociados-a-una-curva-marco-tnb">Vectores asociados a una Curva. Marco TNB</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-tangente-unitario">Vector Tangente Unitario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-normal-unitario">Vector Normal Unitario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-binormal">Vector Binormal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#marco-tnb">Marco TNB</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-de-linea-de-funciones-vectoriales-sobre-curvas">Integrales de Línea de Funciones Vectoriales (sobre Curvas)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-por-tramos">Curva por Tramos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orientacion-de-una-curva">Orientación de una Curva</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-de-linea-en-el-espacio">Integral de Línea en el Espacio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#campos-vectoriales">Campos Vectoriales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campo-vectorial-gradiente">Campo Vectorial Gradiente</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campos-conservativos-y-funciones-potenciales">Campos Conservativos y Funciones Potenciales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-de-linea-sobre-campos-vectoriales">Integrales de Línea sobre Campos Vectoriales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-fundamental-de-las-integrales-de-linea">Teorema Fundamental de las Integrales de Línea</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independencia-de-la-trayectoria">Independencia de la Trayectoria</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <!--###########################################################################################################################
+##############################################################################################################################
+#############################################################################################
+--><section class="tex2jax_ignore mathjax_ignore" id="unidad-6">
+<span id="u6"></span><h1>Unidad 6<a class="headerlink" href="#unidad-6" title="Link to this heading">#</a></h1>
+<section id="integracion-sobre-curvas-y-superficies">
+<h2>Integración sobre Curvas y Superficies<a class="headerlink" href="#integracion-sobre-curvas-y-superficies" title="Link to this heading">#</a></h2>
+<p>En este capítulo estudiaremos integrales para funciones cuyo dominio corresponda a una curva o a una superficie, planas o espaciales.</p>
+</section>
+<section id="funciones-vectoriales">
+<h2>Funciones Vectoriales<a class="headerlink" href="#funciones-vectoriales" title="Link to this heading">#</a></h2>
+<p>Una <strong>función vectorial</strong> en <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> es una función <span class="math notranslate nohighlight">\(\textbf{r}:I\subseteq\mathbb{R}\to\mathbb{R}^n\)</span>, donde <span class="math notranslate nohighlight">\(I\)</span> es un intervalo (que puede ser todo <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> inclusive). Esta función toma un <span class="math notranslate nohighlight">\(t\in I\)</span> y le asigna un vector <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> de <span class="math notranslate nohighlight">\(n\)</span> coordenadas, es decir</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}(t)=(x_1(t),x_2(t),\ldots,x_n(t))=\sum_{i=1}^nx_i(t)\mathbf{e}_i\in\mathbb{R}^n
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\{\mathbf{e}_i\}_{i=1}^n\)</span> es la base canónica de <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>. Las funciones <span class="math notranslate nohighlight">\(x_i:I\to\mathbb{R}\)</span> se denominan <strong>funciones componentes o coordenadas</strong> de <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span>.</p>
+<p>Diremos que <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> es <strong>continua</strong> en <span class="math notranslate nohighlight">\(t_0\)</span> si cada función componente es continua en <span class="math notranslate nohighlight">\(t_0\)</span>, es decir si:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{t\to t_0}x_i(t)=x_i(t_0)~,~\forall~ i=1,2,\ldots,n.
+\]</div>
+<section id="curvas">
+<h3>Curvas<a class="headerlink" href="#curvas" title="Link to this heading">#</a></h3>
+<p>Si cada función componente <span class="math notranslate nohighlight">\(x_i(t)\)</span> es continua en <span class="math notranslate nohighlight">\(I\)</span>, entonces el conjunto de puntos</p>
+<div class="math notranslate nohighlight">
+\[
+C=\{(x_1,x_2,\ldots,x_n)\in\mathbb{R}^n:x_i=x_i(t)~,~t\in I\}
+\]</div>
+<p>es llamado <strong>curva</strong> en <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> y <span class="math notranslate nohighlight">\(t\)</span> se conoce como <strong>parámetro</strong>.</p>
+<p>Em particular, si <span class="math notranslate nohighlight">\(n=3\)</span>, usualmente escribimos</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}(t)=(f(t),g(t),h(t))=f(t)\mathbf{i}+g(t)\mathbf{j}+h(t)\mathbf{k}.
+\]</div>
+<p>En <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> podemos interpretar la curva <span class="math notranslate nohighlight">\(C\)</span> como la trayectoria descrita por un punto <span class="math notranslate nohighlight">\(P(f(t),g(t),h(t))\)</span> que se mueve en el espacio tridimensional a medida que el tiempo <span class="math notranslate nohighlight">\(t\)</span> transcurre. Luego <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> corresponde al vector posición del punto móvil <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<figure class="align-default" id="trayectoriavec">
+<a class="reference internal image-reference" href="_images/trayectoriaVec.png"><img alt="_images/trayectoriaVec.png" src="_images/trayectoriaVec.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 60 </span><span class="caption-text">Vector posición <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> asociado al punto móvil <span class="math notranslate nohighlight">\(P(f(t),g(t),h(t))\)</span></span><a class="headerlink" href="#trayectoriavec" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="recta-en-el-espacio">
+<h3>Recta en el Espacio<a class="headerlink" href="#recta-en-el-espacio" title="Link to this heading">#</a></h3>
+<p>Una recta <span class="math notranslate nohighlight">\(L\)</span> que pasa por el punto <span class="math notranslate nohighlight">\(P_0(x_0,y_0,z_0)\)</span> (con vector posición <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span>) y que tiene vector dirección <span class="math notranslate nohighlight">\(\mathbf{v}=(a,b,c)\)</span> está dada por</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}(t)=\mathbf{r}_0+t\mathbf{v}=(x_0+at,y_0+bt,z_0+ct)~~,~~t\in\mathbb{R}
+\]</div>
+<figure class="align-default" id="recta">
+<a class="reference internal image-reference" href="_images/recta.png"><img alt="_images/recta.png" src="_images/recta.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 61 </span><span class="caption-text">Recta en el espacio</span><a class="headerlink" href="#recta" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="segmento-de-recta">
+<h3>Segmento de Recta<a class="headerlink" href="#segmento-de-recta" title="Link to this heading">#</a></h3>
+<p>Un segmento que une los puntos <span class="math notranslate nohighlight">\(P_0(x_0,y_0,z_0)\)</span> y <span class="math notranslate nohighlight">\(P_1(x_1,y_1,z_1)\)</span> (con vectores posición <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> y <span class="math notranslate nohighlight">\(\mathbf{r}_1\)</span> respectivamente) está dado por</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}(t)=\mathbf{r}_0+t(\mathbf{r}_1-\mathbf{r}_0)=(1-t)\mathbf{r}_0+t\mathbf{r}_1~~,~~t\in I=[0,1].
+\]</div>
+</section>
+<section id="circunferencia">
+<h3>Circunferencia<a class="headerlink" href="#circunferencia" title="Link to this heading">#</a></h3>
+<p>Toda circunferencia en el plano <span class="math notranslate nohighlight">\(XY\)</span>, con centro en el origen y radio <span class="math notranslate nohighlight">\(a&gt;0\)</span>, es decir <span class="math notranslate nohighlight">\(x^2+y^2=a^2\)</span>, puede ser descrita o parametrizada mediante la función vectorial</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}(t)=(a\cos(t),a\sin(t))~~,~~t\in[0,2\pi].
+\]</div>
+</section>
+<section id="elipse">
+<h3>Elipse<a class="headerlink" href="#elipse" title="Link to this heading">#</a></h3>
+<p>Toda elipse <span class="math notranslate nohighlight">\(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\)</span> en el plano <span class="math notranslate nohighlight">\(XY\)</span> puede ser descrita mediante la función vectorial</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}(t)=(a\cos(t),b\sin(t))~~,~~t\in[0,2\pi].
+\]</div>
+</section>
+<section id="helice">
+<h3>Hélice<a class="headerlink" href="#helice" title="Link to this heading">#</a></h3>
+<p>La curva conocida como <strong>hélice</strong> puede ser descrita como</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}(t)=(\cos(t),\sin(t),t).
+\]</div>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/helice.png"><img alt="_images/helice.png" src="_images/helice.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 62 </span><span class="caption-text">Hélice</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Encuentre una parametrización de la curva de intersección del cono <span class="math notranslate nohighlight">\(z=\sqrt{x^2+y^2}\)</span> con el plano <span class="math notranslate nohighlight">\(z=1+y\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="derivadas-de-curvas">
+<h2>Derivadas de Curvas<a class="headerlink" href="#derivadas-de-curvas" title="Link to this heading">#</a></h2>
+<p>La derivada <span class="math notranslate nohighlight">\(\mathbf{r}'(t)\)</span> de una función vectorial está definida como</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d\mathbf{r}}{dt}=\mathbf{r}'(t)=\lim_{h\to0}\frac{\mathbf{r}(t+h)-\mathbf{r}(t)}{h}
+\]</div>
+<figure class="align-default" id="tangente">
+<a class="reference internal image-reference" href="_images/tangente.png"><img alt="_images/tangente.png" src="_images/tangente.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 63 </span><span class="caption-text">Derivada de una curva dada por la función vectorial <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span></span><a class="headerlink" href="#tangente" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Esta derivada existe siempre que las funciones componentes de <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> sean derivables. Luego</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}'(t)=(x_1'(t),x_2'(t),\ldots,x_n'(t)).
+\]</div>
+<p>En particular, si <span class="math notranslate nohighlight">\(n=3\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}'(t)=(f'(t),g'(t),h'(t)).
+\]</div>
+<p>El vector <span class="math notranslate nohighlight">\(\mathbf{r}'(t)\)</span> es llamado el <strong>vector tangente</strong> a la curva en el punto <span class="math notranslate nohighlight">\(P\)</span>, siempre que <span class="math notranslate nohighlight">\(\mathbf{r}'(t)\)</span> exista y <span class="math notranslate nohighlight">\(\mathbf{r}'(t)\neq 0\)</span>. La <strong>recta tangente</strong> a la curva <span class="math notranslate nohighlight">\(C\)</span> en <span class="math notranslate nohighlight">\(P\)</span> se define como la recta que pasa por <span class="math notranslate nohighlight">\(P\)</span> y es paralela al vector tangente <span class="math notranslate nohighlight">\(\mathbf{r}'(t)\)</span>.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Considere la curva <span class="math notranslate nohighlight">\(C\)</span> en el plano <span class="math notranslate nohighlight">\(XY\)</span> que está dada por el gráfico de la función <span class="math notranslate nohighlight">\(y=f(x)\)</span>. Encuentre una parametrización de esta curva y determine su vector tangente.</p>
+</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Encuentre la ecuación de la recta tangente a la curva <span class="math notranslate nohighlight">\(x=t\)</span>, <span class="math notranslate nohighlight">\(y=e^{-t}\)</span>, <span class="math notranslate nohighlight">\(z=2t-t^2\)</span> en el punto <span class="math notranslate nohighlight">\((0,1,0)\)</span>.</p>
+</div>
+<section id="reglas-de-derivacion-de-funciones-vectoriales">
+<h3>Reglas de Derivación de Funciones Vectoriales<a class="headerlink" href="#reglas-de-derivacion-de-funciones-vectoriales" title="Link to this heading">#</a></h3>
+<p>Suponga que <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> y <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> son funciones vectoriales derivables, <span class="math notranslate nohighlight">\(c\)</span> es un escalar y <span class="math notranslate nohighlight">\(f\)</span> es una función de variable real. Entonces</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\dfrac{d}{dt}[\mathbf{u}(t)+\mathbf{v}(t)]=\mathbf{u}'(t)+\mathbf{v}'(t)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{d}{dt}[c\mathbf{u}(t)]=c\mathbf{u}'(t)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{d}{dt}[f(t)\mathbf{u}(t)]=f'(t)\mathbf{u}(t)+f(t)\mathbf{u}'(t)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{d}{dt}[\mathbf{u}(t)\cdot \mathbf{v}(t)]=\mathbf{u}'(t)\cdot \mathbf{v}(t)+\mathbf{u}(t)\cdot\mathbf{v}'(t)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{d}{dt}[\mathbf{u}(t)\times \mathbf{v}(t)]=\mathbf{u}'(t)\times \mathbf{v}(t)+\mathbf{u}(t)\times\mathbf{v}'(t)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{d}{dt}[\mathbf{u}(f(t))]=f'(t)\mathbf{u}'(f(t))\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{d}{dt}[||\mathbf{u}(t)||]=\dfrac{\mathbf{u}'(t)\cdot\mathbf{u}(t)}{||\mathbf{u}(t)||}\)</span>.</p></li>
+</ol>
+</section>
+</section>
+<section id="longitud-de-una-curva">
+<h2>Longitud de una Curva<a class="headerlink" href="#longitud-de-una-curva" title="Link to this heading">#</a></h2>
+<p>La <strong>integral definida</strong> de una función vectorial continua <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> se define en términos de las integrales de sus funciones componentes:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b\mathbf{r}(t)~dt=\left(\int_a^b f(t)~dt\right)\mathbf{i}+\left(\int_a^b g(t)~dt\right)\mathbf{j}+\left(\int_a^b h(t)~dt\right)\mathbf{k}
+\]</div>
+<p>Si <span class="math notranslate nohighlight">\(\mathbf{R}(t)\)</span> es una antiderivada de <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span>, es decir <span class="math notranslate nohighlight">\(\mathbf{R}'(t)=\mathbf{r}(t)\)</span> entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b\mathbf{r}(t)~dt=\big[\mathbf{R}(t)\big]\Big|_a^b
+\]</div>
+<section id="longitud">
+<h3>Longitud<a class="headerlink" href="#longitud" title="Link to this heading">#</a></h3>
+<p>La <strong>longitud</strong> <span class="math notranslate nohighlight">\(L\)</span> de una curva <span class="math notranslate nohighlight">\(C\)</span> definida por una función vectorial continua <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span>, y <span class="math notranslate nohighlight">\(\mathbf{r}'(t)\)</span> también continua, es</p>
+<div class="math notranslate nohighlight">
+\[
+L=\int_a^b||\mathbf{r}'(t)||~dt
+\]</div>
+<p>En particular, si <span class="math notranslate nohighlight">\(\mathbf{r}(t)=(f(t),g(t),h(t))\)</span> entonces</p>
+<div class="math notranslate nohighlight">
+\[
+L=\int_a^b\sqrt{\big(f'(t)\big)^2+\big(g'(t)\big)^2+\big(h'(t)\big)^2}~dt
+\]</div>
+</section>
+<section id="longitud-de-arco">
+<h3>Longitud de Arco<a class="headerlink" href="#longitud-de-arco" title="Link to this heading">#</a></h3>
+<p>Si <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> es una función vectorial  con <span class="math notranslate nohighlight">\(t\in[a,b]\)</span>, definimos la <strong>función longitud de arco</strong> <span class="math notranslate nohighlight">\(s\)</span> como</p>
+<div class="math notranslate nohighlight">
+\[
+s(t)=\int_a^t||\mathbf{r}'(u)||~du
+\]</div>
+<figure class="align-default" id="longitudarco">
+<a class="reference internal image-reference" href="_images/LongitudArco.png"><img alt="_images/LongitudArco.png" src="_images/LongitudArco.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 64 </span><span class="caption-text">Función longitud de arco <span class="math notranslate nohighlight">\(s(t)\)</span></span><a class="headerlink" href="#longitudarco" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><span class="math notranslate nohighlight">\(s(t)\)</span> corresponde a la longitud de la curva <span class="math notranslate nohighlight">\(C\)</span> entre <span class="math notranslate nohighlight">\(\mathbf{r}(a)\)</span> y <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span>. Si derivamos <span class="math notranslate nohighlight">\(s(t)\)</span> obtenemos</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{ds}{dt}=||\mathbf{r}'(t)||~~\Leftrightarrow~~ds=||\mathbf{r}'(t)||~dt~~\Rightarrow~~L=\int_a^b ds
+\]</div>
+<p>(<span class="math notranslate nohighlight">\(ds\)</span> se denomina <strong>diferencial de arco</strong> y lo utilizaremos más adelante).</p>
+</section>
+</section>
+<section id="vectores-asociados-a-una-curva-marco-tnb">
+<h2>Vectores asociados a una Curva. Marco TNB<a class="headerlink" href="#vectores-asociados-a-una-curva-marco-tnb" title="Link to this heading">#</a></h2>
+<p>Una parametrización <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> es <strong>suave</strong> sobre un intervalo <span class="math notranslate nohighlight">\(I\)</span> si <span class="math notranslate nohighlight">\(\mathbf{r}'\)</span> es continua y <span class="math notranslate nohighlight">\(\mathbf{r}'(t)\neq\mathbf{0}\)</span> sobre <span class="math notranslate nohighlight">\(I\)</span>. Una curva <span class="math notranslate nohighlight">\(C\)</span> es suave si tiene una parametrización suave: no tiene puntos agudos ni cúspides; cuando gira el vector tangente <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span>, lo hace en forma continua.</p>
+<section id="vector-tangente-unitario">
+<h3>Vector Tangente Unitario<a class="headerlink" href="#vector-tangente-unitario" title="Link to this heading">#</a></h3>
+<p>Definimos el <strong>vector tangente unitario</strong> <span class="math notranslate nohighlight">\(\mathbf{T}(t)\)</span> a la curva <span class="math notranslate nohighlight">\(C\)</span> como</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{T}(t)=\frac{\mathbf{r}'(t)}{||\mathbf{r}'(t)||}
+\]</div>
+<p>e indica la dirección de la curva.</p>
+<p>Como <span class="math notranslate nohighlight">\(||\mathbf{T}(t)||=1\)</span>, derivando la norma respecto de <span class="math notranslate nohighlight">\(t\)</span>, obtenemos que <span class="math notranslate nohighlight">\(\mathbf{T}(t)\cdot\mathbf{T}'(t)=0\)</span>. Esto implica que <span class="math notranslate nohighlight">\(\mathbf{T}'(t)\)</span> es perpendicular (normal) a <span class="math notranslate nohighlight">\(\mathbf{T}(t)\)</span>.</p>
+</section>
+<section id="vector-normal-unitario">
+<h3>Vector Normal Unitario<a class="headerlink" href="#vector-normal-unitario" title="Link to this heading">#</a></h3>
+<p>El <strong>vector normal unitario</strong> <span class="math notranslate nohighlight">\(\mathbf{N}(t)\)</span> a la curva <span class="math notranslate nohighlight">\(C\)</span> es</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{N}(t)=\frac{\mathbf{T}'(t)}{||\mathbf{T}'(t)||}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\mathbf{T}'(t)\neq\mathbf{0}\)</span>. Se interpreta el vector normal como la dirección en la cual la curva está girando en cada punto.</p>
+</section>
+<section id="vector-binormal">
+<h3>Vector Binormal<a class="headerlink" href="#vector-binormal" title="Link to this heading">#</a></h3>
+<p>El vector <span class="math notranslate nohighlight">\(\mathbf{B}(t)=\mathbf{T}(t)\times\mathbf{N}(t)\)</span> se denomina <strong>vector binormal</strong>, y es perpendicular a <span class="math notranslate nohighlight">\(\mathbf{T}\)</span> y <span class="math notranslate nohighlight">\(\mathbf{N}\)</span> (y es unitario).</p>
+</section>
+<section id="marco-tnb">
+<h3>Marco TNB<a class="headerlink" href="#marco-tnb" title="Link to this heading">#</a></h3>
+<p>Los vectores <span class="math notranslate nohighlight">\(\mathbf{T}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{N}\)</span> y <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> forman el marco <span class="math notranslate nohighlight">\(\mathbf{T}\mathbf{N}\mathbf{B}\)</span> (marco de Frenet-Serret o móvil), que nos entrega un sistema de referencia rectangular para el punto <span class="math notranslate nohighlight">\(P\)</span> sobre la curva <span class="math notranslate nohighlight">\(C\)</span> en cualquier instante <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<figure class="align-default" id="tnb">
+<a class="reference internal image-reference" href="_images/TNB.png"><img alt="_images/TNB.png" src="_images/TNB.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 65 </span><span class="caption-text">Marco referencial TNB</span><a class="headerlink" href="#tnb" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Podemos observar el marco móvil en la siguiente aplicación de <a class="reference external" href="https://www.geogebra.org/m/anbmDpHv">Geogebra</a>.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Considere la curva <span class="math notranslate nohighlight">\(C\)</span> dada por la parametrización</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}(t)=\left(t^2,\frac{1}{3}t^3,2t\right)~~,~~t\in\mathbb{R}.
+\]</div>
+<ol class="arabic simple">
+<li><p>Calcule el largo <span class="math notranslate nohighlight">\(L\)</span> de la curva <span class="math notranslate nohighlight">\(C\)</span> para <span class="math notranslate nohighlight">\(t\in[0,2]\)</span>.</p></li>
+<li><p>Establezca el diferencial de arco <span class="math notranslate nohighlight">\(ds\)</span> para <span class="math notranslate nohighlight">\(C\)</span>.</p></li>
+<li><p>Determine los vectores tangente <span class="math notranslate nohighlight">\(\mathbf{T}\)</span> y normal <span class="math notranslate nohighlight">\(\mathbf{N}\)</span> unitarios en el instante <span class="math notranslate nohighlight">\(t=1\)</span>.</p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="integrales-de-linea-de-funciones-vectoriales-sobre-curvas">
+<h2>Integrales de Línea de Funciones Vectoriales (sobre Curvas)<a class="headerlink" href="#integrales-de-linea-de-funciones-vectoriales-sobre-curvas" title="Link to this heading">#</a></h2>
+<p>Definiremos una integral sobre una curva <span class="math notranslate nohighlight">\(C\)</span> en vez de un intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>. Realizamos el procedimiento habitual: sea <span class="math notranslate nohighlight">\(C\)</span> la curva plana suave dada por la función vectorial <span class="math notranslate nohighlight">\(\mathbf{r}(t)=(x(t),y(t))\)</span>, donde <span class="math notranslate nohighlight">\(a\leq t\leq b\)</span>.</p>
+<figure class="align-default" id="intlinea1">
+<a class="reference internal image-reference" href="_images/IntLinea1.png"><img alt="_images/IntLinea1.png" src="_images/IntLinea1.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 66 </span><span class="caption-text">Partición del intervalo <span class="math notranslate nohighlight">\([a,b]\)</span></span><a class="headerlink" href="#intlinea1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>Dividimos <span class="math notranslate nohighlight">\([a,b]\)</span> en <span class="math notranslate nohighlight">\(n\)</span> subintervalos <span class="math notranslate nohighlight">\([t_{i-1},t_i]\)</span> del mismo ancho y ponemos <span class="math notranslate nohighlight">\(x_i=x(t_i)\)</span> e <span class="math notranslate nohighlight">\(y_i=y(t_i)\)</span>.</p></li>
+<li><p>Los puntos respectivos <span class="math notranslate nohighlight">\(P_i(x_i,y_i)\)</span> dividen a <span class="math notranslate nohighlight">\(C\)</span> en <span class="math notranslate nohighlight">\(n\)</span> subarcos de longitudes <span class="math notranslate nohighlight">\(\Delta s_1, \Delta s_2,\ldots,\Delta s_n\)</span>.</p></li>
+<li><p>Ahora elegimos un punto de muestra <span class="math notranslate nohighlight">\(P_i^\ast(x_i^\ast,y_i^\ast)\)</span> en el <span class="math notranslate nohighlight">\(i-\)</span>ésimo subarco.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(f\)</span> es función cuyo dominio incluye a la curva <span class="math notranslate nohighlight">\(C\)</span>, evaluamos <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\((x_i^\ast,y_i^\ast)\)</span>.</p></li>
+<li><p>Multiplicamos por la longitud del subarco <span class="math notranslate nohighlight">\(\Delta s_i\)</span>, y formamos la suma de Riemann <span class="math notranslate nohighlight">\(\displaystyle\sum_{i=1}^nf(x_i^\ast,y_i^\ast)\Delta s_i\)</span>.</p></li>
+</ol>
+<p>Hacemos <span class="math notranslate nohighlight">\(n\to\infty\)</span> y obtenemos que si <span class="math notranslate nohighlight">\(f\)</span> se define sobre una curva <span class="math notranslate nohighlight">\(C\)</span> suave dada por <span class="math notranslate nohighlight">\(\mathbf{r}(t)=(x(t),y(t))\)</span>, entonces la <strong>integral de línea de</strong> <span class="math notranslate nohighlight">\(\mathbf{f}\)</span> <strong>a lo largo de</strong> <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> (con respecto a la longitud de arco <span class="math notranslate nohighlight">\(ds\)</span>) es</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C f(x,y)~ds=\lim_{n\to\infty}\sum_{i=1}^nf((x_i^\ast,y_i^\ast))\Delta s_i
+\]</div>
+<p>si el límite existe, lo cual ocurre siempre si <span class="math notranslate nohighlight">\(f\)</span> es continua. Para evaluar esta integral usamos que <span class="math notranslate nohighlight">\(\mathbf{r}(t)=(x(t),y(t))\)</span> y <span class="math notranslate nohighlight">\(ds=||\mathbf{r}'(t)||~dt\)</span>, con lo cual</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C f(x,y)~ds=\int_a^b f\big(\mathbf{r}(t)\big)~||\mathbf{r}'(t)||~dt
+\]</div>
+<figure class="align-default" id="intlinea2">
+<a class="reference internal image-reference" href="_images/IntLinea2.png"><img alt="_images/IntLinea2.png" src="_images/IntLinea2.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 67 </span><span class="caption-text">Si <span class="math notranslate nohighlight">\(f(x,y)\geq0\)</span> entonces <span class="math notranslate nohighlight">\(\displaystyle\int\limits_C f(x,y)~ds\)</span> representa el área sobre <span class="math notranslate nohighlight">\(C\)</span> y bajo <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#intlinea2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>El valor de la integral de línea no depende de la parametrización de la curva, siempre que esta se recorra exactamente una vez cuando <span class="math notranslate nohighlight">\(t\)</span> se incrementa desde <span class="math notranslate nohighlight">\(a\)</span> hasta <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<section id="curva-por-tramos">
+<h3>Curva por Tramos<a class="headerlink" href="#curva-por-tramos" title="Link to this heading">#</a></h3>
+<p>Supongamos que <span class="math notranslate nohighlight">\(C\)</span> es una curva suave por tramos; es decir, <span class="math notranslate nohighlight">\(C\)</span> es una unión de una cantidad finita de curvas suaves <span class="math notranslate nohighlight">\(C_1, C_2,\ldots, C_n\)</span>. Entonces, definimos la integral de <span class="math notranslate nohighlight">\(f\)</span> a lo largo de <span class="math notranslate nohighlight">\(C\)</span> como la suma de las integrales de <span class="math notranslate nohighlight">\(f\)</span> a lo largo de cada una de las partes suaves de <span class="math notranslate nohighlight">\(C\)</span>:</p>
+<figure class="align-default" id="intlinea3">
+<a class="reference internal image-reference" href="_images/IntLinea3.png"><img alt="_images/IntLinea3.png" src="_images/IntLinea3.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 68 </span><span class="caption-text">La integral de línea sobre una curva por tramos es la suma de las integrales en cada tramo</span><a class="headerlink" href="#intlinea3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C f(x,y)~ds=\sum_{i=1}^n\int\limits_{C_i} f(x,y)~ds
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Sea <span class="math notranslate nohighlight">\(C\)</span> la curva que consiste en los segmentos de recta desde <span class="math notranslate nohighlight">\((0,0)\)</span> hasta <span class="math notranslate nohighlight">\((2,1)\)</span> y desde <span class="math notranslate nohighlight">\((2, 1)\)</span> hasta <span class="math notranslate nohighlight">\((3, 0)\)</span>. Calcule <span class="math notranslate nohighlight">\(\displaystyle\int\limits_C(x+2y)~ds\)</span></p>
+</div>
+<p>Existen 2 tipos más integrales de línea que ocurren cuando solo miramos la variación del arco <span class="math notranslate nohighlight">\(\Delta s=\sqrt{(\Delta x)^2+(\Delta y)^2}\)</span> con respecto a <span class="math notranslate nohighlight">\(x\)</span> o <span class="math notranslate nohighlight">\(y\)</span>, a saber:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\int\limits_C f(x,y)~dx&amp;=\int_a^b f(x(t),y(t))~x'(t)~dt\\
+\int\limits_C f(x,y)~dy&amp;=\int_a^b f(x(t),y(t))~y'(t)~dt
+\end{aligned}
+\end{split}\]</div>
+</section>
+<section id="orientacion-de-una-curva">
+<h3>Orientación de una Curva<a class="headerlink" href="#orientacion-de-una-curva" title="Link to this heading">#</a></h3>
+<p>Una parametrización dada <span class="math notranslate nohighlight">\(\mathbf{r}(t)=(x(t),y(t))\)</span>, <span class="math notranslate nohighlight">\(t\in[a,b]\)</span> determina una <strong>orientación</strong> de la curva <span class="math notranslate nohighlight">\(C\)</span>, cuya dirección positiva corresponde a los valores crecientes del parámetro <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Si <span class="math notranslate nohighlight">\(-C\)</span> denota la curva que consiste de los mismos puntos que <span class="math notranslate nohighlight">\(C\)</span>, pero con la orientación opuesta, es decir, del punto inicial <span class="math notranslate nohighlight">\(B\)</span> al punto terminal <span class="math notranslate nohighlight">\(A\)</span> de la figura, entonces tenemos</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\int\limits_{-C} f(x,y)~dx&amp;=-\int\limits_{C} f(x,y)~dx\\
+\int\limits_{-C} f(x,y)~dy&amp;=-\int\limits_{C} f(x,y)~dy\\
+\text{pero}~\int\limits_{-C} f(x,y)~ds&amp;=\int\limits_{C} f(x,y)~ds
+\end{aligned}
+\end{split}\]</div>
+<figure class="align-default" id="intlinea4">
+<a class="reference internal image-reference" href="_images/IntLinea4.png"><img alt="_images/IntLinea4.png" src="_images/IntLinea4.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 69 </span><span class="caption-text">Curva <span class="math notranslate nohighlight">\(C\)</span> y con su orientación contraria <span class="math notranslate nohighlight">\(-C\)</span></span><a class="headerlink" href="#intlinea4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Es usual que las integrales de línea respecto a <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span> se presenten juntas. Cuando esto sucede, se acostumbra escribir</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_{C} P(x,y)~dx+\int\limits_{C} Q(x,y)~dy=\int\limits_{C} P(x,y)~dx+Q(x,y)~dy
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Sea <span class="math notranslate nohighlight">\(C\)</span> la curva que consiste del arco de circunferencia <span class="math notranslate nohighlight">\(x^2+y^2=1\)</span> desde <span class="math notranslate nohighlight">\((1,0)\)</span> hasta <span class="math notranslate nohighlight">\((0, 1)\)</span> seguido del segmento de recta desde <span class="math notranslate nohighlight">\((0, 1)\)</span> hasta <span class="math notranslate nohighlight">\((4, 3)\)</span>. Calcule</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C x^2~dx+y^2~dy.
+\]</div>
+</div>
+</section>
+<section id="integral-de-linea-en-el-espacio">
+<h3>Integral de Línea en el Espacio<a class="headerlink" href="#integral-de-linea-en-el-espacio" title="Link to this heading">#</a></h3>
+<p>Si <span class="math notranslate nohighlight">\(C\)</span> es una curva suave en el espacio con parametrización: <span class="math notranslate nohighlight">\(\mathbf{r}(t)=(x(t),y(t),z(t))\)</span>, <span class="math notranslate nohighlight">\(t\in[a,b]\)</span>, podemos generalizar la <strong>integral de línea de</strong> <span class="math notranslate nohighlight">\(f\)</span> <strong>a lo largo de</strong> <span class="math notranslate nohighlight">\(C\)</span> (con respecto a la longitud de arco <span class="math notranslate nohighlight">\(ds\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C f(x,y,z)~ds=\int_a^b f\big(\mathbf{r}(t)\big)~||\mathbf{r}'(t)||~dt
+\]</div>
+<p>y las integrales de línea a lo largo de <span class="math notranslate nohighlight">\(C\)</span> respecto a <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>, que usualmente se escriben</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_{C} P(x,y,z)~dx+Q(x,y,z)~dy+R(x,y,z)~dz
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Sea <span class="math notranslate nohighlight">\(C\)</span> la curva dada por <span class="math notranslate nohighlight">\(\mathbf{r}(t)=(\sqrt{t},t,t^2)\)</span>, <span class="math notranslate nohighlight">\(t\in[1,4]\)</span>. Calcule</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C y~dx+z~dy+x~dz.
+\]</div>
+</div>
+</section>
+</section>
+<section id="campos-vectoriales">
+<h2>Campos Vectoriales<a class="headerlink" href="#campos-vectoriales" title="Link to this heading">#</a></h2>
+<p>Sea <span class="math notranslate nohighlight">\(D\subseteq\mathbb{R}^n\)</span>. Un <strong>campo vectorial</strong> sobre <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> es una función <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> que asigna a cada <span class="math notranslate nohighlight">\((x_1,\ldots,x_n)\in D\)</span> un vector de <span class="math notranslate nohighlight">\(n\)</span> coordenadas <span class="math notranslate nohighlight">\(\mathbf{F}(x_1,\ldots,x_n)\)</span>. Si <span class="math notranslate nohighlight">\(n=2\)</span> o <span class="math notranslate nohighlight">\(n=3\)</span>, tenemos respectivamente</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\mathbf{F}(x,y)&amp;=P(x,y)\mathbf{i}+Q(x,y)\mathbf{j}=\big(P,Q\big)\\ 
+\mathbf{F}(x,y,z)&amp;=P(x,y,z)\mathbf{i}+Q(x,y,z)\mathbf{j}+R(x,y,z)\mathbf{k}\\
+&amp;=\big(P,Q,R\big)
+\end{aligned}
+\end{split}\]</div>
+<figure class="align-default" id="campo1">
+<a class="reference internal image-reference" href="_images/Campo1.png"><img alt="_images/Campo1.png" src="_images/Campo1.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 70 </span><span class="caption-text">Campo <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> en <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span></span><a class="headerlink" href="#campo1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="campo2">
+<a class="reference internal image-reference" href="_images/Campo2.png"><img alt="_images/Campo2.png" src="_images/Campo2.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 71 </span><span class="caption-text">Campo <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> en <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span></span><a class="headerlink" href="#campo2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Para graficar campos vectoriales, usaremos <a class="reference internal" href="#%5Chref%7Bhttps://c3d.libretexts.org/CalcPlot3D/index.html"><span class="xref myst">CalcPlot3D</span></a> eligiendo la opción <em>Vector Field</em>.  Por ejemplo, el campo vectorial dado por <span class="math notranslate nohighlight">\(\mathbf{F}(x,y)=\sin(x)\mathbf{i}+y\mathbf{j}\)</span> es</p>
+<figure class="align-default" id="campo3">
+<a class="reference internal image-reference" href="_images/Campo3.png"><img alt="_images/Campo3.png" src="_images/Campo3.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 72 </span><span class="caption-text">Campo <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> para algunos <span class="math notranslate nohighlight">\((x,y)\)</span></span><a class="headerlink" href="#campo3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="campo4">
+<a class="reference internal image-reference" href="_images/Campo4.png"><img alt="_images/Campo4.png" src="_images/Campo4.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 73 </span><span class="caption-text">Campo <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> para muchos <span class="math notranslate nohighlight">\((x,y)\)</span></span><a class="headerlink" href="#campo4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="campo-vectorial-gradiente">
+<h3>Campo Vectorial Gradiente<a class="headerlink" href="#campo-vectorial-gradiente" title="Link to this heading">#</a></h3>
+<p>Si <span class="math notranslate nohighlight">\(f\)</span> es una función de 2 o 3 variables, su vector gradiente <span class="math notranslate nohighlight">\(\nabla f\)</span> corresponde a un campo vectorial sobre <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> o <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, denominado <strong>campo vectorial gradiente}</strong></p>
+</section>
+<section id="campos-conservativos-y-funciones-potenciales">
+<h3>Campos Conservativos y Funciones Potenciales<a class="headerlink" href="#campos-conservativos-y-funciones-potenciales" title="Link to this heading">#</a></h3>
+<p>Un campo vectorial <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> se denomina <strong>campo vectorial conservativo</strong> si es el gradiente de alguna función escalar, es decir, si existe una función <span class="math notranslate nohighlight">\(f\)</span> tal que <span class="math notranslate nohighlight">\(\mathbf{F}=\nabla f\)</span>. En este caso, <span class="math notranslate nohighlight">\(f\)</span> recibe el nombre de <strong>función de potencial</strong> para <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Sea <span class="math notranslate nohighlight">\(\mathbf{x}=(x,y,z)\)</span>. El campo vectorial</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{F}(\mathbf{x})=\frac{\mathbf{x}}{||\mathbf{x}||}
+\]</div>
+<p>es conservativo ya que si <span class="math notranslate nohighlight">\(f(x,y,z)=\sqrt{x^2+y^2+z^2}\)</span> entonces <span class="math notranslate nohighlight">\(\mathbf{F}=\nabla f\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="integrales-de-linea-sobre-campos-vectoriales">
+<h2>Integrales de Línea sobre Campos Vectoriales<a class="headerlink" href="#integrales-de-linea-sobre-campos-vectoriales" title="Link to this heading">#</a></h2>
+<p>El trabajo <span class="math notranslate nohighlight">\(W\)</span> realizado para mover un objeto desde un punto <span class="math notranslate nohighlight">\(P\)</span> hasta otro punto <span class="math notranslate nohighlight">\(Q\)</span>, cuyo vector desplazamiento es <span class="math notranslate nohighlight">\(\mathbf{D}=\overrightarrow{PQ}\)</span>, sometido a una fuerza <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es <span class="math notranslate nohighlight">\(W=\mathbf{F}\cdot\mathbf{D}\)</span>.</p>
+<p>Si <span class="math notranslate nohighlight">\(\mathbf{F}=(P,Q,R)\)</span> es un campo vectorial de fuerzas continuo sobre <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, nos interesa calcular el trabajo total realizado por esta fuerza al mover una partícula a lo largo de la curva suave <span class="math notranslate nohighlight">\(C\)</span> (que es parte del dominio de <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>). Para ello</p>
+<ol class="arabic simple">
+<li><p>Se divide <span class="math notranslate nohighlight">\([a,b]\)</span> (intervalo de la parametrización de <span class="math notranslate nohighlight">\(C\)</span>) en <span class="math notranslate nohighlight">\(n\)</span> subintervalos  <span class="math notranslate nohighlight">\([t_{i-1},t_i]\)</span> del mismo ancho y ponemos <span class="math notranslate nohighlight">\(x_i=x(t_i)\)</span>, <span class="math notranslate nohighlight">\(y_i=y(t_i)\)</span>, <span class="math notranslate nohighlight">\(z_i=z(t_i)\)</span> .</p></li>
+<li><p>Dividimos <span class="math notranslate nohighlight">\(C\)</span> en <span class="math notranslate nohighlight">\(n\)</span> subarcos <span class="math notranslate nohighlight">\(P_{i-1}P_i\)</span> de longitudes <span class="math notranslate nohighlight">\(\Delta s_1, \Delta s_2,\ldots,\Delta s_n\)</span>.</p></li>
+<li><p>Ahora elegimos un punto de muestra <span class="math notranslate nohighlight">\(P_i^\ast(x_i^\ast,y_i^\ast,z_i^\ast)\)</span> en el <span class="math notranslate nohighlight">\(i-\)</span>ésimo subarco, asociado al instante <span class="math notranslate nohighlight">\(t_i^\ast\)</span>.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(\Delta s_i\)</span> es pequeño, entonces cuando la partícula va de <span class="math notranslate nohighlight">\(P_{i-1}\)</span> hasta <span class="math notranslate nohighlight">\(P_i\)</span> a lo largo de la curva, prosigue aproximadamente en la dirección del vector unitario tangente <span class="math notranslate nohighlight">\(\mathbf{T}(t_i^\ast)\)</span> en <span class="math notranslate nohighlight">\(P_i^\ast\)</span>.</p></li>
+<li><p>El trabajo que efectúa la fuerza <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> al mover la partícula desde <span class="math notranslate nohighlight">\(P_{i-1}\)</span> hasta <span class="math notranslate nohighlight">\(P_i\)</span> es aproximadamente <span class="math notranslate nohighlight">\(\mathbf{F}(P_i^\ast)\cdot[\Delta s_i\mathbf{T}(t_i^\ast)]\)</span>. Reordenando y haciendo la suma de Riemann</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^n \left[\mathbf{F}(x_i^\ast,y_i^\ast,z_i^\ast)\cdot\mathbf{T}(x_i^\ast,y_i^\ast,z_i^\ast)\right]\Delta s_i
+\]</div>
+<figure class="align-default" id="campo5">
+<a class="reference internal image-reference" href="_images/Campo5.png"><img alt="_images/Campo5.png" src="_images/Campo5.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 74 </span><span class="caption-text">Campo <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> sobre la curva <span class="math notranslate nohighlight">\(C\)</span>, con vector tangente unitario <span class="math notranslate nohighlight">\(\mathbf{T}\)</span></span><a class="headerlink" href="#campo5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Hacemos <span class="math notranslate nohighlight">\(n\to\infty\)</span> y si la curva <span class="math notranslate nohighlight">\(C\)</span> suave está dada por <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span>, entonces la <strong>integral de línea del campo</strong> <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> <strong>a lo largo de</strong> <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> (con respecto a la longitud de arco <span class="math notranslate nohighlight">\(ds\)</span>) es</p>
+<div class="math notranslate nohighlight">
+\[
+W=\int\limits_C \mathbf{F}(x,y,z)\cdot\mathbf{T}(x,y,z)~ds=\int\limits_C \mathbf{F}\cdot\mathbf{T}~ds
+\]</div>
+<p>Note que el trabajo es la integral de línea respecto a la longitud de arco de la componente tangencial de la fuerza.</p>
+<p>Para evaluar esta integral usamos que <span class="math notranslate nohighlight">\(\mathbf{r}(t)=(x(t),y(t),z(t))\)</span> para <span class="math notranslate nohighlight">\(t\in[a,b]\)</span>, y <span class="math notranslate nohighlight">\(ds=||\mathbf{r}'(t)||~dt\)</span> y <span class="math notranslate nohighlight">\(\mathbf{T}(t)=\frac{\mathbf{r}'(t)}{||\mathbf{r}'(t)||}\)</span>, con lo cual</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C \mathbf{F}\cdot\mathbf{T}~ds=\int_a^b \mathbf{F}\big(\mathbf{r}(t)\big)\cdot\mathbf{r}'(t)~dt
+\]</div>
+<p>Es usual escribir <span class="math notranslate nohighlight">\(d\mathbf{r}=\mathbf{r}'(t)~dt\)</span>, de modo que</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C \mathbf{F}\cdot d\mathbf{r}=\int\limits_C \mathbf{F}\cdot\mathbf{T}~ds
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Determine el trabajo que hace el campo de fuerzas <span class="math notranslate nohighlight">\(\mathbf{F}(x,y,z)=(x-y^2,y-z^2,z-x^2)\)</span> sobre una partícula que se desplaza por el segmento rectilíneo desde <span class="math notranslate nohighlight">\((0,0,1)\)</span> hasta <span class="math notranslate nohighlight">\((2,1,0)\)</span>.</p>
+</div>
+<p><strong>Nota</strong>. Si la curva <span class="math notranslate nohighlight">\(C\)</span> se recorre en sentido negativo, entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_{-C} \mathbf{F}\cdot d\mathbf{r}=-\int\limits_C \mathbf{F}\cdot d\mathbf{r}
+\]</div>
+<p>ya que el vector unitario tangente <span class="math notranslate nohighlight">\(\mathbf{T}\)</span> se cambia por su opuesto cuando <span class="math notranslate nohighlight">\(C\)</span> se reemplaza por <span class="math notranslate nohighlight">\(-C\)</span>.</p>
+<p><strong>Nota</strong>. Si <span class="math notranslate nohighlight">\(\mathbf{F}=(P,Q,R)\)</span> entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C \mathbf{F}\cdot d\mathbf{r}=\int\limits_C P~dx+Q~dy+R~dz
+\]</div>
+<p>que relaciona las integrales de línea de campos vectoriales con las de campos escalares.</p>
+</section>
+<section id="teorema-fundamental-de-las-integrales-de-linea">
+<h2>Teorema Fundamental de las Integrales de Línea<a class="headerlink" href="#teorema-fundamental-de-las-integrales-de-linea" title="Link to this heading">#</a></h2>
+<p>Sea <span class="math notranslate nohighlight">\(C\)</span> una curva suave definida por la función vectorial <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span>, <span class="math notranslate nohighlight">\(a\leq t\leq b\)</span>. Sea <span class="math notranslate nohighlight">\(f\)</span> una función derivable de dos o tres variables cuyo vector gradiente <span class="math notranslate nohighlight">\(\nabla f\)</span> es continuo sobre <span class="math notranslate nohighlight">\(C\)</span>. Entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C\nabla f\cdot d\mathbf{r}=f(\mathbf{r}(b))-f(\mathbf{r}(b))
+\]</div>
+<p>Este teorema nos dice que la integral de línea de un campo vectorial conservativo <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> depende solamente del punto inicial y del punto final de la curva, no de <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<section id="independencia-de-la-trayectoria">
+<h3>Independencia de la Trayectoria<a class="headerlink" href="#independencia-de-la-trayectoria" title="Link to this heading">#</a></h3>
+<p>Si <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es un campo vectorial continuo cuyo dominio es <span class="math notranslate nohighlight">\(D\)</span>, la integral de línea <span class="math notranslate nohighlight">\(\int\limits_C\mathbf{F}\cdot d\mathbf{r}\)</span> es <strong>independiente de la trayectoria</strong> si <span class="math notranslate nohighlight">\(\int\limits_{C_1}\mathbf{F}\cdot d\mathbf{r}=\int\limits_{C_2}\mathbf{F}\cdot d\mathbf{r}\)</span> para cualesquiera dos trayectorias <span class="math notranslate nohighlight">\(C_1\)</span> y <span class="math notranslate nohighlight">\(C_2\)</span> en <span class="math notranslate nohighlight">\(D\)</span> que tienen los mismos puntos iniciales y finales.</p>
+<p>Con esta definición, las integrales de línea de campos vectoriales conservativos son independientes de la trayectoria.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "DenisOsses/CursoMulti",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Cap5.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Unidad 5</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Desafios.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Desafíos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-sobre-curvas-y-superficies">Integración sobre Curvas y Superficies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-vectoriales">Funciones Vectoriales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curvas">Curvas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recta-en-el-espacio">Recta en el Espacio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmento-de-recta">Segmento de Recta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circunferencia">Circunferencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elipse">Elipse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helice">Hélice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-de-curvas">Derivadas de Curvas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reglas-de-derivacion-de-funciones-vectoriales">Reglas de Derivación de Funciones Vectoriales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#longitud-de-una-curva">Longitud de una Curva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#longitud">Longitud</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#longitud-de-arco">Longitud de Arco</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectores-asociados-a-una-curva-marco-tnb">Vectores asociados a una Curva. Marco TNB</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-tangente-unitario">Vector Tangente Unitario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-normal-unitario">Vector Normal Unitario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-binormal">Vector Binormal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#marco-tnb">Marco TNB</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-de-linea-de-funciones-vectoriales-sobre-curvas">Integrales de Línea de Funciones Vectoriales (sobre Curvas)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-por-tramos">Curva por Tramos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orientacion-de-una-curva">Orientación de una Curva</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-de-linea-en-el-espacio">Integral de Línea en el Espacio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#campos-vectoriales">Campos Vectoriales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campo-vectorial-gradiente">Campo Vectorial Gradiente</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campos-conservativos-y-funciones-potenciales">Campos Conservativos y Funciones Potenciales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-de-linea-sobre-campos-vectoriales">Integrales de Línea sobre Campos Vectoriales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-fundamental-de-las-integrales-de-linea">Teorema Fundamental de las Integrales de Línea</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independencia-de-la-trayectoria">Independencia de la Trayectoria</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por The Jupyter Book Community/ Área de Matemáticas FIC UAI/ Denis Osses, denis.osses@uai.cl
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025-1.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
