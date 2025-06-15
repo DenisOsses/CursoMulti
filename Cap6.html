@@ -488,8 +488,28 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-de-linea-sobre-campos-vectoriales">Integrales de Línea sobre Campos Vectoriales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-fundamental-de-las-integrales-de-linea">Teorema Fundamental de las Integrales de Línea</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independencia-de-la-trayectoria">Independencia de la Trayectoria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curvas-cerradas">Curvas Cerradas</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-green">Teorema de Green</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion">Aplicación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-parametricas-e-integrales-de-superficie">Superficies paramétricas e Integrales de superficie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plano-tangente">Plano Tangente</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#area-de-una-superficie-parametrica">Área de una Superficie Paramétrica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-de-superficie">Integrales de Superficie</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-orientadas">Superficies Orientadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-de-superficie-para-campos-vectoriales">Integrales de Superficie para Campos Vectoriales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacional">Rotacional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergencia">Divergencia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-stokes">Teorema de Stokes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conexion-con-el-teorema-de-green">Conexión con el Teorema de Green</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-la-divergencia">Teorema de la Divergencia</a></li>
 </ul>
             </nav>
         </div>
@@ -978,6 +998,379 @@ W=\int\limits_C \mathbf{F}(x,y,z)\cdot\mathbf{T}(x,y,z)~ds=\int\limits_C \mathbf
 <p>Si <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es un campo vectorial continuo cuyo dominio es <span class="math notranslate nohighlight">\(D\)</span>, la integral de línea <span class="math notranslate nohighlight">\(\int\limits_C\mathbf{F}\cdot d\mathbf{r}\)</span> es <strong>independiente de la trayectoria</strong> si <span class="math notranslate nohighlight">\(\int\limits_{C_1}\mathbf{F}\cdot d\mathbf{r}=\int\limits_{C_2}\mathbf{F}\cdot d\mathbf{r}\)</span> para cualesquiera dos trayectorias <span class="math notranslate nohighlight">\(C_1\)</span> y <span class="math notranslate nohighlight">\(C_2\)</span> en <span class="math notranslate nohighlight">\(D\)</span> que tienen los mismos puntos iniciales y finales.</p>
 <p>Con esta definición, las integrales de línea de campos vectoriales conservativos son independientes de la trayectoria.</p>
 </section>
+<section id="curvas-cerradas">
+<h3>Curvas Cerradas<a class="headerlink" href="#curvas-cerradas" title="Link to this heading">#</a></h3>
+<p>Se dice que una curva es <strong>cerrada</strong> si su punto final coincide con su punto final, es decir, <span class="math notranslate nohighlight">\(\mathbf{r}(a)=\mathbf{r}(b)\)</span>.</p>
+<p><strong>Teorema</strong>. <span class="math notranslate nohighlight">\(\int\limits_{C}\mathbf{F}\cdot d\mathbf{r}\)</span> es independiente de la trayectoria en <span class="math notranslate nohighlight">\(D\)</span> si y solo si <span class="math notranslate nohighlight">\(\int\limits_{C}\mathbf{F}\cdot d\mathbf{r}=0\)</span> para toda trayectoria cerrada <span class="math notranslate nohighlight">\(C\)</span> en <span class="math notranslate nohighlight">\(D\)</span>.</p>
+<p><strong>Teorema</strong>. Supongamos que <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es un campo vectorial que es continuo sobre una región conexa abierta <span class="math notranslate nohighlight">\(D\)</span>. Si <span class="math notranslate nohighlight">\(\int\limits_{C}\mathbf{F}\cdot d\mathbf{r}\)</span> independiente de la trayectoria en <span class="math notranslate nohighlight">\(D\)</span>, entonces <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es un campo vectorial conservativo sobre <span class="math notranslate nohighlight">\(D\)</span>, es decir, existe una función <span class="math notranslate nohighlight">\(f\)</span> tal que <span class="math notranslate nohighlight">\(\nabla f=\mathbf{F}\)</span>.</p>
+<p>¿Cómo es posible determinar si un campo vectorial <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es conservativo?</p>
+<p><strong>Teorema</strong>. Si <span class="math notranslate nohighlight">\(\mathbf{F}=(P,Q)\)</span> un campo vectorial conservativo, donde <span class="math notranslate nohighlight">\(P\)</span> y <span class="math notranslate nohighlight">\(Q\)</span> tienen derivadas parciales continuas de primer orden sobre un dominio <span class="math notranslate nohighlight">\(D\)</span>, entonces en la totalidad de <span class="math notranslate nohighlight">\(D\)</span> tenemos</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}
+\]</div>
+<p><strong>Teorema</strong>. Sea <span class="math notranslate nohighlight">\(\mathbf{F}=(P,Q)\)</span> un campo vectorial sobre una región simplemente conexa <span class="math notranslate nohighlight">\(D\)</span>. Supongamos que <span class="math notranslate nohighlight">\(P\)</span> y <span class="math notranslate nohighlight">\(Q\)</span> tienen derivadas continuas de primer orden y <span class="math notranslate nohighlight">\(P_y=Q_x\)</span> en todo <span class="math notranslate nohighlight">\(D\)</span>. Entonces <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es un campo vectorial conservativo.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Sea <span class="math notranslate nohighlight">\(\mathbf{F}(x,y)=(1+xy)e^{xy}\mathbf{i}+x^2e^{xy}\mathbf{j}\)</span> un campo vectorial. Determine si <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es conservativo. Considere ahora la curva <span class="math notranslate nohighlight">\(C\)</span> dada por <span class="math notranslate nohighlight">\(\mathbf{r}(t)=\cos(t)\mathbf{i}+2\sin(t)\mathbf{j}\)</span>, <span class="math notranslate nohighlight">\(0\leq t\leq \frac{\pi}{2}\)</span>. Calcule <span class="math notranslate nohighlight">\(\int\limits_{C}\mathbf{F}\cdot d\mathbf{r}\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="teorema-de-green">
+<h2>Teorema de Green<a class="headerlink" href="#teorema-de-green" title="Link to this heading">#</a></h2>
+<p>El teorema de Green establece la relación entre una integral de línea alrededor de una curva simple cerrada <span class="math notranslate nohighlight">\(C\)</span> y una integral doble sobre la región plana <span class="math notranslate nohighlight">\(D\)</span> acotada por <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<p>Sea <span class="math notranslate nohighlight">\(C\)</span> una curva simple cerrada, suave por tramos con orientación positiva en el plano, y sea <span class="math notranslate nohighlight">\(D\)</span> la región delimitada por <span class="math notranslate nohighlight">\(C\)</span>. Si <span class="math notranslate nohighlight">\(P\)</span> y <span class="math notranslate nohighlight">\(Q\)</span> tienen derivadas parciales continuas sobre una región abierta que contiene a <span class="math notranslate nohighlight">\(D\)</span>, entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C P~dx+Q~dy=\iint\limits_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)~dA
+\]</div>
+<p><strong>Nota</strong>. Si <span class="math notranslate nohighlight">\(\mathbf{F}=(P,Q)\)</span> entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C\mathbf{F}\cdot d\mathbf{r}=\int\limits_C P~dx+Q~dy
+\]</div>
+<p>A veces se utiliza la notación</p>
+<div class="math notranslate nohighlight">
+\[
+\oint\limits_C P~dx+Q~dy
+\]</div>
+<p>para referirse a que la curva <span class="math notranslate nohighlight">\(C\)</span> es cerrada.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Sea <span class="math notranslate nohighlight">\(C\)</span> la curva frontera de la región encerrada por las parábolas <span class="math notranslate nohighlight">\(y=x^2\)</span> y <span class="math notranslate nohighlight">\(x=y^2\)</span>. Calcule</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C (y+e^{\sqrt{x}})~dx+(2x+\cos(y^2))~dy
+\]</div>
+</div>
+<section id="aplicacion">
+<h3>Aplicación<a class="headerlink" href="#aplicacion" title="Link to this heading">#</a></h3>
+<p>Como el área <span class="math notranslate nohighlight">\(A\)</span> de la región <span class="math notranslate nohighlight">\(D\)</span> es <span class="math notranslate nohighlight">\(\iint\limits_D 1~dA\)</span>, entonces elegimos <span class="math notranslate nohighlight">\(P\)</span> y <span class="math notranslate nohighlight">\(Q\)</span> tales que <span class="math notranslate nohighlight">\(Q_x-P_y=1\)</span>, como por ejemplo:</p>
+<div class="math notranslate nohighlight">
+\[
+P(x,y)=0, Q(x,y)=x~~\text{o}~~P(x,y)=-y, Q(x,y)=0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\text{o}~~P(x,y)=-\frac{1}{2}y, Q(x,y)=\frac{1}{2}x
+\]</div>
+<p>Con lo cual</p>
+<div class="math notranslate nohighlight">
+\[
+A=\oint\limits_C x~dy=-\oint\limits_C y~dx=\frac{1}{2}\oint\limits_C x~dy-y~dx
+\]</div>
+<div class="warning admonition">
+<p class="admonition-title">Ejercicio Propuesto</p>
+<p>Determine el área bajo un arco del cicloide <span class="math notranslate nohighlight">\(x=t-\sin(t)\)</span> e <span class="math notranslate nohighlight">\(y=1-\cos(t)\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="superficies-parametricas-e-integrales-de-superficie">
+<h2>Superficies paramétricas e Integrales de superficie<a class="headerlink" href="#superficies-parametricas-e-integrales-de-superficie" title="Link to this heading">#</a></h2>
+<p>Una <strong>superficie</strong> en <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> es una función <span class="math notranslate nohighlight">\(\textbf{r}:D\subseteq\mathbb{R}^2\to\mathbb{R}^3\)</span>. Esta función toma dos parámetros <span class="math notranslate nohighlight">\((u,v)\in D\)</span> y asigna un vector <span class="math notranslate nohighlight">\(\mathbf{r}(u,v)\)</span> tal que</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}(u,v)=(x(u,v),y(u,v),z(u,v))
+\]</div>
+<p>La superficie paramétrica <span class="math notranslate nohighlight">\(S\)</span> está formada por todos los <span class="math notranslate nohighlight">\((x,y,z)\in\mathbb{R}^3\)</span> para los respectivos <span class="math notranslate nohighlight">\((u,v)\in D\)</span>.</p>
+<figure class="align-default" id="superficies1">
+<a class="reference internal image-reference" href="_images/Superficies1.png"><img alt="_images/Superficies1.png" src="_images/Superficies1.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 75 </span><span class="caption-text">Superficie Paramétrica <span class="math notranslate nohighlight">\(S\)</span> como transformación de la región plana <span class="math notranslate nohighlight">\(D\)</span></span><a class="headerlink" href="#superficies1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-ejemplo admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>El plano que pasa por el punto <span class="math notranslate nohighlight">\(P_0\)</span>, cuyo vector posición es <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> y contiene dos vectores no paralelos <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> y <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> es</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}(u,v)=\mathbf{r}_0+u\mathbf{a}+v\mathbf{b}~~,~~u,v\in\mathbb{R}.
+\]</div>
+</div>
+<div class="admonition-ejemplo admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>La esfera <span class="math notranslate nohighlight">\(x^2+y^2+z^2=a^2\)</span> paramétricamente es</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}(\phi,\theta)=a\sin(\phi)\cos(\theta)\mathbf{i}+a\sin(\phi)\sin(\theta)\mathbf{j}+a\cos(\phi)\mathbf{k}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(0\leq \phi\leq\pi\)</span>, <span class="math notranslate nohighlight">\(0\leq\theta\leq 2\pi.\)</span></p>
+</div>
+<figure class="align-default" id="superficies3">
+<a class="reference internal image-reference" href="_images/Superficies3.png"><img alt="_images/Superficies3.png" src="_images/Superficies3.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 76 </span><span class="caption-text">La esfera <span class="math notranslate nohighlight">\(S\)</span> es la transformación del rectángulo <span class="math notranslate nohighlight">\([0,\pi]\times[0,2\pi]\)</span></span><a class="headerlink" href="#superficies3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Escriba en coordenadas paramétricas el cilindro <span class="math notranslate nohighlight">\(x^2+y^2=1\)</span>.</p>
+</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Determine una representación paramétrica de la superficie que es la parte de la esfera <span class="math notranslate nohighlight">\(x^2+y^2+z^2=4\)</span> que se sitúa arriba del cono <span class="math notranslate nohighlight">\(z=\sqrt{x^2+y^2}\)</span>.</p>
+</div>
+<p><strong>Nota</strong>. Toda función <span class="math notranslate nohighlight">\(z=f(x,y)\)</span> se puede representar paramétricamente como <span class="math notranslate nohighlight">\(\mathbf{r}(x,y)=(x,y,f(x,y))\)</span>.</p>
+<section id="plano-tangente">
+<h3>Plano Tangente<a class="headerlink" href="#plano-tangente" title="Link to this heading">#</a></h3>
+<p>Sea <span class="math notranslate nohighlight">\(P_0(x_0,y_0,z_0)=\mathbf{r}(u_0,v_0)\)</span> un punto sobre la superficie <span class="math notranslate nohighlight">\(S\)</span> dada por la función vectorial</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}(u,v)=(x(u,v),y(u,v),z(u,v)).
+\]</div>
+<p>Tenemos los vectores tangentes asociados <span class="math notranslate nohighlight">\(\mathbf{r}_u=(x_u,y_u,z_u)\)</span> y <span class="math notranslate nohighlight">\(\mathbf{r}_v=(x_v,y_v,z_v)\)</span> generan el vector normal <span class="math notranslate nohighlight">\(\mathbf{r}_u\times\mathbf{r}_v\)</span> al plano tangente a la superficie en <span class="math notranslate nohighlight">\(P_0\)</span>, cuya ecuación est dáda por:</p>
+<div class="math notranslate nohighlight">
+\[
+(\mathbf{r}_u\times\mathbf{r}_v)(u_0,v_0)\cdot(x-x_0,y-y_0,z-z_0)=0
+\]</div>
+<figure class="align-default" id="superficies4">
+<a class="reference internal image-reference" href="_images/Superficies4.png"><img alt="_images/Superficies4.png" src="_images/Superficies4.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 77 </span><span class="caption-text">Vectores tangentes <span class="math notranslate nohighlight">\(\mathbf{r}_u\)</span> y <span class="math notranslate nohighlight">\(\mathbf{r}_v\)</span> con su vector normal asociado <span class="math notranslate nohighlight">\(\mathbf{r}_u\times\mathbf{r}_v\)</span></span><a class="headerlink" href="#superficies4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="area-de-una-superficie-parametrica">
+<h3>Área de una Superficie Paramétrica<a class="headerlink" href="#area-de-una-superficie-parametrica" title="Link to this heading">#</a></h3>
+<p>Si una superficie paramétrica suave <span class="math notranslate nohighlight">\(S\)</span> está dada por la ecuación <span class="math notranslate nohighlight">\(\mathbf{r}(u,v)=x(u,v)\mathbf{i}+y(u,v)\mathbf{j}+z(u,v)\mathbf{k}\)</span>, <span class="math notranslate nohighlight">\((u,v)\in D\)</span>, y <span class="math notranslate nohighlight">\(S\)</span> es cubierta solo una vez cuando <span class="math notranslate nohighlight">\((u,v)\)</span> varía en todo el dominio del parámetro, entonces el área <span class="math notranslate nohighlight">\(A\)</span> de la superficie de <span class="math notranslate nohighlight">\(S\)</span> es</p>
+<div class="math notranslate nohighlight">
+\[
+A(S)=\iint\limits_D ||\mathbf{r}_u\times\mathbf{r}_v||~dA
+\]</div>
+</section>
+<section id="integrales-de-superficie">
+<h3>Integrales de Superficie<a class="headerlink" href="#integrales-de-superficie" title="Link to this heading">#</a></h3>
+<p>Si <span class="math notranslate nohighlight">\(S\)</span> es la superficie paramétrica suave dada por <span class="math notranslate nohighlight">\(\mathbf{r}(u,v)\)</span> con <span class="math notranslate nohighlight">\((u,v)\in D\)</span>, sus funciones componentes <span class="math notranslate nohighlight">\(x(u,v)\)</span>, <span class="math notranslate nohighlight">\(y(u,v)\)</span>, <span class="math notranslate nohighlight">\(z(u,v)\)</span> son continuas, <span class="math notranslate nohighlight">\(\mathbf{r}_u\)</span> y <span class="math notranslate nohighlight">\(\mathbf{r}_v\)</span> no son cero y no son paralelas en el interior de <span class="math notranslate nohighlight">\(D\)</span>, se puede demostrar que</p>
+<div class="math notranslate nohighlight">
+\[
+\iint\limits_S f(x,y,z)~dS=\iint\limits_D f(\mathbf{r}(u,v))~ ||\mathbf{r}_u\times\mathbf{r}_v||~dA
+\]</div>
+<figure class="align-default" id="superficies5">
+<a class="reference internal image-reference" href="_images/Superficies5.png"><img alt="_images/Superficies5.png" src="_images/Superficies5.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 78 </span><span class="caption-text">El diferencial de superficie <span class="math notranslate nohighlight">\(dS\)</span> equivale a <span class="math notranslate nohighlight">\(||\mathbf{r}_u\times\mathbf{r}_v||~dA\)</span> luego de aplicar <span class="math notranslate nohighlight">\(\mathbf{r}\)</span></span><a class="headerlink" href="#superficies5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Sea <span class="math notranslate nohighlight">\(S\)</span> la parte del cono <span class="math notranslate nohighlight">\(z=\sqrt{x^2+y^2}\)</span> que se encuentra entre los planos <span class="math notranslate nohighlight">\(z=1\)</span> y <span class="math notranslate nohighlight">\(z=3\)</span>. Calcule <span class="math notranslate nohighlight">\(\displaystyle\iint\limits_S x^2z^2~dS\)</span>.</p>
+</div>
+<p><strong>Nota</strong>. Si <span class="math notranslate nohighlight">\(S=S_1\cup S_2\cup\cdots\cup S_n\)</span> una unión finita de superficies suaves, entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\iint\limits_S f(x,y,z)~dS=\sum_{i=1}^n\iint\limits_{S_1} f(x,y,z)~dS
+\]</div>
+</section>
+</section>
+<section id="superficies-orientadas">
+<h2>Superficies Orientadas<a class="headerlink" href="#superficies-orientadas" title="Link to this heading">#</a></h2>
+<p>Existen superficies que tienen «un solo lado» como la banda de Moebius</p>
+<figure class="align-default" id="sup1">
+<a class="reference internal image-reference" href="_images/Sup1.png"><img alt="_images/Sup1.png" src="_images/Sup1.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 79 </span><span class="caption-text">Banda de Moebius</span><a class="headerlink" href="#sup1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Solo consideraremos superficies <span class="math notranslate nohighlight">\(S\)</span> que tengan dos lados. Si es posible elegir un vector unitario normal <span class="math notranslate nohighlight">\(\mathbf{N}\)</span> en todos los puntos <span class="math notranslate nohighlight">\((x,y,z)\)</span> de modo que <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> varíe continuamente sobre <span class="math notranslate nohighlight">\(S\)</span>, entonces se dice que <span class="math notranslate nohighlight">\(S\)</span> es una <strong>superficie orientada</strong> y la elección dada de <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> proporciona a <span class="math notranslate nohighlight">\(S\)</span> una <strong>orientación</strong></p>
+<p>Hay dos orientaciones posibles para cualquier superficie orientable</p>
+<figure class="align-default" id="sup2">
+<a class="reference internal image-reference" href="_images/Sup2.png"><img alt="_images/Sup2.png" src="_images/Sup2.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 80 </span><span class="caption-text">Superficies orientables</span><a class="headerlink" href="#sup2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Si tenemos la superficie <span class="math notranslate nohighlight">\(S\)</span> dada por la función <span class="math notranslate nohighlight">\(z=f(x,y)\)</span>, una parametrización posible de ella es <span class="math notranslate nohighlight">\(\mathbf{r}(x,y)=(x,y,f(x,y))\)</span>, cuyo vector normal unitario es</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{n}=\mathbf{r}_x\times\mathbf{r}_y=\frac{-f_x\mathbf{i}-f_x\mathbf{j}+\mathbf{k}}{\sqrt{1+(f_x)^2+(f_y)^2}}
+\]</div>
+<p>Como el signo de la componente <span class="math notranslate nohighlight">\(\mathbf{k}\)</span> es positivo, <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> entrega una orientación <strong>hacia arriba</strong> de <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<p>Si <span class="math notranslate nohighlight">\(S\)</span> es una superficie suave y orientable dada en forma paramétrica por medio de <span class="math notranslate nohighlight">\(\mathbf{r}(u, v)\)</span>, entonces tiene la orientación del vector unitario normal</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{n}=\frac{\mathbf{r}_u\times\mathbf{r}_v}{||\mathbf{r}_u\times\mathbf{r}_v||}
+\]</div>
+<p>Si <span class="math notranslate nohighlight">\(S\)</span> es una <strong>superficie cerrada</strong>, o sea, una superficie frontera de una región sólida <span class="math notranslate nohighlight">\(E\)</span>, su <strong>orientación positiva</strong> es aquella para la cual los vectores normales señalan <strong>hacia afuera</strong> de <span class="math notranslate nohighlight">\(E\)</span>, y si señalan hacia el interior dan la orientación negativa.</p>
+<figure class="align-default" id="sup3">
+<a class="reference internal image-reference" href="_images/Sup3.png"><img alt="_images/Sup3.png" src="_images/Sup3.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 81 </span><span class="caption-text">Orientación positiva y orientación negativa</span><a class="headerlink" href="#sup3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="integrales-de-superficie-para-campos-vectoriales">
+<h2>Integrales de Superficie para Campos Vectoriales<a class="headerlink" href="#integrales-de-superficie-para-campos-vectoriales" title="Link to this heading">#</a></h2>
+<p>Sea <span class="math notranslate nohighlight">\(S\)</span> una superficie orientada con vector unitario normal <span class="math notranslate nohighlight">\(\mathbf{n}\)</span>. Imagine que hay un fluido de densidad <span class="math notranslate nohighlight">\(\rho(x,y,z)\)</span> y campo de velocidad <span class="math notranslate nohighlight">\(\mathbf{v}(x,y,z)\)</span> que circula a través de <span class="math notranslate nohighlight">\(S\)</span>. Entonces, el caudal (masa por unidad de tiempo) por unidad de área es <span class="math notranslate nohighlight">\(\rho\mathbf{v}\)</span>. Si dividimos <span class="math notranslate nohighlight">\(S\)</span> en pequeños parches <span class="math notranslate nohighlight">\(S_{ij}\)</span>, entonces <span class="math notranslate nohighlight">\(S_{ij}\)</span> es casi plana y podemos aproximar la masa del fluido que atraviesa en la dirección de la normal <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> por unidad de tiempo mediante la cantidad <span class="math notranslate nohighlight">\((\rho\mathbf{v})\cdot\mathbf{n}~A(S_{ij})\)</span></p>
+<figure class="align-default" id="sup4">
+<a class="reference internal image-reference" href="_images/Sup4.png"><img alt="_images/Sup4.png" src="_images/Sup4.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 82 </span><span class="caption-text">Flujo a través de una Superficie</span><a class="headerlink" href="#sup4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Sumando y haciendo el límite, obtenemos</p>
+<div class="math notranslate nohighlight">
+\[
+\iint\limits_S \rho\mathbf{v}\cdot\mathbf{n}~dS=\iint\limits_S \rho(x,y,z)\mathbf{v}(x,y,z)\cdot\mathbf{n}(x,y,z)~dS
+\]</div>
+<p>La interpretación física es el caudal que atraviesa <span class="math notranslate nohighlight">\(S\)</span>. Si escribimos <span class="math notranslate nohighlight">\(\mathbf{F}=\rho\mathbf{v}\)</span>, entonces <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es un campo vectorial en <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> y tenemos la siguiente <strong>integral de superficie</strong> o <strong>integral de flujo</strong> de <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> sobre <span class="math notranslate nohighlight">\(S\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\iint\limits_S\mathbf{F}\cdot~d\mathbf{S}=\iint\limits_S \mathbf{F}\cdot\mathbf{n}~dS
+\]</div>
+<p>Para calcular esta integral de superficie de <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> sobre <span class="math notranslate nohighlight">\(S\)</span>, debemos parametrizar la superficie mediante <span class="math notranslate nohighlight">\(\mathbf{r}(u,v)\)</span>, cuyo vector normal unitario <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> está dado más arriba. Reemplazando, obtenemos</p>
+<div class="math notranslate nohighlight">
+\[
+\iint\limits_S\mathbf{F}\cdot~d\mathbf{S}=\iint\limits_D \mathbf{F}\big(\mathbf{r}(u,v)\big)\cdot(\mathbf{r}_u\times\mathbf{r}_v)~dA
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(D\)</span> es el dominio de definición de los parámetros <span class="math notranslate nohighlight">\((u,v)\)</span>.</p>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Determine el flujo del campo vectorial <span class="math notranslate nohighlight">\(\mathbf{F}(x,y,z)=y\mathbf{j}-z\mathbf{k}\)</span> a través de la superficie <span class="math notranslate nohighlight">\(S\)</span> que consiste del paraboloide <span class="math notranslate nohighlight">\(y=x^2+z^2\)</span> (<span class="math notranslate nohighlight">\(0\leq y\leq 1\)</span>), y el disco <span class="math notranslate nohighlight">\(x^2+z^2\leq 1\)</span> con <span class="math notranslate nohighlight">\(y=1\)</span>.</p>
+</div>
+</section>
+<section id="rotacional">
+<h2>Rotacional<a class="headerlink" href="#rotacional" title="Link to this heading">#</a></h2>
+<p>Sea <span class="math notranslate nohighlight">\(\mathbf{F}=(P,Q,R)\)</span> un campo vectorial sobre <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, tal que <span class="math notranslate nohighlight">\(P,Q,R\)</span> tienen derivadas parciales. El <strong>rotacional</strong> de <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es el campo vectorial sobre <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> definido por</p>
+<div class="math notranslate nohighlight">
+\[
+\text{rot}(\mathbf{F})=\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\right)\mathbf{i}+\left(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\right)\mathbf{j}+\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathbf{k}
+\]</div>
+<p>El <strong>operador diferencial nabla</strong> <span class="math notranslate nohighlight">\(\nabla\)</span> se define como</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla=\mathbf{i}\frac{\partial}{\partial x}+\mathbf{j}\frac{\partial}{\partial y}+\mathbf{k}\frac{\partial}{\partial z}=\left(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z}\right)
+\]</div>
+<p>y su significado al operar sobre la función escalar <span class="math notranslate nohighlight">\(f(x,y,z)\)</span> es producir el gradiente de <span class="math notranslate nohighlight">\(f\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f=\mathbf{i}\frac{\partial f}{\partial x}+\mathbf{j}\frac{\partial f}{\partial y}+\mathbf{k}\frac{\partial f}{\partial z}=\left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z}\right)\]</div>
+<p>Si pensamos en <span class="math notranslate nohighlight">\(\nabla\)</span> como el vector <span class="math notranslate nohighlight">\(\left(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z}\right)\)</span>, y calculamos el producto cruz entre <span class="math notranslate nohighlight">\(\nabla\)</span> y el campo <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>, obtenemos <span class="math notranslate nohighlight">\(\nabla\times\mathbf{F}=\text{rot}(\mathbf{F})\)</span></p>
+<p><strong>Teorema</strong>. Si es <span class="math notranslate nohighlight">\(f\)</span> una función de tres variables que tiene derivadas parciales continuas de segundo orden, entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\text{rot}(\nabla f)=\mathbf{0}
+\]</div>
+<p><strong>Nota</strong>. Recuerde que un campo vectorial <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es conservativo si existe <span class="math notranslate nohighlight">\(f\)</span> función escalar tal que <span class="math notranslate nohighlight">\(\mathbf{F}=\nabla f\)</span>. Luego el teorema anterior se puede enunciar como: Si <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es conservativo entonces <span class="math notranslate nohighlight">\(\text{rot}(\mathbf{F})=\mathbf{0}\)</span>.</p>
+<p><strong>Teorema</strong>. Si <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es un campo vectorial definido en <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> cuyas funciones componentes tienen derivadas parciales continuas y <span class="math notranslate nohighlight">\(\text{rot}(\mathbf{F})=\mathbf{0}\)</span>, entonces <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es un campo conservativo.</p>
+</section>
+<section id="divergencia">
+<h2>Divergencia<a class="headerlink" href="#divergencia" title="Link to this heading">#</a></h2>
+<p>Si <span class="math notranslate nohighlight">\(\mathbf{F}=(P,Q,R)\)</span> es un campo vectorial sobre <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> y existen <span class="math notranslate nohighlight">\(\frac{\partial P}{\partial x}\)</span>, <span class="math notranslate nohighlight">\(\frac{\partial Q}{\partial y}\)</span>, <span class="math notranslate nohighlight">\(\frac{\partial R}{\partial z}\)</span> entonces la <strong>divergencia</strong> de <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es la función de tres variables definida por</p>
+<div class="math notranslate nohighlight">
+\[\text{div}(\mathbf{F})=\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}
+\]</div>
+<p>El producto punto entre el operador <span class="math notranslate nohighlight">\(\nabla\)</span> y el campo <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es <span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{F}=\text{div}(\mathbf{F})\)</span>.</p>
+<p><strong>Teorema</strong>. Si <span class="math notranslate nohighlight">\(\mathbf{F}=(P,Q,R)\)</span> es un campo vectorial sobre <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> y existen <span class="math notranslate nohighlight">\(P,Q,R\)</span>  tienen derivadas parciales de segundo orden, entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\text{div}\big(\text{rot}(\mathbf{F})\big)=\nabla\cdot(\nabla\times\mathbf{F})=0
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Determine el rotacional y la divergencia del campo</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{F}(x,y,z)=\left(\frac{x}{y},\frac{y}{z},\frac{z}{x}\right)
+\]</div>
+</div>
+</section>
+<section id="teorema-de-stokes">
+<h2>Teorema de Stokes<a class="headerlink" href="#teorema-de-stokes" title="Link to this heading">#</a></h2>
+<p>Sea <span class="math notranslate nohighlight">\(S\)</span> una superficie suave por tramos y orientada que está acotada por una curva <span class="math notranslate nohighlight">\(C\)</span> suave por tramos, simple y cerrada con orientación positiva. Sea <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> un campo vectorial cuyas componentes tienen derivadas parciales continuas en una región abierta en <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> que contiene a <span class="math notranslate nohighlight">\(S\)</span>. Entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_C\mathbf{F}\cdot d\mathbf{r}=\iint\limits_S\text{rot}(\mathbf{F})\cdot d\mathbf{S}
+\]</div>
+<figure class="align-default" id="stokes1">
+<a class="reference internal image-reference" href="_images/Stokes1.png"><img alt="_images/Stokes1.png" src="_images/Stokes1.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 83 </span><span class="caption-text">Superficie simple y cerrada con orientación positiva</span><a class="headerlink" href="#stokes1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>El teorema de Stokes establece que la integral de línea alrededor de la curva frontera de <span class="math notranslate nohighlight">\(S\)</span> de la componente tangencial de <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> es igual a la integral de superficie de la componente normal del rotacional de <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>.</p>
+<section id="conexion-con-el-teorema-de-green">
+<h3>Conexión con el Teorema de Green<a class="headerlink" href="#conexion-con-el-teorema-de-green" title="Link to this heading">#</a></h3>
+<p>Si la superficie <span class="math notranslate nohighlight">\(S\)</span> es plana y está sobre el plano <span class="math notranslate nohighlight">\(XY\)</span> con orientación hacia arriba, entonces <span class="math notranslate nohighlight">\(\mathbf{k}\)</span> es un vector normal unitario a <span class="math notranslate nohighlight">\(S\)</span> y la integral de superficie se vuelve una integral doble que corresponde al Teorema de Green</p>
+<div class="math notranslate nohighlight">
+\[
+\iint\limits_S\text{rot}(\mathbf{F})\cdot d\mathbf{S}= \iint\limits_S(\text{rot}(\mathbf{F}))\cdot\mathbf{k}~dA=\iint\limits_D\left(Q_x-P_y\right)dA
+\]</div>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Utilice el teorema de Stokes para evaluar <span class="math notranslate nohighlight">\(\int_C\mathbf{F}\cdot d\mathbf{r}\)</span>, donde <span class="math notranslate nohighlight">\(\mathbf{F}(x,y,z)=x^2z\mathbf{i}+xy^2\mathbf{j}+z^2\mathbf{k}\)</span>, y <span class="math notranslate nohighlight">\(C\)</span> es la curva de la intersección entre el plano <span class="math notranslate nohighlight">\(x+y+z=1\)</span> y el cilindro <span class="math notranslate nohighlight">\(x^2+y^2=9\)</span> con orientación en el sentido contrario al de las manecillas del reloj.</p>
+</div>
+</section>
+</section>
+<section id="teorema-de-la-divergencia">
+<h2>Teorema de la Divergencia<a class="headerlink" href="#teorema-de-la-divergencia" title="Link to this heading">#</a></h2>
+<p>Consideremos un pequeño cubo como en el gráfico siguiente</p>
+<figure class="align-default" id="tg23divcubo">
+<a class="reference internal image-reference" href="_images/TG23divCubo.png"><img alt="_images/TG23divCubo.png" src="_images/TG23divCubo.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 84 </span><span class="caption-text">Flujo a través de un cubo</span><a class="headerlink" href="#tg23divcubo" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Nos interesa determinar el flujo del campo vectorial <span class="math notranslate nohighlight">\(\mathbf{F}=(P,Q,R)\)</span> que fluye a través de la superficie de este cubo. Para ello, calcularemos el flujo total como la suma de los flujos a través de cada una de sus seis caras.</p>
+<p>Primero, tomemos la cara (1) del cubo. El flujo es</p>
+<div class="math notranslate nohighlight">
+\[
+\textrm{Flujo a través de (1)}=\mathbf{F}\cdot\mathbf{n}~Area(1)=-P(1)~\Delta y\Delta z.
+\]</div>
+<p>Análogamente, para el flujo que sale de la cara (2):</p>
+<div class="math notranslate nohighlight">
+\[
+\textrm{Flujo a través de (2)}=\mathbf{F'}\cdot\mathbf{n'}~Area(2)=P(2)~\Delta y\Delta z.
+\]</div>
+<p>En general, <span class="math notranslate nohighlight">\(P(1)\)</span> y <span class="math notranslate nohighlight">\(P(2)\)</span> son levemente diferentes: Si <span class="math notranslate nohighlight">\(\Delta x\)</span> es suficientemente pequeño, podemos escribir</p>
+<div class="math notranslate nohighlight">
+\[
+P(2)=P(1)+\Delta P=P(1)+\frac{\partial P}{\partial x}\Delta x
+\]</div>
+<p>Acá los términos <span class="math notranslate nohighlight">\((\Delta x)^2\)</span> y superiores se desprecian cuando <span class="math notranslate nohighlight">\(\Delta x\to0\)</span>.</p>
+<p>Luego el flujo a través de la cara (2) es</p>
+<div class="math notranslate nohighlight">
+\[
+\textrm{Flujo a través de (2)}=\left(P(1)+\frac{\partial P}{\partial x}\Delta x\right)~\Delta y\Delta z.
+\]</div>
+<p>Sumando los flujos por la cara (1) y (2), obtenemos</p>
+<div class="math notranslate nohighlight">
+\[
+\textrm{Flujo a través de (1) y (2)}=\frac{\partial P}{\partial x}~\Delta x\Delta y\Delta z.
+\]</div>
+<p>(La derivada parcial debería ser evaluada en el centro de la cara (1), pero en el límite del cubo infinitesimal, el error es despreciable si evaluamos en <span class="math notranslate nohighlight">\((x,y,z)\)</span>). Análogamente:</p>
+<div class="math notranslate nohighlight">
+\[
+\textrm{Flujo a través de (3) y (4)}=\frac{\partial Q}{\partial y}~\Delta x\Delta y\Delta z
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\textrm{Flujo a través de (5) y (6)}=\frac{\partial R}{\partial z}~\Delta x\Delta y\Delta z
+\]</div>
+<p>Por lo tanto, el flujo total es</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\iint\limits_{Cubo}\mathbf{F}\cdot\mathbf{n}~dS&amp;=\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right)~\Delta x\Delta y\Delta z\\
+&amp;=\text{div}(\mathbf{F})~\Delta V
+\end{aligned}
+\end{split}\]</div>
+<p>La divergencia de un vector en el punto <span class="math notranslate nohighlight">\(P\)</span> es el flujo (flujo saliente del campo <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> por unidad de volumen) en una vecindad de <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<p>Finalmente, si <span class="math notranslate nohighlight">\(S\)</span> es una superficie cerrada que contiene al sólido <span class="math notranslate nohighlight">\(E\)</span> de volumen <span class="math notranslate nohighlight">\(V\)</span> con orientación positiva (hacia afuera), y <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> un campo vectorial cuyas funciones componentes tienen derivadas parciales continuas en una región abierta que contiene <span class="math notranslate nohighlight">\(E\)</span>, podemos aproximar <span class="math notranslate nohighlight">\(V\)</span> usando infinitos cubos y calcular el flujo total sobre <span class="math notranslate nohighlight">\(S\)</span> como la suma de los flujos sobre cada cubo, con lo cual obtenemos el <strong>Teorema de la Divergencia o de Gauss</strong>:</p>
+<p>Sea <span class="math notranslate nohighlight">\(E\)</span> una región sólida simple y <span class="math notranslate nohighlight">\(S\)</span> la superficie frontera de <span class="math notranslate nohighlight">\(E\)</span> con orientación positiva. Sea <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> un campo cuyas funciones componentes tienen derivadas parciales continuas en una región abierta que contiene <span class="math notranslate nohighlight">\(E\)</span>. Luego</p>
+<div class="math notranslate nohighlight">
+\[
+\iint\limits_S \mathbf{F}\cdot d\mathbf{S}=\iiint\limits_E\text{div}(\mathbf{F})~dV
+\]</div>
+<figure class="align-default" id="divergencia1">
+<a class="reference internal image-reference" href="_images/Divergencia1.png"><img alt="_images/Divergencia1.png" src="_images/Divergencia1.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 85 </span><span class="caption-text">Región sólida con orientación positiva</span><a class="headerlink" href="#divergencia1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-ejercicio admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Determine el flujo del campo vectorial <span class="math notranslate nohighlight">\(\mathbf{F}(x,y,z)=y\mathbf{j}-z\mathbf{k}\)</span> a través de la superficie <span class="math notranslate nohighlight">\(S\)</span> que consiste del paraboloide <span class="math notranslate nohighlight">\(y=x^2+z^2\)</span> (<span class="math notranslate nohighlight">\(0\leq y\leq 1\)</span>), y el disco <span class="math notranslate nohighlight">\(x^2+z^2\leq 1\)</span> con <span class="math notranslate nohighlight">\(y=1\)</span>.</p>
+</div>
 </section>
 </section>
 
@@ -1085,8 +1478,28 @@ W=\int\limits_C \mathbf{F}(x,y,z)\cdot\mathbf{T}(x,y,z)~ds=\int\limits_C \mathbf
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-de-linea-sobre-campos-vectoriales">Integrales de Línea sobre Campos Vectoriales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-fundamental-de-las-integrales-de-linea">Teorema Fundamental de las Integrales de Línea</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independencia-de-la-trayectoria">Independencia de la Trayectoria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curvas-cerradas">Curvas Cerradas</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-green">Teorema de Green</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion">Aplicación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-parametricas-e-integrales-de-superficie">Superficies paramétricas e Integrales de superficie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plano-tangente">Plano Tangente</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#area-de-una-superficie-parametrica">Área de una Superficie Paramétrica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-de-superficie">Integrales de Superficie</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-orientadas">Superficies Orientadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-de-superficie-para-campos-vectoriales">Integrales de Superficie para Campos Vectoriales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacional">Rotacional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergencia">Divergencia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-stokes">Teorema de Stokes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conexion-con-el-teorema-de-green">Conexión con el Teorema de Green</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-la-divergencia">Teorema de la Divergencia</a></li>
 </ul>
   </nav></div>
 

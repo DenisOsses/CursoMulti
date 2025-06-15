@@ -573,3 +573,443 @@ Si $\mathbf{F}$ es un campo vectorial continuo cuyo dominio es $D$, la integral 
 
 Con esta definición, las integrales de línea de campos vectoriales conservativos son independientes de la trayectoria.
 
+### Curvas Cerradas
+
+Se dice que una curva es **cerrada** si su punto final coincide con su punto final, es decir, $\mathbf{r}(a)=\mathbf{r}(b)$.
+
+**Teorema**. $\int\limits_{C}\mathbf{F}\cdot d\mathbf{r}$ es independiente de la trayectoria en $D$ si y solo si $\int\limits_{C}\mathbf{F}\cdot d\mathbf{r}=0$ para toda trayectoria cerrada $C$ en $D$.
+
+**Teorema**. Supongamos que $\mathbf{F}$ es un campo vectorial que es continuo sobre una región conexa abierta $D$. Si $\int\limits_{C}\mathbf{F}\cdot d\mathbf{r}$ independiente de la trayectoria en $D$, entonces $\mathbf{F}$ es un campo vectorial conservativo sobre $D$, es decir, existe una función $f$ tal que $\nabla f=\mathbf{F}$.
+
+¿Cómo es posible determinar si un campo vectorial $\mathbf{F}$ es conservativo?
+
+**Teorema**. Si $\mathbf{F}=(P,Q)$ un campo vectorial conservativo, donde $P$ y $Q$ tienen derivadas parciales continuas de primer orden sobre un dominio $D$, entonces en la totalidad de $D$ tenemos 
+
+$$
+\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}
+$$
+
+**Teorema**. Sea $\mathbf{F}=(P,Q)$ un campo vectorial sobre una región simplemente conexa $D$. Supongamos que $P$ y $Q$ tienen derivadas continuas de primer orden y $P_y=Q_x$ en todo $D$. Entonces $\mathbf{F}$ es un campo vectorial conservativo.
+
+```{admonition} Ejercicio 
+Sea $\mathbf{F}(x,y)=(1+xy)e^{xy}\mathbf{i}+x^2e^{xy}\mathbf{j}$ un campo vectorial. Determine si $\mathbf{F}$ es conservativo. Considere ahora la curva $C$ dada por $\mathbf{r}(t)=\cos(t)\mathbf{i}+2\sin(t)\mathbf{j}$, $0\leq t\leq \frac{\pi}{2}$. Calcule $\int\limits_{C}\mathbf{F}\cdot d\mathbf{r}$.
+```
+
+## Teorema de Green
+
+El teorema de Green establece la relación entre una integral de línea alrededor de una curva simple cerrada $C$ y una integral doble sobre la región plana $D$ acotada por $C$.
+
+Sea $C$ una curva simple cerrada, suave por tramos con orientación positiva en el plano, y sea $D$ la región delimitada por $C$. Si $P$ y $Q$ tienen derivadas parciales continuas sobre una región abierta que contiene a $D$, entonces 
+
+$$
+\int\limits_C P~dx+Q~dy=\iint\limits_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)~dA
+$$
+
+**Nota**. Si $\mathbf{F}=(P,Q)$ entonces 
+
+$$
+\int\limits_C\mathbf{F}\cdot d\mathbf{r}=\int\limits_C P~dx+Q~dy
+$$
+
+A veces se utiliza la notación 
+
+$$
+\oint\limits_C P~dx+Q~dy
+$$ 
+
+para referirse a que la curva $C$ es cerrada.
+
+```{admonition} Ejercicio 
+Sea $C$ la curva frontera de la región encerrada por las parábolas $y=x^2$ y $x=y^2$. Calcule 
+
+$$
+\int\limits_C (y+e^{\sqrt{x}})~dx+(2x+\cos(y^2))~dy
+$$
+```
+
+### Aplicación
+
+Como el área $A$ de la región $D$ es $\iint\limits_D 1~dA$, entonces elegimos $P$ y $Q$ tales que $Q_x-P_y=1$, como por ejemplo: 
+
+$$
+P(x,y)=0, Q(x,y)=x~~\text{o}~~P(x,y)=-y, Q(x,y)=0
+$$ 
+$$
+\text{o}~~P(x,y)=-\frac{1}{2}y, Q(x,y)=\frac{1}{2}x
+$$
+
+Con lo cual 
+
+$$
+A=\oint\limits_C x~dy=-\oint\limits_C y~dx=\frac{1}{2}\oint\limits_C x~dy-y~dx
+$$
+
+```{admonition} Ejercicio Propuesto
+:class: warning 
+Determine el área bajo un arco del cicloide $x=t-\sin(t)$ e $y=1-\cos(t)$.
+```
+
+## Superficies paramétricas e Integrales de superficie
+
+Una **superficie** en $\mathbb{R}^3$ es una función $\textbf{r}:D\subseteq\mathbb{R}^2\to\mathbb{R}^3$. Esta función toma dos parámetros $(u,v)\in D$ y asigna un vector $\mathbf{r}(u,v)$ tal que 
+
+$$
+\mathbf{r}(u,v)=(x(u,v),y(u,v),z(u,v))
+$$ 
+
+La superficie paramétrica $S$ está formada por todos los $(x,y,z)\in\mathbb{R}^3$ para los respectivos $(u,v)\in D$.
+
+```{figure} Superficies1.png
+---
+height: 250px
+name: Superficies1
+---
+Superficie Paramétrica $S$ como transformación de la región plana $D$
+```
+
+```{admonition} Ejemplo
+El plano que pasa por el punto $P_0$, cuyo vector posición es $\mathbf{r}_0$ y contiene dos vectores no paralelos $\mathbf{a}$ y $\mathbf{b}$ es 
+
+$$
+\mathbf{r}(u,v)=\mathbf{r}_0+u\mathbf{a}+v\mathbf{b}~~,~~u,v\in\mathbb{R}.
+$$
+```
+
+```{admonition} Ejemplo
+La esfera $x^2+y^2+z^2=a^2$ paramétricamente es 
+
+$$
+\mathbf{r}(\phi,\theta)=a\sin(\phi)\cos(\theta)\mathbf{i}+a\sin(\phi)\sin(\theta)\mathbf{j}+a\cos(\phi)\mathbf{k}
+$$ 
+
+donde $0\leq \phi\leq\pi$, $0\leq\theta\leq 2\pi.$
+```
+
+```{figure} Superficies3.png
+---
+height: 250px
+name: Superficies3
+---
+La esfera $S$ es la transformación del rectángulo $[0,\pi]\times[0,2\pi]$
+```
+
+```{admonition} Ejercicio
+Escriba en coordenadas paramétricas el cilindro $x^2+y^2=1$.
+```
+
+```{admonition} Ejercicio
+Determine una representación paramétrica de la superficie que es la parte de la esfera $x^2+y^2+z^2=4$ que se sitúa arriba del cono $z=\sqrt{x^2+y^2}$.
+```
+
+**Nota**. Toda función $z=f(x,y)$ se puede representar paramétricamente como $\mathbf{r}(x,y)=(x,y,f(x,y))$.
+
+### Plano Tangente
+
+Sea $P_0(x_0,y_0,z_0)=\mathbf{r}(u_0,v_0)$ un punto sobre la superficie $S$ dada por la función vectorial 
+
+$$
+\mathbf{r}(u,v)=(x(u,v),y(u,v),z(u,v)).
+$$ 
+
+Tenemos los vectores tangentes asociados $\mathbf{r}_u=(x_u,y_u,z_u)$ y $\mathbf{r}_v=(x_v,y_v,z_v)$ generan el vector normal $\mathbf{r}_u\times\mathbf{r}_v$ al plano tangente a la superficie en $P_0$, cuya ecuación est dáda por: 
+
+$$
+(\mathbf{r}_u\times\mathbf{r}_v)(u_0,v_0)\cdot(x-x_0,y-y_0,z-z_0)=0
+$$
+
+```{figure} Superficies4.png
+---
+height: 250px
+name: Superficies4
+---
+Vectores tangentes $\mathbf{r}_u$ y $\mathbf{r}_v$ con su vector normal asociado $\mathbf{r}_u\times\mathbf{r}_v$
+```
+
+### Área de una Superficie Paramétrica
+
+Si una superficie paramétrica suave $S$ está dada por la ecuación $\mathbf{r}(u,v)=x(u,v)\mathbf{i}+y(u,v)\mathbf{j}+z(u,v)\mathbf{k}$, $(u,v)\in D$, y $S$ es cubierta solo una vez cuando $(u,v)$ varía en todo el dominio del parámetro, entonces el área $A$ de la superficie de $S$ es 
+
+$$
+A(S)=\iint\limits_D ||\mathbf{r}_u\times\mathbf{r}_v||~dA
+$$
+
+### Integrales de Superficie
+
+Si $S$ es la superficie paramétrica suave dada por $\mathbf{r}(u,v)$ con $(u,v)\in D$, sus funciones componentes $x(u,v)$, $y(u,v)$, $z(u,v)$ son continuas, $\mathbf{r}_u$ y $\mathbf{r}_v$ no son cero y no son paralelas en el interior de $D$, se puede demostrar que 
+
+$$
+\iint\limits_S f(x,y,z)~dS=\iint\limits_D f(\mathbf{r}(u,v))~ ||\mathbf{r}_u\times\mathbf{r}_v||~dA
+$$
+
+```{figure} Superficies5.png
+---
+height: 250px
+name: Superficies5
+---
+El diferencial de superficie $dS$ equivale a $||\mathbf{r}_u\times\mathbf{r}_v||~dA$ luego de aplicar $\mathbf{r}$
+```
+
+```{admonition} Ejercicio
+Sea $S$ la parte del cono $z=\sqrt{x^2+y^2}$ que se encuentra entre los planos $z=1$ y $z=3$. Calcule $\displaystyle\iint\limits_S x^2z^2~dS$.
+```
+
+**Nota**. Si $S=S_1\cup S_2\cup\cdots\cup S_n$ una unión finita de superficies suaves, entonces 
+
+$$
+\iint\limits_S f(x,y,z)~dS=\sum_{i=1}^n\iint\limits_{S_1} f(x,y,z)~dS
+$$
+
+## Superficies Orientadas
+
+Existen superficies que tienen "un solo lado" como la banda de Moebius
+
+```{figure} Sup1.png
+---
+height: 150px
+name: Sup1
+---
+Banda de Moebius
+```
+
+Solo consideraremos superficies $S$ que tengan dos lados. Si es posible elegir un vector unitario normal $\mathbf{N}$ en todos los puntos $(x,y,z)$ de modo que $\mathbf{n}$ varíe continuamente sobre $S$, entonces se dice que $S$ es una **superficie orientada** y la elección dada de $\mathbf{n}$ proporciona a $S$ una **orientación**
+
+Hay dos orientaciones posibles para cualquier superficie orientable
+
+```{figure} Sup2.png
+---
+height: 150px
+name: Sup2
+---
+Superficies orientables
+```
+
+Si tenemos la superficie $S$ dada por la función $z=f(x,y)$, una parametrización posible de ella es $\mathbf{r}(x,y)=(x,y,f(x,y))$, cuyo vector normal unitario es
+
+$$
+\mathbf{n}=\mathbf{r}_x\times\mathbf{r}_y=\frac{-f_x\mathbf{i}-f_x\mathbf{j}+\mathbf{k}}{\sqrt{1+(f_x)^2+(f_y)^2}}
+$$
+
+Como el signo de la componente $\mathbf{k}$ es positivo, $\mathbf{n}$ entrega una orientación **hacia arriba** de $S$.
+
+Si $S$ es una superficie suave y orientable dada en forma paramétrica por medio de $\mathbf{r}(u, v)$, entonces tiene la orientación del vector unitario normal 
+
+$$
+\mathbf{n}=\frac{\mathbf{r}_u\times\mathbf{r}_v}{||\mathbf{r}_u\times\mathbf{r}_v||}
+$$
+
+Si $S$ es una **superficie cerrada**, o sea, una superficie frontera de una región sólida $E$, su **orientación positiva** es aquella para la cual los vectores normales señalan **hacia afuera** de $E$, y si señalan hacia el interior dan la orientación negativa. 
+
+```{figure} Sup3.png
+---
+height: 200px
+name: Sup3
+---
+Orientación positiva y orientación negativa
+```
+
+## Integrales de Superficie para Campos Vectoriales
+
+Sea $S$ una superficie orientada con vector unitario normal $\mathbf{n}$. Imagine que hay un fluido de densidad $\rho(x,y,z)$ y campo de velocidad $\mathbf{v}(x,y,z)$ que circula a través de $S$. Entonces, el caudal (masa por unidad de tiempo) por unidad de área es $\rho\mathbf{v}$. Si dividimos $S$ en pequeños parches $S_{ij}$, entonces $S_{ij}$ es casi plana y podemos aproximar la masa del fluido que atraviesa en la dirección de la normal $\mathbf{n}$ por unidad de tiempo mediante la cantidad $(\rho\mathbf{v})\cdot\mathbf{n}~A(S_{ij})$
+
+```{figure} Sup4.png
+---
+height: 200px
+name: Sup4
+---
+Flujo a través de una Superficie
+```
+
+Sumando y haciendo el límite, obtenemos 
+
+$$
+\iint\limits_S \rho\mathbf{v}\cdot\mathbf{n}~dS=\iint\limits_S \rho(x,y,z)\mathbf{v}(x,y,z)\cdot\mathbf{n}(x,y,z)~dS
+$$
+
+La interpretación física es el caudal que atraviesa $S$. Si escribimos $\mathbf{F}=\rho\mathbf{v}$, entonces $\mathbf{F}$ es un campo vectorial en $\mathbb{R}^3$ y tenemos la siguiente **integral de superficie** o **integral de flujo** de $\mathbf{F}$ sobre $S$: 
+
+$$
+\iint\limits_S\mathbf{F}\cdot~d\mathbf{S}=\iint\limits_S \mathbf{F}\cdot\mathbf{n}~dS
+$$
+
+Para calcular esta integral de superficie de $\mathbf{F}$ sobre $S$, debemos parametrizar la superficie mediante $\mathbf{r}(u,v)$, cuyo vector normal unitario $\mathbf{n}$ está dado más arriba. Reemplazando, obtenemos
+
+
+$$
+\iint\limits_S\mathbf{F}\cdot~d\mathbf{S}=\iint\limits_D \mathbf{F}\big(\mathbf{r}(u,v)\big)\cdot(\mathbf{r}_u\times\mathbf{r}_v)~dA
+$$
+
+donde $D$ es el dominio de definición de los parámetros $(u,v)$.
+
+```{admonition} Ejercicio
+Determine el flujo del campo vectorial $\mathbf{F}(x,y,z)=y\mathbf{j}-z\mathbf{k}$ a través de la superficie $S$ que consiste del paraboloide $y=x^2+z^2$ ($0\leq y\leq 1$), y el disco $x^2+z^2\leq 1$ con $y=1$.
+```
+
+## Rotacional
+
+Sea $\mathbf{F}=(P,Q,R)$ un campo vectorial sobre $\mathbb{R}^3$, tal que $P,Q,R$ tienen derivadas parciales. El **rotacional** de $\mathbf{F}$ es el campo vectorial sobre $\mathbb{R}^3$ definido por 
+
+$$
+\text{rot}(\mathbf{F})=\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\right)\mathbf{i}+\left(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\right)\mathbf{j}+\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathbf{k}
+$$
+
+El **operador diferencial nabla** $\nabla$ se define como 
+
+$$
+\nabla=\mathbf{i}\frac{\partial}{\partial x}+\mathbf{j}\frac{\partial}{\partial y}+\mathbf{k}\frac{\partial}{\partial z}=\left(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z}\right)
+$$ 
+
+y su significado al operar sobre la función escalar $f(x,y,z)$ es producir el gradiente de $f$:
+
+$$
+\nabla f=\mathbf{i}\frac{\partial f}{\partial x}+\mathbf{j}\frac{\partial f}{\partial y}+\mathbf{k}\frac{\partial f}{\partial z}=\left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z}\right)$$ 
+
+Si pensamos en $\nabla$ como el vector $\left(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z}\right)$, y calculamos el producto cruz entre $\nabla$ y el campo $\mathbf{F}$, obtenemos $\nabla\times\mathbf{F}=\text{rot}(\mathbf{F})$
+
+**Teorema**. Si es $f$ una función de tres variables que tiene derivadas parciales continuas de segundo orden, entonces 
+
+$$
+\text{rot}(\nabla f)=\mathbf{0}
+$$
+
+**Nota**. Recuerde que un campo vectorial $\mathbf{F}$ es conservativo si existe $f$ función escalar tal que $\mathbf{F}=\nabla f$. Luego el teorema anterior se puede enunciar como: Si $\mathbf{F}$ es conservativo entonces $\text{rot}(\mathbf{F})=\mathbf{0}$.
+
+**Teorema**. Si $\mathbf{F}$ es un campo vectorial definido en $\mathbb{R}^3$ cuyas funciones componentes tienen derivadas parciales continuas y $\text{rot}(\mathbf{F})=\mathbf{0}$, entonces $\mathbf{F}$ es un campo conservativo.
+
+## Divergencia
+
+Si $\mathbf{F}=(P,Q,R)$ es un campo vectorial sobre $\mathbb{R}^3$ y existen $\frac{\partial P}{\partial x}$, $\frac{\partial Q}{\partial y}$, $\frac{\partial R}{\partial z}$ entonces la **divergencia** de $\mathbf{F}$ es la función de tres variables definida por 
+
+$$\text{div}(\mathbf{F})=\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}
+$$
+
+El producto punto entre el operador $\nabla$ y el campo $\mathbf{F}$ es $\nabla\cdot\mathbf{F}=\text{div}(\mathbf{F})$.
+
+**Teorema**. Si $\mathbf{F}=(P,Q,R)$ es un campo vectorial sobre $\mathbb{R}^3$ y existen $P,Q,R$  tienen derivadas parciales de segundo orden, entonces 
+
+$$
+\text{div}\big(\text{rot}(\mathbf{F})\big)=\nabla\cdot(\nabla\times\mathbf{F})=0
+$$
+
+```{admonition} Ejercicio
+Determine el rotacional y la divergencia del campo 
+
+$$
+\mathbf{F}(x,y,z)=\left(\frac{x}{y},\frac{y}{z},\frac{z}{x}\right)
+$$
+```
+
+## Teorema de Stokes
+
+Sea $S$ una superficie suave por tramos y orientada que está acotada por una curva $C$ suave por tramos, simple y cerrada con orientación positiva. Sea $\mathbf{F}$ un campo vectorial cuyas componentes tienen derivadas parciales continuas en una región abierta en $\mathbb{R}^3$ que contiene a $S$. Entonces
+
+$$
+\int\limits_C\mathbf{F}\cdot d\mathbf{r}=\iint\limits_S\text{rot}(\mathbf{F})\cdot d\mathbf{S}
+$$
+
+```{figure} Stokes1.png
+---
+height: 150px
+name: Stokes1
+---
+Superficie simple y cerrada con orientación positiva
+```
+
+El teorema de Stokes establece que la integral de línea alrededor de la curva frontera de $S$ de la componente tangencial de $\mathbf{F}$ es igual a la integral de superficie de la componente normal del rotacional de $\mathbf{F}$.
+
+### Conexión con el Teorema de Green
+
+Si la superficie $S$ es plana y está sobre el plano $XY$ con orientación hacia arriba, entonces $\mathbf{k}$ es un vector normal unitario a $S$ y la integral de superficie se vuelve una integral doble que corresponde al Teorema de Green 
+
+$$
+\iint\limits_S\text{rot}(\mathbf{F})\cdot d\mathbf{S}= \iint\limits_S(\text{rot}(\mathbf{F}))\cdot\mathbf{k}~dA=\iint\limits_D\left(Q_x-P_y\right)dA
+$$
+
+```{admonition} Ejercicio
+Utilice el teorema de Stokes para evaluar $\int_C\mathbf{F}\cdot d\mathbf{r}$, donde $\mathbf{F}(x,y,z)=x^2z\mathbf{i}+xy^2\mathbf{j}+z^2\mathbf{k}$, y $C$ es la curva de la intersección entre el plano $x+y+z=1$ y el cilindro $x^2+y^2=9$ con orientación en el sentido contrario al de las manecillas del reloj.
+```
+
+## Teorema de la Divergencia
+
+Consideremos un pequeño cubo como en el gráfico siguiente
+
+```{figure} TG23divCubo.png
+---
+height: 200px
+name: TG23divCubo
+---
+Flujo a través de un cubo
+```
+
+Nos interesa determinar el flujo del campo vectorial $\mathbf{F}=(P,Q,R)$ que fluye a través de la superficie de este cubo. Para ello, calcularemos el flujo total como la suma de los flujos a través de cada una de sus seis caras.
+
+Primero, tomemos la cara (1) del cubo. El flujo es 
+
+$$
+\textrm{Flujo a través de (1)}=\mathbf{F}\cdot\mathbf{n}~Area(1)=-P(1)~\Delta y\Delta z.
+$$  
+
+Análogamente, para el flujo que sale de la cara (2): 
+
+$$
+\textrm{Flujo a través de (2)}=\mathbf{F'}\cdot\mathbf{n'}~Area(2)=P(2)~\Delta y\Delta z.
+$$ 
+
+En general, $P(1)$ y $P(2)$ son levemente diferentes: Si $\Delta x$ es suficientemente pequeño, podemos escribir 
+
+$$
+P(2)=P(1)+\Delta P=P(1)+\frac{\partial P}{\partial x}\Delta x
+$$ 
+
+Acá los términos $(\Delta x)^2$ y superiores se desprecian cuando $\Delta x\to0$.
+
+Luego el flujo a través de la cara (2) es 
+
+$$
+\textrm{Flujo a través de (2)}=\left(P(1)+\frac{\partial P}{\partial x}\Delta x\right)~\Delta y\Delta z.
+$$ 
+
+Sumando los flujos por la cara (1) y (2), obtenemos 
+
+$$
+\textrm{Flujo a través de (1) y (2)}=\frac{\partial P}{\partial x}~\Delta x\Delta y\Delta z.
+$$ 
+
+(La derivada parcial debería ser evaluada en el centro de la cara (1), pero en el límite del cubo infinitesimal, el error es despreciable si evaluamos en $(x,y,z)$). Análogamente: 
+
+$$
+\textrm{Flujo a través de (3) y (4)}=\frac{\partial Q}{\partial y}~\Delta x\Delta y\Delta z
+$$ 
+$$
+\textrm{Flujo a través de (5) y (6)}=\frac{\partial R}{\partial z}~\Delta x\Delta y\Delta z
+$$
+
+Por lo tanto, el flujo total es 
+
+$$
+\begin{aligned}
+\iint\limits_{Cubo}\mathbf{F}\cdot\mathbf{n}~dS&=\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right)~\Delta x\Delta y\Delta z\\
+&=\text{div}(\mathbf{F})~\Delta V
+\end{aligned}
+$$  
+
+La divergencia de un vector en el punto $P$ es el flujo (flujo saliente del campo $\mathbf{F}$ por unidad de volumen) en una vecindad de $P$.
+
+Finalmente, si $S$ es una superficie cerrada que contiene al sólido $E$ de volumen $V$ con orientación positiva (hacia afuera), y $\mathbf{F}$ un campo vectorial cuyas funciones componentes tienen derivadas parciales continuas en una región abierta que contiene $E$, podemos aproximar $V$ usando infinitos cubos y calcular el flujo total sobre $S$ como la suma de los flujos sobre cada cubo, con lo cual obtenemos el **Teorema de la Divergencia o de Gauss**:
+
+Sea $E$ una región sólida simple y $S$ la superficie frontera de $E$ con orientación positiva. Sea $\mathbf{F}$ un campo cuyas funciones componentes tienen derivadas parciales continuas en una región abierta que contiene $E$. Luego
+
+$$
+\iint\limits_S \mathbf{F}\cdot d\mathbf{S}=\iiint\limits_E\text{div}(\mathbf{F})~dV
+$$
+
+```{figure} Divergencia1.png
+---
+height: 150px
+name: Divergencia1
+---
+Región sólida con orientación positiva
+```
+
+```{admonition} Ejercicio
+Determine el flujo del campo vectorial $\mathbf{F}(x,y,z)=y\mathbf{j}-z\mathbf{k}$ a través de la superficie $S$ que consiste del paraboloide $y=x^2+z^2$ ($0\leq y\leq 1$), y el disco $x^2+z^2\leq 1$ con $y=1$.
+```
