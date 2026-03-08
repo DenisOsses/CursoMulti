@@ -65,4 +65,7 @@ sphinx:
     language: es
     templates_path:
       - _templates
- 
+    html_static_path:
+      - _static
+    html_js_files:
+      - custom_sidebar.js
