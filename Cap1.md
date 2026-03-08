@@ -151,8 +151,7 @@ c. Determine $Rec(f)$.
 :  code_prompt_show: "Mostrar el código fuente"
 :  code_prompt_hide: "Ocultar el código"
 import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+import plotly.graph_objects as go
 
 def f(x, y):
     return 4*x**2 + y**2  # Ejemplo de función
@@ -163,19 +162,23 @@ y = np.linspace(-5, 5, 100)
 X, Y = np.meshgrid(x, y)
 Z = f(X, Y)
 
-# Crear la figura y los ejes en 3D
-fig = plt.figure(figsize=(8, 6))
-ax = fig.add_subplot(111, projection='3d')
+# Crear la figura interactiva en 3D
+fig = go.Figure(data=[go.Surface(z=Z, x=X, y=Y, colorscale='Viridis')])
 
-# Graficar la superficie
-ax.plot_surface(X, Y, Z, cmap='viridis', edgecolor='none')
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.set_zlabel('f(x,y)')
-ax.set_title('Gráfica de f(x,y)')
+fig.update_layout(
+    title='Gráfica interactiva de f(x,y) (puedes rotarla y acercarla)',
+    scene=dict(
+        xaxis_title='x',
+        yaxis_title='y',
+        zaxis_title='f(x,y)'
+    ),
+    width=700,
+    height=600,
+    margin=dict(l=65, r=50, b=65, t=90)
+)
 
 # Mostrar la gráfica
-plt.show()
+fig.show()
 ```
 
 ```{admonition} Ejercicio 
