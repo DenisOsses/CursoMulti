@@ -252,8 +252,10 @@ En Python:
 :mystnb:
 :  code_prompt_show: "Mostrar el código fuente"
 :  code_prompt_hide: "Ocultar el código"
-import matplotlib.pyplot as plt
 import numpy as np
+import plotly.graph_objects as go
+from IPython.display import display, HTML
+import urllib.parse
 
 # Grilla de datos
 X, Y = np.meshgrid(np.linspace(-2, 2, 50), np.linspace(-2, 2, 50))
@@ -261,20 +263,30 @@ X, Y = np.meshgrid(np.linspace(-2, 2, 50), np.linspace(-2, 2, 50))
 # Función
 Z = X**2 + Y**2
 
-fig = plt.figure()
-ax = fig.add_subplot(projection='3d')
+# Crear la figura interactiva en 3D con superficie y contornos
+fig = go.Figure(data=[go.Surface(
+    z=Z, x=X, y=Y, 
+    colorscale='Spectral', reversescale=True,
+    contours_z=dict(show=True, usecolormap=True, highlightcolor="limegreen", project_z=True)
+)])
 
-# Gráfico de la superficie 3D
-ax.plot_surface(X, Y, Z, cmap='Spectral_r', alpha=1)
+fig.update_layout(
+    title='Superficie con curvas de nivel proyectadas',
+    scene=dict(
+        xaxis_title='x',
+        yaxis_title='y',
+        zaxis_title='z',
+        zaxis=dict(range=[0, 4])
+    ),
+    width=700,
+    height=600,
+    margin=dict(l=65, r=50, b=65, t=90)
+)
 
-# Contornos
-ax.contour(X, Y, Z, linewidths=2, colors='black', offset=0)
-ax.contourf(X, Y, Z, cmap='Spectral_r', offset=0, alpha=0.75)
-
-# Límites en el eje Z
-ax.set_zlim(0, 4)
-
-plt.show()
+# Renderizar como HTML puro embebido en iframe para compatibilidad con Live Code (Thebe)
+html_plot = fig.to_html(include_plotlyjs='cdn', full_html=True)
+srcdoc = urllib.parse.quote(html_plot)
+display(HTML(f'<iframe src="data:text/html;charset=utf-8,{srcdoc}" width="100%" height="650" style="border:none;"></iframe>'))
 ```
 
 **Nota**. Podemos observar mapas de contornos aplicados a diversas zonas geográficas en la aplicación [**contourmap**](https://contourmap.app/)
