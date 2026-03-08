@@ -36,9 +36,8 @@ html:
   use_repository_button: true
   use_multitoc_numbering: true
   #home_page_in_navbar: true
-  # google_analytics_id: G-TW65QWSB9F
-  # analytics:
-  #   google_analytics_id: G-TW65QWSB9F
+  analytics:
+    google_analytics_id: G-0ZZM6N18QQ
 
 # Enable parsing LaTeX-style math blocks with the amsmath MyST extension
 parse:
@@ -69,3 +68,4 @@ sphinx:
       - _static
     html_js_files:
       - custom_sidebar.js
+      - google_analytics.js
