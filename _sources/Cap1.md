@@ -152,6 +152,7 @@ c. Determine $Rec(f)$.
 :  code_prompt_hide: "Ocultar el código"
 import numpy as np
 import plotly.graph_objects as go
+from IPython.display import display, HTML
 
 def f(x, y):
     return 4*x**2 + y**2  # Ejemplo de función
@@ -177,8 +178,11 @@ fig.update_layout(
     margin=dict(l=65, r=50, b=65, t=90)
 )
 
-# Mostrar la gráfica
-fig.show()
+# Renderizar como HTML puro embebido en iframe para compatibilidad con Live Code (Thebe)
+import urllib.parse
+html_plot = fig.to_html(include_plotlyjs='cdn', full_html=True)
+srcdoc = urllib.parse.quote(html_plot)
+display(HTML(f'<iframe src="data:text/html;charset=utf-8,{srcdoc}" width="100%" height="650" style="border:none;"></iframe>'))
 ```
 
 ```{admonition} Ejercicio 
