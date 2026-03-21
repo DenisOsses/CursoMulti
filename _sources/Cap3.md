@@ -161,13 +161,13 @@ fig.frames = frames
 # 5. Configurar los dos deslizadores
 slider_y = dict(
     active=10,
-    yanchor='top', xanchor='left', currentvalue={"prefix": "Valor y_0 (x_0=1): "}, pad={"b": 10, "t": 10}, len=0.9, x=0.1, y=-0.1,
+    yanchor='top', xanchor='left', currentvalue={"prefix": "Valor y_0 (x_0=1): "}, pad={"b": 10, "t": 10}, len=0.9, x=0.1, y=-0.05,
     steps=[dict(method='animate', args=[[f"y_{round(y0,2)}"], dict(mode='immediate', frame=dict(duration=100, redraw=True), transition=dict(duration=0))], label=str(round(y0,2))) for y0 in y0_vals]
 )
 
 slider_x = dict(
     active=15, # índice donde x0=1.0 aprox
-    yanchor='top', xanchor='left', currentvalue={"prefix": "Valor x_0 (y_0=0): "}, pad={"b": 10, "t": 60}, len=0.9, x=0.1, y=-0.1,
+    yanchor='top', xanchor='left', currentvalue={"prefix": "Valor x_0 (y_0=0): "}, pad={"b": 10, "t": 10}, len=0.9, x=0.1, y=-0.30,
     steps=[dict(method='animate', args=[[f"x_{round(x0,2)}"], dict(mode='immediate', frame=dict(duration=100, redraw=True), transition=dict(duration=0))], label=str(round(x0,2))) for x0 in x0_vals]
 )
 
@@ -177,7 +177,7 @@ fig.update_layout(
     sliders=[slider_y, slider_x],
     width=700,
     height=750,
-    margin=dict(b=150) # Espacio para los dos sliders
+    margin=dict(b=180) # Espacio para los dos sliders
 )
 
 # Renderizar como HTML puro embebido en iframe para compatibilidad con Live Code (Thebe)
