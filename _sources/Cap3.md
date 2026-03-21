@@ -56,6 +56,11 @@ La visualización es dinámica: ¡Puedes hacer **zoom** y **rotar** la figura co
 ::::
 
 ```{code-cell} ipython3
+:tags: [DerivadasParciales]
+:tags: [hide-input]
+:mystnb:
+:  code_prompt_show: "Mostrar el código fuente"
+:  code_prompt_hide: "Ocultar el código"
 import numpy as np
 import plotly.graph_objects as go
 
@@ -140,7 +145,12 @@ fig.update_layout(
     updatemenus=[dict(type="buttons", showactive=False, buttons=[dict(label="Play", method="animate", args=[None, dict(frame=dict(duration=100, redraw=True), transition=dict(duration=0), fromcurrent=True, mode='immediate')])])]
 )
 
-fig.show()
+# Renderizar como HTML puro embebido en iframe para compatibilidad con Live Code (Thebe)
+from IPython.display import display, HTML
+import urllib.parse
+html_plot = fig.to_html(include_plotlyjs='cdn', full_html=True)
+srcdoc = urllib.parse.quote(html_plot)
+display(HTML(f'<iframe src="data:text/html;charset=utf-8,{srcdoc}" width="100%" height="650" style="border:none;"></iframe>'))
 ```
 
 ### Derivada Parcial con respecto a $x$
