@@ -47,6 +47,102 @@ Intersección superficie $z=f(x,y)$ con el plano $x=x_0$
 
 Si $(x_0,y_0)$ está en el dominio de $f(x,y)$, el plano vertical $y=y_0$ (donde $y_0$ es un número fijo, constante) corta a la superficie $z=f(x,y)$ en la curva $z=f(x,y_0)$ (que está contenida precisamente en el plano $y=y_0$). Esta curva pertenece a la intersección de $f(x,y)$ con el plano $y=y_0$, y observamos que hay sólo variación en $x$. Análogamente, la curva $z=f(x_0,y)$ está contenida en el plano $x=x_0$, y notamos que hay sólo variación en $y$.
 
+::::{admonition} Visualización Dinámica de Derivadas Parciales
+:class: hint
+
+A continuación se presenta un código interactivo en Python utilizando la librería `plotly`. Puedes usar el botón de **Play** o el **deslizador** (slider) para observar cómo el plano $y=y_0$ al cambiar de posición corta a la superficie $z=f(x,y)$ en diferentes curvas de intersección, junto con su recta tangente. 
+
+La visualización es dinámica: ¡Puedes hacer **zoom** y **rotar** la figura con tu mouse! Además, gracias a Thebe, puedes presionar para editar este bloque de código, por ejemplo para visualizar la intersección constante en $x=x_0$, y ejecutar la celda nuevamente.
+
+```{code-cell} ipython3
+import numpy as np
+import plotly.graph_objects as go
+
+# 1. Definir la función superficie z = f(x,y) = 10 - x^2 - y^2
+x = np.linspace(-3, 3, 50)
+y = np.linspace(-3, 3, 50)
+X, Y = np.meshgrid(x, y)
+Z = 10 - X**2 - Y**2
+
+fig = go.Figure()
+
+# Añadimos la superficie principal
+fig.add_trace(go.Surface(z=Z, x=X, y=Y, colorscale='Viridis', opacity=0.7, showscale=False, name='z=f(x,y)'))
+
+# 2. Configurar los valores para el deslizador y_0
+y0_vals = np.linspace(-2.5, 2.5, 21)
+y_0_init = y0_vals[10]
+
+# Configuración inicial del plano y=y_0
+Z_plane = np.linspace(0, 10, 50)
+X_plane, Z_plane = np.meshgrid(x, Z_plane)
+Y_plane = np.full_like(X_plane, y_0_init)
+
+# Añadimos el plano que corta
+fig.add_trace(go.Surface(x=X_plane, y=Y_plane, z=Z_plane, colorscale='Reds', opacity=0.4, showscale=False, name='Plano y=y_0'))
+
+# 3. Añadir la curva de intersección y elemento tangente
+x_curve = x
+y_curve = np.full_like(x, y_0_init)
+z_curve = 10 - x_curve**2 - y_curve**2
+fig.add_trace(go.Scatter3d(x=x_curve, y=y_curve, z=z_curve, mode='lines', line=dict(color='yellow', width=6), name='Curva intersección'))
+
+# Recta tangente y Punto P
+x_0 = 1.0 # Punto x fijo
+z_0 = 10 - x_0**2 - y_0_init**2
+m = -2 * x_0 # Pendiente fx
+t = np.linspace(-1, 1, 10)
+x_tan = x_0 + t
+y_tan = np.full_like(t, y_0_init)
+z_tan = z_0 + m * t
+fig.add_trace(go.Scatter3d(x=x_tan, y=y_tan, z=z_tan, mode='lines', line=dict(color='red', width=5), name='Recta tangente'))
+fig.add_trace(go.Scatter3d(x=[x_0], y=[y_0_init], z=[z_0], mode='markers', marker=dict(color='black', size=6), name='Punto P'))
+
+# 4. Crear los frames para la animación del deslizador
+frames = []
+for y0 in y0_vals:
+    Y_p = np.full_like(X_plane, y0)
+    y_c = np.full_like(x_curve, y0)
+    z_c = 10 - x_curve**2 - y_c**2
+    z_0_frame = 10 - x_0**2 - y0**2
+    y_tan_frame = np.full_like(t, y0)
+    z_tan_frame = z_0_frame + m * t
+    
+    frame = go.Frame(
+        data=[
+            go.Surface(z=Z, x=X, y=Y), 
+            go.Surface(x=X_plane, y=Y_p, z=Z_plane), 
+            go.Scatter3d(x=x_curve, y=y_c, z=z_c), 
+            go.Scatter3d(x=x_tan, y=y_tan_frame, z=z_tan_frame), 
+            go.Scatter3d(x=[x_0], y=[y0], z=[z_0_frame]) 
+        ],
+        name=str(round(y0, 2))
+    )
+    frames.append(frame)
+
+fig.frames = frames
+
+# 5. Parámetros del Slider
+sliders = [dict(
+    active=10,
+    currentvalue={"prefix": "Valor y_0: "},
+    pad={"t": 50},
+    steps=[dict(method='animate', args=[[str(round(y0,2))], dict(mode='immediate', frame=dict(duration=100, redraw=True), transition=dict(duration=0))], label=str(round(y0,2))) for y0 in y0_vals]
+)]
+
+fig.update_layout(
+    title='Superficie, Corte Plano y Recta Tangente',
+    scene=dict(xaxis_title='Eje x', yaxis_title='Eje y', zaxis_title='Eje z', zaxis=dict(range=[0, 10])),
+    sliders=sliders,
+    width=700,
+    height=600,
+    updatemenus=[dict(type="buttons", showactive=False, buttons=[dict(label="Play", method="animate", args=[None, dict(frame=dict(duration=100, redraw=True), transition=dict(duration=0), fromcurrent=True, mode='immediate')])])]
+)
+
+fig.show()
+```
+::::
+
 ### Derivada Parcial con respecto a $x$
 
 La **derivada parcial** de $f$ **con respecto a** $x$ en $(x_0,y_0)$ es la derivada de la función de una variable $f(x,y_0)$ con respecto a $x$ en el punto $x=x_0$. Se denota como 

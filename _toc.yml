@@ -10,7 +10,7 @@ chapters:
 - file: Cap4
 - file: Cap5
 - file: Cap6
-- file: Desafios
+#- file: Desafios
 #- file: Clases en Youtube
 # - file: notebooks
 # - file: markdown-notebooks

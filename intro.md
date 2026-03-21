@@ -4,7 +4,7 @@ El curso Cálculo Multivariables (CM) tiene como objetivos aplicar las herramien
 
 Durante este semestre, CM se realizará mediante la herramienta Jupyter Book (ver [the Jupyter Book documentation](https://jupyterbook.org) para más información) que nos permitirá una gran versatilidad matemática e interactividad con Python.
 
-Puedes acceder libremente a este libro vía [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://github.com/DenisOsses/CursoMulti) y [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DenisOsses/CursoMulti/HEAD)
+Puedes acceder libremente a este libro vía [![Jupyter Book Badge](https://jupyterbook.org/en/stable/_images/badge.svg)](https://github.com/DenisOsses/CursoMulti) y [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DenisOsses/CursoMulti/HEAD)
 
 Las partes de este libro están compuestas por:
 
