@@ -86,115 +86,98 @@ fig = go.Figure()
 # Añadimos la superficie principal
 fig.add_trace(go.Surface(z=Z, x=X, y=Y, colorscale='Viridis', opacity=0.7, showscale=False, name='z=f(x,y)'))
 
-# 2. Configurar los valores para el deslizador y_0 y el punto x_0 fijo
-# --- ZONA EDITABLE: Selecciona el punto x base y los valores del deslizador ---
-x_0 = 1.0                           # Punto x fijo
-y0_vals = np.linspace(-2.5, 2.5, 21) # Rango de valores para deslizar y_0
-# ------------------------------------------------------------------------------
+# 2. Configurar los valores de deslizamiento
+x0_vals = np.linspace(-2.5, 2.5, 21)
+y0_vals = np.linspace(-2.5, 2.5, 21)
 
-y_0_init = y0_vals[10] # Posición inicial del plano y=y_0
+x_base = 1.0  # Posición por defecto cuando se mueve y_0
+y_base = 0.0  # Posición por defecto cuando se mueve x_0
 
-# Configuración de los planos (y=y_0 que se mueve, y x=x_0 que estará fijo)
 Z_plane = np.linspace(0, 10, 50)
-X_plane, Z_plane_grid = np.meshgrid(x, Z_plane)
-Y_plane = np.full_like(X_plane, y_0_init)
+X_plane_mesh, Z_plane_grid = np.meshgrid(x, Z_plane)
+Y_plane_mesh, Z_plane_grid_x = np.meshgrid(y, Z_plane)
 
-Y_plane_x, Z_plane_grid_x = np.meshgrid(y, Z_plane)
-X_plane_fixed = np.full_like(Y_plane_x, x_0)
+# Función de ayuda para calcular los datos de un frame dado un x0, y0
+def get_frame_data(x0_val, y0_val):
+    # Plano y=y0
+    Y_p = np.full_like(X_plane_mesh, y0_val)
+    # Plano x=x0
+    X_p = np.full_like(Y_plane_mesh, x0_val)
+    
+    # Curvas de intersección
+    y_c_y0 = np.full_like(x, y0_val)
+    z_c_y0 = f(x, y_c_y0)
+    
+    x_c_x0 = np.full_like(y, x0_val)
+    z_c_x0 = f(x_c_x0, y)
+    
+    z_point = f(x0_val, y0_val)
+    
+    # Derivadas
+    m_x = fx(x0_val, y0_val)
+    m_y = fy(x0_val, y0_val)
+    
+    t = np.linspace(-1, 1, 10)
+    
+    y_tan_x = np.full_like(t, y0_val)
+    z_tan_x = z_point + m_x * t
+    x_tan_y = np.full_like(t, x0_val)
+    z_tan_y = z_point + m_y * t
+    
+    return [
+        go.Surface(z=Z, x=X, y=Y),                              # 0. Superficie
+        go.Surface(x=X_p, y=Y_plane_mesh, z=Z_plane_grid_x),    # 1. Plano x=x0
+        go.Surface(x=X_plane_mesh, y=Y_p, z=Z_plane_grid),      # 2. Plano y=y0
+        go.Scatter3d(x=x, y=y_c_y0, z=z_c_y0),                  # 3. Curva intersección y=y0
+        go.Scatter3d(x=x_c_x0, y=y, z=z_c_x0),                  # 4. Curva intersección x=x0
+        go.Scatter3d(x=x0_val+t, y=y_tan_x, z=z_tan_x),         # 5. Tg respecto x
+        go.Scatter3d(x=x_tan_y, y=y0_val+t, z=z_tan_y),         # 6. Tg respecto y
+        go.Scatter3d(x=[x0_val], y=[y0_val], z=[z_point])       # 7. Punto P
+    ]
 
-# Añadimos los planos
-fig.add_trace(go.Surface(x=X_plane_fixed, y=Y_plane_x, z=Z_plane_grid_x, colorscale='Blues', opacity=0.3, showscale=False, name='Plano fijo x=x_0'))
-fig.add_trace(go.Surface(x=X_plane, y=Y_plane, z=Z_plane_grid, colorscale='Reds', opacity=0.3, showscale=False, name='Plano dinámico y=y_0'))
+# Trazos iniciales (usando x_base, y_base)
+init_data = get_frame_data(x_base, y_base)
+fig.add_trace(init_data[1].update(colorscale='Blues', opacity=0.3, showscale=False, name='Plano x=x_0'))
+fig.add_trace(init_data[2].update(colorscale='Reds', opacity=0.3, showscale=False, name='Plano y=y_0'))
+fig.add_trace(init_data[3].update(mode='lines', line=dict(color='yellow', width=5), name='Curva z=f(x, y_0)'))
+fig.add_trace(init_data[4].update(mode='lines', line=dict(color='cyan', width=5), name='Curva z=f(x_0, y)'))
+fig.add_trace(init_data[5].update(mode='lines', line=dict(color='red', width=5), name='Tg respecto a x'))
+fig.add_trace(init_data[6].update(mode='lines', line=dict(color='orange', width=5), name='Tg respecto a y'))
+fig.add_trace(init_data[7].update(mode='markers', marker=dict(color='black', size=6), name='Punto P'))
 
-# 3. Calcular elementos del Punto y Rectas Tangentes Iniciales
-z_0 = f(x_0, y_0_init)
-
-# Curva intersección en y = y_0
-x_curve_y0 = x
-y_curve_y0 = np.full_like(x, y_0_init)
-z_curve_y0 = f(x_curve_y0, y_curve_y0)
-fig.add_trace(go.Scatter3d(x=x_curve_y0, y=y_curve_y0, z=z_curve_y0, mode='lines', line=dict(color='yellow', width=5), name='Curva z=f(x, y_0)'))
-
-# Curva intersección en x = x_0
-x_curve_x0 = np.full_like(y, x_0)
-y_curve_x0 = y
-z_curve_x0 = f(x_curve_x0, y_curve_x0)
-fig.add_trace(go.Scatter3d(x=x_curve_x0, y=y_curve_x0, z=z_curve_x0, mode='lines', line=dict(color='cyan', width=5), name='Curva z=f(x_0, y)'))
-
-# Parámetro t para dibujar los vectores directores de la recta
-t = np.linspace(-1, 1, 10)
-
-# Recta tangente respecto a x (sobre plano y=y_0)
-m_x = fx(x_0, y_0_init)
-x_tan_x = x_0 + t
-y_tan_x = np.full_like(t, y_0_init)
-z_tan_x = z_0 + m_x * t
-fig.add_trace(go.Scatter3d(x=x_tan_x, y=y_tan_x, z=z_tan_x, mode='lines', line=dict(color='red', width=5), name='Tg respecto a x'))
-
-# Recta tangente respecto a y (sobre plano x=x_0)
-m_y = fy(x_0, y_0_init)
-x_tan_y = np.full_like(t, x_0)
-y_tan_y = y_0_init + t
-z_tan_y = z_0 + m_y * t
-fig.add_trace(go.Scatter3d(x=x_tan_y, y=y_tan_y, z=z_tan_y, mode='lines', line=dict(color='orange', width=5), name='Tg respecto a y'))
-
-# Punto central P(x_0, y_0, z_0)
-fig.add_trace(go.Scatter3d(x=[x_0], y=[y_0_init], z=[z_0], mode='markers', marker=dict(color='black', size=6), name='Punto P'))
-
-
-# 4. Crear los frames para la animación del deslizador (y_0 móvil)
+# 4. Crear los frames combinados
 frames = []
+
+# Frames para el deslizador de y_0 (dejando x_0 fijo en x_base)
 for y0 in y0_vals:
-    # Recalcular valores dinámicos
-    Y_p = np.full_like(X_plane, y0)
-    
-    y_c_y0 = np.full_like(x_curve_y0, y0)
-    z_c_y0 = f(x_curve_y0, y_c_y0)
-    
-    z_0_frame = f(x_0, y0)
-    
-    # Derivadas en el nuevo punto (x_0, y0)
-    m_x_frame = fx(x_0, y0)
-    m_y_frame = fy(x_0, y0)
-    
-    y_tan_x_frame = np.full_like(t, y0)
-    z_tan_x_frame = z_0_frame + m_x_frame * t
-    
-    y_tan_y_frame = y0 + t
-    z_tan_y_frame = z_0_frame + m_y_frame * t
-    
-    frame = go.Frame(
-        data=[
-            go.Surface(z=Z, x=X, y=Y),                              # 0. Superficie f(x,y)
-            go.Surface(x=X_plane_fixed, y=Y_plane_x, z=Z_plane_grid_x), # 1. Plano fijo x=x_0
-            go.Surface(x=X_plane, y=Y_p, z=Z_plane_grid),           # 2. Plano móvil y=y0
-            go.Scatter3d(x=x_curve_y0, y=y_c_y0, z=z_c_y0),         # 3. Curva intersección en y=y0
-            go.Scatter3d(x=x_curve_x0, y=y_curve_x0, z=z_curve_x0), # 4. Curva en x=x_0 (no cambia, pero hay que pasarla)
-            go.Scatter3d(x=x_tan_x, y=y_tan_x_frame, z=z_tan_x_frame), # 5. Recta Tg respecto x
-            go.Scatter3d(x=x_tan_y, y=y_tan_y_frame, z=z_tan_y_frame), # 6. Recta Tg respecto y
-            go.Scatter3d(x=[x_0], y=[y0], z=[z_0_frame])            # 7. Punto P
-        ],
-        name=str(round(y0, 2))
-    )
-    frames.append(frame)
+    frames.append(go.Frame(data=get_frame_data(x_base, y0), name=f"y_{round(y0,2)}"))
+
+# Frames para el deslizador de x_0 (dejando y_0 fijo en y_base)
+for x0 in x0_vals:
+    frames.append(go.Frame(data=get_frame_data(x0, y_base), name=f"x_{round(x0,2)}"))
 
 fig.frames = frames
 
-# 5. Parámetros del Slider
-sliders = [dict(
+# 5. Configurar los dos deslizadores
+slider_y = dict(
     active=10,
-    currentvalue={"prefix": "Valor y_0: "},
-    pad={"t": 50},
-    steps=[dict(method='animate', args=[[str(round(y0,2))], dict(mode='immediate', frame=dict(duration=100, redraw=True), transition=dict(duration=0))], label=str(round(y0,2))) for y0 in y0_vals]
-)]
+    yanchor='top', xanchor='left', currentvalue={"prefix": "Valor y_0 (x_0=1): "}, pad={"b": 10, "t": 10}, len=0.9, x=0.1, y=-0.1,
+    steps=[dict(method='animate', args=[[f"y_{round(y0,2)}"], dict(mode='immediate', frame=dict(duration=100, redraw=True), transition=dict(duration=0))], label=str(round(y0,2))) for y0 in y0_vals]
+)
+
+slider_x = dict(
+    active=15, # índice donde x0=1.0 aprox
+    yanchor='top', xanchor='left', currentvalue={"prefix": "Valor x_0 (y_0=0): "}, pad={"b": 10, "t": 60}, len=0.9, x=0.1, y=-0.1,
+    steps=[dict(method='animate', args=[[f"x_{round(x0,2)}"], dict(mode='immediate', frame=dict(duration=100, redraw=True), transition=dict(duration=0))], label=str(round(x0,2))) for x0 in x0_vals]
+)
 
 fig.update_layout(
     title='Superficie, Planos y Rectas Tangentes',
     scene=dict(xaxis_title='Eje x', yaxis_title='Eje y', zaxis_title='Eje z', zaxis=dict(range=[0, 10])),
-    sliders=sliders,
+    sliders=[slider_y, slider_x],
     width=700,
-    height=700,
-    updatemenus=[dict(type="buttons", showactive=False, buttons=[dict(label="Play", method="animate", args=[None, dict(frame=dict(duration=100, redraw=True), transition=dict(duration=0), fromcurrent=True, mode='immediate')])])]
+    height=750,
+    margin=dict(b=150) # Espacio para los dos sliders
 )
 
 # Renderizar como HTML puro embebido en iframe para compatibilidad con Live Code (Thebe)
@@ -205,7 +188,7 @@ from IPython.display import display, HTML
 import html
 
 html_plot = fig.to_html(include_plotlyjs='cdn', full_html=True)
-iframe_html = f'<iframe srcdoc="{html.escape(html_plot)}" width="100%" height="750" style="border:none;"></iframe>'
+iframe_html = f'<iframe srcdoc="{html.escape(html_plot)}" width="100%" height="800" style="border:none;"></iframe>'
 display(HTML(iframe_html))
 ```
 
