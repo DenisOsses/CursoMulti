@@ -146,11 +146,15 @@ fig.update_layout(
 )
 
 # Renderizar como HTML puro embebido en iframe para compatibilidad con Live Code (Thebe)
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="IPython.core.display")
+
 from IPython.display import display, HTML
-import urllib.parse
+import html
+
 html_plot = fig.to_html(include_plotlyjs='cdn', full_html=True)
-srcdoc = urllib.parse.quote(html_plot)
-display(HTML(f'<iframe src="data:text/html;charset=utf-8,{srcdoc}" width="100%" height="650" style="border:none;"></iframe>'))
+iframe_html = f'<iframe srcdoc="{html.escape(html_plot)}" width="100%" height="650" style="border:none;"></iframe>'
+display(HTML(iframe_html))
 ```
 
 ### Derivada Parcial con respecto a $x$
