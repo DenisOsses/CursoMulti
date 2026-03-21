@@ -53,6 +53,7 @@ Si $(x_0,y_0)$ está en el dominio de $f(x,y)$, el plano vertical $y=y_0$ (donde
 A continuación se presenta un código interactivo en Python utilizando la librería `plotly`. Puedes usar el botón de **Play** o el **deslizador** (slider) para observar cómo el plano $y=y_0$ al cambiar de posición corta a la superficie $z=f(x,y)$ en diferentes curvas de intersección, junto con su recta tangente. 
 
 La visualización es dinámica: ¡Puedes hacer **zoom** y **rotar** la figura con tu mouse! Además, gracias a Thebe, puedes presionar para editar este bloque de código, por ejemplo para visualizar la intersección constante en $x=x_0$, y ejecutar la celda nuevamente.
+::::
 
 ```{code-cell} ipython3
 import numpy as np
@@ -141,7 +142,6 @@ fig.update_layout(
 
 fig.show()
 ```
-::::
 
 ### Derivada Parcial con respecto a $x$
 
